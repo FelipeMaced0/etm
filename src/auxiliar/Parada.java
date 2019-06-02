@@ -2,7 +2,7 @@ package auxiliar;
 
 import java.util.Objects;
 
-public class Parada implements Comparable{
+public class Parada{
     String id;
     String endereco;
     double latitude;
@@ -60,19 +60,7 @@ public class Parada implements Comparable{
     public int getnVeiculos() {
         return nVeiculos;
     }
-    
-    @Override
-    public int compareTo(Object obj) {
-        Parada p2 = (Parada)obj;
-        if(this.getnVeiculos()<p2.getnVeiculos()){
-            return -1;
-        }
-        if(this.getnVeiculos()>p2.getnVeiculos()){
-            return 1;
-        }
-        return 0;
-    }
-    
+
     @Override
     public boolean equals(Object obj){
         if(obj!=null){

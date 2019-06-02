@@ -7,6 +7,7 @@ import etm.ETM;
 import java.util.ArrayList;
 import java.util.Calendar;
 import veiculos.Veiculo;
+
 public class GestorDeFrota extends FuncionarioAdministrativo{
     
     public GestorDeFrota(){ 
@@ -70,15 +71,15 @@ public class GestorDeFrota extends FuncionarioAdministrativo{
         return etm.buscarFuncionario(id);
     }
 
-    public String getVeiculosCadastrados(){
+    public ArrayList getVeiculosCadastrados(){
         return etm.getVeiculosCadastrados();
     }
     
-    public String getRotasCadastradas(){
+    public ArrayList getRotasCadastradas(){
         return etm.getRotasCadastradas();
     }
     
-    public String getEnderecos(String idRota){
+    public Rota getEnderecos(String idRota){
         return etm.getEnderecos(idRota);
     }
     
@@ -115,16 +116,11 @@ public class GestorDeFrota extends FuncionarioAdministrativo{
         return etm.calcularTarifaIdealTveiculos(percentDeLucro);
     }
     
-    public String getPontosMaisUsados(){
-        return etm.getPontosMaisUsados();
+    public String getUsoDosPontos(int ordem){
+        return etm.getUsoDosPontos(ordem);
     }
     
-    /*
-    public String getPontosMenosUsados(){
-        return etm.getPontosMenosUsados();
-    }
-    */
-    public double calcularDistancia(Object idRota,Parada p1, Parada p2){
+    public double calcularDistancia(String idRota,Parada p1, Parada p2){
         return etm.calcularDistancia(idRota, p1, p2);
     }
 }

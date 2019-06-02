@@ -1,6 +1,6 @@
 package etm;
 
-import auxiliar.ComparaParadas;
+import auxiliar.ComparadorDeParadas;
 import auxiliar.GeradorDeId;
 import auxiliar.Parada;
 import auxiliar.RelatorioCustoDiario;
@@ -11,7 +11,9 @@ import java.util.ArrayList;
 import veiculos.Veiculo;
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Objects;
 import oficina.Oficina;
 
@@ -150,48 +152,50 @@ public class ETM {
             veiculo.setMinhaRota(null);
         }
     }
-    public Veiculo buscarVeiculo(String id){
+    
+    //Retorna o veículo  que possuir o id igual ao idBuscado
+    public Veiculo buscarVeiculo(String idBuscado){
         Iterator<Veiculo> i = veiculos.iterator();
         Veiculo veiculo;
         while(i.hasNext()){
             veiculo = i.next();
-            if(veiculo.getId().equals(id)){
+            if(veiculo.getId().equals(idBuscado)){
                 return veiculo;
             }
         }
         return null;
     }
-    
-    public Rota buscarRota(String id){
+    //Retorna a rota que possuir o id igual ao idBuscado
+    public Rota buscarRota(String idBuscado){
         Iterator<Rota> i = rotas.iterator();
         Rota rota;
         while(i.hasNext()){
             rota = i.next();
-            if(rota.getId().equals(id)){
+            if(rota.getId().equals(idBuscado)){
                 return rota;
             }
         }
         return null;
     }
-    
-    public Funcionario buscarFuncionario(String cpf){
+    //Retorna o funcionário que possuir o CPF igual ao cpfBuscado
+    public Funcionario buscarFuncionario(String cpfBuscado){
        Iterator<Funcionario> i = funcionarios.iterator();
         Funcionario funcionario;
         while(i.hasNext()){
            funcionario = i.next();
-            if(funcionario.getCpf().equals(cpf)){
+            if(funcionario.getCpf().equals(cpfBuscado)){
                 return funcionario;
             }
         }
         return null;
     }
-    
-    public Parada buscarParada(String id){
+    //Retorna a parada que possuir o id igual ao idBuscado
+    public Parada buscarParada(String idBuscado){
         Iterator<Parada> i = paradas.iterator();
         Parada parada;
         while(i.hasNext()){
             parada = i.next();
-            if(parada.getId().equals(id)){
+            if(parada.getId().equals(idBuscado)){
                 return parada;
             }
         }
@@ -208,35 +212,18 @@ public class ETM {
             funcionarios.set(funcionarios.indexOf(funAtualizado), funAtualizado);
     }
     
-    public static String get(ArrayList lista){
-        String info="";
-        Iterator i = lista.iterator();
-        while(i.hasNext()){
-            info += i.next().toString()+"\n\n";
-        }
-        return info;
+    //Retorna todos os veículos cadastrados
+    public ArrayList getVeiculosCadastrados(){
+        return veiculos;
     }
-    
-    public String getVeiculosCadastrados(){
-        return get(veiculos);
-    }
-    
-    public String getRotasCadastradas(){
-        return get(rotas);
+    //Retorna todas as rotas cadastradas
+    public ArrayList getRotasCadastradas(){
+        return rotas;
     }
     
     //Retorna todos os endereços das paradas de uma rota
-    public String getEnderecos(String idRota){
-        String end="";
-        Iterator<Rota> i = rotas.iterator();
-        Rota rota;
-        while(i.hasNext()){
-            rota = i.next();
-            if(rota.getId().equals(idRota)){
-                return rota.getEnderecos();
-            }
-        }
-        return null;
+    public Rota getEnderecos(String idRota){
+        return buscarRota(idRota);
     }
     
     //Gera um relatório com os funcionários que mais se encaixam nos parâmetros fornecidos
@@ -303,7 +290,7 @@ public class ETM {
         }
         return null;
     }
-    //resolver problema com a receita dos ônibus
+    //resolver problema com a receita dos veículos
     public void BalancoDodia(){
         for(int j=0;j<tiposDeVeiculos.length;j++){
             float custoFun=0;
@@ -532,17 +519,25 @@ public class ETM {
         return "TIPO DE VEÍCULO: "+tipoDeVeiculo.toUpperCase()+"\nTARIFA IDEAL: "+tarifa;
     }
     
-    private void ordenar(){
+    private void ordenar(int ordem){
         if(paradasDesordenadas){
+            if(ordem<0){
+               Comparator<Parada> c = new ComparadorDeParadas().reversed();
+               Collections.sort(paradas, c);
+            }
+            else{
+                Comparator<Parada> c = new ComparadorDeParadas();
+                Collections.sort(paradas,c);
+            }
             
         }
     }
     
-    public String getPontosMaisUsados(){
+    public String getUsoDosPontos(int ordem){
         String info="";
+        ordenar(ordem);
         Iterator<Parada> i = paradas.iterator();
         Parada parada;
-        //Collections.sort(paradas);
         while(i.hasNext()){
             //System.out.println("dentro do laço");
             parada = i.next();
@@ -551,33 +546,18 @@ public class ETM {
         return info;
     }
     
-    /*IMPLEMENTAR
-    public String getPontosMenosUsados(){
-        
+
+    public void mandarVeiculoParaOfici(String id){
+       Veiculo veiculoDanificado = buscarVeiculo(id);
+       if(veiculoDanificado != null){
+            oficina.cadatrarVeiculo(veiculoDanificado);
+       }
     }
     
-    IMPLEMENTAR
-    public void mandarOnibusParaOfici(Object id){
-        for(int i=0;i<proxPLve;i++){
-            if(veiculos[i].equals(id)){
-                oficina.cadatrarVeiculo(veiculos[i]);
-                veiculos[i].setStatus("OFICINA");
-                break;
-            }
-        }
-    }
-    */
-    
-    public double calcularDistancia(Object idRota, Parada p1, Parada p2){
+    public double calcularDistancia(String idRota, Parada p1, Parada p2){
         Iterator<Rota> i = rotas.iterator();
-        Rota rota;
-        while(i.hasNext()){
-            rota = i.next();
-            if(rota.equals(idRota)){
-                return rota.calcularDistancia(p1, p2);
-            }
-        }
-        return -1;
+        Rota rota = buscarRota(idRota);
+        return rota.calcularDistancia(p1, p2);
     }
     
     public String mostrarRelatoriosDiarios(){
