@@ -1,6 +1,6 @@
 package veiculos;
 
-public class VeiculoTrilhos extends Veiculo {
+public abstract class VeiculoTrilhos extends Veiculo {
 
     public VeiculoTrilhos() {
     }

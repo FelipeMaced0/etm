@@ -9,13 +9,14 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Oficina {
+    
     private String id;
     private String nome;
     private Funcionario encarregado;
     private ETM etm;
     
     private String [] status;
-    private ArrayList<Funcionario> mecanicos;
+    private ArrayList<Mecanico> mecanicos;
     private ArrayList<Veiculo> veiculos;
 
     public Oficina() {
@@ -55,60 +56,76 @@ public class Oficina {
     }
     
     public void cadastrarMecanico(Mecanico mecanico){
-        mecanicos.add(encarregado);
+        mecanicos.add(mecanico);
     }
     
-    //Resolver problema do .equals
-    public void descadatrarVeiculo(String id){
-        veiculos.remove(veiculos.indexOf(id));
+    public void descadastrarVeiculo(String id){
+        Veiculo veiculo = buscarVeiculo(id);
+        if(veiculo != null){
+            veiculos.remove(veiculo);
+        }
     }
-    //Resolver problema do .equals
+    
     public void descadastrarMecanico(String cpf){
-       mecanicos.remove(mecanicos.indexOf(new Mecanico(cpf)));
-    }
-    //Resolver problema do .equals
-    public void agendarNovaRevisão(String idVeiculo, Revisao nRevisao){
-        Iterator<Veiculo> ve = veiculos.iterator();
-        Veiculo veiculo;
-        while(ve.hasNext()){
-            veiculo = ve.next();
-            if(veiculo.equals(idVeiculo)){
-                   veiculo.cadastrarRevisao(nRevisao);
-               }
-        }
-    }
-    //Resolver problema do .equals
-    public void retirarRevisao(String idVeiculo, String idRevisao){
-        Iterator<Veiculo> ve = veiculos.iterator();
-        Veiculo veiculo;
-        while(ve.hasNext()){
-            veiculo = ve.next();
-            if(veiculo.equals(idVeiculo)){
-               veiculo.descadastrarRevisao(idRevisao);
-            }
+        Mecanico mecanico = buscarMecanico(cpf);
+        if(mecanico != null){
+            mecanicos.remove(mecanico);
         }
     }
     
-    public String veiculosEmManutencao(){
-        String info="";
+    public Veiculo buscarVeiculo(String idVeiculo){
         Iterator<Veiculo> ve = veiculos.iterator();
         Veiculo veiculo;
         while(ve.hasNext()){
             veiculo = ve.next();
-            info += veiculo.toString()+"\n\n";
-        }
-        return info;
-    }
-    //Resolver problema do .equals
-    public void setCustoEmVeiculo(String id, float custo){
-        Iterator<Veiculo> ve = veiculos.iterator();
-        Veiculo veiculo;
-        while(ve.hasNext()){
-            veiculo = ve.next();
-            if(veiculo.equals(id)){
-                veiculo.setCustoManutencao(custo);
-                break;
+            if(veiculo.getId().equals(idVeiculo)){
+                return veiculo;
             }
+        }
+        return null;
+    }
+    
+    public Mecanico buscarMecanico(String cpf){
+        Iterator<Mecanico> me = mecanicos.iterator();
+        Mecanico mecanico;
+        while(me.hasNext()){
+            mecanico = me.next();
+            if(mecanico.getCpf().equals(cpf)){
+                return mecanico;
+            }
+        }
+        return null;
+    }
+
+    public void agendarNovaRevisão(String idVeiculo, Revisao nRevisao){
+        Veiculo veiculo = buscarVeiculo(idVeiculo);
+        if(veiculo != null){
+            veiculo.cadastrarRevisao(nRevisao);
+        }
+    }
+
+    public void retirarRevisao(String idVeiculo, String idRevisao){
+        Veiculo veiculo = buscarVeiculo(idVeiculo);
+        if(veiculo != null){
+            veiculo.descadastrarRevisao(idRevisao);
+        }
+    }
+    
+    public ArrayList<Veiculo> veiculosEmManutencao(){
+        return veiculos;
+    }
+
+    public void setCustoEmVeiculo(String idVeiculo, float custo){
+        Veiculo veiculo = buscarVeiculo(idVeiculo);
+        if(veiculo != null){
+            veiculo.setCustoManutencao(custo);
+        }
+    }
+    
+    public void mudarStatusVeiculo(String idVeiculo, String status){
+        Veiculo veiculo = buscarVeiculo(idVeiculo);
+        if(veiculo != null){
+            veiculo.setStatus(status);
         }
     }
     
@@ -116,5 +133,4 @@ public class Oficina {
     public String toString() {
         return "NOME: "+nome+"\nID: "+id+"ENCARREGADO: "+encarregado.toString();
     }
-    
 }

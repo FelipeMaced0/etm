@@ -13,7 +13,6 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Objects;
 import oficina.Oficina;
 
@@ -122,26 +121,41 @@ public class ETM {
     }
     //Atualizar número de veículos nas rotas
     //Retirar veículo das rotas
-    public void descadastrarVeiculo(Veiculo veiculo){
-        veiculos.remove(veiculo);
+    public void descadastrarVeiculo(String idVeiculo){
+        Veiculo veiculo = buscarVeiculo(idVeiculo);
+        if(veiculo != null){
+            veiculos.remove(veiculo);
+        }       
     } 
     // descadastrar rota do veículos tbm
-    public void descadastrarRota(Rota rota){
-        rotas.remove(rota);
-        paradasDesordenadas = true;
+    public void descadastrarRota(String idRota){
+        Rota rota = buscarRota(idRota);
+        if(rota != null){
+            rotas.remove(rota);
+            paradasDesordenadas = true;
+        }
+       
     }
     //Retirar parada das rotas
-    public void descadastrarParada(Parada parada){
-        paradas.remove(parada);
-        paradasDesordenadas = true;
+    public void descadastrarParada(String idParada){
+        Parada parada = buscarParada(idParada);
+        if(parada != null){
+            paradas.remove(parada);
+            paradasDesordenadas = true;
+        }
     }
-    //resolver problema com o .equals
+    
+    /*
+    repensar sobre a necessidade
     public void descadastrarRelatorio(RelatorioCustoDiario relatorio){
         relatoriosDiarios.remove(relatorio);
     }
-    // retirar Funcionario dos veículo.
-    public void descadastrarFucionario(Funcionario fun){
-        funcionarios.remove(fun);
+    */
+    public void descadastrarFucionario(String idFun){
+        Funcionario fun = buscarFuncionario(idFun);
+        if(fun != null){
+            funcionarios.remove(fun);
+        }   
     }
     
     public void descadastrarVeiculoEmRota(String idRota, String idVeiculo){

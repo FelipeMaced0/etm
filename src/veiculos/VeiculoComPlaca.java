@@ -1,6 +1,6 @@
 package veiculos;
 
-public class VeiculoComPlaca extends Veiculo{
+public abstract class VeiculoComPlaca extends Veiculo{
     String placa;
     public VeiculoComPlaca() {
     }
