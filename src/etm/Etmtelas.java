@@ -1,27 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package etm;
 
-import funcionarios.GerenteLocal;
+import java.awt.Component;
+import javax.swing.JComboBox;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 
-
-/**
- *
- * @author pc
- */
 public class Etmtelas extends javax.swing.JFrame {
-    GerenteLocal glocal;
-    
-    //Funcionario novato = new Funcionario();
-   
     
     public Etmtelas() {
         initComponents();
-        GerenteLocal glocal = new GerenteLocal ();
     }
 
     
@@ -3298,6 +3286,21 @@ public class Etmtelas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void limparCampos(JPanel painel){
+        Component [] componentes;
+        componentes = painel.getComponents();
+        
+        for(Component c: componentes){
+            if(c instanceof JTextField){
+                ((JTextField)c).setText("");
+            }
+            else if(c instanceof JComboBox){
+                ((JComboBox)c).setSelectedIndex(0);
+            }
+        }
+    }
+    
+    
     private void ct_IdCartaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ct_IdCartaoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ct_IdCartaoActionPerformed
