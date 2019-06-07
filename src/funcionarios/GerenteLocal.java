@@ -33,9 +33,7 @@ public class GerenteLocal extends Gerente{
     }
     
     public void demitirFuncionario(String cpf){
-        Funcionario fun;
-        fun = etm.buscarFuncionario(cpf);
-        etm.descadastrarFucionario(fun);
+        etm.descadastrarFucionario(cpf);
     }
     
     public Funcionario buscarFuncionario(String cpf){

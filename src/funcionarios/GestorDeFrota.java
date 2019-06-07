@@ -42,21 +42,15 @@ public class GestorDeFrota extends FuncionarioAdministrativo{
     }
     
     public void descadastrarVeiculo(String id){
-        Veiculo veiculo;
-        veiculo = etm.buscarVeiculo(id);
-        etm.descadastrarVeiculo(veiculo);
+        etm.descadastrarVeiculo(id);
     }   
     
     public void descadastrarRota(String id){
-        Rota rota;
-        rota = etm.buscarRota(id);
-        etm.descadastrarRota(rota);
+        etm.descadastrarRota(id);
     }
 
     public void descadastrarParada(String id){
-        Parada parada;
-        parada = etm.buscarParada(id);
-        etm.descadastrarParada(parada);
+        etm.descadastrarParada(id);
     }
     
     public Object buscarVeiculo(String id){
