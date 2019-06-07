@@ -77,9 +77,15 @@ public class ModeloDeTabelaFuncionario extends AbstractTableModel{
             case "CTPS":
                 fun.setCtps(String.valueOf(value));
             case "SALÁRIO":
-                if(value instanceof Float){
+                try{
+                
                     fun.setSalario(Float.parseFloat(atributo));
+                }catch(NumberFormatException e){
+                    
+                
                 }
+                    
+                
                 break;
             default:
                 break;

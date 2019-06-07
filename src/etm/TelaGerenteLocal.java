@@ -319,9 +319,9 @@ public class TelaGerenteLocal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(Cadastrar_P_escalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Cadastrar_CB_domingo)
-                    .addComponent(Cadastrar_CB_segunda)
                     .addComponent(Cadastrar_CB_terca)
-                    .addComponent(Cadastrar_CB_quarta))
+                    .addComponent(Cadastrar_CB_quarta)
+                    .addComponent(Cadastrar_CB_segunda, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(Cadastrar_P_escalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Cadastrar_CB_quinta)
@@ -481,10 +481,8 @@ public class TelaGerenteLocal extends javax.swing.JFrame {
     }//GEN-LAST:event_Cadastrar_CB_funcaoActionPerformed
 
     private void Cadastrar_BT_atualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastrar_BT_atualizarActionPerformed
-        Component c;
         int j=0;
-        for(int i=0;i<elementosPainelEscala.length;i++){
-            c = elementosPainelEscala[i];
+        for(Component c: elementosPainelEscala){
             if(c instanceof JCheckBox && !((JCheckBox)c).getText().equals("Todos")){
                 escala[j] = ((JCheckBox)c).isSelected();
                 j+=1;
@@ -493,9 +491,7 @@ public class TelaGerenteLocal extends javax.swing.JFrame {
     }//GEN-LAST:event_Cadastrar_BT_atualizarActionPerformed
 
     private void Cadastrar_CB_todosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastrar_CB_todosActionPerformed
-        Component c;
-        for(int i=0;i<elementosPainelEscala.length;i++){
-            c = elementosPainelEscala[i];
+        for(Component c: elementosPainelEscala){
             if( c instanceof JCheckBox && !((JCheckBox)c).getText().equals("Todos")){
                 ((JCheckBox)c).setSelected(Cadastrar_CB_todos.isSelected());
             }
