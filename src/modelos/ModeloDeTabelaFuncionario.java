@@ -7,10 +7,11 @@ import javax.swing.table.AbstractTableModel;
 
 public class ModeloDeTabelaFuncionario extends AbstractTableModel{
     private final ArrayList<Funcionario> rows;
-    private final String [] columns = new String [] {"NOME","IDADE","FUNÇÃO","CPF","CTPS","SALÁRIO"};
+    private final String [] columns;
     
     public ModeloDeTabelaFuncionario(ArrayList<Funcionario> funcionarios) {
         this.rows = funcionarios;
+        columns = new String [] {"NOME","IDADE","FUNÇÃO","CPF","CTPS","SALÁRIO"};
     }
     
     @Override
@@ -37,9 +38,9 @@ public class ModeloDeTabelaFuncionario extends AbstractTableModel{
                 return Integer.class;
             case 5:
                 return Float.class;
-                
+            default:
+                return null;   
         }
-        return null;
     }
     
     @Override

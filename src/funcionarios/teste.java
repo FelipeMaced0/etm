@@ -16,12 +16,13 @@ public class teste {
         ETM etm = new ETM("joão doido","123");
         GerenteLocal  gl = new GerenteLocal();
         GestorDeFrota gf = new GestorDeFrota();
-        Rota ro = new Rota("MEU CA","2321");
-        Rota ra = new Rota("DODO","23333");
-        Parada p1 =  new Parada("Terminal central-ifba","123",123231,123123);
-        Parada p2 =  new Parada("Terminal central-Hospital clériston","123",123121,23323);
-        Parada p3 =  new Parada("Terminal central-Getúlio","123",23441,123112);
-        Parada p4 =  new Parada("Terminal central-Câmara de vereadores","123",123231,123123);
+        Rota ro = new Rota("MEU CA");
+        Rota ra = new Rota("DODO");
+        Parada p1 =  new Parada("Terminal central-ifba",123231,123123);
+        Parada p2 =  new Parada("Terminal central-Hospital clériston",123121,23323);
+        Parada p3 =  new Parada("Terminal central-Getúlio",23441,123112);
+        Parada p4 =  new Parada("Terminal central-Câmara de vereadores",123231,123123);
+        
         gf.setEtm(etm);
         gl.setEtm(etm);
         

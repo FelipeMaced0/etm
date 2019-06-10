@@ -5,12 +5,11 @@ import java.util.Objects;
 public class Parada{
     String id;
     String endereco;
-    double latitude;
-    double longitude;
+    float latitude;
+    float longitude;
     int nVeiculos;
     
-    public Parada(String endereco,String id, double latitude, double longitude){
-        this.id = id;
+    public Parada(String endereco,float latitude, float longitude){
         this.endereco = endereco.toUpperCase();
         this.latitude = latitude;
         this.longitude = longitude;
@@ -29,11 +28,11 @@ public class Parada{
         this.endereco = nome.toUpperCase();
     }
     
-    public void setLatitude(double latitude) {
+    public void setLatitude(float latitude) {
         this.latitude = latitude;
     }
 
-    public void setLongitude(double longitude) {
+    public void setLongitude(float longitude) {
         this.longitude = longitude;
     }
 
@@ -41,11 +40,11 @@ public class Parada{
         this.id = id;
     }
     
-    public double getLatitude() {
+    public float getLatitude() {
         return latitude;
     }
 
-    public double getLongitude() {
+    public float getLongitude() {
         return longitude;
     }
 

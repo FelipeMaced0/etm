@@ -14,9 +14,8 @@ public class Rota {
     public Rota(){
     }
     
-    public Rota(String nome, String id){
+    public Rota(String nome){
         this.nome = nome;
-        this.id = id;
         paradas = new ArrayList();
         veiculos = new ArrayList();
         coordenadas = new ArrayList();
