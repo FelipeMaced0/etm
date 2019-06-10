@@ -1,9 +1,16 @@
 package etm;
 
 import java.awt.Component;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import passageiro.CartaoMag;
+import passageiro.Convencional;
+import passageiro.Estudante;
+import passageiro.Idoso;
 
 
 public class Etmtelas extends javax.swing.JFrame {
@@ -39,6 +46,20 @@ public class Etmtelas extends javax.swing.JFrame {
         Atendente_CT_credito = new javax.swing.JTextField();
         Atendente_CT_troco = new javax.swing.JTextField();
         Atendente_BT_inserirSaldo = new javax.swing.JButton();
+        AT_abaCadastro = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        AT_Cadastro_CT_nome = new javax.swing.JTextField();
+        AT_Cadastro_CT_idCartao = new javax.swing.JTextField();
+        AT_Cadastro_BT_cadastrar = new javax.swing.JButton();
+        AT_Cadastro_BT_buscar = new javax.swing.JButton();
+        AT_Cadastro_BT_remover = new javax.swing.JButton();
+        AT_Cadastro_BT_atualizar = new javax.swing.JButton();
+        AT_Cadastro_CB_tipoDeUsuario = new javax.swing.JComboBox();
+        AT_Cadastro_CB_status = new javax.swing.JCheckBox();
         AT_abaRelatórioFinanceiro = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -408,6 +429,11 @@ public class Etmtelas extends javax.swing.JFrame {
 
         Atendente_BT_inserirSaldo.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         Atendente_BT_inserirSaldo.setText("INSERIR SALDO");
+        Atendente_BT_inserirSaldo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Atendente_BT_inserirSaldoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout AT_VendaPassagem_PN_inserirSaldoLayout = new javax.swing.GroupLayout(AT_VendaPassagem_PN_inserirSaldo);
         AT_VendaPassagem_PN_inserirSaldo.setLayout(AT_VendaPassagem_PN_inserirSaldoLayout);
@@ -479,6 +505,119 @@ public class Etmtelas extends javax.swing.JFrame {
 
         AT_abaInterna.addTab("Venda Passagem", AT_abaVendaPassagem);
 
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CADASTRO", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
+        jPanel2.setName(""); // NOI18N
+
+        jLabel18.setText("NOME:");
+
+        jLabel25.setText("ID CARTÃO:");
+
+        jLabel26.setText("TIPO DE USUÁRIO:");
+
+        jLabel16.setText("STATUS:");
+
+        AT_Cadastro_BT_cadastrar.setText("Cadastrar");
+        AT_Cadastro_BT_cadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AT_Cadastro_BT_cadastrarActionPerformed(evt);
+            }
+        });
+
+        AT_Cadastro_BT_buscar.setText("Buscar");
+        AT_Cadastro_BT_buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AT_Cadastro_BT_buscarActionPerformed(evt);
+            }
+        });
+
+        AT_Cadastro_BT_remover.setText("Remover");
+
+        AT_Cadastro_BT_atualizar.setText("Atualizar");
+
+        AT_Cadastro_CB_tipoDeUsuario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "IDOSO", "ESTUDANTE", "CONVENCIONAL" }));
+
+        AT_Cadastro_CB_status.setText("AUTORIZADO");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(AT_Cadastro_CT_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel25)
+                            .addComponent(jLabel26))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(AT_Cadastro_CB_tipoDeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AT_Cadastro_CT_idCartao, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel16)
+                        .addGap(18, 18, 18)
+                        .addComponent(AT_Cadastro_CB_status))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(AT_Cadastro_BT_cadastrar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(AT_Cadastro_BT_buscar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(AT_Cadastro_BT_remover)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(AT_Cadastro_BT_atualizar)))
+                .addContainerGap(70, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(AT_Cadastro_CT_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25)
+                    .addComponent(AT_Cadastro_CT_idCartao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AT_Cadastro_CB_tipoDeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel26))
+                .addGap(22, 22, 22)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(AT_Cadastro_CB_status))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AT_Cadastro_BT_cadastrar)
+                    .addComponent(AT_Cadastro_BT_buscar)
+                    .addComponent(AT_Cadastro_BT_remover)
+                    .addComponent(AT_Cadastro_BT_atualizar))
+                .addContainerGap(41, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout AT_abaCadastroLayout = new javax.swing.GroupLayout(AT_abaCadastro);
+        AT_abaCadastro.setLayout(AT_abaCadastroLayout);
+        AT_abaCadastroLayout.setHorizontalGroup(
+            AT_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AT_abaCadastroLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(529, Short.MAX_VALUE))
+        );
+        AT_abaCadastroLayout.setVerticalGroup(
+            AT_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AT_abaCadastroLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(189, Short.MAX_VALUE))
+        );
+
+        AT_abaInterna.addTab("Cadastro", AT_abaCadastro);
+
         jLabel13.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel13.setText("Quantidade  de Passagem Vendida:");
 
@@ -526,7 +665,7 @@ public class Etmtelas extends javax.swing.JFrame {
                         .addGroup(AT_abaRelatórioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(AT_RelatorioFinanceiro_CT_totalEmDinheiro, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(AT_RelatorioFinanceiro_CT_quantPassagensVendidas, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(734, Short.MAX_VALUE))
+                        .addContainerGap(615, Short.MAX_VALUE))
                     .addGroup(AT_abaRelatórioFinanceiroLayout.createSequentialGroup()
                         .addGroup(AT_abaRelatórioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(AT_abaRelatórioFinanceiroLayout.createSequentialGroup()
@@ -2854,40 +2993,25 @@ public class Etmtelas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void limparCampos(JPanel painel){
-        Component [] componentes;
-        componentes = painel.getComponents();
-        
-        for(Component c: componentes){
-            if(c instanceof JTextField){
-                ((JTextField)c).setText("");
-            }
-            else if(c instanceof JComboBox){
-                ((JComboBox)c).setSelectedIndex(0);
-            }
-        }
-    }
-    
-    
-    private void GL_tarifa_BT_calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GL_tarifa_BT_calcularActionPerformed
+    private void GR_Tarifa_BT_calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GR_Tarifa_BT_calcularActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_GL_tarifa_BT_calcularActionPerformed
+    }//GEN-LAST:event_GR_Tarifa_BT_calcularActionPerformed
 
-    private void GR_Cadastro_BT_cadastrarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GR_Cadastro_BT_cadastrarFuncionarioActionPerformed
+    private void GR_veiculos_BT_limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GR_veiculos_BT_limparActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_GR_Cadastro_BT_cadastrarFuncionarioActionPerformed
-
-    private void GR_Cadastro_BT_atualizarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GR_Cadastro_BT_atualizarFuncionarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GR_Cadastro_BT_atualizarFuncionarioActionPerformed
+    }//GEN-LAST:event_GR_veiculos_BT_limparActionPerformed
 
     private void GR_Cadastro_BT_buscarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GR_Cadastro_BT_buscarFuncionarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_GR_Cadastro_BT_buscarFuncionarioActionPerformed
 
-    private void GL_Cadastro_BT_limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GL_Cadastro_BT_limparActionPerformed
-        limparCampos(GL_abaCadastro);
-    }//GEN-LAST:event_GL_Cadastro_BT_limparActionPerformed
+    private void GR_Cadastro_BT_atualizarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GR_Cadastro_BT_atualizarFuncionarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_GR_Cadastro_BT_atualizarFuncionarioActionPerformed
+
+    private void GR_Cadastro_BT_cadastrarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GR_Cadastro_BT_cadastrarFuncionarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_GR_Cadastro_BT_cadastrarFuncionarioActionPerformed
 
     private void GL_Cadastro_CB_funcaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GL_Cadastro_CB_funcaoActionPerformed
         String tipoDeFuncionario;
@@ -2905,18 +3029,95 @@ public class Etmtelas extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_GL_Cadastro_CB_funcaoActionPerformed
 
+    private void GL_Cadastro_BT_limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GL_Cadastro_BT_limparActionPerformed
+        limparCampos(GL_abaCadastro);
+    }//GEN-LAST:event_GL_Cadastro_BT_limparActionPerformed
+
+    private void GL_tarifa_BT_calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GL_tarifa_BT_calcularActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_GL_tarifa_BT_calcularActionPerformed
+
     private void GL_veiculos_BT_limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GL_veiculos_BT_limparActionPerformed
-       limparCampos(GL_PN_dadosVeiculo);
+        limparCampos(GL_PN_dadosVeiculo);
     }//GEN-LAST:event_GL_veiculos_BT_limparActionPerformed
 
-    private void GR_veiculos_BT_limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GR_veiculos_BT_limparActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GR_veiculos_BT_limparActionPerformed
+    private void Atendente_BT_inserirSaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Atendente_BT_inserirSaldoActionPerformed
+        String idCartao;
+        float dinheiroRecebido;
+        int quantCreditos;
+        float troco;
 
-    private void GR_Tarifa_BT_calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GR_Tarifa_BT_calcularActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GR_Tarifa_BT_calcularActionPerformed
+        idCartao = Atendente_CT_idCartao.getText();
+        dinheiroRecebido = Float.parseFloat(Atendente_CT_dinheiro.getText());
+        quantCreditos = Integer.parseInt(Atendente_CT_credito.getText());
+        if(quantCreditos*etm.getTarifa()<=dinheiroRecebido){
+            CartaoMag cartao;
+            cartao = etm.buscarCartao(idCartao);
+            if(cartao != null){
+                cartao.setCreditos(quantCreditos);
+                troco = dinheiroRecebido-(quantCreditos*etm.getTarifa());
+                Atendente_CT_troco.setText(String.valueOf(troco));
+            }
+        }
+    }//GEN-LAST:event_Atendente_BT_inserirSaldoActionPerformed
 
+    private void AT_Cadastro_BT_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AT_Cadastro_BT_cadastrarActionPerformed
+        
+        String nomePassageiro;
+        String tipoDeUsuario;
+        boolean status;
+        CartaoMag nCartao;
+        
+        nCartao = null;
+        nomePassageiro = AT_Cadastro_CT_nome.getText();
+        tipoDeUsuario = AT_Cadastro_CB_tipoDeUsuario.getSelectedItem().toString();
+        status = AT_Cadastro_CB_status.isSelected();
+        switch(tipoDeUsuario){
+            case "IDOSO":
+                nCartao = new Idoso(nomePassageiro,"",status,(float)1,0,null);
+                break;
+            case "CONVENCIONAL":
+                nCartao = new Convencional(nomePassageiro,"",status,(float)1,0,null);
+                break;
+            case "ESTUDANTE":
+                nCartao = new Estudante(nomePassageiro,"",status,(float)1,0,null);
+                break;
+            default:
+                break;
+        }
+        if(nCartao!=null){
+            etm.cadastrarCartao(nCartao);
+        }
+        
+    }//GEN-LAST:event_AT_Cadastro_BT_cadastrarActionPerformed
+
+    private void AT_Cadastro_BT_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AT_Cadastro_BT_buscarActionPerformed
+        CartaoMag cartaoBuscado;
+        String idCartao;
+        idCartao = AT_Cadastro_CT_idCartao.getText();
+        cartaoBuscado = etm.buscarCartao(idCartao);
+        if(cartaoBuscado!=null){
+            AT_Cadastro_CT_nome.setText(cartaoBuscado.getNome());
+            AT_Cadastro_CB_tipoDeUsuario.setSelectedItem(cartaoBuscado.getTipoDeUsuario());
+            AT_Cadastro_CB_status.setSelected(cartaoBuscado.isAutorizado());
+        }
+    }//GEN-LAST:event_AT_Cadastro_BT_buscarActionPerformed
+
+    public void limparCampos(JPanel painel){
+        Component [] componentes;
+        componentes = painel.getComponents();
+        
+        for(Component c: componentes){
+            if(c instanceof JTextField){
+                ((JTextField)c).setText("");
+            }
+            else if(c instanceof JComboBox){
+                ((JComboBox)c).setSelectedIndex(0);
+            }
+        }
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -2956,6 +3157,14 @@ public class Etmtelas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AT_Cadastro_BT_atualizar;
+    private javax.swing.JButton AT_Cadastro_BT_buscar;
+    private javax.swing.JButton AT_Cadastro_BT_cadastrar;
+    private javax.swing.JButton AT_Cadastro_BT_remover;
+    private javax.swing.JCheckBox AT_Cadastro_CB_status;
+    private javax.swing.JComboBox AT_Cadastro_CB_tipoDeUsuario;
+    private javax.swing.JTextField AT_Cadastro_CT_idCartao;
+    private javax.swing.JTextField AT_Cadastro_CT_nome;
     private javax.swing.JTextField AT_RelatorioFinanceiro_CT_quantEstudante;
     private javax.swing.JTextField AT_RelatorioFinanceiro_CT_quantIdosos;
     private javax.swing.JTextField AT_RelatorioFinanceiro_CT_quantIntegral;
@@ -2966,6 +3175,7 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JTextField AT_RelatorioFinanceiro_CT_valorIntegral;
     private javax.swing.JPanel AT_VendaPassagem_PN_inserirSaldo;
     private javax.swing.JPanel AT_aba;
+    private javax.swing.JPanel AT_abaCadastro;
     private javax.swing.JTabbedPane AT_abaInterna;
     private javax.swing.JPanel AT_abaRelatórioFinanceiro;
     private javax.swing.JPanel AT_abaVendaPassagem;
@@ -3194,6 +3404,7 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel157;
     private javax.swing.JLabel jLabel158;
     private javax.swing.JLabel jLabel159;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel160;
     private javax.swing.JLabel jLabel161;
     private javax.swing.JLabel jLabel162;
@@ -3209,6 +3420,7 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel172;
     private javax.swing.JLabel jLabel173;
     private javax.swing.JLabel jLabel174;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel184;
     private javax.swing.JLabel jLabel185;
     private javax.swing.JLabel jLabel186;
@@ -3220,6 +3432,8 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
@@ -3269,6 +3483,7 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;

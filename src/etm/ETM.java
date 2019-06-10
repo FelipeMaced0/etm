@@ -18,25 +18,25 @@ import oficina.Oficina;
 import passageiro.CartaoMag;
 
 public class ETM {
-    String nome;
-    String id;
+    private String nome;
+    private String id;
     
-    float tarifa;
-    Oficina oficina;
+    private float tarifa;
+    private Oficina oficina;
     
-    GeradorDeId idRotas;
-    GeradorDeId idVeiculos;
-    GeradorDeId idRelatorios;
-    GeradorDeId idParadas;
+    private GeradorDeId idRotas;
+    private GeradorDeId idVeiculos;
+    private GeradorDeId idRelatorios;
+    private GeradorDeId idParadas;
     
-    String [] tiposDeVeiculos;
-    ArrayList <Veiculo> veiculos;
-    ArrayList <Funcionario> funcionarios;
-    ArrayList <RelatorioCustoDiario> relatoriosDiarios;
-    ArrayList <Rota> rotas;
-    ArrayList <Parada> paradas;
-    ArrayList <CartaoMag> cartoes;
-    boolean paradasDesordenadas = true;
+    private String [] tiposDeVeiculos;
+    private ArrayList <Veiculo> veiculos;
+    private ArrayList <Funcionario> funcionarios;
+    private ArrayList <RelatorioCustoDiario> relatoriosDiarios;
+    private ArrayList <Rota> rotas;
+    private ArrayList <Parada> paradas;
+    private ArrayList <CartaoMag> cartoes;
+    private boolean paradasDesordenadas = true;
     
     public ETM(){
         this.tiposDeVeiculos = new String[]{"ÔNIBUS", "VAN", "MICRO-ÔNIBUS", "METRÔ", "VLT", "BRT"};
@@ -75,13 +75,21 @@ public class ETM {
     public void setId(String id) {
         this.id = id;
     }
-
+    
+    public void setTarifa(Float tarifa){
+        this.tarifa = tarifa;
+    }
+    
     public String getNome() {
         return nome;
     }
 
     public String getId() {
         return id;
+    }
+    
+    public Float getTarifa(){
+        return tarifa;
     }
     
     public void cadastrarFuncionario(Funcionario nFuncionario){
