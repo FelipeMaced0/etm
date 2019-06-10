@@ -1,22 +1,33 @@
 package etm;
 
+import funcionarios.Funcionario;
+import funcionarios.Motorista;
 import java.awt.Component;
+import java.util.ArrayList;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import modelos.ModeloDeTabelaFuncionario;
 import passageiro.CartaoMag;
 import passageiro.Convencional;
 import passageiro.Estudante;
 import passageiro.Idoso;
+import veiculos.Onibus;
+import veiculos.Veiculo;
 
 
 public class Etmtelas extends javax.swing.JFrame {
     ETM etm;
+    ArrayList<Funcionario> funcionarios;
     public Etmtelas() {
         initComponents();
         etm = new ETM("asdsd","12312");
         etm.setTarifa((float)3.8);
+        Motorista m = new Motorista("arnaldo","1290312312","123123123","Masculino",40,12,20);
+        funcionarios = new ArrayList();
+        funcionarios.add(m);
+        GF_Relatorios_tabela.setModel(new ModeloDeTabelaFuncionario(funcionarios));
     }
 
     
@@ -34,17 +45,6 @@ public class Etmtelas extends javax.swing.JFrame {
         grandeAba = new javax.swing.JTabbedPane();
         AT_aba = new javax.swing.JPanel();
         AT_abaInterna = new javax.swing.JTabbedPane();
-        AT_abaVendaPassagem = new javax.swing.JPanel();
-        AT_VendaPassagem_PN_inserirSaldo = new javax.swing.JPanel();
-        jLabel47 = new javax.swing.JLabel();
-        jLabel49 = new javax.swing.JLabel();
-        jLabel48 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        AT_VendaPassagem_CT_idCartao = new javax.swing.JTextField();
-        AT_VendaPassagem_CT_dinheiro = new javax.swing.JTextField();
-        AT_VendaPassagem_CT_credito = new javax.swing.JTextField();
-        AT_VendaPassagem_CT_troco = new javax.swing.JTextField();
-        AT_VendaPassagem_BT_inserirSaldo = new javax.swing.JButton();
         AT_abaCadastro = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
@@ -59,7 +59,18 @@ public class Etmtelas extends javax.swing.JFrame {
         AT_Cadastro_BT_atualizar = new javax.swing.JButton();
         AT_Cadastro_CB_tipoDeUsuario = new javax.swing.JComboBox();
         AT_Cadastro_CB_status = new javax.swing.JCheckBox();
-        AT_abaRelatórioFinanceiro = new javax.swing.JPanel();
+        AT_abaVendaPassagem = new javax.swing.JPanel();
+        AT_VendaPassagem_PN_inserirSaldo = new javax.swing.JPanel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        AT_VendaPassagem_CT_idCartao = new javax.swing.JTextField();
+        AT_VendaPassagem_CT_dinheiro = new javax.swing.JTextField();
+        AT_VendaPassagem_CT_credito = new javax.swing.JTextField();
+        AT_VendaPassagem_CT_troco = new javax.swing.JTextField();
+        AT_VendaPassagem_BT_inserirSaldo = new javax.swing.JButton();
+        AT_abaRelatorioFinanceiro = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel50 = new javax.swing.JLabel();
@@ -80,6 +91,28 @@ public class Etmtelas extends javax.swing.JFrame {
         AT_RelatorioFinanceiro_CT_valorIntegral = new javax.swing.JTextField();
         GL_aba = new javax.swing.JPanel();
         GL_abaInterna = new javax.swing.JTabbedPane();
+        GL_abaCadastro = new javax.swing.JPanel();
+        nome = new javax.swing.JLabel();
+        cpf = new javax.swing.JLabel();
+        ctps = new javax.swing.JLabel();
+        cargaHoraria = new javax.swing.JLabel();
+        salario = new javax.swing.JLabel();
+        sexo = new javax.swing.JLabel();
+        funcao = new javax.swing.JLabel();
+        GL_Cadastro_CB_nome = new javax.swing.JTextField();
+        GL_Cadastro_CT_cpf = new javax.swing.JTextField();
+        GL_Cadastro_CT_ctps = new javax.swing.JTextField();
+        GL_Cadastro_CT_cargaHoraria = new javax.swing.JTextField();
+        GL_Cadastro_CT_Salario = new javax.swing.JTextField();
+        GL_Cadastro_BT_Cadastrar = new javax.swing.JButton();
+        GL_Cadastro_BT_limpar = new javax.swing.JButton();
+        GL_Cadastro_BT_atualizar = new javax.swing.JButton();
+        GL_Cadastro_CB_sexo = new javax.swing.JComboBox();
+        GL_Cadastro_CB_funcao = new javax.swing.JComboBox();
+        GL_Cadastro_PN_escala = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
+        jLabel17 = new javax.swing.JLabel();
         GL_abaVeiculos = new javax.swing.JPanel();
         GL_PN_dadosVeiculo = new javax.swing.JPanel();
         jLabel88 = new javax.swing.JLabel();
@@ -122,6 +155,10 @@ public class Etmtelas extends javax.swing.JFrame {
         GL_tarifa_CT_tarifaIdeal = new javax.swing.JTextField();
         GL_tarifa_BT_calcular = new javax.swing.JButton();
         GL_tarifa_BT_limpar = new javax.swing.JButton();
+        GR_Tarifa_PN_tarifaIdeal1 = new javax.swing.JPanel();
+        GR_Tarifa_BT_definirTarifa1 = new javax.swing.JButton();
+        GR_Tarifa_CT_tarifaIdeal1 = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
         GL_abaRelatorio = new javax.swing.JPanel();
         jLabel106 = new javax.swing.JLabel();
         jLabel98 = new javax.swing.JLabel();
@@ -159,28 +196,6 @@ public class Etmtelas extends javax.swing.JFrame {
         GL_relatorioLocal_CT_totalDeVlts = new javax.swing.JTextField();
         GL_relatorioLocal_CT_totalDeMetros = new javax.swing.JTextField();
         GL_relatorioLocal_CT_custoCombustivel = new javax.swing.JTextField();
-        GL_abaCadastro = new javax.swing.JPanel();
-        nome = new javax.swing.JLabel();
-        cpf = new javax.swing.JLabel();
-        ctps = new javax.swing.JLabel();
-        cargaHoraria = new javax.swing.JLabel();
-        salario = new javax.swing.JLabel();
-        sexo = new javax.swing.JLabel();
-        funcao = new javax.swing.JLabel();
-        GL_Cadastro_CB_nome = new javax.swing.JTextField();
-        GL_Cadastro_CT_cpf = new javax.swing.JTextField();
-        GL_Cadastro_CT_ctps = new javax.swing.JTextField();
-        GL_Cadastro_CT_cargaHoraria = new javax.swing.JTextField();
-        GL_Cadastro_CT_Salario = new javax.swing.JTextField();
-        GL_Cadastro_BT_Cadastrar = new javax.swing.JButton();
-        GL_Cadastro_BT_limpar = new javax.swing.JButton();
-        GL_Cadastro_BT_atualizar = new javax.swing.JButton();
-        GL_Cadastro_CB_sexo = new javax.swing.JComboBox();
-        GL_Cadastro_CB_funcao = new javax.swing.JComboBox();
-        GL_Cadastro_PN_escala = new javax.swing.JPanel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
-        jLabel17 = new javax.swing.JLabel();
         GR_aba = new javax.swing.JPanel();
         GR_abaInterna = new javax.swing.JTabbedPane();
         GR_abaFuncionario = new javax.swing.JPanel();
@@ -207,6 +222,7 @@ public class Etmtelas extends javax.swing.JFrame {
         GR_Cadastro_BT_excluirFuncionario = new javax.swing.JButton();
         GR_Cadastro_BT_atualizarFuncionario = new javax.swing.JButton();
         GR_Cadastro_BT_buscarFuncionario = new javax.swing.JButton();
+        GR_Cadastro_BT_limpar = new javax.swing.JButton();
         GR_Cadastro_CB_funcaoFuncionario = new javax.swing.JComboBox<String>();
         GR_Cadastro_CB_sexoFuncionario = new javax.swing.JComboBox<String>();
         GR_Cadastro_PR_funcionario = new javax.swing.JScrollPane();
@@ -395,110 +411,107 @@ public class Etmtelas extends javax.swing.JFrame {
         MC_Vistoria_CB_tipoDeVeiculo = new javax.swing.JComboBox<String>();
         MC_Vistoria_BT_tipoDeCombustivel = new javax.swing.JComboBox<String>();
         jScrollPane6 = new javax.swing.JScrollPane();
+        GF_aba = new javax.swing.JPanel();
+        GF_abaInterna = new javax.swing.JTabbedPane();
+        GF_CadastrarVeiculo_PN = new javax.swing.JPanel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        GF_CadasVei_CT_id = new javax.swing.JTextField();
+        GF_CadasVei_CT_capacidade = new javax.swing.JTextField();
+        GF_CadasVei_CT_autonomia = new javax.swing.JTextField();
+        CadasVei_BT_cadastrar = new javax.swing.JButton();
+        GF_CadasVei_BT_limpar = new javax.swing.JButton();
+        GF_CadasVei_BT_remover = new javax.swing.JButton();
+        GF_CadasVei_BT_atualizar = new javax.swing.JButton();
+        GF_CadasVei_BT_buscar = new javax.swing.JButton();
+        GF_CadasVei_CB_tipoDeRota = new javax.swing.JComboBox();
+        GF_CadasVei_CB_tipoDeCobranca = new javax.swing.JComboBox();
+        GF_CadasVei_CB_status = new javax.swing.JComboBox();
+        GF_CadasVei_CB_rotas = new javax.swing.JComboBox();
+        GF_CadasVei_CB_tipoCombustivel = new javax.swing.JComboBox();
+        GF_CadasVei_CB_tipoDeVeiculo = new javax.swing.JComboBox();
+        GF_CadasVei_PN_placa = new javax.swing.JPanel();
+        jLabel42 = new javax.swing.JLabel();
+        GF_CadasVei_CT_placa = new javax.swing.JTextField();
+        GF_CadasVei_PN_Alocar = new javax.swing.JPanel();
+        jLabel69 = new javax.swing.JLabel();
+        jLabel70 = new javax.swing.JLabel();
+        jLabel71 = new javax.swing.JLabel();
+        jLabel72 = new javax.swing.JLabel();
+        GF_Alocar_CT_cpf = new javax.swing.JTextField();
+        GF_Alocar_CT_veiculoId = new javax.swing.JTextField();
+        GF_Alocar_CT_rotaId = new javax.swing.JTextField();
+        GF_Alocar_CT_idParada = new javax.swing.JTextField();
+        GF_Alocar_BT_buscar = new javax.swing.JButton();
+        GF_Alocar_BT_cadastrar = new javax.swing.JButton();
+        GF_Alocar_BT_descadastrar = new javax.swing.JButton();
+        GF_Alocar_BT_limpar = new javax.swing.JButton();
+        GF_Alocar_CB_tipoAlocado = new javax.swing.JComboBox();
+        GF_CadastrarParada_PN = new javax.swing.JPanel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel68 = new javax.swing.JLabel();
+        CadasParada_CT_endereco = new javax.swing.JTextField();
+        CadasParada_CT_latitude = new javax.swing.JTextField();
+        CadasParada_CT_longitude = new javax.swing.JTextField();
+        CadasParada_CT_id = new javax.swing.JTextField();
+        CadasParada_BT_cadastrar = new javax.swing.JButton();
+        CadasParada_BT_limpar = new javax.swing.JButton();
+        CadasParada_BT_atualizar = new javax.swing.JButton();
+        CadasParada_BT_remover = new javax.swing.JButton();
+        CadasParada_BT_buscar = new javax.swing.JButton();
+        GF_CadasVei_PN_Alocar1 = new javax.swing.JPanel();
+        jLabel82 = new javax.swing.JLabel();
+        jLabel83 = new javax.swing.JLabel();
+        GF_Alocar_CT_rotaId1 = new javax.swing.JTextField();
+        GF_Alocar_CT_idParada1 = new javax.swing.JTextField();
+        GF_Alocar_BT_buscar1 = new javax.swing.JButton();
+        GF_Alocar_BT_cadastrar1 = new javax.swing.JButton();
+        GF_Alocar_BT_descadastrar1 = new javax.swing.JButton();
+        GF_Alocar_BT_limpar1 = new javax.swing.JButton();
+        GF_Relatorios_PN = new javax.swing.JPanel();
+        GF_Relatorios_BT_balanco = new javax.swing.JButton();
+        GF_Relatorios_BT_mostrarRelatorio = new javax.swing.JButton();
+        GF_Relatorios_BT_limpar = new javax.swing.JButton();
+        GF_Relatorios_BR_veiculo = new javax.swing.JRadioButton();
+        GF_Relatorios_BR_funcionario = new javax.swing.JRadioButton();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        GF_Relatorios_tabela = new javax.swing.JTable();
+        GF_Relatorios_PN_Funcionario = new javax.swing.JPanel();
+        jLabel73 = new javax.swing.JLabel();
+        jLabel75 = new javax.swing.JLabel();
+        jLabel76 = new javax.swing.JLabel();
+        GF_Funcionario_CT_sexo = new javax.swing.JTextField();
+        GF_Funcionario_CT_idade = new javax.swing.JTextField();
+        GF_Funcionario_CT_renda = new javax.swing.JTextField();
+        GF_Relatorios_PN_Veiculo = new javax.swing.JPanel();
+        jLabel74 = new javax.swing.JLabel();
+        GF_Veiculo_CB_tipoDeVeiculo = new javax.swing.JComboBox();
+        GF_BuscarRelatorios_PN = new javax.swing.JPanel();
+        jLabel77 = new javax.swing.JLabel();
+        jLabel78 = new javax.swing.JLabel();
+        jLabel79 = new javax.swing.JLabel();
+        RelatoriosPorPe_CTF_dataInicial = new javax.swing.JFormattedTextField();
+        RelatoriosPorPe_CTF_dataFinal = new javax.swing.JFormattedTextField();
+        RelatoriosPorPe_BT_mostraRelatorio = new javax.swing.JButton();
+        RelatoriosPorPe_BT_limpar = new javax.swing.JButton();
+        RelatoriosPorPe_RB_veiculo = new javax.swing.JRadioButton();
+        RelatoriosPorPe_RB_funcionario = new javax.swing.JRadioButton();
+        RelatoriosPorPe_CB_tipoDeVeiculo = new javax.swing.JComboBox();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        RelatoriosPorPe_AT_info = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        AT_VendaPassagem_PN_inserirSaldo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "INSERIR SALDO", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 20))); // NOI18N
-
-        jLabel47.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
-        jLabel47.setText("ID CARTÃO");
-
-        jLabel49.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
-        jLabel49.setText("DINHEIRO R$:");
-
-        jLabel48.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
-        jLabel48.setText("CRÉDITO R$:");
-
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
-        jLabel12.setText("TROCO R$");
-
-        AT_VendaPassagem_CT_idCartao.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
-
-        AT_VendaPassagem_CT_dinheiro.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
-
-        AT_VendaPassagem_CT_credito.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
-
-        AT_VendaPassagem_CT_troco.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
-
-        AT_VendaPassagem_BT_inserirSaldo.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
-        AT_VendaPassagem_BT_inserirSaldo.setText("INSERIR SALDO");
-        AT_VendaPassagem_BT_inserirSaldo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AT_VendaPassagem_BT_inserirSaldoActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout AT_VendaPassagem_PN_inserirSaldoLayout = new javax.swing.GroupLayout(AT_VendaPassagem_PN_inserirSaldo);
-        AT_VendaPassagem_PN_inserirSaldo.setLayout(AT_VendaPassagem_PN_inserirSaldoLayout);
-        AT_VendaPassagem_PN_inserirSaldoLayout.setHorizontalGroup(
-            AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(AT_VendaPassagem_BT_inserirSaldo)
-                    .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createSequentialGroup()
-                        .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel47)
-                            .addComponent(jLabel49)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AT_VendaPassagem_PN_inserirSaldoLayout.createSequentialGroup()
-                                .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel48)
-                                    .addComponent(jLabel12))
-                                .addGap(22, 22, 22)))
-                        .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(AT_VendaPassagem_CT_dinheiro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(AT_VendaPassagem_CT_idCartao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(AT_VendaPassagem_CT_credito)
-                                .addComponent(AT_VendaPassagem_CT_troco, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(32, 32, 32)))
-                .addContainerGap(31, Short.MAX_VALUE))
-        );
-        AT_VendaPassagem_PN_inserirSaldoLayout.setVerticalGroup(
-            AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel47)
-                    .addComponent(AT_VendaPassagem_CT_idCartao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel49)
-                    .addComponent(AT_VendaPassagem_CT_dinheiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel48)
-                    .addComponent(AT_VendaPassagem_CT_credito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel12)
-                    .addComponent(AT_VendaPassagem_CT_troco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                .addComponent(AT_VendaPassagem_BT_inserirSaldo)
-                .addGap(32, 32, 32))
-        );
-
-        javax.swing.GroupLayout AT_abaVendaPassagemLayout = new javax.swing.GroupLayout(AT_abaVendaPassagem);
-        AT_abaVendaPassagem.setLayout(AT_abaVendaPassagemLayout);
-        AT_abaVendaPassagemLayout.setHorizontalGroup(
-            AT_abaVendaPassagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AT_abaVendaPassagemLayout.createSequentialGroup()
-                .addContainerGap(283, Short.MAX_VALUE)
-                .addComponent(AT_VendaPassagem_PN_inserirSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(268, 268, 268))
-        );
-        AT_abaVendaPassagemLayout.setVerticalGroup(
-            AT_abaVendaPassagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AT_abaVendaPassagemLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(AT_VendaPassagem_PN_inserirSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        AT_abaInterna.addTab("Venda Passagem", AT_abaVendaPassagem);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CADASTRO", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
         jPanel2.setName(""); // NOI18N
@@ -611,7 +624,7 @@ public class Etmtelas extends javax.swing.JFrame {
             .addGroup(AT_abaCadastroLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(529, Short.MAX_VALUE))
+                .addContainerGap(652, Short.MAX_VALUE))
         );
         AT_abaCadastroLayout.setVerticalGroup(
             AT_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -622,6 +635,106 @@ public class Etmtelas extends javax.swing.JFrame {
         );
 
         AT_abaInterna.addTab("Cadastro", AT_abaCadastro);
+
+        AT_VendaPassagem_PN_inserirSaldo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "INSERIR SALDO", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 20))); // NOI18N
+
+        jLabel47.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+        jLabel47.setText("ID CARTÃO");
+
+        jLabel49.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+        jLabel49.setText("DINHEIRO R$:");
+
+        jLabel48.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+        jLabel48.setText("CRÉDITO R$:");
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+        jLabel12.setText("TROCO R$");
+
+        AT_VendaPassagem_CT_idCartao.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+
+        AT_VendaPassagem_CT_dinheiro.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+
+        AT_VendaPassagem_CT_credito.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+
+        AT_VendaPassagem_CT_troco.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+
+        AT_VendaPassagem_BT_inserirSaldo.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
+        AT_VendaPassagem_BT_inserirSaldo.setText("INSERIR SALDO");
+        AT_VendaPassagem_BT_inserirSaldo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AT_VendaPassagem_BT_inserirSaldoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout AT_VendaPassagem_PN_inserirSaldoLayout = new javax.swing.GroupLayout(AT_VendaPassagem_PN_inserirSaldo);
+        AT_VendaPassagem_PN_inserirSaldo.setLayout(AT_VendaPassagem_PN_inserirSaldoLayout);
+        AT_VendaPassagem_PN_inserirSaldoLayout.setHorizontalGroup(
+            AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(AT_VendaPassagem_BT_inserirSaldo)
+                    .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createSequentialGroup()
+                        .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel47)
+                            .addComponent(jLabel49)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AT_VendaPassagem_PN_inserirSaldoLayout.createSequentialGroup()
+                                .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel48)
+                                    .addComponent(jLabel12))
+                                .addGap(22, 22, 22)))
+                        .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(AT_VendaPassagem_CT_dinheiro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(AT_VendaPassagem_CT_idCartao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(AT_VendaPassagem_CT_credito)
+                                .addComponent(AT_VendaPassagem_CT_troco, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(32, 32, 32)))
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+        AT_VendaPassagem_PN_inserirSaldoLayout.setVerticalGroup(
+            AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel47)
+                    .addComponent(AT_VendaPassagem_CT_idCartao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel49)
+                    .addComponent(AT_VendaPassagem_CT_dinheiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel48)
+                    .addComponent(AT_VendaPassagem_CT_credito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel12)
+                    .addComponent(AT_VendaPassagem_CT_troco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addComponent(AT_VendaPassagem_BT_inserirSaldo)
+                .addGap(32, 32, 32))
+        );
+
+        javax.swing.GroupLayout AT_abaVendaPassagemLayout = new javax.swing.GroupLayout(AT_abaVendaPassagem);
+        AT_abaVendaPassagem.setLayout(AT_abaVendaPassagemLayout);
+        AT_abaVendaPassagemLayout.setHorizontalGroup(
+            AT_abaVendaPassagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AT_abaVendaPassagemLayout.createSequentialGroup()
+                .addContainerGap(388, Short.MAX_VALUE)
+                .addComponent(AT_VendaPassagem_PN_inserirSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(268, 268, 268))
+        );
+        AT_abaVendaPassagemLayout.setVerticalGroup(
+            AT_abaVendaPassagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AT_abaVendaPassagemLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(AT_VendaPassagem_PN_inserirSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        AT_abaInterna.addTab("Venda Passagem", AT_abaVendaPassagem);
 
         jLabel13.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel13.setText("Quantidade  de Passagem Vendida:");
@@ -653,93 +766,93 @@ public class Etmtelas extends javax.swing.JFrame {
         jLabel61.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel61.setText("Integral:");
 
-        javax.swing.GroupLayout AT_abaRelatórioFinanceiroLayout = new javax.swing.GroupLayout(AT_abaRelatórioFinanceiro);
-        AT_abaRelatórioFinanceiro.setLayout(AT_abaRelatórioFinanceiroLayout);
-        AT_abaRelatórioFinanceiroLayout.setHorizontalGroup(
-            AT_abaRelatórioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AT_abaRelatórioFinanceiroLayout.createSequentialGroup()
+        javax.swing.GroupLayout AT_abaRelatorioFinanceiroLayout = new javax.swing.GroupLayout(AT_abaRelatorioFinanceiro);
+        AT_abaRelatorioFinanceiro.setLayout(AT_abaRelatorioFinanceiroLayout);
+        AT_abaRelatorioFinanceiroLayout.setHorizontalGroup(
+            AT_abaRelatorioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AT_abaRelatorioFinanceiroLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addGroup(AT_abaRelatórioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(AT_abaRelatórioFinanceiroLayout.createSequentialGroup()
-                        .addGroup(AT_abaRelatórioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(AT_abaRelatorioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(AT_abaRelatorioFinanceiroLayout.createSequentialGroup()
+                        .addGroup(AT_abaRelatorioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel13)
                             .addComponent(jLabel59)
                             .addComponent(jLabel56)
                             .addComponent(jLabel14))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(AT_abaRelatórioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(AT_abaRelatorioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(AT_RelatorioFinanceiro_CT_totalEmDinheiro, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(AT_RelatorioFinanceiro_CT_quantPassagensVendidas, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(615, Short.MAX_VALUE))
-                    .addGroup(AT_abaRelatórioFinanceiroLayout.createSequentialGroup()
-                        .addGroup(AT_abaRelatórioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(AT_abaRelatórioFinanceiroLayout.createSequentialGroup()
-                                .addGroup(AT_abaRelatórioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(AT_abaRelatórioFinanceiroLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(AT_abaRelatorioFinanceiroLayout.createSequentialGroup()
+                        .addGroup(AT_abaRelatorioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(AT_abaRelatorioFinanceiroLayout.createSequentialGroup()
+                                .addGroup(AT_abaRelatorioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(AT_abaRelatorioFinanceiroLayout.createSequentialGroup()
                                         .addComponent(jLabel60)
                                         .addGap(40, 40, 40))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, AT_abaRelatórioFinanceiroLayout.createSequentialGroup()
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, AT_abaRelatorioFinanceiroLayout.createSequentialGroup()
                                         .addGap(10, 10, 10)
                                         .addComponent(jLabel50)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addComponent(jLabel52))
-                            .addGroup(AT_abaRelatórioFinanceiroLayout.createSequentialGroup()
+                            .addGroup(AT_abaRelatorioFinanceiroLayout.createSequentialGroup()
                                 .addComponent(jLabel51)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(AT_RelatorioFinanceiro_CT_quantEstudante, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(AT_abaRelatórioFinanceiroLayout.createSequentialGroup()
+                            .addGroup(AT_abaRelatorioFinanceiroLayout.createSequentialGroup()
                                 .addComponent(jLabel61)
                                 .addGap(32, 32, 32)
-                                .addGroup(AT_abaRelatórioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(AT_abaRelatorioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(AT_RelatorioFinanceiro_CT_quantIntegral, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
                                     .addComponent(AT_RelatorioFinanceiro_CT_quantIdosos))))
                         .addGap(30, 30, 30)
-                        .addGroup(AT_abaRelatórioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(AT_abaRelatorioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel54, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(AT_RelatorioFinanceiro_CT_valorEstudante)
                             .addComponent(AT_RelatorioFinanceiro_CT_valorIdosos)
                             .addComponent(AT_RelatorioFinanceiro_CT_valorIntegral))
                         .addGap(670, 670, 670))))
         );
-        AT_abaRelatórioFinanceiroLayout.setVerticalGroup(
-            AT_abaRelatórioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AT_abaRelatórioFinanceiroLayout.createSequentialGroup()
+        AT_abaRelatorioFinanceiroLayout.setVerticalGroup(
+            AT_abaRelatorioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AT_abaRelatorioFinanceiroLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jLabel56)
                 .addGap(13, 13, 13)
-                .addGroup(AT_abaRelatórioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(AT_abaRelatorioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
                     .addComponent(AT_RelatorioFinanceiro_CT_quantPassagensVendidas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(AT_abaRelatórioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(AT_abaRelatorioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
                     .addComponent(AT_RelatorioFinanceiro_CT_totalEmDinheiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addComponent(jLabel59)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(AT_abaRelatórioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(AT_abaRelatorioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel50)
                     .addComponent(jLabel52)
                     .addComponent(jLabel54))
                 .addGap(18, 18, 18)
-                .addGroup(AT_abaRelatórioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(AT_abaRelatorioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel51)
                     .addComponent(AT_RelatorioFinanceiro_CT_quantEstudante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AT_RelatorioFinanceiro_CT_valorEstudante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(AT_abaRelatórioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(AT_abaRelatorioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel60)
                     .addComponent(AT_RelatorioFinanceiro_CT_quantIdosos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AT_RelatorioFinanceiro_CT_valorIdosos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(AT_abaRelatórioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(AT_abaRelatorioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel61)
                     .addComponent(AT_RelatorioFinanceiro_CT_quantIntegral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AT_RelatorioFinanceiro_CT_valorIntegral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        AT_abaInterna.addTab("Relatório Financeiro", AT_abaRelatórioFinanceiro);
+        AT_abaInterna.addTab("Relatório Financeiro", AT_abaRelatorioFinanceiro);
 
         javax.swing.GroupLayout AT_abaLayout = new javax.swing.GroupLayout(AT_aba);
         AT_aba.setLayout(AT_abaLayout);
@@ -751,10 +864,175 @@ public class Etmtelas extends javax.swing.JFrame {
             AT_abaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AT_abaLayout.createSequentialGroup()
                 .addComponent(AT_abaInterna, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 151, Short.MAX_VALUE))
+                .addGap(0, 220, Short.MAX_VALUE))
         );
 
         grandeAba.addTab("ATENDENTE", AT_aba);
+
+        nome.setText("NOME:");
+
+        cpf.setText("CPF:");
+
+        ctps.setText("CTPS:");
+
+        cargaHoraria.setText("CARGA HORÁRIA: ");
+
+        salario.setText("SALÁRIO:");
+
+        sexo.setText("SEXO:");
+
+        funcao.setText("FUNÇÃO:");
+
+        GL_Cadastro_BT_Cadastrar.setText("Cadastrar");
+
+        GL_Cadastro_BT_limpar.setText("Limpar");
+        GL_Cadastro_BT_limpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GL_Cadastro_BT_limparActionPerformed(evt);
+            }
+        });
+
+        GL_Cadastro_BT_atualizar.setText("Atualizar");
+
+        GL_Cadastro_CB_sexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "MASCULINO", "FEMININO" }));
+
+        GL_Cadastro_CB_funcao.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "MOTORISTA", "COBRADOR", "MECÂNICO", "GESTOR DE FROTA" }));
+        GL_Cadastro_CB_funcao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GL_Cadastro_CB_funcaoActionPerformed(evt);
+            }
+        });
+
+        GL_Cadastro_PN_escala.setVisible(false);
+
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Nome", "Cpf", "Ctps", "Salario", "Carga Horaria", "Função"
+            }
+        ));
+        jScrollPane5.setViewportView(jTable4);
+
+        jLabel17.setText("Escala");
+
+        javax.swing.GroupLayout GL_Cadastro_PN_escalaLayout = new javax.swing.GroupLayout(GL_Cadastro_PN_escala);
+        GL_Cadastro_PN_escala.setLayout(GL_Cadastro_PN_escalaLayout);
+        GL_Cadastro_PN_escalaLayout.setHorizontalGroup(
+            GL_Cadastro_PN_escalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GL_Cadastro_PN_escalaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 442, Short.MAX_VALUE))
+            .addGroup(GL_Cadastro_PN_escalaLayout.createSequentialGroup()
+                .addGap(194, 194, 194)
+                .addComponent(jLabel17)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        GL_Cadastro_PN_escalaLayout.setVerticalGroup(
+            GL_Cadastro_PN_escalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GL_Cadastro_PN_escalaLayout.createSequentialGroup()
+                .addGap(7, 7, 7)
+                .addComponent(jLabel17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout GL_abaCadastroLayout = new javax.swing.GroupLayout(GL_abaCadastro);
+        GL_abaCadastro.setLayout(GL_abaCadastroLayout);
+        GL_abaCadastroLayout.setHorizontalGroup(
+            GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GL_abaCadastroLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(GL_abaCadastroLayout.createSequentialGroup()
+                            .addComponent(ctps)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(GL_Cadastro_CT_ctps, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE))
+                        .addGroup(GL_abaCadastroLayout.createSequentialGroup()
+                            .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(nome)
+                                .addComponent(cpf))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(GL_Cadastro_CT_cpf, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
+                                .addComponent(GL_Cadastro_CB_nome))))
+                    .addGroup(GL_abaCadastroLayout.createSequentialGroup()
+                        .addComponent(cargaHoraria)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(GL_Cadastro_CT_cargaHoraria, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(GL_abaCadastroLayout.createSequentialGroup()
+                        .addComponent(GL_Cadastro_BT_Cadastrar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(GL_Cadastro_BT_atualizar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(GL_Cadastro_BT_limpar))
+                    .addGroup(GL_abaCadastroLayout.createSequentialGroup()
+                        .addComponent(salario)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(GL_Cadastro_CT_Salario, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(GL_abaCadastroLayout.createSequentialGroup()
+                        .addGap(121, 121, 121)
+                        .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(GL_abaCadastroLayout.createSequentialGroup()
+                                .addComponent(funcao)
+                                .addGap(18, 18, 18)
+                                .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(GL_Cadastro_CB_funcao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(GL_Cadastro_CB_sexo, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(sexo)))
+                    .addGroup(GL_abaCadastroLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(GL_Cadastro_PN_escala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(347, Short.MAX_VALUE))
+        );
+        GL_abaCadastroLayout.setVerticalGroup(
+            GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GL_abaCadastroLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nome)
+                    .addComponent(GL_Cadastro_CB_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sexo)
+                    .addComponent(GL_Cadastro_CB_sexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(GL_Cadastro_CT_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cpf)
+                    .addComponent(funcao)
+                    .addComponent(GL_Cadastro_CB_funcao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(GL_abaCadastroLayout.createSequentialGroup()
+                        .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ctps)
+                            .addComponent(GL_Cadastro_CT_ctps, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(30, 30, 30)
+                        .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(salario, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(GL_Cadastro_CT_Salario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27)
+                        .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cargaHoraria)
+                            .addComponent(GL_Cadastro_CT_cargaHoraria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(43, 43, 43)
+                        .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(GL_Cadastro_BT_Cadastrar)
+                            .addComponent(GL_Cadastro_BT_limpar)
+                            .addComponent(GL_Cadastro_BT_atualizar)))
+                    .addComponent(GL_Cadastro_PN_escala, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        GL_abaInterna.addTab("Cadastro", GL_abaCadastro);
 
         GL_PN_dadosVeiculo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "DADOS DO VEÍCULO", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 20))); // NOI18N
 
@@ -793,7 +1071,7 @@ public class Etmtelas extends javax.swing.JFrame {
             }
         });
 
-        GL_veiculos_BT_excluir.setText("EXCLUIR");
+        GL_veiculos_BT_excluir.setText("REMOVER");
 
         GL_veiculos_BT_tipoDeVeiculo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "Ônibus", "Micro-Ônibus", "Van", "Brt", "Vlt", "Metrô" }));
 
@@ -827,14 +1105,15 @@ public class Etmtelas extends javax.swing.JFrame {
                             .addComponent(GL_veiculos_CB_categoriaVeicular, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(GL_veiculos_CB_tipoDeRota, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(GL_PN_dadosVeiculoLayout.createSequentialGroup()
-                        .addComponent(GL_veiculos_BT_buscar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(10, 10, 10)
                         .addComponent(GL_veiculos_BT_cadastrar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(GL_veiculos_BT_atualizar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(GL_veiculos_BT_excluir)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(GL_veiculos_BT_buscar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(GL_veiculos_BT_atualizar)
+                        .addGap(12, 12, 12)
                         .addComponent(GL_veiculos_BT_limpar)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -867,11 +1146,11 @@ public class Etmtelas extends javax.swing.JFrame {
                     .addComponent(GL_veiculos_CB_tipoDeRota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(75, 75, 75)
                 .addGroup(GL_PN_dadosVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(GL_veiculos_BT_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(GL_veiculos_BT_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(GL_veiculos_BT_atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(GL_veiculos_BT_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(GL_veiculos_BT_limpar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(GL_veiculos_BT_limpar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(GL_veiculos_BT_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(124, Short.MAX_VALUE))
         );
 
@@ -881,7 +1160,7 @@ public class Etmtelas extends javax.swing.JFrame {
             GL_abaVeiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(GL_abaVeiculosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(GL_PN_dadosVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(GL_PN_dadosVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 467, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         GL_abaVeiculosLayout.setVerticalGroup(
@@ -944,6 +1223,39 @@ public class Etmtelas extends javax.swing.JFrame {
 
         GL_tarifa_BT_limpar.setText("Limpar");
 
+        GR_Tarifa_BT_definirTarifa1.setText("Definir tarifa");
+
+        jLabel27.setText("Tarifa ideal");
+
+        javax.swing.GroupLayout GR_Tarifa_PN_tarifaIdeal1Layout = new javax.swing.GroupLayout(GR_Tarifa_PN_tarifaIdeal1);
+        GR_Tarifa_PN_tarifaIdeal1.setLayout(GR_Tarifa_PN_tarifaIdeal1Layout);
+        GR_Tarifa_PN_tarifaIdeal1Layout.setHorizontalGroup(
+            GR_Tarifa_PN_tarifaIdeal1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GR_Tarifa_PN_tarifaIdeal1Layout.createSequentialGroup()
+                .addGroup(GR_Tarifa_PN_tarifaIdeal1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(GR_Tarifa_PN_tarifaIdeal1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(GR_Tarifa_BT_definirTarifa1))
+                    .addGroup(GR_Tarifa_PN_tarifaIdeal1Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(GR_Tarifa_CT_tarifaIdeal1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(GR_Tarifa_PN_tarifaIdeal1Layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel27)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        GR_Tarifa_PN_tarifaIdeal1Layout.setVerticalGroup(
+            GR_Tarifa_PN_tarifaIdeal1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GR_Tarifa_PN_tarifaIdeal1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel27)
+                .addGap(11, 11, 11)
+                .addComponent(GR_Tarifa_CT_tarifaIdeal1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(GR_Tarifa_BT_definirTarifa1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout GL_abaTarifaLayout = new javax.swing.GroupLayout(GL_abaTarifa);
         GL_abaTarifa.setLayout(GL_abaTarifaLayout);
         GL_abaTarifaLayout.setHorizontalGroup(
@@ -972,35 +1284,40 @@ public class Etmtelas extends javax.swing.JFrame {
                                             .addComponent(GL_tarifa_CT_totalDePassagensVendidas))
                                         .addComponent(GL_tarifa_CT_quantidadeDeIdosos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(GL_tarifa_CT_totalDeDescontos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jLabel134)))
+                            .addComponent(jLabel134))
+                        .addGap(77, 77, 77))
                     .addGroup(GL_abaTarifaLayout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addGroup(GL_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel141)
                             .addGroup(GL_abaTarifaLayout.createSequentialGroup()
-                                .addGroup(GL_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(GL_abaTarifaLayout.createSequentialGroup()
-                                        .addComponent(jLabel144, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18))
-                                    .addGroup(GL_abaTarifaLayout.createSequentialGroup()
-                                        .addComponent(jLabel142, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(33, 33, 33)))
-                                .addGroup(GL_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(GL_tarifa_CT_custosTotais, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
-                                    .addComponent(GL_tarifa_CT_lucroDesejado)))
-                            .addGroup(GL_abaTarifaLayout.createSequentialGroup()
                                 .addComponent(jLabel145)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(GL_tarifa_CT_tarifaIdeal, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(GL_abaTarifaLayout.createSequentialGroup()
-                                .addComponent(jLabel143, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(GL_tarifa_CT_quantidadeDePassageiros, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(GL_abaTarifaLayout.createSequentialGroup()
                                 .addComponent(GL_tarifa_BT_calcular)
                                 .addGap(43, 43, 43)
-                                .addComponent(GL_tarifa_BT_limpar)))))
-                .addGap(600, 600, 600))
+                                .addComponent(GL_tarifa_BT_limpar))
+                            .addGroup(GL_abaTarifaLayout.createSequentialGroup()
+                                .addGroup(GL_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(GL_abaTarifaLayout.createSequentialGroup()
+                                        .addGroup(GL_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(GL_abaTarifaLayout.createSequentialGroup()
+                                                .addComponent(jLabel144, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18))
+                                            .addGroup(GL_abaTarifaLayout.createSequentialGroup()
+                                                .addComponent(jLabel142, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addGap(33, 33, 33)))
+                                        .addGroup(GL_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(GL_tarifa_CT_custosTotais, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+                                            .addComponent(GL_tarifa_CT_lucroDesejado)))
+                                    .addGroup(GL_abaTarifaLayout.createSequentialGroup()
+                                        .addComponent(jLabel143, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(GL_tarifa_CT_quantidadeDePassageiros, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(49, 49, 49)
+                                .addComponent(GR_Tarifa_PN_tarifaIdeal1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(523, 523, 523))
         );
         GL_abaTarifaLayout.setVerticalGroup(
             GL_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1030,22 +1347,25 @@ public class Etmtelas extends javax.swing.JFrame {
                 .addGap(55, 55, 55)
                 .addComponent(jLabel141)
                 .addGap(35, 35, 35)
-                .addGroup(GL_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel144)
-                    .addComponent(GL_tarifa_CT_lucroDesejado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(GL_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel142)
-                    .addComponent(GL_tarifa_CT_custosTotais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(GL_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel143)
-                    .addComponent(GL_tarifa_CT_quantidadeDePassageiros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGroup(GL_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(GL_abaTarifaLayout.createSequentialGroup()
+                        .addGroup(GL_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel144)
+                            .addComponent(GL_tarifa_CT_lucroDesejado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(GL_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel142)
+                            .addComponent(GL_tarifa_CT_custosTotais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(GL_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel143)
+                            .addComponent(GL_tarifa_CT_quantidadeDePassageiros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(GR_Tarifa_PN_tarifaIdeal1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(GL_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(GL_tarifa_BT_calcular)
                     .addComponent(GL_tarifa_BT_limpar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 153, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 222, Short.MAX_VALUE)
                 .addGroup(GL_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel145)
                     .addComponent(GL_tarifa_CT_tarifaIdeal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1184,7 +1504,7 @@ public class Etmtelas extends javax.swing.JFrame {
                         .addComponent(jLabel128, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(35, 35, 35)))
                 .addGroup(GL_abaRelatorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(GL_relatorioLocal_CT_totalDeVlts, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
+                    .addComponent(GL_relatorioLocal_CT_totalDeVlts, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
                     .addComponent(GL_relatorioLocal_CT_totalDeMetros)
                     .addComponent(GL_relatorioLocal_CT_custoCombustivel)
                     .addComponent(GL_relatorioLocal_CT_totalDeVeiculos)
@@ -1272,175 +1592,10 @@ public class Etmtelas extends javax.swing.JFrame {
                                 .addGroup(GL_abaRelatorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(GL_relatorioLocal_CT_salarioAtendente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel106))))))
-                .addContainerGap(377, Short.MAX_VALUE))
+                .addContainerGap(446, Short.MAX_VALUE))
         );
 
         GL_abaInterna.addTab("Relatório Local", GL_abaRelatorio);
-
-        nome.setText("NOME:");
-
-        cpf.setText("CPF:");
-
-        ctps.setText("CTPS:");
-
-        cargaHoraria.setText("CARGA HORÁRIA: ");
-
-        salario.setText("SALÁRIO:");
-
-        sexo.setText("SEXO:");
-
-        funcao.setText("FUNÇÃO:");
-
-        GL_Cadastro_BT_Cadastrar.setText("Cadastrar");
-
-        GL_Cadastro_BT_limpar.setText("Limpar");
-        GL_Cadastro_BT_limpar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GL_Cadastro_BT_limparActionPerformed(evt);
-            }
-        });
-
-        GL_Cadastro_BT_atualizar.setText("Atualizar");
-
-        GL_Cadastro_CB_sexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "MASCULINO", "FEMININO" }));
-
-        GL_Cadastro_CB_funcao.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "MOTORISTA", "COBRADOR", "MECÂNICO", "GESTOR DE FROTA" }));
-        GL_Cadastro_CB_funcao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GL_Cadastro_CB_funcaoActionPerformed(evt);
-            }
-        });
-
-        GL_Cadastro_PN_escala.setVisible(false);
-
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
-            },
-            new String [] {
-                "Nome", "Cpf", "Ctps", "Salario", "Carga Horaria", "Função"
-            }
-        ));
-        jScrollPane5.setViewportView(jTable4);
-
-        jLabel17.setText("Escala");
-
-        javax.swing.GroupLayout GL_Cadastro_PN_escalaLayout = new javax.swing.GroupLayout(GL_Cadastro_PN_escala);
-        GL_Cadastro_PN_escala.setLayout(GL_Cadastro_PN_escalaLayout);
-        GL_Cadastro_PN_escalaLayout.setHorizontalGroup(
-            GL_Cadastro_PN_escalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(GL_Cadastro_PN_escalaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 442, Short.MAX_VALUE))
-            .addGroup(GL_Cadastro_PN_escalaLayout.createSequentialGroup()
-                .addGap(194, 194, 194)
-                .addComponent(jLabel17)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        GL_Cadastro_PN_escalaLayout.setVerticalGroup(
-            GL_Cadastro_PN_escalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(GL_Cadastro_PN_escalaLayout.createSequentialGroup()
-                .addGap(7, 7, 7)
-                .addComponent(jLabel17)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout GL_abaCadastroLayout = new javax.swing.GroupLayout(GL_abaCadastro);
-        GL_abaCadastro.setLayout(GL_abaCadastroLayout);
-        GL_abaCadastroLayout.setHorizontalGroup(
-            GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(GL_abaCadastroLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(GL_abaCadastroLayout.createSequentialGroup()
-                            .addComponent(ctps)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(GL_Cadastro_CT_ctps, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE))
-                        .addGroup(GL_abaCadastroLayout.createSequentialGroup()
-                            .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(nome)
-                                .addComponent(cpf))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(GL_Cadastro_CT_cpf, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
-                                .addComponent(GL_Cadastro_CB_nome))))
-                    .addGroup(GL_abaCadastroLayout.createSequentialGroup()
-                        .addComponent(cargaHoraria)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(GL_Cadastro_CT_cargaHoraria, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(GL_abaCadastroLayout.createSequentialGroup()
-                        .addComponent(GL_Cadastro_BT_Cadastrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(GL_Cadastro_BT_atualizar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(GL_Cadastro_BT_limpar))
-                    .addGroup(GL_abaCadastroLayout.createSequentialGroup()
-                        .addComponent(salario)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(GL_Cadastro_CT_Salario, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(GL_abaCadastroLayout.createSequentialGroup()
-                        .addGap(121, 121, 121)
-                        .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(GL_abaCadastroLayout.createSequentialGroup()
-                                .addComponent(funcao)
-                                .addGap(18, 18, 18)
-                                .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(GL_Cadastro_CB_funcao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(GL_Cadastro_CB_sexo, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(sexo)))
-                    .addGroup(GL_abaCadastroLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(GL_Cadastro_PN_escala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(343, Short.MAX_VALUE))
-        );
-        GL_abaCadastroLayout.setVerticalGroup(
-            GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(GL_abaCadastroLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nome)
-                    .addComponent(GL_Cadastro_CB_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sexo)
-                    .addComponent(GL_Cadastro_CB_sexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(GL_Cadastro_CT_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cpf)
-                    .addComponent(funcao)
-                    .addComponent(GL_Cadastro_CB_funcao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
-                .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(GL_abaCadastroLayout.createSequentialGroup()
-                        .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ctps)
-                            .addComponent(GL_Cadastro_CT_ctps, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(30, 30, 30)
-                        .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(salario, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(GL_Cadastro_CT_Salario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(27, 27, 27)
-                        .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cargaHoraria)
-                            .addComponent(GL_Cadastro_CT_cargaHoraria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(43, 43, 43)
-                        .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(GL_Cadastro_BT_Cadastrar)
-                            .addComponent(GL_Cadastro_BT_limpar)
-                            .addComponent(GL_Cadastro_BT_atualizar)))
-                    .addComponent(GL_Cadastro_PN_escala, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        GL_abaInterna.addTab("Cadastro", GL_abaCadastro);
 
         javax.swing.GroupLayout GL_abaLayout = new javax.swing.GroupLayout(GL_aba);
         GL_aba.setLayout(GL_abaLayout);
@@ -1514,7 +1669,7 @@ public class Etmtelas extends javax.swing.JFrame {
             }
         });
 
-        GR_Cadastro_BT_excluirFuncionario.setText("EXCLUIR");
+        GR_Cadastro_BT_excluirFuncionario.setText("REMOVER");
 
         GR_Cadastro_BT_atualizarFuncionario.setText("ATUALIZAR");
         GR_Cadastro_BT_atualizarFuncionario.addActionListener(new java.awt.event.ActionListener() {
@@ -1529,6 +1684,8 @@ public class Etmtelas extends javax.swing.JFrame {
                 GR_Cadastro_BT_buscarFuncionarioActionPerformed(evt);
             }
         });
+
+        GR_Cadastro_BT_limpar.setText("LIMPAR");
 
         GR_Cadastro_CB_funcaoFuncionario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "MOTORISTA", "COBRADOR", "MECÂNICO", "GESTOR DE FROTA" }));
 
@@ -1546,15 +1703,6 @@ public class Etmtelas extends javax.swing.JFrame {
             .addGroup(GR_PN_cadastroLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addGroup(GR_PN_cadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(GR_PN_cadastroLayout.createSequentialGroup()
-                        .addComponent(GR_Cadastro_BT_buscarFuncionario)
-                        .addGap(18, 18, 18)
-                        .addComponent(GR_Cadastro_BT_cadastrarFuncionario)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(GR_Cadastro_BT_atualizarFuncionario)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(GR_Cadastro_BT_excluirFuncionario)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(GR_PN_cadastroLayout.createSequentialGroup()
                         .addGroup(GR_PN_cadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(GR_PN_cadastroLayout.createSequentialGroup()
@@ -1600,7 +1748,19 @@ public class Etmtelas extends javax.swing.JFrame {
                                         .addComponent(GR_Cadastro_CB_funcaoFuncionario, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 384, Short.MAX_VALUE)
                         .addComponent(GR_Cadastro_PR_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(143, 143, 143))))
+                        .addGap(143, 143, 143))
+                    .addGroup(GR_PN_cadastroLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(GR_Cadastro_BT_cadastrarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(GR_Cadastro_BT_excluirFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5)
+                        .addComponent(GR_Cadastro_BT_buscarFuncionario)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(GR_Cadastro_BT_atualizarFuncionario)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(GR_Cadastro_BT_limpar)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         GR_PN_cadastroLayout.setVerticalGroup(
             GR_PN_cadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1649,12 +1809,12 @@ public class Etmtelas extends javax.swing.JFrame {
                     .addComponent(jLabel109)
                     .addComponent(GR_Cadastro_CT_salarioFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(GR_PN_cadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(GR_PN_cadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(GR_Cadastro_BT_atualizarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(GR_Cadastro_BT_buscarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(GR_Cadastro_BT_excluirFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(GR_Cadastro_BT_cadastrarFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(GR_PN_cadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(GR_Cadastro_BT_atualizarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(GR_Cadastro_BT_excluirFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(GR_Cadastro_BT_limpar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(GR_Cadastro_BT_cadastrarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(GR_Cadastro_BT_buscarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(208, Short.MAX_VALUE))
         );
 
@@ -1665,13 +1825,13 @@ public class Etmtelas extends javax.swing.JFrame {
             .addGap(0, 1064, Short.MAX_VALUE)
             .addGroup(GR_abaFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(GR_abaFuncionarioLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGap(0, 2, Short.MAX_VALUE)
                     .addComponent(GR_PN_cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 3, Short.MAX_VALUE)))
         );
         GR_abaFuncionarioLayout.setVerticalGroup(
             GR_abaFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 638, Short.MAX_VALUE)
+            .addGap(0, 707, Short.MAX_VALUE)
             .addGroup(GR_abaFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(GR_abaFuncionarioLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -1997,7 +2157,7 @@ public class Etmtelas extends javax.swing.JFrame {
                 .addGroup(GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(GR_Tarifa_BT_calcular)
                     .addComponent(GR_Tarifa_BT_limpar))
-                .addContainerGap(187, Short.MAX_VALUE))
+                .addContainerGap(256, Short.MAX_VALUE))
         );
 
         GR_abaInterna.addTab("Tarifa", GR_abaTarifa);
@@ -2230,7 +2390,7 @@ public class Etmtelas extends javax.swing.JFrame {
                                 .addGroup(GR_abaRelatorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(GR_relatorioRegional_CT_salarioAtendente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel112))))))
-                .addContainerGap(377, Short.MAX_VALUE))
+                .addContainerGap(446, Short.MAX_VALUE))
         );
 
         GR_abaInterna.addTab("Relatório Regional", GR_abaRelatorio);
@@ -2316,7 +2476,7 @@ public class Etmtelas extends javax.swing.JFrame {
                             .addComponent(jTextField76)
                             .addComponent(jTextField77)
                             .addComponent(jTextField78))))
-                .addContainerGap(590, Short.MAX_VALUE))
+                .addContainerGap(594, Short.MAX_VALUE))
         );
         PR_abaLayout.setVerticalGroup(
             PR_abaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2353,7 +2513,7 @@ public class Etmtelas extends javax.swing.JFrame {
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(213, Short.MAX_VALUE))
+                .addContainerGap(282, Short.MAX_VALUE))
         );
 
         grandeAba.addTab("PRESIDENTE", PR_aba);
@@ -2412,7 +2572,7 @@ public class Etmtelas extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(602, Short.MAX_VALUE))
+                .addContainerGap(606, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2437,7 +2597,7 @@ public class Etmtelas extends javax.swing.JFrame {
                 .addComponent(jLabel146, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(294, Short.MAX_VALUE))
+                .addContainerGap(363, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Viagem", jPanel3);
@@ -2466,7 +2626,7 @@ public class Etmtelas extends javax.swing.JFrame {
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addGap(97, 97, 97)
                         .addComponent(jButton19)))
-                .addContainerGap(793, Short.MAX_VALUE))
+                .addContainerGap(797, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2481,7 +2641,7 @@ public class Etmtelas extends javax.swing.JFrame {
                     .addComponent(jTextField87, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(116, 116, 116)
                 .addComponent(jButton19)
-                .addContainerGap(426, Short.MAX_VALUE))
+                .addContainerGap(495, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Vistoria", jPanel10);
@@ -2641,7 +2801,7 @@ public class Etmtelas extends javax.swing.JFrame {
                     .addGroup(CB_abaVendaPassagemLayout.createSequentialGroup()
                         .addGap(373, 373, 373)
                         .addComponent(CB_VendaPassagem_PN_aDinheiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(448, Short.MAX_VALUE))
+                .addContainerGap(452, Short.MAX_VALUE))
         );
         CB_abaVendaPassagemLayout.setVerticalGroup(
             CB_abaVendaPassagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2818,7 +2978,7 @@ public class Etmtelas extends javax.swing.JFrame {
             CB_abaRelatorioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CB_abaRelatorioFinanceiroLayout.createSequentialGroup()
                 .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(188, Short.MAX_VALUE))
+                .addContainerGap(192, Short.MAX_VALUE))
         );
         CB_abaRelatorioFinanceiroLayout.setVerticalGroup(
             CB_abaRelatorioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2952,25 +3112,747 @@ public class Etmtelas extends javax.swing.JFrame {
         MC_abaLayout.setHorizontalGroup(
             MC_abaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MC_abaLayout.createSequentialGroup()
-                .addComponent(MC_abaInterna, javax.swing.GroupLayout.DEFAULT_SIZE, 1059, Short.MAX_VALUE)
+                .addComponent(MC_abaInterna, javax.swing.GroupLayout.DEFAULT_SIZE, 1063, Short.MAX_VALUE)
                 .addContainerGap())
         );
         MC_abaLayout.setVerticalGroup(
             MC_abaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MC_abaLayout.createSequentialGroup()
                 .addComponent(MC_abaInterna, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 151, Short.MAX_VALUE))
+                .addGap(0, 220, Short.MAX_VALUE))
         );
 
         grandeAba.addTab("MECÂNICO", MC_aba);
+
+        jLabel28.setText("Status:");
+
+        jLabel31.setText("Combustível:");
+
+        jLabel32.setText("Capacidade:");
+
+        jLabel37.setText("Custo por Km:");
+
+        jLabel38.setText("Tipo de rota:");
+
+        jLabel39.setText("Rotas:");
+
+        jLabel40.setText("Tipo de Veículo:");
+
+        jLabel41.setText("Tipo de cobrança:");
+
+        jLabel44.setText("ID:");
+
+        GF_CadasVei_CT_capacidade.setText("0");
+
+        GF_CadasVei_CT_autonomia.setText("0");
+
+        CadasVei_BT_cadastrar.setText("CADASTRAR");
+        CadasVei_BT_cadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CadasVei_BT_cadastrarActionPerformed(evt);
+            }
+        });
+
+        GF_CadasVei_BT_limpar.setText("LIMPAR");
+
+        GF_CadasVei_BT_remover.setText("REMOVER");
+
+        GF_CadasVei_BT_atualizar.setText("ATUALIZAR");
+
+        GF_CadasVei_BT_buscar.setText("BUSCAR");
+        GF_CadasVei_BT_buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GF_CadasVei_BT_buscarActionPerformed(evt);
+            }
+        });
+
+        GF_CadasVei_CB_tipoDeRota.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "FLEXÍVEL", "FIXA" }));
+
+        GF_CadasVei_CB_tipoDeCobranca.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "MANUAL", "MISTA" }));
+
+        GF_CadasVei_CB_status.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "OPERACIONAL", "EM MANUTENÇÃO" }));
+        GF_CadasVei_CB_status.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GF_CadasVei_CB_statusActionPerformed(evt);
+            }
+        });
+
+        GF_CadasVei_CB_rotas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-" }));
+
+        GF_CadasVei_CB_tipoCombustivel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "GASOLINA", "DÍSEL", "ELETICIDADE", "GÁS" }));
+
+        GF_CadasVei_CB_tipoDeVeiculo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "VLT", "BRT", "VAN", "METRÔ", "ÔNIBUS", "MICRO-ÔNIBUS" }));
+        GF_CadasVei_CB_tipoDeVeiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GF_CadasVei_CB_tipoDeVeiculoActionPerformed(evt);
+            }
+        });
+
+        GF_CadasVei_PN_placa.setVisible(false);
+        GF_CadasVei_PN_placa.setName(""); // NOI18N
+
+        jLabel42.setText("Placa:");
+
+        javax.swing.GroupLayout GF_CadasVei_PN_placaLayout = new javax.swing.GroupLayout(GF_CadasVei_PN_placa);
+        GF_CadasVei_PN_placa.setLayout(GF_CadasVei_PN_placaLayout);
+        GF_CadasVei_PN_placaLayout.setHorizontalGroup(
+            GF_CadasVei_PN_placaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GF_CadasVei_PN_placaLayout.createSequentialGroup()
+                .addContainerGap(11, Short.MAX_VALUE)
+                .addComponent(jLabel42)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(GF_CadasVei_CT_placa, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        GF_CadasVei_PN_placaLayout.setVerticalGroup(
+            GF_CadasVei_PN_placaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GF_CadasVei_PN_placaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(GF_CadasVei_PN_placaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(GF_CadasVei_CT_placa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel42, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(20, 20, 20))
+        );
+
+        GF_CadasVei_PN_Alocar.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ALOCAR", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
+
+        jLabel69.setText("CPF:");
+
+        jLabel70.setText("Veículo ID:");
+
+        jLabel71.setText("Rota ID:");
+
+        jLabel72.setText("Parada ID:");
+
+        GF_Alocar_BT_buscar.setText("BUSCAR");
+
+        GF_Alocar_BT_cadastrar.setText("ALOCAR");
+
+        GF_Alocar_BT_descadastrar.setText("REMOVER");
+
+        GF_Alocar_BT_limpar.setText("LIMPAR");
+
+        GF_Alocar_CB_tipoAlocado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "ROTA", "VEICULO", "FUNCIONARIO" }));
+
+        javax.swing.GroupLayout GF_CadasVei_PN_AlocarLayout = new javax.swing.GroupLayout(GF_CadasVei_PN_Alocar);
+        GF_CadasVei_PN_Alocar.setLayout(GF_CadasVei_PN_AlocarLayout);
+        GF_CadasVei_PN_AlocarLayout.setHorizontalGroup(
+            GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
+                        .addComponent(jLabel69)
+                        .addGap(18, 18, 18)
+                        .addComponent(GF_Alocar_CT_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(GF_Alocar_CB_tipoAlocado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(79, 79, 79))
+                    .addGroup(GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
+                                .addComponent(GF_Alocar_BT_descadastrar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(GF_Alocar_BT_buscar))
+                            .addGroup(GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
+                                .addComponent(GF_Alocar_BT_cadastrar)
+                                .addGap(178, 178, 178)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(GF_Alocar_BT_limpar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
+                        .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel70)
+                            .addComponent(jLabel71)
+                            .addComponent(jLabel72))
+                        .addGap(18, 18, 18)
+                        .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(GF_Alocar_CT_veiculoId)
+                            .addComponent(GF_Alocar_CT_rotaId, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
+                            .addComponent(GF_Alocar_CT_idParada))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        GF_CadasVei_PN_AlocarLayout.setVerticalGroup(
+            GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
+                        .addComponent(GF_Alocar_CB_tipoAlocado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(25, 25, 25))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
+                        .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel69)
+                            .addComponent(GF_Alocar_CT_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)))
+                .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel70)
+                    .addComponent(GF_Alocar_CT_veiculoId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel71)
+                    .addComponent(GF_Alocar_CT_rotaId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(GF_Alocar_CT_idParada, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel72))
+                .addGap(77, 77, 77)
+                .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(GF_Alocar_BT_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(GF_Alocar_BT_descadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(GF_Alocar_BT_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(GF_Alocar_BT_limpar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout GF_CadastrarVeiculo_PNLayout = new javax.swing.GroupLayout(GF_CadastrarVeiculo_PN);
+        GF_CadastrarVeiculo_PN.setLayout(GF_CadastrarVeiculo_PNLayout);
+        GF_CadastrarVeiculo_PNLayout.setHorizontalGroup(
+            GF_CadastrarVeiculo_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GF_CadastrarVeiculo_PNLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(GF_CadastrarVeiculo_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(GF_CadastrarVeiculo_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(GF_CadastrarVeiculo_PNLayout.createSequentialGroup()
+                            .addComponent(jLabel39)
+                            .addGap(18, 18, 18)
+                            .addComponent(GF_CadasVei_CB_rotas, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(GF_CadastrarVeiculo_PNLayout.createSequentialGroup()
+                            .addGroup(GF_CadastrarVeiculo_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel32)
+                                .addComponent(jLabel37)
+                                .addComponent(jLabel31))
+                            .addGap(18, 18, 18)
+                            .addGroup(GF_CadastrarVeiculo_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(GF_CadasVei_CT_autonomia)
+                                .addComponent(GF_CadasVei_CT_capacidade)
+                                .addComponent(GF_CadasVei_CB_tipoCombustivel, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(GF_CadastrarVeiculo_PNLayout.createSequentialGroup()
+                            .addComponent(jLabel28)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(GF_CadasVei_CB_status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(GF_CadastrarVeiculo_PNLayout.createSequentialGroup()
+                        .addGroup(GF_CadastrarVeiculo_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(GF_CadasVei_BT_atualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(CadasVei_BT_cadastrar))
+                        .addGap(18, 18, 18)
+                        .addGroup(GF_CadastrarVeiculo_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(GF_CadasVei_BT_buscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(GF_CadasVei_BT_remover))
+                        .addGap(18, 18, 18)
+                        .addComponent(GF_CadasVei_BT_limpar))
+                    .addGroup(GF_CadastrarVeiculo_PNLayout.createSequentialGroup()
+                        .addComponent(jLabel44)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(GF_CadasVei_CT_id, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(GF_CadastrarVeiculo_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(GF_CadastrarVeiculo_PNLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(GF_CadastrarVeiculo_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(GF_CadasVei_PN_placa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(GF_CadastrarVeiculo_PNLayout.createSequentialGroup()
+                                .addGroup(GF_CadastrarVeiculo_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(GF_CadastrarVeiculo_PNLayout.createSequentialGroup()
+                                        .addGroup(GF_CadastrarVeiculo_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel38)
+                                            .addComponent(jLabel40))
+                                        .addGap(29, 29, 29))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GF_CadastrarVeiculo_PNLayout.createSequentialGroup()
+                                        .addComponent(jLabel41)
+                                        .addGap(18, 18, 18)))
+                                .addGroup(GF_CadastrarVeiculo_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(GF_CadasVei_CB_tipoDeCobranca, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(GF_CadasVei_CB_tipoDeVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(GF_CadasVei_CB_tipoDeRota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(GF_CadastrarVeiculo_PNLayout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(GF_CadasVei_PN_Alocar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(389, Short.MAX_VALUE))
+        );
+        GF_CadastrarVeiculo_PNLayout.setVerticalGroup(
+            GF_CadastrarVeiculo_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GF_CadastrarVeiculo_PNLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(GF_CadastrarVeiculo_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(GF_CadastrarVeiculo_PNLayout.createSequentialGroup()
+                        .addGroup(GF_CadastrarVeiculo_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel40)
+                            .addComponent(GF_CadasVei_CB_tipoDeVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(GF_CadastrarVeiculo_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel38)
+                            .addComponent(GF_CadasVei_CB_tipoDeRota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(GF_CadastrarVeiculo_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(GF_CadasVei_CB_tipoDeCobranca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel41))
+                        .addGap(18, 18, 18))
+                    .addGroup(GF_CadastrarVeiculo_PNLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(GF_CadastrarVeiculo_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(GF_CadasVei_CT_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel44))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(GF_CadastrarVeiculo_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(GF_CadasVei_CB_status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel28))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(GF_CadastrarVeiculo_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(GF_CadasVei_CB_tipoCombustivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel31))
+                        .addGap(11, 11, 11)))
+                .addGroup(GF_CadastrarVeiculo_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(GF_CadastrarVeiculo_PNLayout.createSequentialGroup()
+                        .addGroup(GF_CadastrarVeiculo_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel32)
+                            .addComponent(GF_CadasVei_CT_capacidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(GF_CadastrarVeiculo_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel37)
+                            .addComponent(GF_CadasVei_CT_autonomia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(GF_CadasVei_PN_placa, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(GF_CadastrarVeiculo_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(GF_CadastrarVeiculo_PNLayout.createSequentialGroup()
+                        .addGroup(GF_CadastrarVeiculo_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel39)
+                            .addComponent(GF_CadasVei_CB_rotas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(50, 50, 50)
+                        .addGroup(GF_CadastrarVeiculo_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(CadasVei_BT_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(GF_CadasVei_BT_limpar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(GF_CadasVei_BT_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(GF_CadastrarVeiculo_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(GF_CadasVei_BT_atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(GF_CadasVei_BT_remover, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(GF_CadasVei_PN_Alocar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(240, 240, 240))
+        );
+
+        GF_abaInterna.addTab("Cadastrar veículo", GF_CadastrarVeiculo_PN);
+
+        jLabel45.setText("Endereço:");
+
+        jLabel46.setText("Latitude:");
+
+        jLabel62.setText("Longitude:");
+
+        jLabel68.setText("ID:");
+
+        CadasParada_BT_cadastrar.setText("CADASTRAR");
+
+        CadasParada_BT_limpar.setText("LIMPAR");
+
+        CadasParada_BT_atualizar.setText("ATUALIZAR");
+
+        CadasParada_BT_remover.setText("REMOVER");
+
+        CadasParada_BT_buscar.setText("BUSCAR");
+
+        GF_CadasVei_PN_Alocar1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ALOCAR", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
+
+        jLabel82.setText("Rota ID:");
+
+        jLabel83.setText("Parada ID:");
+
+        GF_Alocar_BT_buscar1.setText("BUSCAR");
+
+        GF_Alocar_BT_cadastrar1.setText("ALOCAR");
+
+        GF_Alocar_BT_descadastrar1.setText("REMOVER");
+
+        GF_Alocar_BT_limpar1.setText("LIMPAR");
+
+        javax.swing.GroupLayout GF_CadasVei_PN_Alocar1Layout = new javax.swing.GroupLayout(GF_CadasVei_PN_Alocar1);
+        GF_CadasVei_PN_Alocar1.setLayout(GF_CadasVei_PN_Alocar1Layout);
+        GF_CadasVei_PN_Alocar1Layout.setHorizontalGroup(
+            GF_CadasVei_PN_Alocar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GF_CadasVei_PN_Alocar1Layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(GF_Alocar_BT_cadastrar1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(GF_Alocar_BT_descadastrar1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(GF_Alocar_BT_buscar1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(GF_CadasVei_PN_Alocar1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(GF_CadasVei_PN_Alocar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(GF_CadasVei_PN_Alocar1Layout.createSequentialGroup()
+                        .addGroup(GF_CadasVei_PN_Alocar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel83)
+                            .addComponent(jLabel82))
+                        .addGap(8, 8, 8)
+                        .addGroup(GF_CadasVei_PN_Alocar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(GF_Alocar_CT_rotaId1)
+                            .addComponent(GF_Alocar_CT_idParada1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(GF_CadasVei_PN_Alocar1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(GF_Alocar_BT_limpar1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        GF_CadasVei_PN_Alocar1Layout.setVerticalGroup(
+            GF_CadasVei_PN_Alocar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GF_CadasVei_PN_Alocar1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(GF_CadasVei_PN_Alocar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel82)
+                    .addComponent(GF_Alocar_CT_rotaId1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(GF_CadasVei_PN_Alocar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(GF_Alocar_CT_idParada1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel83))
+                .addGap(25, 25, 25)
+                .addGroup(GF_CadasVei_PN_Alocar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(GF_Alocar_BT_cadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(GF_Alocar_BT_descadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(GF_Alocar_BT_buscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(103, 103, 103)
+                .addComponent(GF_Alocar_BT_limpar1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        javax.swing.GroupLayout GF_CadastrarParada_PNLayout = new javax.swing.GroupLayout(GF_CadastrarParada_PN);
+        GF_CadastrarParada_PN.setLayout(GF_CadastrarParada_PNLayout);
+        GF_CadastrarParada_PNLayout.setHorizontalGroup(
+            GF_CadastrarParada_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GF_CadastrarParada_PNLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(GF_CadastrarParada_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(GF_CadastrarParada_PNLayout.createSequentialGroup()
+                        .addGroup(GF_CadastrarParada_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(GF_CadastrarParada_PNLayout.createSequentialGroup()
+                                .addComponent(jLabel62)
+                                .addGap(18, 18, 18)
+                                .addComponent(CadasParada_CT_longitude, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(GF_CadastrarParada_PNLayout.createSequentialGroup()
+                                .addGroup(GF_CadastrarParada_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GF_CadastrarParada_PNLayout.createSequentialGroup()
+                                        .addGroup(GF_CadastrarParada_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel45)
+                                            .addComponent(jLabel46))
+                                        .addGap(18, 18, 18))
+                                    .addGroup(GF_CadastrarParada_PNLayout.createSequentialGroup()
+                                        .addComponent(jLabel68)
+                                        .addGap(27, 27, 27)))
+                                .addGroup(GF_CadastrarParada_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(CadasParada_CT_endereco, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
+                                    .addComponent(CadasParada_CT_latitude)
+                                    .addComponent(CadasParada_CT_id))))
+                        .addGap(71, 71, 71)
+                        .addComponent(GF_CadasVei_PN_Alocar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(GF_CadastrarParada_PNLayout.createSequentialGroup()
+                        .addGroup(GF_CadastrarParada_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CadasParada_BT_cadastrar)
+                            .addComponent(CadasParada_BT_atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(GF_CadastrarParada_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(GF_CadastrarParada_PNLayout.createSequentialGroup()
+                                .addComponent(CadasParada_BT_remover)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(CadasParada_BT_buscar))
+                            .addComponent(CadasParada_BT_limpar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(584, Short.MAX_VALUE))
+        );
+        GF_CadastrarParada_PNLayout.setVerticalGroup(
+            GF_CadastrarParada_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GF_CadastrarParada_PNLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(GF_CadastrarParada_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(GF_CadastrarParada_PNLayout.createSequentialGroup()
+                        .addGroup(GF_CadastrarParada_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel45)
+                            .addComponent(CadasParada_CT_endereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(GF_CadastrarParada_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel68)
+                            .addComponent(CadasParada_CT_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(GF_CadastrarParada_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel46)
+                            .addComponent(CadasParada_CT_latitude, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(GF_CadastrarParada_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel62)
+                            .addComponent(CadasParada_CT_longitude, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(GF_CadasVei_PN_Alocar1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(145, 145, 145)
+                .addGroup(GF_CadastrarParada_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CadasParada_BT_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CadasParada_BT_remover, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CadasParada_BT_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(GF_CadastrarParada_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CadasParada_BT_atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CadasParada_BT_limpar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(307, 307, 307))
+        );
+
+        GF_abaInterna.addTab("Cadastrar Parada", GF_CadastrarParada_PN);
+
+        GF_Relatorios_BT_balanco.setText("BALANÇO");
+
+        GF_Relatorios_BT_mostrarRelatorio.setText("BUSCAR");
+
+        GF_Relatorios_BT_limpar.setText("LIMPAR");
+
+        buttonGroup1.add(GF_Relatorios_BR_veiculo);
+        GF_Relatorios_BR_veiculo.setText("VEÍCULO");
+
+        buttonGroup1.add(GF_Relatorios_BR_funcionario);
+        GF_Relatorios_BR_funcionario.setText("FUNCIONARIO");
+
+        GF_Relatorios_tabela.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane9.setViewportView(GF_Relatorios_tabela);
+
+        GF_Relatorios_PN_Funcionario.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "FUNCIONÁRIO", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
+
+        jLabel73.setText("Sexo:");
+
+        jLabel75.setText("Idade:");
+
+        jLabel76.setText("Renda:");
+
+        javax.swing.GroupLayout GF_Relatorios_PN_FuncionarioLayout = new javax.swing.GroupLayout(GF_Relatorios_PN_Funcionario);
+        GF_Relatorios_PN_Funcionario.setLayout(GF_Relatorios_PN_FuncionarioLayout);
+        GF_Relatorios_PN_FuncionarioLayout.setHorizontalGroup(
+            GF_Relatorios_PN_FuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GF_Relatorios_PN_FuncionarioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(GF_Relatorios_PN_FuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(GF_Relatorios_PN_FuncionarioLayout.createSequentialGroup()
+                        .addComponent(jLabel76)
+                        .addGap(11, 11, 11)
+                        .addComponent(GF_Funcionario_CT_renda, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(GF_Relatorios_PN_FuncionarioLayout.createSequentialGroup()
+                        .addGroup(GF_Relatorios_PN_FuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GF_Relatorios_PN_FuncionarioLayout.createSequentialGroup()
+                                .addComponent(jLabel73)
+                                .addGap(18, 18, 18))
+                            .addGroup(GF_Relatorios_PN_FuncionarioLayout.createSequentialGroup()
+                                .addComponent(jLabel75)
+                                .addGap(14, 14, 14)))
+                        .addGroup(GF_Relatorios_PN_FuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(GF_Funcionario_CT_idade, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(GF_Funcionario_CT_sexo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+        GF_Relatorios_PN_FuncionarioLayout.setVerticalGroup(
+            GF_Relatorios_PN_FuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GF_Relatorios_PN_FuncionarioLayout.createSequentialGroup()
+                .addGroup(GF_Relatorios_PN_FuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel73)
+                    .addComponent(GF_Funcionario_CT_sexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(GF_Relatorios_PN_FuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel75)
+                    .addComponent(GF_Funcionario_CT_idade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(GF_Relatorios_PN_FuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel76)
+                    .addComponent(GF_Funcionario_CT_renda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        jLabel74.setText("Tipo de veículo:");
+
+        GF_Veiculo_CB_tipoDeVeiculo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "ÔNIBUS", "BRT", "MICRO-ÔNIBUS", "METRÔ", "VLT" }));
+
+        javax.swing.GroupLayout GF_Relatorios_PN_VeiculoLayout = new javax.swing.GroupLayout(GF_Relatorios_PN_Veiculo);
+        GF_Relatorios_PN_Veiculo.setLayout(GF_Relatorios_PN_VeiculoLayout);
+        GF_Relatorios_PN_VeiculoLayout.setHorizontalGroup(
+            GF_Relatorios_PN_VeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GF_Relatorios_PN_VeiculoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel74)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(GF_Veiculo_CB_tipoDeVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        GF_Relatorios_PN_VeiculoLayout.setVerticalGroup(
+            GF_Relatorios_PN_VeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GF_Relatorios_PN_VeiculoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(GF_Relatorios_PN_VeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel74)
+                    .addComponent(GF_Veiculo_CB_tipoDeVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout GF_Relatorios_PNLayout = new javax.swing.GroupLayout(GF_Relatorios_PN);
+        GF_Relatorios_PN.setLayout(GF_Relatorios_PNLayout);
+        GF_Relatorios_PNLayout.setHorizontalGroup(
+            GF_Relatorios_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GF_Relatorios_PNLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(GF_Relatorios_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(GF_Relatorios_PNLayout.createSequentialGroup()
+                        .addGroup(GF_Relatorios_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(GF_Relatorios_PN_Funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(GF_Relatorios_PNLayout.createSequentialGroup()
+                                .addComponent(GF_Relatorios_BR_veiculo)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(GF_Relatorios_BR_funcionario)))
+                        .addGap(97, 97, 97)
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(GF_Relatorios_PN_Veiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(GF_Relatorios_PNLayout.createSequentialGroup()
+                        .addComponent(GF_Relatorios_BT_balanco)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(GF_Relatorios_BT_mostrarRelatorio))
+                    .addComponent(GF_Relatorios_BT_limpar))
+                .addContainerGap(339, Short.MAX_VALUE))
+        );
+        GF_Relatorios_PNLayout.setVerticalGroup(
+            GF_Relatorios_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GF_Relatorios_PNLayout.createSequentialGroup()
+                .addGroup(GF_Relatorios_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(GF_Relatorios_PNLayout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(GF_Relatorios_PNLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(GF_Relatorios_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(GF_Relatorios_BR_veiculo)
+                            .addComponent(GF_Relatorios_BR_funcionario))
+                        .addGap(38, 38, 38)
+                        .addComponent(GF_Relatorios_PN_Funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(GF_Relatorios_PN_Veiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(GF_Relatorios_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(GF_Relatorios_BT_balanco, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(GF_Relatorios_BT_mostrarRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(GF_Relatorios_BT_limpar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(378, Short.MAX_VALUE))
+        );
+
+        GF_abaInterna.addTab("Relatórios", GF_Relatorios_PN);
+
+        jLabel77.setText("Data de início:");
+
+        jLabel78.setText("Data de fim:");
+
+        jLabel79.setText("Tipo de veículo:");
+
+        RelatoriosPorPe_CTF_dataFinal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RelatoriosPorPe_CTF_dataFinalActionPerformed(evt);
+            }
+        });
+
+        RelatoriosPorPe_BT_mostraRelatorio.setText("Mostra Relatório");
+        RelatoriosPorPe_BT_mostraRelatorio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RelatoriosPorPe_BT_mostraRelatorioActionPerformed(evt);
+            }
+        });
+
+        RelatoriosPorPe_BT_limpar.setText("Limpar");
+
+        RelatoriosPorPe_RB_veiculo.setText("Veículo ");
+
+        RelatoriosPorPe_RB_funcionario.setText("Funcionário");
+
+        RelatoriosPorPe_CB_tipoDeVeiculo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "ÔNIBUS", "BRT", "MICRO-ÔNIBUS", "METRÔ", "VLT" }));
+
+        RelatoriosPorPe_AT_info.setColumns(20);
+        RelatoriosPorPe_AT_info.setRows(5);
+        jScrollPane8.setViewportView(RelatoriosPorPe_AT_info);
+
+        javax.swing.GroupLayout GF_BuscarRelatorios_PNLayout = new javax.swing.GroupLayout(GF_BuscarRelatorios_PN);
+        GF_BuscarRelatorios_PN.setLayout(GF_BuscarRelatorios_PNLayout);
+        GF_BuscarRelatorios_PNLayout.setHorizontalGroup(
+            GF_BuscarRelatorios_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GF_BuscarRelatorios_PNLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(GF_BuscarRelatorios_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(GF_BuscarRelatorios_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(GF_BuscarRelatorios_PNLayout.createSequentialGroup()
+                            .addComponent(RelatoriosPorPe_BT_mostraRelatorio)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(RelatoriosPorPe_BT_limpar))
+                        .addGroup(GF_BuscarRelatorios_PNLayout.createSequentialGroup()
+                            .addComponent(jLabel79)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(RelatoriosPorPe_CB_tipoDeVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(GF_BuscarRelatorios_PNLayout.createSequentialGroup()
+                            .addGroup(GF_BuscarRelatorios_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel78)
+                                .addComponent(jLabel77))
+                            .addGap(18, 18, 18)
+                            .addGroup(GF_BuscarRelatorios_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(RelatoriosPorPe_CTF_dataInicial, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
+                                .addComponent(RelatoriosPorPe_CTF_dataFinal))))
+                    .addGroup(GF_BuscarRelatorios_PNLayout.createSequentialGroup()
+                        .addComponent(RelatoriosPorPe_RB_veiculo)
+                        .addGap(14, 14, 14)
+                        .addComponent(RelatoriosPorPe_RB_funcionario)))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 729, Short.MAX_VALUE)
+                .addGap(116, 116, 116))
+        );
+        GF_BuscarRelatorios_PNLayout.setVerticalGroup(
+            GF_BuscarRelatorios_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GF_BuscarRelatorios_PNLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(GF_BuscarRelatorios_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(GF_BuscarRelatorios_PNLayout.createSequentialGroup()
+                        .addGroup(GF_BuscarRelatorios_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(RelatoriosPorPe_RB_veiculo)
+                            .addComponent(RelatoriosPorPe_RB_funcionario))
+                        .addGap(28, 28, 28)
+                        .addGroup(GF_BuscarRelatorios_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel79)
+                            .addComponent(RelatoriosPorPe_CB_tipoDeVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(GF_BuscarRelatorios_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(RelatoriosPorPe_CTF_dataInicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel77))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(GF_BuscarRelatorios_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(RelatoriosPorPe_CTF_dataFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel78))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 530, Short.MAX_VALUE)
+                        .addGroup(GF_BuscarRelatorios_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(RelatoriosPorPe_BT_mostraRelatorio)
+                            .addComponent(RelatoriosPorPe_BT_limpar))))
+                .addContainerGap())
+        );
+
+        GF_abaInterna.addTab("Relatórios por período", GF_BuscarRelatorios_PN);
+
+        javax.swing.GroupLayout GF_abaLayout = new javax.swing.GroupLayout(GF_aba);
+        GF_aba.setLayout(GF_abaLayout);
+        GF_abaLayout.setHorizontalGroup(
+            GF_abaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(GF_abaInterna, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
+        GF_abaLayout.setVerticalGroup(
+            GF_abaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(GF_abaInterna, javax.swing.GroupLayout.PREFERRED_SIZE, 746, Short.MAX_VALUE)
+        );
+
+        grandeAba.addTab("GESTOR DE FROTA", GF_aba);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(grandeAba, javax.swing.GroupLayout.PREFERRED_SIZE, 955, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(grandeAba, javax.swing.GroupLayout.PREFERRED_SIZE, 1022, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2983,15 +3865,13 @@ public class Etmtelas extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 953, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(81, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 546, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -3146,6 +4026,95 @@ public class Etmtelas extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_AT_Cadastro_BT_atualizarActionPerformed
 
+    private void RelatoriosPorPe_BT_mostraRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RelatoriosPorPe_BT_mostraRelatorioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RelatoriosPorPe_BT_mostraRelatorioActionPerformed
+
+    private void RelatoriosPorPe_CTF_dataFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RelatoriosPorPe_CTF_dataFinalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RelatoriosPorPe_CTF_dataFinalActionPerformed
+
+    private void GF_CadasVei_CB_tipoDeVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GF_CadasVei_CB_tipoDeVeiculoActionPerformed
+        String tipoDeVeiculo;
+        tipoDeVeiculo = GF_CadasVei_CB_tipoDeVeiculo.getSelectedItem().toString();
+        switch(tipoDeVeiculo){
+            case "ÔNIBUS":case "MICRO-ÔNIBUS":
+            GF_CadasVei_PN_placa.setVisible(true);
+            break;
+            default:
+            GF_CadasVei_PN_placa.setVisible(false);
+            break;
+        }
+    }//GEN-LAST:event_GF_CadasVei_CB_tipoDeVeiculoActionPerformed
+
+    private void GF_CadasVei_CB_statusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GF_CadasVei_CB_statusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_GF_CadasVei_CB_statusActionPerformed
+
+    private void GF_CadasVei_BT_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GF_CadasVei_BT_buscarActionPerformed
+        Veiculo veiculo;
+        String id;
+
+        id = GF_CadasVei_CT_id.getText();
+        veiculo = etm.buscarVeiculo(id);
+        if(veiculo != null){
+            GF_CadasVei_CB_status.setSelectedItem(veiculo.getStatus());
+            GF_CadasVei_CB_tipoCombustivel.setSelectedItem(veiculo.getCombustivel());
+            GF_CadasVei_CB_tipoDeRota.setSelectedItem(veiculo.getTipoDeRota());
+            GF_CadasVei_CB_tipoDeVeiculo.setSelectedItem(veiculo.getTipoDeVeiculo());
+            GF_CadasVei_CB_tipoDeCobranca.setSelectedItem(veiculo.getTipoDeCobranca());
+            if(veiculo instanceof Onibus){
+                GF_CadasVei_CT_placa.setText(((Onibus)veiculo).getPlaca());
+            }
+            GF_CadasVei_CT_capacidade.setText(String.valueOf(veiculo.getCapacidade()));
+            GF_CadasVei_CT_autonomia.setText(String.valueOf(veiculo.getAutonomia()));
+        }
+        else{
+            mostrarMensagem("VEÍCULO NÃO ENCONTRADO");
+        }
+    }//GEN-LAST:event_GF_CadasVei_BT_buscarActionPerformed
+
+    private void CadasVei_BT_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadasVei_BT_cadastrarActionPerformed
+        String status;
+        String tipoDeCombustivel;
+        String tipoDeVeiculo;
+        String tipoDeRota;
+        String tipoDeCobranca;
+        String placa;
+        int capacidade;
+        float autonomia;
+
+        Veiculo nVeiculo=null;
+        status = GF_CadasVei_CB_status.getSelectedItem().toString();
+        tipoDeCombustivel = GF_CadasVei_CB_tipoCombustivel.getSelectedItem().toString();
+        tipoDeRota = GF_CadasVei_CB_tipoDeRota.getSelectedItem().toString();
+        tipoDeVeiculo = GF_CadasVei_CB_tipoDeVeiculo.getSelectedItem().toString();
+        tipoDeCobranca = GF_CadasVei_CB_tipoDeCobranca.getSelectedItem().toString();
+        placa = GF_CadasVei_CT_placa.getText();
+        capacidade = Integer.parseInt(GF_CadasVei_CT_capacidade.getText());
+        autonomia = Float.parseFloat(GF_CadasVei_CT_autonomia.getText());
+
+        switch(tipoDeVeiculo){
+            case "VLT":
+
+            break;
+            case "BRT":
+            break;
+            case "VAN":
+            break;
+            case "METRÔ":
+            break;
+            case "ÔNIBUS":
+            nVeiculo = new Onibus(placa,"",status,tipoDeCombustivel,tipoDeRota,tipoDeCobranca,capacidade,autonomia);
+            break;
+            case "MICRO-ÔNIBUS":
+        }
+        if(nVeiculo != null){
+            etm.cadastrarVeiculo(nVeiculo);
+            GF_CadasVei_CT_id.setText(nVeiculo.getId());
+        }
+    }//GEN-LAST:event_CadasVei_BT_cadastrarActionPerformed
+
     public void limparCampos(JPanel painel){
         Component [] componentes;
         componentes = painel.getComponents();
@@ -3228,7 +4197,7 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JPanel AT_aba;
     private javax.swing.JPanel AT_abaCadastro;
     private javax.swing.JTabbedPane AT_abaInterna;
-    private javax.swing.JPanel AT_abaRelatórioFinanceiro;
+    private javax.swing.JPanel AT_abaRelatorioFinanceiro;
     private javax.swing.JPanel AT_abaVendaPassagem;
     private javax.swing.JButton CB_CartaoMagnetico_BT_ok;
     private javax.swing.JTextField CB_CartaoMagnetico_CT_idCartao;
@@ -3243,6 +4212,66 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JTabbedPane CB_abaInterna;
     private javax.swing.JPanel CB_abaRelatorioFinanceiro;
     private javax.swing.JPanel CB_abaVendaPassagem;
+    private javax.swing.JButton CadasParada_BT_atualizar;
+    private javax.swing.JButton CadasParada_BT_buscar;
+    private javax.swing.JButton CadasParada_BT_cadastrar;
+    private javax.swing.JButton CadasParada_BT_limpar;
+    private javax.swing.JButton CadasParada_BT_remover;
+    private javax.swing.JTextField CadasParada_CT_endereco;
+    private javax.swing.JTextField CadasParada_CT_id;
+    private javax.swing.JTextField CadasParada_CT_latitude;
+    private javax.swing.JTextField CadasParada_CT_longitude;
+    private javax.swing.JButton CadasVei_BT_cadastrar;
+    private javax.swing.JButton GF_Alocar_BT_buscar;
+    private javax.swing.JButton GF_Alocar_BT_buscar1;
+    private javax.swing.JButton GF_Alocar_BT_cadastrar;
+    private javax.swing.JButton GF_Alocar_BT_cadastrar1;
+    private javax.swing.JButton GF_Alocar_BT_descadastrar;
+    private javax.swing.JButton GF_Alocar_BT_descadastrar1;
+    private javax.swing.JButton GF_Alocar_BT_limpar;
+    private javax.swing.JButton GF_Alocar_BT_limpar1;
+    private javax.swing.JComboBox GF_Alocar_CB_tipoAlocado;
+    private javax.swing.JTextField GF_Alocar_CT_cpf;
+    private javax.swing.JTextField GF_Alocar_CT_idParada;
+    private javax.swing.JTextField GF_Alocar_CT_idParada1;
+    private javax.swing.JTextField GF_Alocar_CT_rotaId;
+    private javax.swing.JTextField GF_Alocar_CT_rotaId1;
+    private javax.swing.JTextField GF_Alocar_CT_veiculoId;
+    private javax.swing.JPanel GF_BuscarRelatorios_PN;
+    private javax.swing.JButton GF_CadasVei_BT_atualizar;
+    private javax.swing.JButton GF_CadasVei_BT_buscar;
+    private javax.swing.JButton GF_CadasVei_BT_limpar;
+    private javax.swing.JButton GF_CadasVei_BT_remover;
+    private javax.swing.JComboBox GF_CadasVei_CB_rotas;
+    private javax.swing.JComboBox GF_CadasVei_CB_status;
+    private javax.swing.JComboBox GF_CadasVei_CB_tipoCombustivel;
+    private javax.swing.JComboBox GF_CadasVei_CB_tipoDeCobranca;
+    private javax.swing.JComboBox GF_CadasVei_CB_tipoDeRota;
+    private javax.swing.JComboBox GF_CadasVei_CB_tipoDeVeiculo;
+    private javax.swing.JTextField GF_CadasVei_CT_autonomia;
+    private javax.swing.JTextField GF_CadasVei_CT_capacidade;
+    private javax.swing.JTextField GF_CadasVei_CT_id;
+    private javax.swing.JTextField GF_CadasVei_CT_placa;
+    private javax.swing.JPanel GF_CadasVei_PN_Alocar;
+    private javax.swing.JPanel GF_CadasVei_PN_Alocar1;
+    private javax.swing.JPanel GF_CadasVei_PN_placa;
+    private javax.swing.JPanel GF_CadastrarParada_PN;
+    private javax.swing.JPanel GF_CadastrarVeiculo_PN;
+    private javax.swing.JTextField GF_Funcionario_CT_idade;
+    private javax.swing.JTextField GF_Funcionario_CT_renda;
+    private javax.swing.JTextField GF_Funcionario_CT_sexo;
+    private javax.swing.JRadioButton GF_Relatorios_BR_funcionario;
+    private javax.swing.JRadioButton GF_Relatorios_BR_veiculo;
+    private javax.swing.JButton GF_Relatorios_BT_balanco;
+    private javax.swing.JButton GF_Relatorios_BT_limpar;
+    private javax.swing.JButton GF_Relatorios_BT_mostrarRelatorio;
+    private javax.swing.JPanel GF_Relatorios_PN;
+    private javax.swing.JPanel GF_Relatorios_PN_Funcionario;
+    private javax.swing.JPanel GF_Relatorios_PN_Veiculo;
+    private javax.swing.JTable GF_Relatorios_tabela;
+    private javax.swing.JComboBox GF_Veiculo_CB_tipoDeVeiculo;
+    private javax.swing.JPanel GF_aba;
+    private javax.swing.JTabbedPane GF_abaInterna;
     private javax.swing.JButton GL_Cadastro_BT_Cadastrar;
     private javax.swing.JButton GL_Cadastro_BT_atualizar;
     private javax.swing.JButton GL_Cadastro_BT_limpar;
@@ -3304,6 +4333,7 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JButton GR_Cadastro_BT_buscarFuncionario;
     private javax.swing.JButton GR_Cadastro_BT_cadastrarFuncionario;
     private javax.swing.JButton GR_Cadastro_BT_excluirFuncionario;
+    private javax.swing.JButton GR_Cadastro_BT_limpar;
     private javax.swing.JComboBox<String> GR_Cadastro_CB_funcaoFuncionario;
     private javax.swing.JComboBox<String> GR_Cadastro_CB_sexoFuncionario;
     private javax.swing.JTextField GR_Cadastro_CT_CHorariaFuncionario;
@@ -3319,6 +4349,7 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JPanel GR_PN_dadosVeiculo;
     private javax.swing.JButton GR_Tarifa_BT_calcular;
     private javax.swing.JButton GR_Tarifa_BT_definirTarifa;
+    private javax.swing.JButton GR_Tarifa_BT_definirTarifa1;
     private javax.swing.JButton GR_Tarifa_BT_limpar;
     private javax.swing.JTextField GR_Tarifa_CT_custosTotais;
     private javax.swing.JTextField GR_Tarifa_CT_lucroDesejado;
@@ -3327,9 +4358,11 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JTextField GR_Tarifa_CT_quantidadeDePassageiros;
     private javax.swing.JTextField GR_Tarifa_CT_receita;
     private javax.swing.JTextField GR_Tarifa_CT_tarifaIdeal;
+    private javax.swing.JTextField GR_Tarifa_CT_tarifaIdeal1;
     private javax.swing.JTextField GR_Tarifa_CT_totalDeDescontos;
     private javax.swing.JTextField GR_Tarifa_CT_totalDePassagensVendidas;
     private javax.swing.JPanel GR_Tarifa_PN_tarifaIdeal;
+    private javax.swing.JPanel GR_Tarifa_PN_tarifaIdeal1;
     private javax.swing.JPanel GR_aba;
     private javax.swing.JPanel GR_abaFuncionario;
     private javax.swing.JTabbedPane GR_abaInterna;
@@ -3377,6 +4410,14 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JPanel MC_abaVistoria;
     private javax.swing.JPanel MT_aba;
     private javax.swing.JPanel PR_aba;
+    private javax.swing.JTextArea RelatoriosPorPe_AT_info;
+    private javax.swing.JButton RelatoriosPorPe_BT_limpar;
+    private javax.swing.JButton RelatoriosPorPe_BT_mostraRelatorio;
+    private javax.swing.JComboBox RelatoriosPorPe_CB_tipoDeVeiculo;
+    private javax.swing.JFormattedTextField RelatoriosPorPe_CTF_dataFinal;
+    private javax.swing.JFormattedTextField RelatoriosPorPe_CTF_dataInicial;
+    private javax.swing.JRadioButton RelatoriosPorPe_RB_funcionario;
+    private javax.swing.JRadioButton RelatoriosPorPe_RB_veiculo;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel cargaHoraria;
     private javax.swing.JLabel cpf;
@@ -3480,15 +4521,28 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
@@ -3506,13 +4560,28 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel70;
+    private javax.swing.JLabel jLabel71;
+    private javax.swing.JLabel jLabel72;
+    private javax.swing.JLabel jLabel73;
+    private javax.swing.JLabel jLabel74;
+    private javax.swing.JLabel jLabel75;
+    private javax.swing.JLabel jLabel76;
+    private javax.swing.JLabel jLabel77;
+    private javax.swing.JLabel jLabel78;
+    private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel82;
+    private javax.swing.JLabel jLabel83;
     private javax.swing.JLabel jLabel88;
     private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
@@ -3538,6 +4607,8 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;

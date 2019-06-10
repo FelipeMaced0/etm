@@ -2,13 +2,13 @@ package modelos;
 
 import funcionarios.Funcionario;
 import java.util.ArrayList;
-import javax.swing.event.TableModelListener;
 import javax.swing.table.AbstractTableModel;
 
 
 public class ModeloDeTabelaFuncionario extends AbstractTableModel{
     private final ArrayList<Funcionario> rows;
-    private final String [] columns = new String [] {"NOME","CPF","CTPS","SALÁRIO"};
+    private final String [] columns = new String [] {"NOME","IDADE","FUNÇÃO","CPF","CTPS","SALÁRIO"};
+    
     public ModeloDeTabelaFuncionario(ArrayList<Funcionario> funcionarios) {
         this.rows = funcionarios;
     }
@@ -31,9 +31,11 @@ public class ModeloDeTabelaFuncionario extends AbstractTableModel{
     @Override
     public Class<?> getColumnClass(int columnIndex){
         switch(columnIndex){
-            case 0:case 1:case 2:
+            case 0: case 2: case 3: case 4:
                 return String.class;
-            case 3:
+            case 1:
+                return Integer.class;
+            case 5:
                 return Float.class;
                 
         }
@@ -52,6 +54,10 @@ public class ModeloDeTabelaFuncionario extends AbstractTableModel{
         switch(atributo){
             case "NOME":
                 return fun.getNome();
+            case "IDADE":
+                return fun.getIdade();
+            case "FUNÇÃO":
+                return fun.getFuncao();
             case "CPF":
                 return fun.getCpf();
             case "CTPS":
@@ -71,6 +77,15 @@ public class ModeloDeTabelaFuncionario extends AbstractTableModel{
             case "NOME":
                 fun.setNome(String.valueOf(value));
                 break;
+            case "IDADE":
+                try{
+                    fun.setIdade(Integer.parseInt(String.valueOf(value)));
+                }catch(NumberFormatException e){
+                    
+                }
+                break;
+            case "FUNÇÃO":
+                break;
             case "CPF":
                 fun.setCpf(String.valueOf(value));
                 break;
@@ -78,29 +93,15 @@ public class ModeloDeTabelaFuncionario extends AbstractTableModel{
                 fun.setCtps(String.valueOf(value));
             case "SALÁRIO":
                 try{
-                
                     fun.setSalario(Float.parseFloat(atributo));
                 }catch(NumberFormatException e){
-                    
                 
                 }
-                    
-                
                 break;
             default:
                 break;
         }
         fireTableCellUpdated(rowIndex,columnIndex);
         
-    }
-
-    @Override
-    public void addTableModelListener(TableModelListener l) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public void removeTableModelListener(TableModelListener l) {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
 }
