@@ -246,7 +246,7 @@ public class Login extends javax.swing.JFrame {
         String senha;
         String nome;
         String cpf;
-        Funcionario fun = new FuncionarioAdministrativo();
+        Funcionario fun = null;
         tipoFuncionario = Cadastrar_CB_tipoFuncionario.getSelectedItem().toString();
         nickName = Cadastrar_CT_usuario.getText();
         senha = String.valueOf(Cadastrar_CS_senha.getPassword());
@@ -264,8 +264,11 @@ public class Login extends javax.swing.JFrame {
                 fun = new GestorDeFrota(nome, cpf, etm);
                 break;
         }
-        Usuario usuario = new Usuario(nickName, senha, fun);
-        if(!usuarios.contains(usuario)){usuarios.add(usuario);}
+        if(fun != null){
+            Usuario usuario = new Usuario(nickName, senha, fun);
+            if(!usuarios.contains(usuario)){usuarios.add(usuario);}
+        }
+        
     }//GEN-LAST:event_Cadastrar_BT_cadastrarActionPerformed
 
     private void Login_BT_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login_BT_loginActionPerformed

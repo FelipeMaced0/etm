@@ -15,6 +15,7 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Objects;
 import oficina.Oficina;
+import passageiro.CartaoMag;
 
 public class ETM {
     String nome;
@@ -34,6 +35,7 @@ public class ETM {
     ArrayList <RelatorioCustoDiario> relatoriosDiarios;
     ArrayList <Rota> rotas;
     ArrayList <Parada> paradas;
+    ArrayList <CartaoMag> cartoes;
     boolean paradasDesordenadas = true;
     
     public ETM(){
@@ -105,6 +107,10 @@ public class ETM {
         paradasDesordenadas = true;
     }
     
+    public void cadastrarCartao(CartaoMag cartao){
+        cartoes.add(cartao);
+    }
+    
     public void cadastrarVeiculoEmRota(String idRota, Veiculo veiculo){
         Rota rota = buscarRota(idRota);
         if(rota!=null){
@@ -156,6 +162,13 @@ public class ETM {
         if(fun != null){
             funcionarios.remove(fun);
         }   
+    }
+    
+    public void descadastrarCartao(String idCartao){
+        CartaoMag cartao = buscarCartao(idCartao);
+        if(cartao != null){
+            cartoes.remove(cartao);
+        }
     }
     
     public void descadastrarVeiculoEmRota(String idRota, String idVeiculo){
@@ -211,6 +224,18 @@ public class ETM {
             parada = i.next();
             if(parada.getId().equals(idBuscado)){
                 return parada;
+            }
+        }
+        return null;
+    }
+    
+    public CartaoMag buscarCartao(String nCartao){
+        Iterator<CartaoMag> i = cartoes.iterator();
+        CartaoMag cartao;
+        while(i.hasNext()){
+            cartao = i.next();
+            if(cartao.getnCartao().equals(nCartao)){
+                return cartao;
             }
         }
         return null;

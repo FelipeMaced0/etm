@@ -7,9 +7,10 @@ import javax.swing.JTextField;
 
 
 public class Etmtelas extends javax.swing.JFrame {
-    
+    ETM etm;
     public Etmtelas() {
         initComponents();
+        etm = new ETM("asdsd","12312");
     }
 
     
@@ -28,7 +29,7 @@ public class Etmtelas extends javax.swing.JFrame {
         AT_aba = new javax.swing.JPanel();
         AT_abaInterna = new javax.swing.JTabbedPane();
         AT_abaVendaPassagem = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
+        AT_VendaPassagem_PN_inserirSaldo = new javax.swing.JPanel();
         jLabel47 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
@@ -49,14 +50,14 @@ public class Etmtelas extends javax.swing.JFrame {
         jLabel59 = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
-        jTextField34 = new javax.swing.JTextField();
-        jTextField35 = new javax.swing.JTextField();
-        jTextField36 = new javax.swing.JTextField();
-        jTextField37 = new javax.swing.JTextField();
-        jTextField38 = new javax.swing.JTextField();
-        jTextField39 = new javax.swing.JTextField();
-        jTextField40 = new javax.swing.JTextField();
-        jTextField41 = new javax.swing.JTextField();
+        AT_RelatorioFinanceiro_CT_quantPassagensVendidas = new javax.swing.JTextField();
+        AT_RelatorioFinanceiro_CT_totalEmDinheiro = new javax.swing.JTextField();
+        AT_RelatorioFinanceiro_CT_quantEstudante = new javax.swing.JTextField();
+        AT_RelatorioFinanceiro_CT_quantIdosos = new javax.swing.JTextField();
+        AT_RelatorioFinanceiro_CT_quantIntegral = new javax.swing.JTextField();
+        AT_RelatorioFinanceiro_CT_valorEstudante = new javax.swing.JTextField();
+        AT_RelatorioFinanceiro_CT_valorIdosos = new javax.swing.JTextField();
+        AT_RelatorioFinanceiro_CT_valorIntegral = new javax.swing.JTextField();
         GL_aba = new javax.swing.JPanel();
         GL_abaInterna = new javax.swing.JTabbedPane();
         GL_abaVeiculos = new javax.swing.JPanel();
@@ -220,18 +221,20 @@ public class Etmtelas extends javax.swing.JFrame {
         jLabel161 = new javax.swing.JLabel();
         jLabel162 = new javax.swing.JLabel();
         jLabel163 = new javax.swing.JLabel();
-        jLabel164 = new javax.swing.JLabel();
-        GR_tarifa_CT_totalDePassagensVendidas = new javax.swing.JTextField();
-        GR_tarifa_CT_totalDeDescontos = new javax.swing.JTextField();
-        GR_tarifa_CT_quantidadeDeIdosos = new javax.swing.JTextField();
-        GR_tarifa_CT_quantidadeDeEstudantes = new javax.swing.JTextField();
-        GR_tarifa_CT_receita = new javax.swing.JTextField();
-        GR_tarifa_CT_lucroDesejado = new javax.swing.JTextField();
-        GR_tarifa_CT_custosTotais = new javax.swing.JTextField();
-        GR_tarifa_CT_quantidadeDePassageiros = new javax.swing.JTextField();
-        GR_tarifa_CT_tarifaIdeal = new javax.swing.JTextField();
-        GR_tarifa_BT_calcular = new javax.swing.JButton();
-        GR_tarifa_BT_limpar = new javax.swing.JButton();
+        GR_Tarifa_CT_totalDePassagensVendidas = new javax.swing.JTextField();
+        GR_Tarifa_CT_totalDeDescontos = new javax.swing.JTextField();
+        GR_Tarifa_CT_quantidadeDeIdosos = new javax.swing.JTextField();
+        GR_Tarifa_CT_quantidadeDeEstudantes = new javax.swing.JTextField();
+        GR_Tarifa_CT_receita = new javax.swing.JTextField();
+        GR_Tarifa_CT_lucroDesejado = new javax.swing.JTextField();
+        GR_Tarifa_CT_custosTotais = new javax.swing.JTextField();
+        GR_Tarifa_CT_quantidadeDePassageiros = new javax.swing.JTextField();
+        GR_Tarifa_BT_calcular = new javax.swing.JButton();
+        GR_Tarifa_BT_limpar = new javax.swing.JButton();
+        GR_Tarifa_PN_tarifaIdeal = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        GR_Tarifa_CT_tarifaIdeal = new javax.swing.JTextField();
+        GR_Tarifa_BT_definirTarifa = new javax.swing.JButton();
         GR_abaRelatorio = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel112 = new javax.swing.JLabel();
@@ -296,17 +299,17 @@ public class Etmtelas extends javax.swing.JFrame {
         jLabel116 = new javax.swing.JLabel();
         jLabel117 = new javax.swing.JLabel();
         jLabel146 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField13 = new javax.swing.JTextField();
         jButton17 = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
         jPanel10 = new javax.swing.JPanel();
         jLabel67 = new javax.swing.JLabel();
-        jTextField86 = new javax.swing.JTextField();
         jLabel147 = new javax.swing.JLabel();
+        jTextField86 = new javax.swing.JTextField();
         jTextField87 = new javax.swing.JTextField();
         jButton19 = new javax.swing.JButton();
         CB_aba = new javax.swing.JPanel();
@@ -377,7 +380,7 @@ public class Etmtelas extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "INSERIR SALDO", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 20))); // NOI18N
+        AT_VendaPassagem_PN_inserirSaldo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "INSERIR SALDO", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 20))); // NOI18N
 
         jLabel47.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
         jLabel47.setText("ID CARTÃO");
@@ -396,19 +399,9 @@ public class Etmtelas extends javax.swing.JFrame {
 
         Atendente_CT_dinheiro.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
         Atendente_CT_dinheiro.setText(" ");
-        Atendente_CT_dinheiro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Atendente_CT_dinheiroActionPerformed(evt);
-            }
-        });
 
         Atendente_CT_credito.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
         Atendente_CT_credito.setText(" ");
-        Atendente_CT_credito.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Atendente_CT_creditoActionPerformed(evt);
-            }
-        });
 
         Atendente_CT_troco.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
         Atendente_CT_troco.setText(" ");
@@ -416,50 +409,50 @@ public class Etmtelas extends javax.swing.JFrame {
         Atendente_BT_inserirSaldo.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         Atendente_BT_inserirSaldo.setText("INSERIR SALDO");
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+        javax.swing.GroupLayout AT_VendaPassagem_PN_inserirSaldoLayout = new javax.swing.GroupLayout(AT_VendaPassagem_PN_inserirSaldo);
+        AT_VendaPassagem_PN_inserirSaldo.setLayout(AT_VendaPassagem_PN_inserirSaldoLayout);
+        AT_VendaPassagem_PN_inserirSaldoLayout.setHorizontalGroup(
+            AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(Atendente_BT_inserirSaldo)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createSequentialGroup()
+                        .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel47)
                             .addComponent(jLabel49)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AT_VendaPassagem_PN_inserirSaldoLayout.createSequentialGroup()
+                                .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel48)
                                     .addComponent(jLabel12))
                                 .addGap(22, 22, 22)))
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(Atendente_CT_dinheiro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Atendente_CT_idCartao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(Atendente_CT_credito)
                                 .addComponent(Atendente_CT_troco, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(32, 32, 32)))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+        AT_VendaPassagem_PN_inserirSaldoLayout.setVerticalGroup(
+            AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel47)
                     .addComponent(Atendente_CT_idCartao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel49)
                     .addComponent(Atendente_CT_dinheiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel48)
                     .addComponent(Atendente_CT_credito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(AT_VendaPassagem_PN_inserirSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel12)
                     .addComponent(Atendente_CT_troco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
@@ -473,14 +466,14 @@ public class Etmtelas extends javax.swing.JFrame {
             AT_abaVendaPassagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AT_abaVendaPassagemLayout.createSequentialGroup()
                 .addContainerGap(384, Short.MAX_VALUE)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AT_VendaPassagem_PN_inserirSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(268, 268, 268))
         );
         AT_abaVendaPassagemLayout.setVerticalGroup(
             AT_abaVendaPassagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AT_abaVendaPassagemLayout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AT_VendaPassagem_PN_inserirSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -531,8 +524,8 @@ public class Etmtelas extends javax.swing.JFrame {
                             .addComponent(jLabel14))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(AT_abaRelatórioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField35, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField34, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(AT_RelatorioFinanceiro_CT_totalEmDinheiro, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AT_RelatorioFinanceiro_CT_quantPassagensVendidas, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(734, Short.MAX_VALUE))
                     .addGroup(AT_abaRelatórioFinanceiroLayout.createSequentialGroup()
                         .addGroup(AT_abaRelatórioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -549,19 +542,19 @@ public class Etmtelas extends javax.swing.JFrame {
                             .addGroup(AT_abaRelatórioFinanceiroLayout.createSequentialGroup()
                                 .addComponent(jLabel51)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField36, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(AT_RelatorioFinanceiro_CT_quantEstudante, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(AT_abaRelatórioFinanceiroLayout.createSequentialGroup()
                                 .addComponent(jLabel61)
                                 .addGap(32, 32, 32)
                                 .addGroup(AT_abaRelatórioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField38, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
-                                    .addComponent(jTextField37))))
+                                    .addComponent(AT_RelatorioFinanceiro_CT_quantIntegral, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
+                                    .addComponent(AT_RelatorioFinanceiro_CT_quantIdosos))))
                         .addGap(30, 30, 30)
                         .addGroup(AT_abaRelatórioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel54, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField39)
-                            .addComponent(jTextField40)
-                            .addComponent(jTextField41))
+                            .addComponent(AT_RelatorioFinanceiro_CT_valorEstudante)
+                            .addComponent(AT_RelatorioFinanceiro_CT_valorIdosos)
+                            .addComponent(AT_RelatorioFinanceiro_CT_valorIntegral))
                         .addGap(670, 670, 670))))
         );
         AT_abaRelatórioFinanceiroLayout.setVerticalGroup(
@@ -572,11 +565,11 @@ public class Etmtelas extends javax.swing.JFrame {
                 .addGap(13, 13, 13)
                 .addGroup(AT_abaRelatórioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
-                    .addComponent(jTextField34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(AT_RelatorioFinanceiro_CT_quantPassagensVendidas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(AT_abaRelatórioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
-                    .addComponent(jTextField35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(AT_RelatorioFinanceiro_CT_totalEmDinheiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addComponent(jLabel59)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -587,18 +580,18 @@ public class Etmtelas extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(AT_abaRelatórioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel51)
-                    .addComponent(jTextField36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(AT_RelatorioFinanceiro_CT_quantEstudante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AT_RelatorioFinanceiro_CT_valorEstudante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(AT_abaRelatórioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel60)
-                    .addComponent(jTextField37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(AT_RelatorioFinanceiro_CT_quantIdosos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AT_RelatorioFinanceiro_CT_valorIdosos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(AT_abaRelatórioFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel61)
-                    .addComponent(jTextField38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(AT_RelatorioFinanceiro_CT_quantIntegral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AT_RelatorioFinanceiro_CT_valorIntegral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -642,11 +635,6 @@ public class Etmtelas extends javax.swing.JFrame {
         GL_veiculos_CT_idVeiculo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         GL_veiculos_CT_quantidadeDePassageiros.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        GL_veiculos_CT_quantidadeDePassageiros.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GL_veiculos_CT_quantidadeDePassageirosActionPerformed(evt);
-            }
-        });
 
         GL_veiculos_BT_buscar.setText("BUSCAR");
 
@@ -795,12 +783,6 @@ public class Etmtelas extends javax.swing.JFrame {
         jLabel145.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel145.setText("PASSAGEM IDEAL:   R$");
 
-        GL_tarifa_CT_quantidadeDeEstudantes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GL_tarifa_CT_quantidadeDeEstudantesActionPerformed(evt);
-            }
-        });
-
         GL_tarifa_CT_lucroDesejado.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         GL_tarifa_CT_custosTotais.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -808,11 +790,6 @@ public class Etmtelas extends javax.swing.JFrame {
         GL_tarifa_CT_quantidadeDePassageiros.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         GL_tarifa_CT_tarifaIdeal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        GL_tarifa_CT_tarifaIdeal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GL_tarifa_CT_tarifaIdealActionPerformed(evt);
-            }
-        });
 
         GL_tarifa_BT_calcular.setText("Calcular");
         GL_tarifa_BT_calcular.addActionListener(new java.awt.event.ActionListener() {
@@ -993,18 +970,6 @@ public class Etmtelas extends javax.swing.JFrame {
         jLabel185.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel185.setText("até o mês :");
 
-        GL_relatorioLocal_CT_dataFinal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GL_relatorioLocal_CT_dataFinalActionPerformed(evt);
-            }
-        });
-
-        GL_relatorioLocal_CT_salarioCobrador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GL_relatorioLocal_CT_salarioCobradorActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout GL_abaRelatorioLayout = new javax.swing.GroupLayout(GL_abaRelatorio);
         GL_abaRelatorio.setLayout(GL_abaRelatorioLayout);
         GL_abaRelatorioLayout.setHorizontalGroup(
@@ -1182,24 +1147,6 @@ public class Etmtelas extends javax.swing.JFrame {
 
         funcao.setText("FUNÇÃO:");
 
-        GL_Cadastro_CB_nome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GL_Cadastro_CB_nomeActionPerformed(evt);
-            }
-        });
-
-        GL_Cadastro_CT_ctps.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GL_Cadastro_CT_ctpsActionPerformed(evt);
-            }
-        });
-
-        GL_Cadastro_CT_cargaHoraria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GL_Cadastro_CT_cargaHorariaActionPerformed(evt);
-            }
-        });
-
         GL_Cadastro_BT_Cadastrar.setText("Cadastrar");
 
         GL_Cadastro_BT_limpar.setText("Limpar");
@@ -1212,11 +1159,6 @@ public class Etmtelas extends javax.swing.JFrame {
         GL_Cadastro_BT_atualizar.setText("Atualizar");
 
         GL_Cadastro_CB_sexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "MASCULINO", "FEMININO" }));
-        GL_Cadastro_CB_sexo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GL_Cadastro_CB_sexoActionPerformed(evt);
-            }
-        });
 
         GL_Cadastro_CB_funcao.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "MOTORISTA", "COBRADOR", "MECÂNICO", "GESTOR DE FROTA" }));
         GL_Cadastro_CB_funcao.addActionListener(new java.awt.event.ActionListener() {
@@ -1406,11 +1348,6 @@ public class Etmtelas extends javax.swing.JFrame {
         jLabel111.setText("Idade :");
 
         GR_Cadastro_CT_cpfFuncionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        GR_Cadastro_CT_cpfFuncionario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GR_Cadastro_CT_cpfFuncionarioActionPerformed(evt);
-            }
-        });
 
         GR_Cadastro_CT_nomeFuncionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
@@ -1421,18 +1358,8 @@ public class Etmtelas extends javax.swing.JFrame {
         GR_Cadastro_CT_ctpsFuncionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         GR_Cadastro_CT_telefoneFuncionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        GR_Cadastro_CT_telefoneFuncionario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GR_Cadastro_CT_telefoneFuncionarioActionPerformed(evt);
-            }
-        });
 
         GR_Cadastro_CT_CHorariaFuncionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        GR_Cadastro_CT_CHorariaFuncionario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GR_Cadastro_CT_CHorariaFuncionarioActionPerformed(evt);
-            }
-        });
 
         GR_Cadastro_CT_salarioFuncionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
@@ -1633,11 +1560,6 @@ public class Etmtelas extends javax.swing.JFrame {
         GR_veiculos_CT_idVeiculo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         GR_veiculos_CT_quantidadeDePassageiros.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        GR_veiculos_CT_quantidadeDePassageiros.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GR_veiculos_CT_quantidadeDePassageirosActionPerformed(evt);
-            }
-        });
 
         GR_veiculos_BT_buscar.setText("BUSCAR");
 
@@ -1783,70 +1705,64 @@ public class Etmtelas extends javax.swing.JFrame {
         jLabel163.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel163.setText("LUCRO DESEJADO:");
 
-        jLabel164.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel164.setText("PASSAGEM IDEAL:   R$");
+        GR_Tarifa_CT_lucroDesejado.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
-        GR_tarifa_CT_quantidadeDeEstudantes.addActionListener(new java.awt.event.ActionListener() {
+        GR_Tarifa_CT_custosTotais.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        GR_Tarifa_CT_quantidadeDePassageiros.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        GR_Tarifa_BT_calcular.setText("Calcular");
+        GR_Tarifa_BT_calcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GR_tarifa_CT_quantidadeDeEstudantesActionPerformed(evt);
+                GR_Tarifa_BT_calcularActionPerformed(evt);
             }
         });
 
-        GR_tarifa_CT_lucroDesejado.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        GR_Tarifa_BT_limpar.setText("Limpar");
 
-        GR_tarifa_CT_custosTotais.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel15.setText("Tarifa ideal");
 
-        GR_tarifa_CT_quantidadeDePassageiros.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        GR_Tarifa_BT_definirTarifa.setText("Definir tarifa");
 
-        GR_tarifa_CT_tarifaIdeal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        GR_tarifa_CT_tarifaIdeal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GR_tarifa_CT_tarifaIdealActionPerformed(evt);
-            }
-        });
-
-        GR_tarifa_BT_calcular.setText("Calcular");
-        GR_tarifa_BT_calcular.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GR_tarifa_BT_calcularActionPerformed(evt);
-            }
-        });
-
-        GR_tarifa_BT_limpar.setText("Limpar");
+        javax.swing.GroupLayout GR_Tarifa_PN_tarifaIdealLayout = new javax.swing.GroupLayout(GR_Tarifa_PN_tarifaIdeal);
+        GR_Tarifa_PN_tarifaIdeal.setLayout(GR_Tarifa_PN_tarifaIdealLayout);
+        GR_Tarifa_PN_tarifaIdealLayout.setHorizontalGroup(
+            GR_Tarifa_PN_tarifaIdealLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GR_Tarifa_PN_tarifaIdealLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(GR_Tarifa_PN_tarifaIdealLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(GR_Tarifa_BT_definirTarifa)
+                    .addGroup(GR_Tarifa_PN_tarifaIdealLayout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addGroup(GR_Tarifa_PN_tarifaIdealLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(GR_Tarifa_CT_tarifaIdeal, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(GR_Tarifa_PN_tarifaIdealLayout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel15)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        GR_Tarifa_PN_tarifaIdealLayout.setVerticalGroup(
+            GR_Tarifa_PN_tarifaIdealLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GR_Tarifa_PN_tarifaIdealLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(GR_Tarifa_CT_tarifaIdeal, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(GR_Tarifa_BT_definirTarifa)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout GR_abaTarifaLayout = new javax.swing.GroupLayout(GR_abaTarifa);
         GR_abaTarifa.setLayout(GR_abaTarifaLayout);
         GR_abaTarifaLayout.setHorizontalGroup(
             GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(GR_abaTarifaLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
                 .addGroup(GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel160)
                     .addGroup(GR_abaTarifaLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(GR_abaTarifaLayout.createSequentialGroup()
-                                .addGroup(GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel159, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel158, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel157, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GR_abaTarifaLayout.createSequentialGroup()
-                                        .addGroup(GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel156, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel155, javax.swing.GroupLayout.Alignment.TRAILING))
-                                        .addGap(6, 6, 6)))
-                                .addGap(22, 22, 22)
-                                .addGroup(GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(GR_tarifa_CT_receita)
-                                            .addComponent(GR_tarifa_CT_quantidadeDeEstudantes)
-                                            .addComponent(GR_tarifa_CT_totalDePassagensVendidas))
-                                        .addComponent(GR_tarifa_CT_quantidadeDeIdosos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(GR_tarifa_CT_totalDeDescontos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jLabel154)))
-                    .addGroup(GR_abaTarifaLayout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addGroup(GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel160)
                             .addGroup(GR_abaTarifaLayout.createSequentialGroup()
                                 .addGroup(GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(GR_abaTarifaLayout.createSequentialGroup()
@@ -1856,21 +1772,40 @@ public class Etmtelas extends javax.swing.JFrame {
                                         .addComponent(jLabel161, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGap(33, 33, 33)))
                                 .addGroup(GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(GR_tarifa_CT_custosTotais, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
-                                    .addComponent(GR_tarifa_CT_lucroDesejado)))
-                            .addGroup(GR_abaTarifaLayout.createSequentialGroup()
-                                .addComponent(jLabel164)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(GR_tarifa_CT_tarifaIdeal, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(GR_Tarifa_CT_custosTotais, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+                                    .addComponent(GR_Tarifa_CT_lucroDesejado)))
                             .addGroup(GR_abaTarifaLayout.createSequentialGroup()
                                 .addComponent(jLabel162, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(GR_tarifa_CT_quantidadeDePassageiros, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(GR_Tarifa_CT_quantidadeDePassageiros, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(GR_abaTarifaLayout.createSequentialGroup()
-                                .addComponent(GR_tarifa_BT_calcular)
+                                .addComponent(GR_Tarifa_BT_calcular)
                                 .addGap(43, 43, 43)
-                                .addComponent(GR_tarifa_BT_limpar)))))
-                .addGap(600, 600, 600))
+                                .addComponent(GR_Tarifa_BT_limpar)))
+                        .addGap(60, 60, 60)
+                        .addComponent(GR_Tarifa_PN_tarifaIdeal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(GR_abaTarifaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(GR_abaTarifaLayout.createSequentialGroup()
+                        .addGroup(GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel155)
+                            .addComponent(jLabel156)
+                            .addComponent(jLabel157)
+                            .addComponent(jLabel158)
+                            .addComponent(jLabel159))
+                        .addGap(28, 28, 28)
+                        .addGroup(GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(GR_Tarifa_CT_quantidadeDeEstudantes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+                            .addComponent(GR_Tarifa_CT_quantidadeDeIdosos, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(GR_Tarifa_CT_totalDeDescontos, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(GR_Tarifa_CT_totalDePassagensVendidas, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(GR_Tarifa_CT_receita))
+                        .addGap(0, 739, Short.MAX_VALUE))
+                    .addGroup(GR_abaTarifaLayout.createSequentialGroup()
+                        .addComponent(jLabel154)
+                        .addGap(547, 547, 547))))
         );
         GR_abaTarifaLayout.setVerticalGroup(
             GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1880,46 +1815,45 @@ public class Etmtelas extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel155)
-                    .addComponent(GR_tarifa_CT_totalDePassagensVendidas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(GR_Tarifa_CT_totalDePassagensVendidas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel156)
-                    .addComponent(GR_tarifa_CT_totalDeDescontos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(GR_Tarifa_CT_totalDeDescontos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel157)
-                    .addComponent(GR_tarifa_CT_quantidadeDeIdosos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(GR_Tarifa_CT_quantidadeDeIdosos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel158)
-                    .addComponent(GR_tarifa_CT_quantidadeDeEstudantes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(GR_Tarifa_CT_quantidadeDeEstudantes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel159)
-                    .addComponent(GR_tarifa_CT_receita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(GR_Tarifa_CT_receita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(55, 55, 55)
                 .addComponent(jLabel160)
                 .addGap(35, 35, 35)
+                .addGroup(GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(GR_abaTarifaLayout.createSequentialGroup()
+                        .addGroup(GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel163)
+                            .addComponent(GR_Tarifa_CT_lucroDesejado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel161)
+                            .addComponent(GR_Tarifa_CT_custosTotais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel162)
+                            .addComponent(GR_Tarifa_CT_quantidadeDePassageiros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(GR_Tarifa_PN_tarifaIdeal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel163)
-                    .addComponent(GR_tarifa_CT_lucroDesejado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel161)
-                    .addComponent(GR_tarifa_CT_custosTotais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel162)
-                    .addComponent(GR_tarifa_CT_quantidadeDePassageiros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(GR_tarifa_BT_calcular)
-                    .addComponent(GR_tarifa_BT_limpar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 153, Short.MAX_VALUE)
-                .addGroup(GR_abaTarifaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel164)
-                    .addComponent(GR_tarifa_CT_tarifaIdeal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                    .addComponent(GR_Tarifa_BT_calcular)
+                    .addComponent(GR_Tarifa_BT_limpar))
+                .addContainerGap(187, Short.MAX_VALUE))
         );
 
         GR_abaInterna.addTab("Tarifa", GR_abaTarifa);
@@ -1986,18 +1920,6 @@ public class Etmtelas extends javax.swing.JFrame {
 
         jLabel187.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel187.setText("até o mês :");
-
-        GR_relatorioRegional_CT_dataFinal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GR_relatorioRegional_CT_dataFinalActionPerformed(evt);
-            }
-        });
-
-        GR_relatorioRegional_CT_salarioCobrador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GR_relatorioRegional_CT_salarioCobradorActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout GR_abaRelatorioLayout = new javax.swing.GroupLayout(GR_abaRelatorio);
         GR_abaRelatorio.setLayout(GR_abaRelatorioLayout);
@@ -2209,12 +2131,6 @@ public class Etmtelas extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setText("relatório de lucro:");
-
-        jTextField72.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField72ActionPerformed(evt);
-            }
-        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -2462,11 +2378,6 @@ public class Etmtelas extends javax.swing.JFrame {
         jLabel33.setText("ID CARTÃO");
 
         CB_CartaoMagnetico_CT_idCartao.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
-        CB_CartaoMagnetico_CT_idCartao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CB_CartaoMagnetico_CT_idCartaoActionPerformed(evt);
-            }
-        });
 
         CB_CartaoMagnetico_BT_ok.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
         CB_CartaoMagnetico_BT_ok.setText("OK");
@@ -2634,12 +2545,6 @@ public class Etmtelas extends javax.swing.JFrame {
         jLabel66.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jLabel66.setText("Dinhieiro");
 
-        jTextField79.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField79ActionPerformed(evt);
-            }
-        });
-
         jButton1.setText("EMITIR RELATÓRIO ");
 
         jTextArea1.setColumns(20);
@@ -2735,7 +2640,7 @@ public class Etmtelas extends javax.swing.JFrame {
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel14Layout.createSequentialGroup()
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(jPanel14Layout.createSequentialGroup()
@@ -2964,41 +2869,9 @@ public class Etmtelas extends javax.swing.JFrame {
     }
     
     
-    private void CB_CartaoMagnetico_CT_idCartaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CB_CartaoMagnetico_CT_idCartaoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CB_CartaoMagnetico_CT_idCartaoActionPerformed
-
-    private void GL_tarifa_CT_tarifaIdealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GL_tarifa_CT_tarifaIdealActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GL_tarifa_CT_tarifaIdealActionPerformed
-
-    private void GL_veiculos_CT_quantidadeDePassageirosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GL_veiculos_CT_quantidadeDePassageirosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GL_veiculos_CT_quantidadeDePassageirosActionPerformed
-
-    private void Atendente_CT_creditoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Atendente_CT_creditoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Atendente_CT_creditoActionPerformed
-
-    private void Atendente_CT_dinheiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Atendente_CT_dinheiroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Atendente_CT_dinheiroActionPerformed
-
-    private void GL_tarifa_CT_quantidadeDeEstudantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GL_tarifa_CT_quantidadeDeEstudantesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GL_tarifa_CT_quantidadeDeEstudantesActionPerformed
-
     private void GL_tarifa_BT_calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GL_tarifa_BT_calcularActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_GL_tarifa_BT_calcularActionPerformed
-
-    private void GL_relatorioLocal_CT_dataFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GL_relatorioLocal_CT_dataFinalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GL_relatorioLocal_CT_dataFinalActionPerformed
-
-    private void GL_relatorioLocal_CT_salarioCobradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GL_relatorioLocal_CT_salarioCobradorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GL_relatorioLocal_CT_salarioCobradorActionPerformed
 
     private void GR_Cadastro_BT_cadastrarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GR_Cadastro_BT_cadastrarFuncionarioActionPerformed
         // TODO add your handling code here:
@@ -3012,45 +2885,9 @@ public class Etmtelas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_GR_Cadastro_BT_buscarFuncionarioActionPerformed
 
-    private void GR_Cadastro_CT_cpfFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GR_Cadastro_CT_cpfFuncionarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GR_Cadastro_CT_cpfFuncionarioActionPerformed
-
-    private void GR_Cadastro_CT_telefoneFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GR_Cadastro_CT_telefoneFuncionarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GR_Cadastro_CT_telefoneFuncionarioActionPerformed
-
-    private void GR_Cadastro_CT_CHorariaFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GR_Cadastro_CT_CHorariaFuncionarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GR_Cadastro_CT_CHorariaFuncionarioActionPerformed
-
-    private void jTextField72ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField72ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField72ActionPerformed
-
-    private void jTextField79ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField79ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField79ActionPerformed
-
-    private void GL_Cadastro_CB_nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GL_Cadastro_CB_nomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GL_Cadastro_CB_nomeActionPerformed
-
-    private void GL_Cadastro_CT_ctpsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GL_Cadastro_CT_ctpsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GL_Cadastro_CT_ctpsActionPerformed
-
-    private void GL_Cadastro_CT_cargaHorariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GL_Cadastro_CT_cargaHorariaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GL_Cadastro_CT_cargaHorariaActionPerformed
-
     private void GL_Cadastro_BT_limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GL_Cadastro_BT_limparActionPerformed
         limparCampos(GL_abaCadastro);
     }//GEN-LAST:event_GL_Cadastro_BT_limparActionPerformed
-
-    private void GL_Cadastro_CB_sexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GL_Cadastro_CB_sexoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GL_Cadastro_CB_sexoActionPerformed
 
     private void GL_Cadastro_CB_funcaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GL_Cadastro_CB_funcaoActionPerformed
         String tipoDeFuncionario;
@@ -3072,33 +2909,13 @@ public class Etmtelas extends javax.swing.JFrame {
        limparCampos(GL_PN_dadosVeiculo);
     }//GEN-LAST:event_GL_veiculos_BT_limparActionPerformed
 
-    private void GR_veiculos_CT_quantidadeDePassageirosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GR_veiculos_CT_quantidadeDePassageirosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GR_veiculos_CT_quantidadeDePassageirosActionPerformed
-
     private void GR_veiculos_BT_limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GR_veiculos_BT_limparActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_GR_veiculos_BT_limparActionPerformed
 
-    private void GR_tarifa_CT_quantidadeDeEstudantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GR_tarifa_CT_quantidadeDeEstudantesActionPerformed
+    private void GR_Tarifa_BT_calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GR_Tarifa_BT_calcularActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_GR_tarifa_CT_quantidadeDeEstudantesActionPerformed
-
-    private void GR_tarifa_CT_tarifaIdealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GR_tarifa_CT_tarifaIdealActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GR_tarifa_CT_tarifaIdealActionPerformed
-
-    private void GR_tarifa_BT_calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GR_tarifa_BT_calcularActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GR_tarifa_BT_calcularActionPerformed
-
-    private void GR_relatorioRegional_CT_dataFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GR_relatorioRegional_CT_dataFinalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GR_relatorioRegional_CT_dataFinalActionPerformed
-
-    private void GR_relatorioRegional_CT_salarioCobradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GR_relatorioRegional_CT_salarioCobradorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GR_relatorioRegional_CT_salarioCobradorActionPerformed
+    }//GEN-LAST:event_GR_Tarifa_BT_calcularActionPerformed
 
     /**
      * @param args the command line arguments
@@ -3139,6 +2956,15 @@ public class Etmtelas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField AT_RelatorioFinanceiro_CT_quantEstudante;
+    private javax.swing.JTextField AT_RelatorioFinanceiro_CT_quantIdosos;
+    private javax.swing.JTextField AT_RelatorioFinanceiro_CT_quantIntegral;
+    private javax.swing.JTextField AT_RelatorioFinanceiro_CT_quantPassagensVendidas;
+    private javax.swing.JTextField AT_RelatorioFinanceiro_CT_totalEmDinheiro;
+    private javax.swing.JTextField AT_RelatorioFinanceiro_CT_valorEstudante;
+    private javax.swing.JTextField AT_RelatorioFinanceiro_CT_valorIdosos;
+    private javax.swing.JTextField AT_RelatorioFinanceiro_CT_valorIntegral;
+    private javax.swing.JPanel AT_VendaPassagem_PN_inserirSaldo;
     private javax.swing.JPanel AT_aba;
     private javax.swing.JTabbedPane AT_abaInterna;
     private javax.swing.JPanel AT_abaRelatórioFinanceiro;
@@ -3235,6 +3061,19 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JScrollPane GR_Cadastro_PR_funcionario;
     private javax.swing.JPanel GR_PN_cadastro;
     private javax.swing.JPanel GR_PN_dadosVeiculo;
+    private javax.swing.JButton GR_Tarifa_BT_calcular;
+    private javax.swing.JButton GR_Tarifa_BT_definirTarifa;
+    private javax.swing.JButton GR_Tarifa_BT_limpar;
+    private javax.swing.JTextField GR_Tarifa_CT_custosTotais;
+    private javax.swing.JTextField GR_Tarifa_CT_lucroDesejado;
+    private javax.swing.JTextField GR_Tarifa_CT_quantidadeDeEstudantes;
+    private javax.swing.JTextField GR_Tarifa_CT_quantidadeDeIdosos;
+    private javax.swing.JTextField GR_Tarifa_CT_quantidadeDePassageiros;
+    private javax.swing.JTextField GR_Tarifa_CT_receita;
+    private javax.swing.JTextField GR_Tarifa_CT_tarifaIdeal;
+    private javax.swing.JTextField GR_Tarifa_CT_totalDeDescontos;
+    private javax.swing.JTextField GR_Tarifa_CT_totalDePassagensVendidas;
+    private javax.swing.JPanel GR_Tarifa_PN_tarifaIdeal;
     private javax.swing.JPanel GR_aba;
     private javax.swing.JPanel GR_abaFuncionario;
     private javax.swing.JTabbedPane GR_abaInterna;
@@ -3257,17 +3096,6 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JTextField GR_relatorioRegional_CT_totalDeVans;
     private javax.swing.JTextField GR_relatorioRegional_CT_totalDeVeiculos;
     private javax.swing.JTextField GR_relatorioRegional_CT_totalDeVlts;
-    private javax.swing.JButton GR_tarifa_BT_calcular;
-    private javax.swing.JButton GR_tarifa_BT_limpar;
-    private javax.swing.JTextField GR_tarifa_CT_custosTotais;
-    private javax.swing.JTextField GR_tarifa_CT_lucroDesejado;
-    private javax.swing.JTextField GR_tarifa_CT_quantidadeDeEstudantes;
-    private javax.swing.JTextField GR_tarifa_CT_quantidadeDeIdosos;
-    private javax.swing.JTextField GR_tarifa_CT_quantidadeDePassageiros;
-    private javax.swing.JTextField GR_tarifa_CT_receita;
-    private javax.swing.JTextField GR_tarifa_CT_tarifaIdeal;
-    private javax.swing.JTextField GR_tarifa_CT_totalDeDescontos;
-    private javax.swing.JTextField GR_tarifa_CT_totalDePassagensVendidas;
     private javax.swing.JButton GR_veiculos_BT_atualizar;
     private javax.swing.JButton GR_veiculos_BT_buscar;
     private javax.swing.JButton GR_veiculos_BT_cadastrar;
@@ -3355,6 +3183,7 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel147;
     private javax.swing.JLabel jLabel148;
     private javax.swing.JLabel jLabel149;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel150;
     private javax.swing.JLabel jLabel151;
     private javax.swing.JLabel jLabel152;
@@ -3369,7 +3198,6 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel161;
     private javax.swing.JLabel jLabel162;
     private javax.swing.JLabel jLabel163;
-    private javax.swing.JLabel jLabel164;
     private javax.swing.JLabel jLabel165;
     private javax.swing.JLabel jLabel166;
     private javax.swing.JLabel jLabel167;
@@ -3443,7 +3271,6 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -3462,14 +3289,6 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField16;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField34;
-    private javax.swing.JTextField jTextField35;
-    private javax.swing.JTextField jTextField36;
-    private javax.swing.JTextField jTextField37;
-    private javax.swing.JTextField jTextField38;
-    private javax.swing.JTextField jTextField39;
-    private javax.swing.JTextField jTextField40;
-    private javax.swing.JTextField jTextField41;
     private javax.swing.JTextField jTextField72;
     private javax.swing.JTextField jTextField73;
     private javax.swing.JTextField jTextField74;

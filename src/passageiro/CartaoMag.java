@@ -2,12 +2,12 @@ package passageiro;
 import java.util.Calendar;
 public abstract class CartaoMag {
     
-    public String nome;
-    public String nCartao;
-    public boolean autorizado;
-    public float creditos;
-    public int nIntegracoes;
-    public Calendar dataUltimoUso;
+    protected String nome;
+    protected String nCartao;
+    protected boolean autorizado;
+    protected float creditos;
+    protected int nIntegracoes;
+    protected Calendar dataUltimoUso;
     
     public CartaoMag(){ 
     }

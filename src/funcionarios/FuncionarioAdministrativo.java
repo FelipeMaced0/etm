@@ -2,14 +2,16 @@ package funcionarios;
 
 import etm.ETM;
 
-public class FuncionarioAdministrativo extends Funcionario {
+public abstract class FuncionarioAdministrativo extends Funcionario {
+    
     protected ETM etm;
     
     public FuncionarioAdministrativo() {
     }
 
-    public FuncionarioAdministrativo(String nome, String cpf, String ctps, String sexo, int idade, int cargaHoraria, float salario) {
+    public FuncionarioAdministrativo(String nome, String cpf, String ctps, String sexo, int idade, int cargaHoraria, float salario, ETM etm) {
         super(nome, cpf, ctps, sexo, idade, cargaHoraria, salario);
+        this.etm = etm;
     }
 
     public FuncionarioAdministrativo(String nome, String cpf, ETM etm) {

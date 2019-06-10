@@ -11,8 +11,8 @@ public class GerenteLocal extends Gerente{
     public GerenteLocal(){
     }
     
-    public GerenteLocal(String nome,String cpf, String ctps, String sexo,int idade,int cargaHoraria, float salario){
-        super(nome,cpf,ctps,sexo,idade,cargaHoraria,salario);
+    public GerenteLocal(String nome,String cpf, String ctps, String sexo,int idade,int cargaHoraria, float salario, ETM etm){
+        super(nome,cpf,ctps,sexo,idade,cargaHoraria,salario,etm);
     }
 
     public GerenteLocal(String nome, String cpf, ETM etm) {
