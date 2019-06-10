@@ -10,6 +10,10 @@ public class Idoso extends CartaoMag{
     public Idoso(String nome, String nCartao, boolean autorizado, float creditos, int nIntegracoes, Calendar dataUltimoUso) {
         super(nome, nCartao, autorizado, creditos, nIntegracoes, dataUltimoUso);
     }
+
+    public Idoso(String nome, String nCartao, boolean autorizado) {
+        super(nome, nCartao, autorizado);
+    }
     
     @Override
     public boolean cobrarPassagem(float tarifa){

@@ -1,5 +1,6 @@
 package passageiro;
 import java.util.Calendar;
+import java.util.Objects;
 public abstract class CartaoMag {
     
     protected String nome;
@@ -21,6 +22,13 @@ public abstract class CartaoMag {
         this.dataUltimoUso = dataUltimoUso;
     }
 
+    public CartaoMag(String nome, String nCartao, boolean autorizado) {
+        this.nome = nome;
+        this.nCartao = nCartao;
+        this.autorizado = autorizado;
+    }
+    
+    
     public void setNome(String nome) {
         this.nome = nome.toUpperCase();
     }
@@ -78,4 +86,25 @@ public abstract class CartaoMag {
     }
     
     public abstract boolean cobrarPassagem(float tarifa);
+    
+     @Override
+    public boolean equals(Object obj){
+        if(obj!=null){
+            if(obj instanceof CartaoMag){
+                if(((CartaoMag)obj).nCartao.equals(this.nCartao)){
+                    return true;
+                }
+                return false;
+            }
+            return false;
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 71 * hash + Objects.hashCode(this.nCartao);
+        return hash;
+    }
 }

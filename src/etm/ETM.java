@@ -28,7 +28,7 @@ public class ETM {
     private GeradorDeId idVeiculos;
     private GeradorDeId idRelatorios;
     private GeradorDeId idParadas;
-    
+    private GeradorDeId idCartoes;
     private String [] tiposDeVeiculos;
     private ArrayList <Veiculo> veiculos;
     private ArrayList <Funcionario> funcionarios;
@@ -45,10 +45,12 @@ public class ETM {
         veiculos = new ArrayList();
         rotas = new ArrayList();   
         paradas  = new ArrayList();
+        cartoes = new ArrayList();
         idRotas = new GeradorDeId();
         idVeiculos = new GeradorDeId();
         idRelatorios = new GeradorDeId();
         idParadas = new GeradorDeId();
+        idCartoes = new GeradorDeId();
         oficina = new Oficina();
     }
     
@@ -61,10 +63,12 @@ public class ETM {
         veiculos = new ArrayList();
         rotas = new ArrayList();   
         paradas  = new ArrayList();
+        cartoes = new ArrayList();
         idRotas = new GeradorDeId();
         idVeiculos = new GeradorDeId();
         idRelatorios = new GeradorDeId();
         idParadas = new GeradorDeId();
+        idCartoes = new GeradorDeId();
         oficina = new Oficina();
     }
 
@@ -116,6 +120,7 @@ public class ETM {
     }
     
     public void cadastrarCartao(CartaoMag cartao){
+        cartao.setnCartao(idCartoes.gerarId());
         cartoes.add(cartao);
     }
     
@@ -258,7 +263,11 @@ public class ETM {
         if (funcionarios.contains(funAtualizado))
             funcionarios.set(funcionarios.indexOf(funAtualizado), funAtualizado);
     }
-    
+    public void atualizarCartao(CartaoMag cartao){
+        if(cartoes.contains(cartao)){
+            cartoes.set(cartoes.lastIndexOf(cartao), cartao);
+        }
+    }
     //Retorna todos os veículos cadastrados
     public ArrayList getVeiculosCadastrados(){
         return veiculos;

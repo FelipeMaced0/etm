@@ -118,7 +118,7 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace pref="384" max="32767" attributes="0"/>
+                                  <EmptySpace pref="283" max="32767" attributes="0"/>
                                   <Component id="AT_VendaPassagem_PN_inserirSaldo" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="268" max="-2" attributes="0"/>
                               </Group>
@@ -152,7 +152,7 @@
                                   <Group type="102" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="Atendente_BT_inserirSaldo" min="-2" max="-2" attributes="0"/>
+                                          <Component id="AT_VendaPassagem_BT_inserirSaldo" min="-2" max="-2" attributes="0"/>
                                           <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="jLabel47" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -167,12 +167,12 @@
                                               </Group>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                                   <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                                      <Component id="Atendente_CT_dinheiro" alignment="1" min="-2" pref="140" max="-2" attributes="0"/>
-                                                      <Component id="Atendente_CT_idCartao" alignment="1" min="-2" pref="140" max="-2" attributes="0"/>
+                                                      <Component id="AT_VendaPassagem_CT_dinheiro" alignment="1" min="-2" pref="140" max="-2" attributes="0"/>
+                                                      <Component id="AT_VendaPassagem_CT_idCartao" alignment="1" min="-2" pref="140" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                      <Component id="Atendente_CT_credito" max="32767" attributes="0"/>
-                                                      <Component id="Atendente_CT_troco" min="-2" pref="140" max="-2" attributes="0"/>
+                                                      <Component id="AT_VendaPassagem_CT_credito" max="32767" attributes="0"/>
+                                                      <Component id="AT_VendaPassagem_CT_troco" min="-2" pref="140" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
@@ -188,25 +188,25 @@
                                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="jLabel47" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Atendente_CT_idCartao" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="AT_VendaPassagem_CT_idCartao" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="jLabel49" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Atendente_CT_dinheiro" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="AT_VendaPassagem_CT_dinheiro" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel48" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Atendente_CT_credito" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="AT_VendaPassagem_CT_credito" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Atendente_CT_troco" min="-2" max="-2" attributes="0"/>
+                                          <Component id="AT_VendaPassagem_CT_troco" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace pref="50" max="32767" attributes="0"/>
-                                      <Component id="Atendente_BT_inserirSaldo" min="-2" max="-2" attributes="0"/>
+                                      <Component id="AT_VendaPassagem_BT_inserirSaldo" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -245,39 +245,35 @@
                                 <Property name="text" type="java.lang.String" value="TROCO R$"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JTextField" name="Atendente_CT_idCartao">
+                            <Component class="javax.swing.JTextField" name="AT_VendaPassagem_CT_idCartao">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Tahoma" size="25" style="1"/>
                                 </Property>
-                                <Property name="text" type="java.lang.String" value=" "/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JTextField" name="Atendente_CT_dinheiro">
+                            <Component class="javax.swing.JTextField" name="AT_VendaPassagem_CT_dinheiro">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Tahoma" size="25" style="1"/>
                                 </Property>
-                                <Property name="text" type="java.lang.String" value=" "/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JTextField" name="Atendente_CT_credito">
+                            <Component class="javax.swing.JTextField" name="AT_VendaPassagem_CT_credito">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Tahoma" size="25" style="1"/>
                                 </Property>
-                                <Property name="text" type="java.lang.String" value=" "/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JTextField" name="Atendente_CT_troco">
+                            <Component class="javax.swing.JTextField" name="AT_VendaPassagem_CT_troco">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Tahoma" size="25" style="1"/>
                                 </Property>
-                                <Property name="text" type="java.lang.String" value=" "/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JButton" name="Atendente_BT_inserirSaldo">
+                            <Component class="javax.swing.JButton" name="AT_VendaPassagem_BT_inserirSaldo">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Tahoma" size="15" style="1"/>
@@ -285,7 +281,7 @@
                                 <Property name="text" type="java.lang.String" value="INSERIR SALDO"/>
                               </Properties>
                               <Events>
-                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Atendente_BT_inserirSaldoActionPerformed"/>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AT_VendaPassagem_BT_inserirSaldoActionPerformed"/>
                               </Events>
                             </Component>
                           </SubComponents>
@@ -455,11 +451,17 @@
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Remover"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AT_Cadastro_BT_removerActionPerformed"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JButton" name="AT_Cadastro_BT_atualizar">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Atualizar"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AT_Cadastro_BT_atualizarActionPerformed"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JComboBox" name="AT_Cadastro_CB_tipoDeUsuario">
                               <Properties>

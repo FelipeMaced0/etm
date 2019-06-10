@@ -98,6 +98,7 @@ public abstract class Funcionario {
     public String toString(){
         return "FUNÇÃO: "+this.getClass().getSimpleName()+"\nNOME: "+nome+"\nSEXO: "+sexo+"\nIDADE: "+idade+"\nCARGA HORÁRIA: "+cargaHoraria+" H"+"\nSALÁRIO: "+salario+"\nCPF: "+cpf+"\nCTPS: "+ctps+"\n\n";
     }
+    
     @Override
     public boolean equals(Object obj){
         if(obj!=null){
