@@ -31,12 +31,12 @@ public class Etmtelas extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         jLabel48 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
-        ct_DinhieiroAtendente = new javax.swing.JTextField();
-        ct_IdCartaoAtendente = new javax.swing.JTextField();
-        ct_CreditoAntedente = new javax.swing.JTextField();
         jLabel47 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        ct_TrocoAtendente = new javax.swing.JTextField();
+        Atendente_CT_dinheiro = new javax.swing.JTextField();
+        Atendente_CT_idCartao = new javax.swing.JTextField();
+        Atendente_CT_credito = new javax.swing.JTextField();
+        Atendente_CT_troco = new javax.swing.JTextField();
         bInserirSaldo = new javax.swing.JButton();
         abaRelatórioFinanceiroAtendente = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
@@ -73,10 +73,10 @@ public class Etmtelas extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        jComboBox1 = new javax.swing.JComboBox<String>();
+        jComboBox2 = new javax.swing.JComboBox<String>();
+        jComboBox3 = new javax.swing.JComboBox<String>();
+        jComboBox4 = new javax.swing.JComboBox<String>();
         GLveiculos_BT_limpar = new javax.swing.JButton();
         abaTarifaGerenteLocal = new javax.swing.JPanel();
         jLabel134 = new javax.swing.JLabel();
@@ -190,8 +190,8 @@ public class Etmtelas extends javax.swing.JFrame {
         jLabel111 = new javax.swing.JLabel();
         ct_CampoTextoFuncionario1 = new javax.swing.JScrollPane();
         jTextArea3 = new javax.swing.JTextArea();
-        jComboBox14 = new javax.swing.JComboBox<>();
-        jComboBox15 = new javax.swing.JComboBox<>();
+        jComboBox14 = new javax.swing.JComboBox<String>();
+        jComboBox15 = new javax.swing.JComboBox<String>();
         abaTarifaGerenteRegional = new javax.swing.JPanel();
         abaTarifaGerenteLocal1 = new javax.swing.JPanel();
         jLabel140 = new javax.swing.JLabel();
@@ -230,10 +230,10 @@ public class Etmtelas extends javax.swing.JFrame {
         jButton12 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
-        jComboBox8 = new javax.swing.JComboBox<>();
-        jComboBox9 = new javax.swing.JComboBox<>();
-        jComboBox10 = new javax.swing.JComboBox<>();
-        jComboBox11 = new javax.swing.JComboBox<>();
+        jComboBox8 = new javax.swing.JComboBox<String>();
+        jComboBox9 = new javax.swing.JComboBox<String>();
+        jComboBox10 = new javax.swing.JComboBox<String>();
+        jComboBox11 = new javax.swing.JComboBox<String>();
         abaRelatorioGerenteLocal1 = new javax.swing.JPanel();
         jLabel127 = new javax.swing.JLabel();
         jLabel129 = new javax.swing.JLabel();
@@ -372,8 +372,8 @@ public class Etmtelas extends javax.swing.JFrame {
         jLabel63 = new javax.swing.JLabel();
         jTextField43 = new javax.swing.JTextField();
         jTextField44 = new javax.swing.JTextField();
-        jComboBox6 = new javax.swing.JComboBox<>();
-        jComboBox7 = new javax.swing.JComboBox<>();
+        jComboBox6 = new javax.swing.JComboBox<String>();
+        jComboBox7 = new javax.swing.JComboBox<String>();
         jLabel3 = new javax.swing.JLabel();
         jFormattedTextField1 = new javax.swing.JFormattedTextField();
         jLabel53 = new javax.swing.JLabel();
@@ -398,33 +398,33 @@ public class Etmtelas extends javax.swing.JFrame {
         jLabel49.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
         jLabel49.setText("DINHEIRO R$:");
 
-        ct_DinhieiroAtendente.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
-        ct_DinhieiroAtendente.setText(" ");
-        ct_DinhieiroAtendente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ct_DinhieiroAtendenteActionPerformed(evt);
-            }
-        });
-
-        ct_IdCartaoAtendente.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
-        ct_IdCartaoAtendente.setText(" ");
-
-        ct_CreditoAntedente.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
-        ct_CreditoAntedente.setText(" ");
-        ct_CreditoAntedente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ct_CreditoAntedenteActionPerformed(evt);
-            }
-        });
-
         jLabel47.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
         jLabel47.setText("ID CARTÃO");
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
         jLabel12.setText("TROCO R$");
 
-        ct_TrocoAtendente.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
-        ct_TrocoAtendente.setText(" ");
+        Atendente_CT_dinheiro.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+        Atendente_CT_dinheiro.setText(" ");
+        Atendente_CT_dinheiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Atendente_CT_dinheiroActionPerformed(evt);
+            }
+        });
+
+        Atendente_CT_idCartao.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+        Atendente_CT_idCartao.setText(" ");
+
+        Atendente_CT_credito.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+        Atendente_CT_credito.setText(" ");
+        Atendente_CT_credito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Atendente_CT_creditoActionPerformed(evt);
+            }
+        });
+
+        Atendente_CT_troco.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+        Atendente_CT_troco.setText(" ");
 
         bInserirSaldo.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         bInserirSaldo.setText("INSERIR SALDO");
@@ -448,11 +448,11 @@ public class Etmtelas extends javax.swing.JFrame {
                                 .addGap(22, 22, 22)))
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(ct_DinhieiroAtendente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(ct_IdCartaoAtendente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Atendente_CT_dinheiro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Atendente_CT_idCartao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(ct_CreditoAntedente)
-                                .addComponent(ct_TrocoAtendente, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(Atendente_CT_credito)
+                                .addComponent(Atendente_CT_troco, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(32, 32, 32)))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
@@ -462,19 +462,19 @@ public class Etmtelas extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel47)
-                    .addComponent(ct_IdCartaoAtendente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Atendente_CT_idCartao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel49)
-                    .addComponent(ct_DinhieiroAtendente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Atendente_CT_dinheiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel48)
-                    .addComponent(ct_CreditoAntedente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Atendente_CT_credito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel12)
-                    .addComponent(ct_TrocoAtendente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Atendente_CT_troco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addComponent(bInserirSaldo)
                 .addGap(32, 32, 32))
@@ -669,13 +669,13 @@ public class Etmtelas extends javax.swing.JFrame {
 
         jButton5.setText("EXCLUIR");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Ônibus", "Micro-Ônibus", "Van", "Brt", "Vlt", "Metrô" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "Ônibus", "Micro-Ônibus", "Van", "Brt", "Vlt", "Metrô" }));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Gasolina", "Diesel", "Elétrico" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "Gasolina", "Diesel", "Elétrico" }));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A", "C", "D", "E" }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "A", "C", "D", "E" }));
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Fixa", "Flexível" }));
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "Fixa", "Flexível" }));
 
         GLveiculos_BT_limpar.setText("LIMPAR");
         GLveiculos_BT_limpar.addActionListener(new java.awt.event.ActionListener() {
@@ -1485,9 +1485,9 @@ public class Etmtelas extends javax.swing.JFrame {
         jTextArea3.setText("resusltado de listas\nmensagens\n");
         ct_CampoTextoFuncionario1.setViewportView(jTextArea3);
 
-        jComboBox14.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "MOTORISTA", "COBRADOR", "MECÂNICO", "GESTOR DE FROTA" }));
+        jComboBox14.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "MOTORISTA", "COBRADOR", "MECÂNICO", "GESTOR DE FROTA" }));
 
-        jComboBox15.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Feminino", "Masculino" }));
+        jComboBox15.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "Feminino", "Masculino" }));
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -1862,13 +1862,13 @@ public class Etmtelas extends javax.swing.JFrame {
 
         jButton14.setText("EXCLUIR");
 
-        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Ônibus", "Micro-Ônibus", "Van", "Brt", "Vlt", "Metrô" }));
+        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "Ônibus", "Micro-Ônibus", "Van", "Brt", "Vlt", "Metrô" }));
 
-        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Gasolina", "Diesel", "Elétrico" }));
+        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "Gasolina", "Diesel", "Elétrico" }));
 
-        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A", "C", "D", "E" }));
+        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "A", "C", "D", "E" }));
 
-        jComboBox11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Fixa", "Flexível" }));
+        jComboBox11.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "Fixa", "Flexível" }));
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -2932,9 +2932,9 @@ public class Etmtelas extends javax.swing.JFrame {
 
         jLabel63.setText("Descrição:");
 
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "B", "C", "D", "E" }));
+        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "B", "C", "D", "E" }));
 
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Gasolina", "Diesel", "Elétrico" }));
+        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "Gasolina", "Diesel", "Elétrico" }));
 
         jLabel3.setText("Id. Veiculo: ");
 
@@ -3111,13 +3111,13 @@ public class Etmtelas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
 
-    private void ct_CreditoAntedenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ct_CreditoAntedenteActionPerformed
+    private void Atendente_CT_creditoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Atendente_CT_creditoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ct_CreditoAntedenteActionPerformed
+    }//GEN-LAST:event_Atendente_CT_creditoActionPerformed
 
-    private void ct_DinhieiroAtendenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ct_DinhieiroAtendenteActionPerformed
+    private void Atendente_CT_dinheiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Atendente_CT_dinheiroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ct_DinhieiroAtendenteActionPerformed
+    }//GEN-LAST:event_Atendente_CT_dinheiroActionPerformed
 
     private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
         // TODO add your handling code here:
@@ -3270,6 +3270,10 @@ public class Etmtelas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Atendente_CT_credito;
+    private javax.swing.JTextField Atendente_CT_dinheiro;
+    private javax.swing.JTextField Atendente_CT_idCartao;
+    private javax.swing.JTextField Atendente_CT_troco;
     private javax.swing.JButton Cadastrar_BT_Cadastrar;
     private javax.swing.JButton Cadastrar_BT_limpar;
     private javax.swing.JTextField Cadastrar_CT_Salario;
@@ -3320,18 +3324,14 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JTextField ct_CHorariaFuncionario1;
     private javax.swing.JScrollPane ct_CampoTextoFuncionario1;
     private javax.swing.JTextField ct_CpfFuncionario1;
-    private javax.swing.JTextField ct_CreditoAntedente;
     private javax.swing.JTextField ct_CtpsFuncionario1;
     private javax.swing.JTextField ct_DinheiroRecebido;
-    private javax.swing.JTextField ct_DinhieiroAtendente;
     private javax.swing.JTextField ct_EnderecoFuncionario1;
     private javax.swing.JTextField ct_IdCartao;
-    private javax.swing.JTextField ct_IdCartaoAtendente;
     private javax.swing.JTextField ct_IdadeFuncionario1;
     private javax.swing.JTextField ct_NomeFuncionario1;
     private javax.swing.JTextField ct_SalarioFuncionario1;
     private javax.swing.JTextField ct_TelefoneFuncionario1;
-    private javax.swing.JTextField ct_TrocoAtendente;
     private javax.swing.JLabel ctps;
     private javax.swing.JLabel escala;
     private javax.swing.JLabel funcao;
