@@ -101,7 +101,7 @@ public class ETM {
     }
     
     public void cadastrarVeiculo(Veiculo nVeiculo){
-        //nVeiculo.setId(idVeiculos.gerarId());
+        nVeiculo.setId(idVeiculos.gerarId());
         veiculos.add(nVeiculo);
     }
 
@@ -110,7 +110,7 @@ public class ETM {
         rotas.add(nRota);
         paradasDesordenadas = true;
     }
-    
+    //revisar a possibilidade de colocar um id
     public void cadastrarRelatorio(RelatorioCustoDiario relatorio){
         relatoriosDiarios.add(relatorio);
     }

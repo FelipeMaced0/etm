@@ -165,17 +165,19 @@
                                       </Group>
                                   </Group>
                                   <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="GF_CadasRota_BT_cadastrar" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="GF_CadasRota_BT_remover" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="GF_CadasRota_BT_buscar" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="GF_CadasRota_BT_cadastrar" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                          <Component id="GF_CadasRota_BT_buscar" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="GF_CadasRota_BT_atualizar" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                                       <Component id="GF_CadasRota_BT_limpar" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="401" max="32767" attributes="0"/>
+                                  <EmptySpace pref="407" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -381,10 +383,12 @@
                                       <Component id="GF_CadasVei_PN_Alocar1" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="132" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="GF_CadasParada_BT_cadastrar" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="GF_CadasParada_BT_remover" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="GF_CadasParada_BT_buscar" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="GF_CadasParada_BT_cadastrar" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                          <Component id="GF_CadasParada_BT_buscar" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -437,21 +441,33 @@
                           <Properties>
                             <Property name="text" type="java.lang.String" value="LIMPAR"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GF_CadasParada_BT_limparActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JButton" name="GF_CadasParada_BT_atualizar">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="ATUALIZAR"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GF_CadasParada_BT_atualizarActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JButton" name="GF_CadasParada_BT_remover">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="REMOVER"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GF_CadasParada_BT_removerActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JButton" name="GF_CadasParada_BT_buscar">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="BUSCAR"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GF_CadasParada_BT_buscarActionPerformed"/>
+                          </Events>
                         </Component>
                         <Container class="javax.swing.JPanel" name="GF_CadasVei_PN_Alocar1">
                           <Properties>
@@ -467,25 +483,28 @@
                           <Layout>
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                      <Component id="GF_CadasParada_Alocar_BT_cadastrar" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="GF_CadasParada_Alocar_BT_remover" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="30" max="32767" attributes="0"/>
-                                  </Group>
                                   <Group type="102" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel83" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel82" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                              <Component id="GF_CadasParada_Alocar_BT_cadastrar" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="GF_CadasParada_Alocar_BT_remover" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel83" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel82" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="GF_CadasParada_Alocar_CT_idParada" min="-2" pref="61" max="-2" attributes="0"/>
+                                                  <Component id="GF_CadasParada_Alocar_CT_idRota" min="-2" pref="61" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
                                       </Group>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="GF_CadasParada_Alocar_CT_idParada" min="-2" pref="61" max="-2" attributes="0"/>
-                                          <Component id="GF_CadasParada_Alocar_CT_idRota" min="-2" pref="61" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace pref="30" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -625,20 +644,20 @@
                                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="GF_CadasVei_CB_tipoDeCobranca" alignment="0" min="-2" pref="69" max="-2" attributes="0"/>
-                                                      <Component id="GF_CadasVei_CB_tipoDeVeiculo" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="GF_CadasVei_CB_tipoDeRota" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="GF_CadasVei_CB_tipoDeVeiculo" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="GF_CadasVei_CB_tipoDeCobranca" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="GF_CadasVei_CB_tipoDeRota" alignment="0" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                                          <Component id="GF_CadasVei_PN_Alocar" min="-2" max="-2" attributes="0"/>
+                                          <Component id="GF_CadasVei_PN_Alocar" min="-2" pref="300" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="401" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -793,11 +812,17 @@
                           <Properties>
                             <Property name="text" type="java.lang.String" value="LIMPAR"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GF_CadasVei_BT_limparActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JButton" name="GF_CadasVei_BT_remover">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="REMOVER"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GF_CadasVei_BT_removerActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JButton" name="GF_CadasVei_BT_atualizar">
                           <Properties>
@@ -969,9 +994,7 @@
                                                       <EmptySpace min="-2" pref="178" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="GF_Alocar_BT_limpar" min="-2" pref="75" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
@@ -1027,7 +1050,6 @@
                                           <Component id="GF_Alocar_BT_cadastrar" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                                           <Component id="GF_Alocar_BT_descadastrar" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                                           <Component id="GF_Alocar_BT_buscar" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                                          <Component id="GF_Alocar_BT_limpar" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace pref="19" max="32767" attributes="0"/>
                                   </Group>
@@ -1076,11 +1098,6 @@
                             <Component class="javax.swing.JButton" name="GF_Alocar_BT_descadastrar">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="REMOVER"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JButton" name="GF_Alocar_BT_limpar">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="LIMPAR"/>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JComboBox" name="GF_Alocar_CB_tipoAlocado">
@@ -1436,7 +1453,7 @@
                                               <Component id="RelatoriosPorPe_CTF_dataFinal" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel78" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace pref="530" max="32767" attributes="0"/>
+                                          <EmptySpace pref="536" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
                                               <Component id="RelatoriosPorPe_BT_mostraRelatorio" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="RelatoriosPorPe_BT_limpar" alignment="3" min="-2" max="-2" attributes="0"/>

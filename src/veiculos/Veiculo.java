@@ -52,6 +52,20 @@ public abstract class Veiculo {
         }
     }
     
+    public Veiculo(String status, String combustivel, String tipoDeRota, String tipoDeCobranca, int capacidade, float autonomia){
+        this.status = status.toUpperCase();
+        this.combustivel = combustivel.toUpperCase();
+        this.tipoDeRota = tipoDeRota.toUpperCase();
+        this.tipoDeCobranca = tipoDeCobranca.toUpperCase();
+        this.capacidade = capacidade;
+        this.autonomia = autonomia;
+        funcionarios = new ArrayList();
+        revisoes = new ArrayList();
+        if(this.tipoDeCobranca.equals("MISTA")||this.tipoDeCobranca.equals("ELETRONICA")){
+            ce = new CobradorEletronico();
+        }
+    }
+    
     public Veiculo(String id){
         this.id = id;
     }
