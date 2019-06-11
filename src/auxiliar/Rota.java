@@ -14,13 +14,22 @@ public class Rota {
     public Rota(){
     }
     
-    public Rota(String nome){
+    public Rota(String nome, String id){
+        this.nome = nome;
+        this.id = id;
+        paradas = new ArrayList();
+        veiculos = new ArrayList();
+        coordenadas = new ArrayList();
+    }
+
+    public Rota(String nome) {
         this.nome = nome;
         paradas = new ArrayList();
         veiculos = new ArrayList();
         coordenadas = new ArrayList();
     }
 
+    
     public void setId(String id) {
         this.id = id;
     }
@@ -35,6 +44,10 @@ public class Rota {
 
     public String getNome() {
         return nome;
+    }
+    
+    public ArrayList<Parada> getParadas(){
+        return paradas;
     }
     
     public int getnVeiculos(){

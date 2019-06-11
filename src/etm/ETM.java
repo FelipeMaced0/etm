@@ -106,6 +106,7 @@ public class ETM {
     }
 
     public void cadastrarRota(Rota nRota){
+        nRota.setId(idRotas.gerarId());
         rotas.add(nRota);
         paradasDesordenadas = true;
     }
@@ -115,6 +116,7 @@ public class ETM {
     }
     
     public void cadastrarParada(Parada nParada){
+        nParada.setId(idParadas.gerarId());
         paradas.add(nParada);
         paradasDesordenadas = true;
     }
@@ -268,6 +270,19 @@ public class ETM {
             cartoes.set(cartoes.lastIndexOf(cartao), cartao);
         }
     }
+    
+    public void atualizarRota(Rota rotaAtualizada){
+        if(rotas.contains(rotaAtualizada)){
+            rotas.set(rotas.lastIndexOf(rotaAtualizada), rotaAtualizada);
+        }
+    }
+    
+    public void atualizarParada(Parada paradaAtualizada){
+        if(paradas.contains(paradaAtualizada)){
+            paradas.set(paradas.lastIndexOf(paradaAtualizada), paradaAtualizada);
+        }
+    }
+    
     //Retorna todos os veículos cadastrados
     public ArrayList getVeiculosCadastrados(){
         return veiculos;

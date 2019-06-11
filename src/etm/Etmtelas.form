@@ -120,9 +120,10 @@
                                               <Component id="GF_CadasRota_CT_nome" pref="64" max="32767" attributes="0"/>
                                               <Component id="GF_CadasRota_CT_id" max="32767" attributes="0"/>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace min="-2" pref="239" max="-2" attributes="0"/>
+                                          <Component id="GF_CadasRota_PN_minhasParadas" min="-2" pref="565" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="1" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="GF_CadasRota_BT_cadastrar" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="GF_CadasRota_BT_atualizar" alignment="0" min="-2" pref="93" max="-2" attributes="0"/>
@@ -136,33 +137,34 @@
                                               </Group>
                                               <Component id="GF_CadasRota_BT_limpar" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace pref="393" max="32767" attributes="0"/>
-                                  <Component id="jScrollPane7" min="-2" pref="539" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                                  <EmptySpace pref="79" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel80" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                                      <Component id="GF_CadasRota_CT_nome" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel80" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                                              <Component id="GF_CadasRota_CT_nome" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel81" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="GF_CadasRota_CT_id" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                                          <Component id="GF_CadasRota_PN_minhasParadas" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel81" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="GF_CadasRota_CT_id" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane7" min="-2" pref="90" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="GF_CadasRota_BT_cadastrar" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                                       <Component id="GF_CadasRota_BT_remover" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
@@ -189,6 +191,10 @@
                             <Property name="text" type="java.lang.String" value="Id:"/>
                           </Properties>
                         </Component>
+                        <Component class="javax.swing.JTextField" name="GF_CadasRota_CT_nome">
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="GF_CadasRota_CT_id">
+                        </Component>
                         <Component class="javax.swing.JButton" name="GF_CadasRota_BT_cadastrar">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="CADASTRAR"/>
@@ -201,45 +207,81 @@
                           <Properties>
                             <Property name="text" type="java.lang.String" value="REMOVER"/>
                           </Properties>
-                        </Component>
-                        <Component class="javax.swing.JButton" name="GF_CadasRota_BT_buscar">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="BUSCAR"/>
-                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GF_CadasRota_BT_removerActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JButton" name="GF_CadasRota_BT_atualizar">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="ATUALIZAR"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GF_CadasRota_BT_atualizarActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JButton" name="GF_CadasRota_BT_limpar">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="LIMPAR"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GF_CadasRota_BT_limparActionPerformed"/>
+                          </Events>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="GF_CadasRota_CT_nome">
+                        <Component class="javax.swing.JButton" name="GF_CadasRota_BT_buscar">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="BUSCAR"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GF_CadasRota_BT_buscarActionPerformed"/>
+                          </Events>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="GF_CadasRota_CT_id">
-                        </Component>
-                        <Container class="javax.swing.JScrollPane" name="jScrollPane7">
+                        <Container class="javax.swing.JPanel" name="GF_CadasRota_PN_minhasParadas">
                           <AuxValues>
-                            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="GF_CadasRota_PN_minhasParadas.setVisible(false);"/>
                           </AuxValues>
 
-                          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                          <Layout>
+                            <DimensionLayout dim="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="GF_CadasRota_SP_minhasParadas" min="-2" pref="545" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                            </DimensionLayout>
+                            <DimensionLayout dim="1">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="GF_CadasRota_SP_minhasParadas" min="-2" pref="92" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                            </DimensionLayout>
+                          </Layout>
                           <SubComponents>
-                            <Component class="javax.swing.JTable" name="GF_CadasRota_TB_minhasParadas">
-                              <Properties>
-                                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                  <Table columnCount="4" rowCount="4">
-                                    <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 4" type="java.lang.Object"/>
-                                  </Table>
-                                </Property>
-                              </Properties>
-                            </Component>
+                            <Container class="javax.swing.JScrollPane" name="GF_CadasRota_SP_minhasParadas">
+                              <AuxValues>
+                                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                              </AuxValues>
+
+                              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                              <SubComponents>
+                                <Component class="javax.swing.JTable" name="GF_CadasRota_TB_minhasParadas">
+                                  <Properties>
+                                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                                      <Table columnCount="4" rowCount="4">
+                                        <Column editable="true" title="Title 1" type="java.lang.Object"/>
+                                        <Column editable="true" title="Title 2" type="java.lang.Object"/>
+                                        <Column editable="true" title="Title 3" type="java.lang.Object"/>
+                                        <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                                      </Table>
+                                    </Property>
+                                  </Properties>
+                                </Component>
+                              </SubComponents>
+                            </Container>
                           </SubComponents>
                         </Container>
                       </SubComponents>
@@ -427,32 +469,23 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                      <Component id="GF_Alocar_BT_cadastrar1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="GF_CadasParada_Alocar_BT_cadastrar" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="GF_Alocar_BT_descadastrar1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="GF_CadasParada_Alocar_BT_remover" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace pref="30" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabel83" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel82" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Component id="GF_Alocar_CT_idParada1" min="-2" pref="61" max="-2" attributes="0"/>
-                                                  <Component id="GF_Alocar_CT_rotaId1" min="-2" pref="61" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                              <Component id="GF_Alocar_BT_limpar1" min="-2" pref="75" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="jLabel83" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel82" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="GF_CadasParada_Alocar_CT_idParada" min="-2" pref="61" max="-2" attributes="0"/>
+                                          <Component id="GF_CadasParada_Alocar_CT_idRota" min="-2" pref="61" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -462,20 +495,19 @@
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="jLabel82" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="GF_Alocar_CT_rotaId1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="GF_CadasParada_Alocar_CT_idRota" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel83" min="-2" max="-2" attributes="0"/>
-                                          <Component id="GF_Alocar_CT_idParada1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="GF_CadasParada_Alocar_CT_idParada" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="GF_Alocar_BT_cadastrar1" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                                          <Component id="GF_Alocar_BT_descadastrar1" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                                          <Component id="GF_CadasParada_Alocar_BT_cadastrar" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                                          <Component id="GF_CadasParada_Alocar_BT_remover" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
-                                      <Component id="GF_Alocar_BT_limpar1" min="-2" pref="31" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -491,24 +523,25 @@
                                 <Property name="text" type="java.lang.String" value="Parada ID:"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JTextField" name="GF_Alocar_CT_rotaId1">
+                            <Component class="javax.swing.JTextField" name="GF_CadasParada_Alocar_CT_idRota">
                             </Component>
-                            <Component class="javax.swing.JTextField" name="GF_Alocar_CT_idParada1">
+                            <Component class="javax.swing.JTextField" name="GF_CadasParada_Alocar_CT_idParada">
                             </Component>
-                            <Component class="javax.swing.JButton" name="GF_Alocar_BT_cadastrar1">
+                            <Component class="javax.swing.JButton" name="GF_CadasParada_Alocar_BT_cadastrar">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="ALOCAR"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GF_CadasParada_Alocar_BT_cadastrarActionPerformed"/>
+                              </Events>
                             </Component>
-                            <Component class="javax.swing.JButton" name="GF_Alocar_BT_descadastrar1">
+                            <Component class="javax.swing.JButton" name="GF_CadasParada_Alocar_BT_remover">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="REMOVER"/>
                               </Properties>
-                            </Component>
-                            <Component class="javax.swing.JButton" name="GF_Alocar_BT_limpar1">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="LIMPAR"/>
-                              </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GF_CadasParada_Alocar_BT_removerActionPerformed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>

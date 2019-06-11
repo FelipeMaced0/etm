@@ -75,13 +75,12 @@ public class ModeloDeTabelaParada extends AbstractTableModel{
                 parada.setEndereco(String.valueOf(value));
                 break;
             case "ID":
-                parada.setId(String.valueOf(value));
                 break;
             case "LATITUDE":
-                parada.setLatitude(Float.parseFloat((String)value));
+                parada.setLatitude(Float.parseFloat(String.valueOf(value)));
                 break;
             case "LONGITUDE":
-                parada.setLatitude(Float.parseFloat((String)value));
+                parada.setLatitude(Float.parseFloat(String.valueOf(value)));
                 break;
             default:
                 break;
