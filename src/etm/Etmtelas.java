@@ -114,7 +114,6 @@ public class Etmtelas extends javax.swing.JFrame {
         GF_CadasVei_Alocar_CT_cpf = new javax.swing.JTextField();
         GF_CadasVei_Alocar_CT_idVeiculo = new javax.swing.JTextField();
         GF_CadasVei_Alocar_CT_idRota = new javax.swing.JTextField();
-        GF_CadasVei_Alocar_BT_buscar = new javax.swing.JButton();
         GF_CadasVei_Alocar_BT_cadastrar = new javax.swing.JButton();
         GF_CadasVei_Alocar_BT_descadastrar = new javax.swing.JButton();
         GF_CadasVei_Alocar_CB_tipoDeAlocacao = new javax.swing.JComboBox();
@@ -950,8 +949,6 @@ public class Etmtelas extends javax.swing.JFrame {
 
         jLabel71.setText("Rota ID:");
 
-        GF_CadasVei_Alocar_BT_buscar.setText("BUSCAR");
-
         GF_CadasVei_Alocar_BT_cadastrar.setText("ALOCAR");
         GF_CadasVei_Alocar_BT_cadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -979,11 +976,10 @@ public class Etmtelas extends javax.swing.JFrame {
                 .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
+                            .addGap(33, 33, 33)
                             .addComponent(GF_CadasVei_Alocar_BT_cadastrar)
-                            .addGap(18, 18, 18)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(GF_CadasVei_Alocar_BT_descadastrar)
-                            .addGap(18, 18, 18)
-                            .addComponent(GF_CadasVei_Alocar_BT_buscar)
                             .addGap(0, 0, Short.MAX_VALUE))
                         .addGroup(GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
                             .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1026,11 +1022,10 @@ public class Etmtelas extends javax.swing.JFrame {
                 .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(GF_CadasVei_Alocar_CB_tipoDeAlocacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel72))
-                .addGap(30, 30, 30)
+                .addGap(31, 31, 31)
                 .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(GF_CadasVei_Alocar_BT_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(GF_CadasVei_Alocar_BT_descadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(GF_CadasVei_Alocar_BT_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(GF_CadasVei_Alocar_BT_descadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -4514,7 +4509,7 @@ public class Etmtelas extends javax.swing.JFrame {
     }//GEN-LAST:event_GF_CadasVei_Alocar_BT_cadastrarActionPerformed
 
     private void GF_CadasVei_Alocar_BT_descadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GF_CadasVei_Alocar_BT_descadastrarActionPerformed
-         String tipoDeAlocacao;
+        String tipoDeAlocacao;
         String idRota;
         String idVeiculo;
         String cpfFun;
@@ -4661,7 +4656,6 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JPanel GF_CadasRota_PN_minhasParadas;
     private javax.swing.JScrollPane GF_CadasRota_SP_minhasParadas;
     private javax.swing.JTable GF_CadasRota_TB_minhasParadas;
-    private javax.swing.JButton GF_CadasVei_Alocar_BT_buscar;
     private javax.swing.JButton GF_CadasVei_Alocar_BT_cadastrar;
     private javax.swing.JButton GF_CadasVei_Alocar_BT_descadastrar;
     private javax.swing.JComboBox GF_CadasVei_Alocar_CB_tipoDeAlocacao;

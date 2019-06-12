@@ -978,11 +978,10 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                                                   <Component id="GF_CadasVei_Alocar_BT_cadastrar" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                   <Component id="GF_CadasVei_Alocar_BT_descadastrar" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="GF_CadasVei_Alocar_BT_buscar" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
@@ -1042,11 +1041,10 @@
                                           <Component id="GF_CadasVei_Alocar_CB_tipoDeAlocacao" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel72" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="GF_CadasVei_Alocar_BT_cadastrar" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                                           <Component id="GF_CadasVei_Alocar_BT_descadastrar" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                                          <Component id="GF_CadasVei_Alocar_BT_buscar" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="32767" attributes="0"/>
                                   </Group>
@@ -1074,11 +1072,6 @@
                             <Component class="javax.swing.JTextField" name="GF_CadasVei_Alocar_CT_idVeiculo">
                             </Component>
                             <Component class="javax.swing.JTextField" name="GF_CadasVei_Alocar_CT_idRota">
-                            </Component>
-                            <Component class="javax.swing.JButton" name="GF_CadasVei_Alocar_BT_buscar">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="BUSCAR"/>
-                              </Properties>
                             </Component>
                             <Component class="javax.swing.JButton" name="GF_CadasVei_Alocar_BT_cadastrar">
                               <Properties>
