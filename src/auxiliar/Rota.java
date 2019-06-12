@@ -50,6 +50,18 @@ public class Rota {
         return paradas;
     }
     
+    public ArrayList<Veiculo> getVeiculos(){
+        return veiculos;
+    }
+    
+    public ArrayList<Coordenada> getCoordenadas(){
+        return coordenadas;
+    }
+    
+    public void atualizar(Rota rotaAtualizada){
+        this.nome = rotaAtualizada.getNome();
+    }
+    
     public int getnVeiculos(){
         return nVeiculos;
     }
@@ -63,6 +75,12 @@ public class Rota {
         coordenadas.add(novaCoordenada);
     }
     
+    public void cadastrarVeiculo(Veiculo nVeiculo){
+        veiculos.add(nVeiculo);
+        nVeiculos += 1;
+        atualizarNVeiculosNasParadas(1);
+    }
+    
     public void atualizarNVeiculosNasParadas(int num){
         Iterator<Parada> p = paradas.iterator();
         Parada parada;
@@ -70,12 +88,6 @@ public class Rota {
             parada = p.next();
             parada.setnVeiculos(num+parada.getnVeiculos());
         }
-    }
-    
-    public void cadastrarVeiculo(Veiculo nVeiculo){
-        veiculos.add(nVeiculo);
-        nVeiculos += 1;
-        atualizarNVeiculosNasParadas(1);
     }
 
     public void subParada(String id){
@@ -131,12 +143,16 @@ public class Rota {
         return paradas.get(paradas.indexOf(new Parada(id)));
     }
     
-    public boolean buscarParadaBoolean(String id){
+    public boolean paradaEstaCadastrada(String id){
         return paradas.contains(new Parada(id));
     }
     
     public Coordenada buscarCoordenada(String id){
        return coordenadas.get(coordenadas.indexOf(new Coordenada(id)));
+    }
+    
+    public boolean veiculoEstaCadastrado(String idVeiculo){
+        return buscarVeiculo(idVeiculo).getId().equals(idVeiculo);
     }
     
     public void descadastrarRotaDeVeiculos(){

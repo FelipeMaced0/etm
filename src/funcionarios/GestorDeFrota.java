@@ -33,12 +33,12 @@ public class GestorDeFrota extends FuncionarioAdministrativo{
         etm.cadastrarParada(nParada);
     }
     
-    public void cadastrarVeiculoEmRota(String idRota, Veiculo veiculo){
-        etm.cadastrarVeiculoEmRota(idRota, veiculo);
+    public void cadastrarVeiculoEmRota(String idRota, String idVeiculo){
+        etm.cadastrarVeiculoEmRota(idRota, idVeiculo);
     }
     
-    public void cadastrarParadaEmRota(String idrota, Parada parada){
-        etm.cadastrarParadaEmRota(idrota, parada);
+    public void cadastrarParadaEmRota(String idrota, String idParada){
+        etm.cadastrarParadaEmRota(idrota, idParada);
     }
     
     public void descadastrarVeiculo(String id){

@@ -7,6 +7,7 @@ import auxiliar.RelatorioCustoDiario;
 import auxiliar.RelatorioPorPeriodo;
 import auxiliar.Rota;
 import funcionarios.Funcionario;
+import funcionarios.FuncionarioOperacional;
 import java.util.ArrayList;
 import veiculos.Veiculo;
 import java.util.Calendar;
@@ -126,20 +127,38 @@ public class ETM {
         cartoes.add(cartao);
     }
     
-    public void cadastrarVeiculoEmRota(String idRota, Veiculo veiculo){
+    public void cadastrarVeiculoEmRota(String idRota, String idVeiculo){
         Rota rota = buscarRota(idRota);
-        if(rota!=null){
-            rota.cadastrarVeiculo(veiculo);
-            veiculo.setMinhaRota(rota);
+        Veiculo veiculo = buscarVeiculo(idVeiculo);
+        if(rota!=null&&veiculo!=null){
+            if(!rota.veiculoEstaCadastrado(idVeiculo)){
+                rota.cadastrarVeiculo(veiculo);
+                veiculo.setMinhaRota(rota);
+            }
+            
         }
     }
     
-    public void cadastrarParadaEmRota(String idRota, Parada parada){
+    public void cadastrarParadaEmRota(String idRota, String idParada){
         Rota rota = buscarRota(idRota);
+        Parada parada = buscarParada(idParada);
         if(rota != null){
-            rota.addParada(parada);
+            if(!rota.paradaEstaCadastrada(idParada)){
+                rota.addParada(parada);
+            }
         }
     }
+    
+    public void cadastrarFuncionarioEmVeiculo(String idVeiculo, String cpf){
+        Veiculo veiculo = buscarVeiculo(idVeiculo);
+        Funcionario fun = buscarFuncionario(cpf);
+        if(veiculo!=null&&fun!=null){
+            if(!veiculo.funcionarioEstaCadastrado(cpf)){
+                veiculo.cadastrarFuncionario((FuncionarioOperacional)fun);
+            }
+        }
+    }
+    
     //Atualizar número de veículos nas rotas
     //Retirar veículo das rotas
     public void descadastrarVeiculo(String idVeiculo){
@@ -189,12 +208,21 @@ public class ETM {
     public void descadastrarVeiculoEmRota(String idRota, String idVeiculo){
         Rota rota = buscarRota(idRota);
         Veiculo veiculo = buscarVeiculo(idVeiculo);
-        if(rota!=null){
+        if(rota!=null&&veiculo!=null){
             rota.descadastrarVeiculo(veiculo);
             veiculo.setMinhaRota(null);
         }
     }
     
+    public void descadastrarParadaEmRota(String idRota, String idParada){
+        Rota rota = buscarRota(idRota);
+        Parada parada = buscarParada(idParada);
+        if(rota!=null&&parada!=null){
+            rota.subParada(idParada);
+        }
+    }
+    
+     
     //Retorna o veículo  que possuir o id igual ao idBuscado
     public Veiculo buscarVeiculo(String idBuscado){
         Iterator<Veiculo> i = veiculos.iterator();
@@ -262,8 +290,11 @@ public class ETM {
     }
     
     public void atualizarFuncionario(Funcionario funAtualizado){
-        if (funcionarios.contains(funAtualizado))
-            funcionarios.set(funcionarios.indexOf(funAtualizado), funAtualizado);
+        
+        if (funcionarios.contains(funAtualizado)){
+            Funcionario fun= funcionarios.get(funcionarios.indexOf(funAtualizado));
+            fun.atualizar(funAtualizado);
+        }
     }
     public void atualizarCartao(CartaoMag cartao){
         if(cartoes.contains(cartao)){
@@ -273,13 +304,15 @@ public class ETM {
     
     public void atualizarRota(Rota rotaAtualizada){
         if(rotas.contains(rotaAtualizada)){
-            rotas.set(rotas.lastIndexOf(rotaAtualizada), rotaAtualizada);
+            Rota rota = rotas.get(rotas.indexOf(rotaAtualizada));
+            rota.atualizar(rotaAtualizada);
         }
     }
     
     public void atualizarParada(Parada paradaAtualizada){
         if(paradas.contains(paradaAtualizada)){
-            paradas.set(paradas.lastIndexOf(paradaAtualizada), paradaAtualizada);
+            Parada parada = paradas.get(paradas.indexOf(paradaAtualizada));
+            parada.atualizar(paradaAtualizada);
         }
     }
     

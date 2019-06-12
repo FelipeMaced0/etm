@@ -94,6 +94,16 @@ public abstract class Funcionario {
         return this.getClass().getSimpleName();
     }
     
+    public void atualizar(Funcionario funAtualizado){
+        nome = funAtualizado.getNome();
+        idade = funAtualizado.getIdade();
+        cargaHoraria = funAtualizado.getCargaHoraria();
+        salario = funAtualizado.getSalario();
+        cpf = funAtualizado.getCpf();
+        ctps = funAtualizado.getCtps();
+        sexo = funAtualizado.getSexo();
+    }
+    
     @Override
     public String toString(){
         return "FUNÇÃO: "+this.getClass().getSimpleName()+"\nNOME: "+nome+"\nSEXO: "+sexo+"\nIDADE: "+idade+"\nCARGA HORÁRIA: "+cargaHoraria+" H"+"\nSALÁRIO: "+salario+"\nCPF: "+cpf+"\nCTPS: "+ctps+"\n\n";

@@ -31,23 +31,23 @@ public class teste {
         gf.cadastrarRota(ro);
         gf.cadastrarRota(ra);
         
-        gf.cadastrarVeiculoEmRota(ro.getId(), o);
-        gf.cadastrarVeiculoEmRota(ra.getId(), f);
-        gf.cadastrarVeiculoEmRota(ra.getId(), g); 
-        gf.cadastrarVeiculoEmRota(ra.getId(), k);
+        gf.cadastrarVeiculoEmRota(ro.getId(), o.getId());
+        gf.cadastrarVeiculoEmRota(ra.getId(), f.getId());
+        gf.cadastrarVeiculoEmRota(ra.getId(), g.getId()); 
+        gf.cadastrarVeiculoEmRota(ra.getId(), k.getId());
         
         gf.cadastrarParada(p1);
         gf.cadastrarParada(p2);
         gf.cadastrarParada(p3);
         gf.cadastrarParada(p4);
         
-        gf.cadastrarParadaEmRota(ro.getId(), p1);
-        gf.cadastrarParadaEmRota(ro.getId(), p2);
-        gf.cadastrarParadaEmRota(ro.getId(), p3);
-        gf.cadastrarParadaEmRota(ro.getId(), p4);
+        gf.cadastrarParadaEmRota(ro.getId(), p1.getId());
+        gf.cadastrarParadaEmRota(ro.getId(), p2.getId());
+        gf.cadastrarParadaEmRota(ro.getId(), p3.getId());
+        gf.cadastrarParadaEmRota(ro.getId(), p4.getId());
         
-        gf.cadastrarParadaEmRota(ra.getId(), p1);
-        gf.cadastrarParadaEmRota(ra.getId(), p2);
+        gf.cadastrarParadaEmRota(ra.getId(), p1.getId());
+        gf.cadastrarParadaEmRota(ra.getId(), p2.getId());
         
         System.out.println(gf.getUsoDosPontos(-1));
     }

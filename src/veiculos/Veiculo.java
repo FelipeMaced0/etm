@@ -7,6 +7,7 @@ import auxiliar.Rota;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
+import java.util.Objects;
 import passageiro.CartaoMag;
 
 public abstract class Veiculo {
@@ -265,9 +266,21 @@ public abstract class Veiculo {
     }
 
     public FuncionarioOperacional buscarFuncionario(String cpf){
-        return funcionarios.get(funcionarios.indexOf(cpf));
+        Iterator<FuncionarioOperacional> i = funcionarios.iterator();
+        FuncionarioOperacional fun;
+        while(i.hasNext()){
+            fun = i.next();
+            if(fun.getCpf().equals(cpf)){
+                return fun;
+            }
+        }
+        return null;
     }
-   
+    
+    public boolean funcionarioEstaCadastrado(String cpf){
+        return buscarFuncionario(cpf).getCpf().equals(cpf);
+    }
+
     public static String get(ArrayList lista, String nomeClasse){
         String info="";
         Iterator i = lista.iterator();
@@ -334,5 +347,12 @@ public abstract class Veiculo {
             return false;
         }
         return false;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 23 * hash + Objects.hashCode(this.id);
+        return hash;
     }
 }

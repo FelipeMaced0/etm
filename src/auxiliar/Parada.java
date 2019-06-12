@@ -16,6 +16,13 @@ public class Parada{
         nVeiculos = 0;
     }
     
+    public Parada(String endereco, String id,float latitude, float longitude){
+        this.endereco = endereco.toUpperCase();
+        this.id = id;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        nVeiculos = 0;
+    }
     public Parada(String id){
         this.id = id;
     }
@@ -38,6 +45,12 @@ public class Parada{
 
     public void setId(String id) {
         this.id = id;
+    }
+    
+    public void atualizar(Parada parada){
+        endereco = parada.getEndereco();
+        latitude = parada.getLatitude();
+        longitude = parada.getLongitude();
     }
     
     public float getLatitude() {

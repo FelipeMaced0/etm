@@ -4333,10 +4333,7 @@ public class Etmtelas extends javax.swing.JFrame {
         
         idRota = GF_CadasParada_Alocar_CT_idRota.getText();
         idParada = GF_CadasParada_Alocar_CT_idParada.getText();
-        parada = etm.buscarParada(idParada);
-        if(parada != null){
-            etm.cadastrarParadaEmRota(idRota, parada);
-        }
+        etm.cadastrarParadaEmRota(idRota, idParada);
     }//GEN-LAST:event_GF_CadasParada_Alocar_BT_cadastrarActionPerformed
 
     private void GF_CadasRota_BT_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GF_CadasRota_BT_buscarActionPerformed
@@ -4352,7 +4349,6 @@ public class Etmtelas extends javax.swing.JFrame {
             if(!paradas.isEmpty()){
                 GF_CadasRota_PN_minhasParadas.setVisible(true);
                 GF_CadasRota_TB_minhasParadas.setModel(new ModeloDeTabelaParada(paradas));
-                
             }
         }
     }//GEN-LAST:event_GF_CadasRota_BT_buscarActionPerformed
@@ -4362,7 +4358,6 @@ public class Etmtelas extends javax.swing.JFrame {
         String idRota;
         Rota rotaAtualizada;
         
-        GF_CadasRota_BT_buscarActionPerformed(evt);
         nomeRota = GF_CadasRota_CT_nome.getText();
         idRota = GF_CadasRota_CT_id.getText();
         rotaAtualizada = new Rota(nomeRota, idRota);
@@ -4380,8 +4375,7 @@ public class Etmtelas extends javax.swing.JFrame {
        
        idRota = GF_CadasParada_Alocar_CT_idRota.getText();
        idParada = GF_CadasParada_Alocar_CT_idParada.getText();
-       
-      
+       etm.descadastrarParadaEmRota(idRota, idParada);
     }//GEN-LAST:event_GF_CadasParada_Alocar_BT_removerActionPerformed
 
     private void GF_CadasParada_BT_removerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GF_CadasParada_BT_removerActionPerformed
@@ -4408,14 +4402,16 @@ public class Etmtelas extends javax.swing.JFrame {
 
     private void GF_CadasParada_BT_atualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GF_CadasParada_BT_atualizarActionPerformed
         String endereco;
+        String id;
         float lat;
         float longi;
         Parada paradaAtualizada;
         
         endereco = GF_CadasParada_CT_endereco.getText();
+        id = GF_CadasParada_CT_id.getText();
         lat = Float.parseFloat(GF_CadasParada_CT_latitude.getText().trim());
         longi = Float.parseFloat(GF_CadasParada_CT_longitude.getText().trim());
-        paradaAtualizada = new Parada(endereco,lat,longi);
+        paradaAtualizada = new Parada(endereco,id,lat,longi);
         etm.atualizarParada(paradaAtualizada);
     }//GEN-LAST:event_GF_CadasParada_BT_atualizarActionPerformed
 
