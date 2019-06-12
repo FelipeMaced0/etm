@@ -111,15 +111,14 @@ public class Etmtelas extends javax.swing.JFrame {
         jLabel69 = new javax.swing.JLabel();
         jLabel70 = new javax.swing.JLabel();
         jLabel71 = new javax.swing.JLabel();
+        GF_CadasVei_Alocar_CT_cpf = new javax.swing.JTextField();
+        GF_CadasVei_Alocar_CT_idVeiculo = new javax.swing.JTextField();
+        GF_CadasVei_Alocar_CT_idRota = new javax.swing.JTextField();
+        GF_CadasVei_Alocar_BT_buscar = new javax.swing.JButton();
+        GF_CadasVei_Alocar_BT_cadastrar = new javax.swing.JButton();
+        GF_CadasVei_Alocar_BT_descadastrar = new javax.swing.JButton();
+        GF_CadasVei_Alocar_CB_tipoDeAlocacao = new javax.swing.JComboBox();
         jLabel72 = new javax.swing.JLabel();
-        GF_Alocar_CT_cpf = new javax.swing.JTextField();
-        GF_Alocar_CT_veiculoId = new javax.swing.JTextField();
-        GF_Alocar_CT_rotaId = new javax.swing.JTextField();
-        GF_Alocar_CT_idParada = new javax.swing.JTextField();
-        GF_Alocar_BT_buscar = new javax.swing.JButton();
-        GF_Alocar_BT_cadastrar = new javax.swing.JButton();
-        GF_Alocar_BT_descadastrar = new javax.swing.JButton();
-        GF_Alocar_CB_tipoAlocado = new javax.swing.JComboBox();
         GF_Relatorios_PN = new javax.swing.JPanel();
         GF_Relatorios_BT_balanco = new javax.swing.JButton();
         GF_Relatorios_BT_mostrarRelatorio = new javax.swing.JButton();
@@ -882,6 +881,11 @@ public class Etmtelas extends javax.swing.JFrame {
         });
 
         GF_CadasVei_BT_atualizar.setText("ATUALIZAR");
+        GF_CadasVei_BT_atualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GF_CadasVei_BT_atualizarActionPerformed(evt);
+            }
+        });
 
         GF_CadasVei_BT_buscar.setText("BUSCAR");
         GF_CadasVei_BT_buscar.addActionListener(new java.awt.event.ActionListener() {
@@ -946,15 +950,25 @@ public class Etmtelas extends javax.swing.JFrame {
 
         jLabel71.setText("Rota ID:");
 
-        jLabel72.setText("Parada ID:");
+        GF_CadasVei_Alocar_BT_buscar.setText("BUSCAR");
 
-        GF_Alocar_BT_buscar.setText("BUSCAR");
+        GF_CadasVei_Alocar_BT_cadastrar.setText("ALOCAR");
+        GF_CadasVei_Alocar_BT_cadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GF_CadasVei_Alocar_BT_cadastrarActionPerformed(evt);
+            }
+        });
 
-        GF_Alocar_BT_cadastrar.setText("ALOCAR");
+        GF_CadasVei_Alocar_BT_descadastrar.setText("REMOVER");
+        GF_CadasVei_Alocar_BT_descadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GF_CadasVei_Alocar_BT_descadastrarActionPerformed(evt);
+            }
+        });
 
-        GF_Alocar_BT_descadastrar.setText("REMOVER");
+        GF_CadasVei_Alocar_CB_tipoDeAlocacao.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "VEICULO", "FUNCIONARIO" }));
 
-        GF_Alocar_CB_tipoAlocado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "ROTA", "VEICULO", "FUNCIONARIO" }));
+        jLabel72.setText("Tipo de Alocação");
 
         javax.swing.GroupLayout GF_CadasVei_PN_AlocarLayout = new javax.swing.GroupLayout(GF_CadasVei_PN_Alocar);
         GF_CadasVei_PN_Alocar.setLayout(GF_CadasVei_PN_AlocarLayout);
@@ -963,66 +977,61 @@ public class Etmtelas extends javax.swing.JFrame {
             .addGroup(GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
-                        .addComponent(jLabel69)
-                        .addGap(18, 18, 18)
-                        .addComponent(GF_Alocar_CT_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(GF_Alocar_CB_tipoAlocado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(79, 79, 79))
-                    .addGroup(GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
-                                .addComponent(GF_Alocar_BT_descadastrar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(GF_Alocar_BT_buscar))
-                            .addGroup(GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
-                                .addComponent(GF_Alocar_BT_cadastrar)
-                                .addGap(178, 178, 178)))
-                        .addGap(95, 95, 95))
-                    .addGroup(GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
-                        .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel70)
-                            .addComponent(jLabel71)
-                            .addComponent(jLabel72))
-                        .addGap(18, 18, 18)
-                        .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(GF_Alocar_CT_veiculoId)
-                            .addComponent(GF_Alocar_CT_rotaId, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
-                            .addComponent(GF_Alocar_CT_idParada))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
+                            .addComponent(GF_CadasVei_Alocar_BT_cadastrar)
+                            .addGap(18, 18, 18)
+                            .addComponent(GF_CadasVei_Alocar_BT_descadastrar)
+                            .addGap(18, 18, 18)
+                            .addComponent(GF_CadasVei_Alocar_BT_buscar)
+                            .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
+                            .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel71)
+                                .addComponent(jLabel70))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
+                                    .addComponent(GF_CadasVei_Alocar_CT_idRota, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(79, 162, Short.MAX_VALUE))
+                                .addGroup(GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
+                                    .addComponent(GF_CadasVei_Alocar_CT_idVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                    .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
+                            .addComponent(jLabel72)
+                            .addGap(18, 18, 18)
+                            .addComponent(GF_CadasVei_Alocar_CB_tipoDeAlocacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
+                            .addComponent(jLabel69)
+                            .addGap(18, 18, 18)
+                            .addComponent(GF_CadasVei_Alocar_CT_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))))
         );
         GF_CadasVei_PN_AlocarLayout.setVerticalGroup(
             GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
-                        .addComponent(GF_Alocar_CB_tipoAlocado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(25, 25, 25))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
-                        .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel69)
-                            .addComponent(GF_Alocar_CT_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)))
+                .addGap(35, 35, 35)
+                .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel69)
+                    .addComponent(GF_CadasVei_Alocar_CT_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel70)
-                    .addComponent(GF_Alocar_CT_veiculoId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(GF_CadasVei_Alocar_CT_idVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel71)
-                    .addComponent(GF_Alocar_CT_rotaId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(GF_CadasVei_Alocar_CT_idRota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(GF_Alocar_CT_idParada, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(GF_CadasVei_Alocar_CB_tipoDeAlocacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel72))
-                .addGap(77, 77, 77)
+                .addGap(30, 30, 30)
                 .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(GF_Alocar_BT_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(GF_Alocar_BT_descadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(GF_Alocar_BT_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                    .addComponent(GF_CadasVei_Alocar_BT_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(GF_CadasVei_Alocar_BT_descadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(GF_CadasVei_Alocar_BT_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout GF_CadastrarVeiculo_PNLayout = new javax.swing.GroupLayout(GF_CadastrarVeiculo_PN);
@@ -1086,7 +1095,7 @@ public class Etmtelas extends javax.swing.JFrame {
                                     .addComponent(GF_CadasVei_CB_tipoDeRota, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                     .addGroup(GF_CadastrarVeiculo_PNLayout.createSequentialGroup()
                         .addGap(22, 22, 22)
-                        .addComponent(GF_CadasVei_PN_Alocar, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(GF_CadasVei_PN_Alocar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(401, Short.MAX_VALUE))
         );
         GF_CadastrarVeiculo_PNLayout.setVerticalGroup(
@@ -1146,8 +1155,8 @@ public class Etmtelas extends javax.swing.JFrame {
                         .addGroup(GF_CadastrarVeiculo_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(GF_CadasVei_BT_atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(GF_CadasVei_BT_remover, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(GF_CadasVei_PN_Alocar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(240, 240, 240))
+                    .addComponent(GF_CadasVei_PN_Alocar, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(284, 284, 284))
         );
 
         GF_abaInterna.addTab("Cadastrar veículo", GF_CadastrarVeiculo_PN);
@@ -4023,7 +4032,7 @@ public class Etmtelas extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(grandeAba, javax.swing.GroupLayout.DEFAULT_SIZE, 1022, Short.MAX_VALUE)
+            .addComponent(grandeAba, javax.swing.GroupLayout.PREFERRED_SIZE, 1022, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4208,11 +4217,11 @@ public class Etmtelas extends javax.swing.JFrame {
         String tipoDeVeiculo;
         tipoDeVeiculo = GF_CadasVei_CB_tipoDeVeiculo.getSelectedItem().toString();
         switch(tipoDeVeiculo){
-            case "ÔNIBUS":case "MICRO-ÔNIBUS":
-            GF_CadasVei_PN_placa.setVisible(true);
-            break;
+            case "ÔNIBUS":case "MICRO-ÔNIBUS":case "BRT":case"VAN":
+                GF_CadasVei_PN_placa.setVisible(true);
+                break;
             default:
-            GF_CadasVei_PN_placa.setVisible(false);
+                GF_CadasVei_PN_placa.setVisible(false);
             break;
         }
     }//GEN-LAST:event_GF_CadasVei_CB_tipoDeVeiculoActionPerformed
@@ -4234,7 +4243,7 @@ public class Etmtelas extends javax.swing.JFrame {
             GF_CadasVei_CB_tipoDeVeiculo.setSelectedItem(veiculo.getTipoDeVeiculo());
             GF_CadasVei_CB_tipoDeCobranca.setSelectedItem(veiculo.getTipoDeCobranca());
             if(veiculo instanceof VeiculoComPlaca){
-                GF_CadasVei_CT_placa.setText(((Onibus)veiculo).getPlaca());
+                GF_CadasVei_CT_placa.setText(((VeiculoComPlaca)veiculo).getPlaca());
             }
             GF_CadasVei_CT_capacidade.setText(String.valueOf(veiculo.getCapacidade()));
             GF_CadasVei_CT_autonomia.setText(String.valueOf(veiculo.getAutonomia()));
@@ -4430,6 +4439,103 @@ public class Etmtelas extends javax.swing.JFrame {
        etm.descadastrarVeiculo(idVeiculo);
     }//GEN-LAST:event_GF_CadasVei_BT_removerActionPerformed
 
+    private void GF_CadasVei_BT_atualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GF_CadasVei_BT_atualizarActionPerformed
+        String status;
+        String id;
+        String tipoDeCombustivel;
+        String tipoDeVeiculo;
+        String tipoDeRota;
+        String tipoDeCobranca;
+        String placa;
+        int capacidade;
+        float autonomia;
+
+        Veiculo nVeiculo=null;
+        status = GF_CadasVei_CB_status.getSelectedItem().toString();
+        id = GF_CadasVei_CT_id.getText();
+        tipoDeCombustivel = GF_CadasVei_CB_tipoCombustivel.getSelectedItem().toString();
+        tipoDeRota = GF_CadasVei_CB_tipoDeRota.getSelectedItem().toString();
+        tipoDeVeiculo = GF_CadasVei_CB_tipoDeVeiculo.getSelectedItem().toString();
+        tipoDeCobranca = GF_CadasVei_CB_tipoDeCobranca.getSelectedItem().toString();
+        placa = GF_CadasVei_CT_placa.getText();
+        capacidade = Integer.parseInt(GF_CadasVei_CT_capacidade.getText());
+        autonomia = Float.parseFloat(GF_CadasVei_CT_autonomia.getText());
+
+        switch(tipoDeVeiculo){
+            case "VLT":
+                nVeiculo = new Vlt(status,id,tipoDeCombustivel,tipoDeRota,tipoDeCobranca,capacidade,autonomia);
+                break;
+            case "BRT":
+                nVeiculo = new Brt(placa,id,status,tipoDeCombustivel,tipoDeRota,tipoDeCobranca,capacidade,autonomia);
+                break;
+            case "VAN":
+                nVeiculo = new Van(placa,id,status,tipoDeCombustivel,tipoDeRota,tipoDeCobranca,capacidade,autonomia);
+                break;
+            case "METRÔ":
+                nVeiculo = new Metro(id,status,tipoDeCombustivel,tipoDeRota,tipoDeCobranca,capacidade,autonomia);
+                break;
+            case "ÔNIBUS":
+                nVeiculo = new Onibus(placa,id,status,tipoDeCombustivel,tipoDeRota,tipoDeCobranca,capacidade,autonomia);
+                break;
+            case "MICRO-ÔNIBUS":
+                nVeiculo = new MicroOnibus(placa,id,status,tipoDeCombustivel,tipoDeRota,tipoDeCobranca,capacidade,autonomia);
+                break;
+            default:
+                break;
+        }
+        if(nVeiculo != null){
+            System.out.println(nVeiculo.getId());
+            etm.atualizarVeiculo(nVeiculo);
+        }
+    }//GEN-LAST:event_GF_CadasVei_BT_atualizarActionPerformed
+
+    private void GF_CadasVei_Alocar_BT_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GF_CadasVei_Alocar_BT_cadastrarActionPerformed
+        String tipoDeAlocacao;
+        String idRota;
+        String idVeiculo;
+        String cpfFun;
+        
+        tipoDeAlocacao = GF_CadasVei_Alocar_CB_tipoDeAlocacao.getSelectedItem().toString();
+        switch(tipoDeAlocacao){
+            case "FUNCIONARIO":
+                cpfFun = GF_CadasVei_Alocar_CT_cpf.getText();
+                idVeiculo = GF_CadasVei_Alocar_CT_idVeiculo.getText();
+                etm.cadastrarFuncionarioEmVeiculo(idVeiculo, cpfFun);
+                break;
+            case "ROTA":
+                idRota = GF_CadasVei_Alocar_CT_idRota.getText();
+                idVeiculo = GF_CadasVei_Alocar_CT_idVeiculo.getText();
+                etm.cadastrarVeiculoEmRota(idRota, idVeiculo);
+                break;
+            default:
+                break;
+        
+        }
+    }//GEN-LAST:event_GF_CadasVei_Alocar_BT_cadastrarActionPerformed
+
+    private void GF_CadasVei_Alocar_BT_descadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GF_CadasVei_Alocar_BT_descadastrarActionPerformed
+         String tipoDeAlocacao;
+        String idRota;
+        String idVeiculo;
+        String cpfFun;
+        
+        tipoDeAlocacao = GF_CadasVei_Alocar_CB_tipoDeAlocacao.getSelectedItem().toString();
+        switch(tipoDeAlocacao){
+            case "FUNCIONARIO":
+                cpfFun = GF_CadasVei_Alocar_CT_cpf.getText();
+                idVeiculo = GF_CadasVei_Alocar_CT_idVeiculo.getText();
+                etm.descadastrarFuncionarioEmVeiculo(idVeiculo, cpfFun);
+                break;
+            case "ROTA":
+                idRota = GF_CadasVei_Alocar_CT_idRota.getText();
+                idVeiculo = GF_CadasVei_Alocar_CT_idVeiculo.getText();
+                etm.descadastrarVeiculoEmRota(idRota, idVeiculo);
+                break;
+            default:
+                break;
+        }
+    }//GEN-LAST:event_GF_CadasVei_Alocar_BT_descadastrarActionPerformed
+
     public void limparCampos(JPanel painel){
         Component [] componentes;
         componentes = painel.getComponents();
@@ -4531,14 +4637,6 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JPanel CB_abaRelatorioFinanceiro;
     private javax.swing.JPanel CB_abaVendaPassagem;
     private javax.swing.JButton CadasVei_BT_cadastrar;
-    private javax.swing.JButton GF_Alocar_BT_buscar;
-    private javax.swing.JButton GF_Alocar_BT_cadastrar;
-    private javax.swing.JButton GF_Alocar_BT_descadastrar;
-    private javax.swing.JComboBox GF_Alocar_CB_tipoAlocado;
-    private javax.swing.JTextField GF_Alocar_CT_cpf;
-    private javax.swing.JTextField GF_Alocar_CT_idParada;
-    private javax.swing.JTextField GF_Alocar_CT_rotaId;
-    private javax.swing.JTextField GF_Alocar_CT_veiculoId;
     private javax.swing.JPanel GF_BuscarRelatorios_PN;
     private javax.swing.JButton GF_CadasParada_Alocar_BT_cadastrar;
     private javax.swing.JButton GF_CadasParada_Alocar_BT_remover;
@@ -4563,6 +4661,13 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JPanel GF_CadasRota_PN_minhasParadas;
     private javax.swing.JScrollPane GF_CadasRota_SP_minhasParadas;
     private javax.swing.JTable GF_CadasRota_TB_minhasParadas;
+    private javax.swing.JButton GF_CadasVei_Alocar_BT_buscar;
+    private javax.swing.JButton GF_CadasVei_Alocar_BT_cadastrar;
+    private javax.swing.JButton GF_CadasVei_Alocar_BT_descadastrar;
+    private javax.swing.JComboBox GF_CadasVei_Alocar_CB_tipoDeAlocacao;
+    private javax.swing.JTextField GF_CadasVei_Alocar_CT_cpf;
+    private javax.swing.JTextField GF_CadasVei_Alocar_CT_idRota;
+    private javax.swing.JTextField GF_CadasVei_Alocar_CT_idVeiculo;
     private javax.swing.JButton GF_CadasVei_BT_atualizar;
     private javax.swing.JButton GF_CadasVei_BT_buscar;
     private javax.swing.JButton GF_CadasVei_BT_limpar;

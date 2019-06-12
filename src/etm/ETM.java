@@ -222,6 +222,14 @@ public class ETM {
         }
     }
     
+    public void descadastrarFuncionarioEmVeiculo(String idVeiculo, String cpf){
+        Veiculo veiculo = buscarVeiculo(idVeiculo);
+        Funcionario fun = buscarFuncionario(cpf);
+        
+        if(veiculo!=null&&fun!=null){
+            veiculo.descadastrarFuncionario(cpf);
+        }
+    }
      
     //Retorna o veículo  que possuir o id igual ao idBuscado
     public Veiculo buscarVeiculo(String idBuscado){
@@ -284,6 +292,7 @@ public class ETM {
         return null;
     }
     
+    //atualizar veículo nas rotas
     public void atualizarVeiculo(Veiculo veiAtualizado){
         if (veiculos.contains(veiAtualizado))
             veiculos.set(veiculos.indexOf(veiAtualizado), veiAtualizado);
