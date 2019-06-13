@@ -517,6 +517,7 @@ public class Etmtelas extends javax.swing.JFrame {
         MC_Vistoria_CB_tipoDeVeiculo = new javax.swing.JComboBox<String>();
         MC_Vistoria_BT_tipoDeCombustivel = new javax.swing.JComboBox<String>();
         jScrollPane6 = new javax.swing.JScrollPane();
+        jTable5 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -571,9 +572,24 @@ public class Etmtelas extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Endereço", "ID", "Latitude", "Longitude"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.Float.class
+            };
+            boolean[] canEdit = new boolean [] {
+                true, false, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         GF_CadasRota_SP_minhasParadas.setViewportView(GF_CadasRota_TB_minhasParadas);
 
         javax.swing.GroupLayout GF_CadasRota_PN_minhasParadasLayout = new javax.swing.GroupLayout(GF_CadasRota_PN_minhasParadas);
@@ -980,19 +996,16 @@ public class Etmtelas extends javax.swing.JFrame {
                             .addComponent(GF_CadasVei_Alocar_BT_cadastrar)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(GF_CadasVei_Alocar_BT_descadastrar)
-                            .addGap(0, 0, Short.MAX_VALUE))
+                            .addGap(0, 81, Short.MAX_VALUE))
                         .addGroup(GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
                             .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel71)
                                 .addComponent(jLabel70))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
-                                    .addComponent(GF_CadasVei_Alocar_CT_idRota, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(79, 162, Short.MAX_VALUE))
-                                .addGroup(GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
-                                    .addComponent(GF_CadasVei_Alocar_CT_idVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addComponent(GF_CadasVei_Alocar_CT_idRota, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(GF_CadasVei_Alocar_CT_idVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(GF_CadasVei_PN_AlocarLayout.createSequentialGroup()
                             .addComponent(jLabel72)
@@ -1407,7 +1420,7 @@ public class Etmtelas extends javax.swing.JFrame {
         );
         GF_abaLayout.setVerticalGroup(
             GF_abaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(GF_abaInterna, javax.swing.GroupLayout.PREFERRED_SIZE, 746, Short.MAX_VALUE)
+            .addComponent(GF_abaInterna, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 746, Short.MAX_VALUE)
         );
 
         grandeAba.addTab("GESTOR DE FROTA", GF_aba);
@@ -3635,8 +3648,6 @@ public class Etmtelas extends javax.swing.JFrame {
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
-        CB_VendaPassagem_PN_aDinheiro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
         jLabel36.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jLabel36.setText("RECEBIDO");
 
@@ -3700,7 +3711,7 @@ public class Etmtelas extends javax.swing.JFrame {
                     .addGroup(CB_abaVendaPassagemLayout.createSequentialGroup()
                         .addGap(373, 373, 373)
                         .addComponent(CB_VendaPassagem_PN_aDinheiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addContainerGap(400, Short.MAX_VALUE))
         );
         CB_abaVendaPassagemLayout.setVerticalGroup(
             CB_abaVendaPassagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4004,6 +4015,20 @@ public class Etmtelas extends javax.swing.JFrame {
         );
 
         MC_abaInterna.addTab("VISTORIA", MC_abaVistoria);
+
+        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane6.setViewportView(jTable5);
+
         MC_abaInterna.addTab("REALIZADAS", jScrollPane6);
 
         javax.swing.GroupLayout MC_abaLayout = new javax.swing.GroupLayout(MC_aba);
@@ -5041,6 +5066,7 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
+    private javax.swing.JTable jTable5;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField13;

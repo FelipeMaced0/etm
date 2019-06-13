@@ -80,7 +80,7 @@ public class ModeloDeTabelaParada extends AbstractTableModel{
                 parada.setLatitude(Float.parseFloat(String.valueOf(value)));
                 break;
             case "LONGITUDE":
-                parada.setLatitude(Float.parseFloat(String.valueOf(value)));
+                parada.setLongitude(Float.parseFloat(String.valueOf(value)));
                 break;
             default:
                 break;
