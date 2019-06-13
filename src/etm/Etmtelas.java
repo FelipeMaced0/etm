@@ -29,9 +29,8 @@ import veiculos.Vlt;
 public class Etmtelas extends javax.swing.JFrame {
     ETM etm;
     public Etmtelas() {
-        initComponents();
         etm = new ETM("asdsd","12312");
-        etm.setTarifa((float)3.8);
+        initComponents();
     }
 
     
@@ -1043,7 +1042,7 @@ public class Etmtelas extends javax.swing.JFrame {
                 .addGroup(GF_CadasVei_PN_AlocarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(GF_CadasVei_Alocar_BT_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(GF_CadasVei_Alocar_BT_descadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout GF_CadastrarVeiculo_PNLayout = new javax.swing.GroupLayout(GF_CadastrarVeiculo_PN);
@@ -1167,8 +1166,8 @@ public class Etmtelas extends javax.swing.JFrame {
                         .addGroup(GF_CadastrarVeiculo_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(GF_CadasVei_BT_atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(GF_CadasVei_BT_remover, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(GF_CadasVei_PN_Alocar, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(284, 284, 284))
+                    .addComponent(GF_CadasVei_PN_Alocar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(257, 257, 257))
         );
 
         GF_abaInterna.addTab("Cadastrar veículo", GF_CadastrarVeiculo_PN);
@@ -4596,9 +4595,7 @@ public class Etmtelas extends javax.swing.JFrame {
             float renda=0;
             
             objs = etm.gerarRelatorioFuncionario(sexoFun, idade, CHoraria, renda);
-            System.out.println(objs);
             if(!objs.isEmpty()){
-                System.out.println((ArrayList<Funcionario>)objs);
                 GF_Relatorios_TB_listagem.setModel(new ModeloDeTabelaFuncionario((ArrayList<Funcionario>)objs));
             }
             

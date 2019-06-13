@@ -710,9 +710,9 @@
                                           <Component id="GF_CadasVei_BT_remover" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Component id="GF_CadasVei_PN_Alocar" alignment="0" min="-2" pref="262" max="-2" attributes="0"/>
+                                  <Component id="GF_CadasVei_PN_Alocar" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="284" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="257" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1016,7 +1016,7 @@
                                       <Component id="GF_CadasVei_Alocar_BT_cadastrar" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                                       <Component id="GF_CadasVei_Alocar_BT_descadastrar" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="32" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>

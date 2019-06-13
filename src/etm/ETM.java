@@ -361,12 +361,12 @@ public class ETM {
             if(fun.getSalario()==renda){
                 p+=1;
             } 
-            if(p>pAnt){
+            if(p==pAnt){
                 pAnt = p;
-                
                 relatados.add(fun);
             }
-            else if(p==pAnt){
+            else if(p>pAnt){
+               pAnt = p;
                relatados.removeAll(relatados);
                relatados.add(fun);
             }   

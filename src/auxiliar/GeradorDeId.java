@@ -8,7 +8,7 @@ public class GeradorDeId {
     ArrayList<String> idsEmUso;
     final int NUMPOSSIBILIDADES;
     public GeradorDeId() {
-        this.NUMPOSSIBILIDADES = 1757600;
+        NUMPOSSIBILIDADES = 1757600;
         idsEmUso = new ArrayList();
     }
     
@@ -16,7 +16,7 @@ public class GeradorDeId {
         String nId="";
         String alfabeto = "ABCDEFGHIJKLMNOPQRSTUVXWYZ";
         Random nRandomico = new Random();
-        while(true){
+        while(idsEmUso.size()<NUMPOSSIBILIDADES){
             for(int j=0;j<5;j++){
                 if(j<3){
                     nId += alfabeto.charAt(nRandomico.nextInt(26));
@@ -36,6 +36,7 @@ public class GeradorDeId {
                 return nId;
             }
         }
+        return null;
     }
     
     public String buscarId(String id){

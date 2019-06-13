@@ -91,8 +91,27 @@ public abstract class Funcionario {
     }
 
     public String getFuncao() {
-        return this.getClass().getSimpleName();
+        if(this instanceof Cobrador){
+            return "COBRADOR";
+        }
+        if(this instanceof Motorista){
+            return "MOTORISTA";
+        }
+        if(this instanceof Mecanico){
+            return "MECÂNICO";
+        }
+        if(this instanceof GestorDeFrota){
+            return "GESTOR DE FROTA";
+        }
+        if(this instanceof GerenteLocal){
+            return "GERENTE LOCAL";
+        }
+        if(this instanceof GerenteRegional){
+            return "GERENTE REGIONAL";
+        }
+        return null;
     }
+    
     
     public void atualizar(Funcionario funAtualizado){
         nome = funAtualizado.getNome();
