@@ -127,7 +127,7 @@ public class ETM {
         cartoes.add(cartao);
     }
     
-    public void cadastrarVeiculoEmRota(String idRota, String idVeiculo){
+    public void alocarVeiculo(String idRota, String idVeiculo){
         Rota rota = buscarRota(idRota);
         Veiculo veiculo = buscarVeiculo(idVeiculo);
         if(rota!=null&&veiculo!=null){
@@ -139,7 +139,7 @@ public class ETM {
         }
     }
     
-    public void cadastrarParadaEmRota(String idRota, String idParada){
+    public void alocarParada(String idRota, String idParada){
         Rota rota = buscarRota(idRota);
         Parada parada = buscarParada(idParada);
         if(rota != null){
@@ -149,7 +149,7 @@ public class ETM {
         }
     }
     
-    public void cadastrarFuncionarioEmVeiculo(String idVeiculo, String cpf){
+    public void alocarFuncionario(String idVeiculo, String cpf){
         Veiculo veiculo = buscarVeiculo(idVeiculo);
         Funcionario fun = buscarFuncionario(cpf);
         if(veiculo!=null&&fun!=null){
@@ -650,17 +650,9 @@ public class ETM {
         }
     }
     
-    public String getUsoDosPontos(int ordem){
-        String info="";
+    public ArrayList<Parada> getUsoDosPontos(int ordem){
         ordenar(ordem);
-        Iterator<Parada> i = paradas.iterator();
-        Parada parada;
-        while(i.hasNext()){
-            //System.out.println("dentro do laço");
-            parada = i.next();
-            info += "\nPONTO: "+parada.getEndereco()+"\nNº VEÍCULOS: "+parada.getnVeiculos();
-        }
-        return info;
+        return this.getParadasCadastradas();
     }
     
 

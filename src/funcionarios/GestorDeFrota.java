@@ -34,11 +34,11 @@ public class GestorDeFrota extends FuncionarioAdministrativo{
     }
     
     public void cadastrarVeiculoEmRota(String idRota, String idVeiculo){
-        etm.cadastrarVeiculoEmRota(idRota, idVeiculo);
+        etm.alocarVeiculo(idRota, idVeiculo);
     }
     
     public void cadastrarParadaEmRota(String idrota, String idParada){
-        etm.cadastrarParadaEmRota(idrota, idParada);
+        etm.alocarParada(idrota, idParada);
     }
     
     public void descadastrarVeiculo(String id){
@@ -110,7 +110,7 @@ public class GestorDeFrota extends FuncionarioAdministrativo{
         return etm.calcularTarifaIdealTveiculos(percentDeLucro);
     }
     
-    public String getUsoDosPontos(int ordem){
+    public ArrayList<Parada> getUsoDosPontos(int ordem){
         return etm.getUsoDosPontos(ordem);
     }
     

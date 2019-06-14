@@ -9,7 +9,7 @@ public class Rota {
     private ArrayList<Coordenada> coordenadas;
     private ArrayList<Parada> paradas;
     private ArrayList<Veiculo> veiculos;
-    private int nVeiculos;
+    private int nVeiculos=0;
     
     public Rota(){
     }

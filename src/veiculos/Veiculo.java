@@ -278,7 +278,7 @@ public abstract class Veiculo {
     }
     
     public boolean funcionarioEstaCadastrado(String cpf){
-        return buscarFuncionario(cpf).getCpf().equals(cpf);
+        return buscarFuncionario(cpf)!=null;
     }
 
     public static String get(ArrayList lista, String nomeClasse){

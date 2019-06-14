@@ -10,7 +10,7 @@ public class ModeloDeTabelaParada extends AbstractTableModel{
     private final String columns[];
 
     public ModeloDeTabelaParada(ArrayList<Parada> rows) {
-        this.columns = new String[] {"ENDEREÇO","ID","LATITUDE","LONGITUDE"};
+        this.columns = new String[] {"ENDEREÇO","ID","Nº DE VEÍCULOS","LATITUDE","LONGITUDE"};
         this.rows = rows;
     }
     
@@ -34,7 +34,9 @@ public class ModeloDeTabelaParada extends AbstractTableModel{
         switch(columnIndex){
             case 0: case 1:
                 return String.class;
-            case 2: case 3:
+            case 2: 
+                return Integer.class;
+            case 3:case 4:
                 return Float.class;
             default:
                 return null;
@@ -56,6 +58,8 @@ public class ModeloDeTabelaParada extends AbstractTableModel{
                 return parada.getEndereco();
             case "ID":
                 return parada.getId();
+            case "Nº DE VEÍCULOS":
+                return parada.getnVeiculos();
             case "LATITUDE":
                 return parada.getLatitude();
             case "LONGITUDE":
@@ -75,6 +79,8 @@ public class ModeloDeTabelaParada extends AbstractTableModel{
                 parada.setEndereco(String.valueOf(value));
                 break;
             case "ID":
+                break;
+            case "Nº DE VEÍCULOS":
                 break;
             case "LATITUDE":
                 parada.setLatitude(Float.parseFloat(String.valueOf(value)));

@@ -74,7 +74,6 @@ public class Etmtelas extends javax.swing.JFrame {
         GF_CadasRota_PN_listaDeParadas = new javax.swing.JPanel();
         GF_CadasRota_BT_voltar = new javax.swing.JButton();
         GF_CadasRota_BT_detalhar = new javax.swing.JButton();
-        GF_CadasRota_CB_ordenacao = new javax.swing.JComboBox();
         jScrollPane10 = new javax.swing.JScrollPane();
         GF_CadasRota_TB_listagem = new javax.swing.JTable();
         GF_CadastrarParada_PN = new javax.swing.JPanel();
@@ -98,6 +97,11 @@ public class Etmtelas extends javax.swing.JFrame {
         GF_CadasParada_Alocar_CT_idParada = new javax.swing.JTextField();
         GF_CadasParada_Alocar_BT_cadastrar = new javax.swing.JButton();
         GF_CadasParada_Alocar_BT_remover = new javax.swing.JButton();
+        GF_CadasParada_PN_listaDeParadas = new javax.swing.JPanel();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        GF_CadasParada_TB_listaDeParadas = new javax.swing.JTable();
+        GF_CadasParada_CB_ordenacao = new javax.swing.JComboBox();
+        jLabel55 = new javax.swing.JLabel();
         GF_CadastrarVeiculo_PN = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
@@ -674,6 +678,8 @@ public class Etmtelas extends javax.swing.JFrame {
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
+        GF_CadasRota_PN_listaDeParadas.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
         GF_CadasRota_BT_voltar.setText("VOLTAR");
         GF_CadasRota_BT_voltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -688,25 +694,30 @@ public class Etmtelas extends javax.swing.JFrame {
             }
         });
 
-        GF_CadasRota_CB_ordenacao.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "MENOR-MAIOR", "MAIOR-MENOR" }));
-
         GF_CadasRota_TB_listagem.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "NOME", "ID"
+                "NOME", "ID", "Nº DE VEÍCULOS"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         jScrollPane10.setViewportView(GF_CadasRota_TB_listagem);
@@ -717,29 +728,23 @@ public class Etmtelas extends javax.swing.JFrame {
             GF_CadasRota_PN_listaDeParadasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(GF_CadasRota_PN_listaDeParadasLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(GF_CadasRota_PN_listaDeParadasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 567, Short.MAX_VALUE)
-                    .addGroup(GF_CadasRota_PN_listaDeParadasLayout.createSequentialGroup()
-                        .addGroup(GF_CadasRota_PN_listaDeParadasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(GF_CadasRota_CB_ordenacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(GF_CadasRota_PN_listaDeParadasLayout.createSequentialGroup()
-                                .addComponent(GF_CadasRota_BT_detalhar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(GF_CadasRota_BT_voltar)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addComponent(GF_CadasRota_BT_detalhar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(GF_CadasRota_BT_voltar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(GF_CadasRota_PN_listaDeParadasLayout.createSequentialGroup()
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 609, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 15, Short.MAX_VALUE))
         );
         GF_CadasRota_PN_listaDeParadasLayout.setVerticalGroup(
             GF_CadasRota_PN_listaDeParadasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GF_CadasRota_PN_listaDeParadasLayout.createSequentialGroup()
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(GF_CadasRota_CB_ordenacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(37, 37, 37)
                 .addGroup(GF_CadasRota_PN_listaDeParadasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(GF_CadasRota_BT_detalhar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(GF_CadasRota_BT_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21))
+                .addGap(19, 19, 19))
         );
 
         javax.swing.GroupLayout GF_CadastrarRota_PNLayout = new javax.swing.GroupLayout(GF_CadastrarRota_PN);
@@ -757,9 +762,9 @@ public class Etmtelas extends javax.swing.JFrame {
                         .addGroup(GF_CadastrarRota_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(GF_CadasRota_CT_nome, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
                             .addComponent(GF_CadasRota_CT_id))
-                        .addGap(55, 55, 55)
-                        .addComponent(GF_CadasRota_PN_listaDeParadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                        .addGap(26, 26, 26)
+                        .addComponent(GF_CadasRota_PN_listaDeParadas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(35, 35, 35)
                         .addComponent(GF_CadasRota_PN_calcularDistancia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(GF_CadastrarRota_PNLayout.createSequentialGroup()
@@ -795,7 +800,7 @@ public class Etmtelas extends javax.swing.JFrame {
                             .addComponent(GF_CadasRota_CT_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(GF_CadastrarRota_PNLayout.createSequentialGroup()
                         .addGap(33, 33, 33)
-                        .addComponent(GF_CadasRota_PN_listaDeParadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(GF_CadasRota_PN_listaDeParadas, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(GF_CadastrarRota_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(GF_CadastrarRota_PNLayout.createSequentialGroup()
                         .addGap(52, 52, 52)
@@ -919,6 +924,70 @@ public class Etmtelas extends javax.swing.JFrame {
                 .addGap(134, 134, 134))
         );
 
+        GF_CadasParada_PN_listaDeParadas.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        GF_CadasParada_TB_listaDeParadas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "ENDEREÇO", "ID", "Nº  DE VEÍCULOS", "LATITUDE", "LONGITUDE"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Float.class, java.lang.Float.class
+            };
+            boolean[] canEdit = new boolean [] {
+                true, false, false, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane11.setViewportView(GF_CadasParada_TB_listaDeParadas);
+
+        GF_CadasParada_CB_ordenacao.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "MAIOR-MENOR", "MENOR-MAIOR" }));
+        GF_CadasParada_CB_ordenacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GF_CadasParada_CB_ordenacaoActionPerformed(evt);
+            }
+        });
+
+        jLabel55.setText("ORDENAÇÃO:");
+
+        javax.swing.GroupLayout GF_CadasParada_PN_listaDeParadasLayout = new javax.swing.GroupLayout(GF_CadasParada_PN_listaDeParadas);
+        GF_CadasParada_PN_listaDeParadas.setLayout(GF_CadasParada_PN_listaDeParadasLayout);
+        GF_CadasParada_PN_listaDeParadasLayout.setHorizontalGroup(
+            GF_CadasParada_PN_listaDeParadasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GF_CadasParada_PN_listaDeParadasLayout.createSequentialGroup()
+                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 609, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 15, Short.MAX_VALUE))
+            .addGroup(GF_CadasParada_PN_listaDeParadasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel55)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(GF_CadasParada_CB_ordenacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        GF_CadasParada_PN_listaDeParadasLayout.setVerticalGroup(
+            GF_CadasParada_PN_listaDeParadasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GF_CadasParada_PN_listaDeParadasLayout.createSequentialGroup()
+                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
+                .addGroup(GF_CadasParada_PN_listaDeParadasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel55)
+                    .addComponent(GF_CadasParada_CB_ordenacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout GF_CadastrarParada_PNLayout = new javax.swing.GroupLayout(GF_CadastrarParada_PN);
         GF_CadastrarParada_PN.setLayout(GF_CadastrarParada_PNLayout);
         GF_CadastrarParada_PNLayout.setHorizontalGroup(
@@ -960,7 +1029,9 @@ public class Etmtelas extends javax.swing.JFrame {
                                     .addComponent(GF_CadasParada_CT_id))))
                         .addGap(102, 102, 102)
                         .addComponent(GF_CadasParada_PN_Alocar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(53, 53, 53)
+                        .addComponent(GF_CadasParada_PN_listaDeParadas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(146, 146, 146))))
         );
         GF_CadastrarParada_PNLayout.setVerticalGroup(
             GF_CadastrarParada_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -983,7 +1054,8 @@ public class Etmtelas extends javax.swing.JFrame {
                         .addGroup(GF_CadastrarParada_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(GF_CadasParada_CT_longitude, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel62)))
-                    .addComponent(GF_CadasParada_PN_Alocar, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(GF_CadasParada_PN_Alocar, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(GF_CadasParada_PN_listaDeParadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(132, 132, 132)
                 .addGroup(GF_CadastrarParada_PNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(GF_CadasParada_BT_remover, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4475,6 +4547,7 @@ public class Etmtelas extends javax.swing.JFrame {
         float lat;
         float longi;
         Parada novaParada;
+        ArrayList<Parada> paradas;
         
         endereco = GF_CadasParada_CT_endereco.getText();
         lat = Float.parseFloat(GF_CadasParada_CT_latitude.getText().trim());
@@ -4483,7 +4556,8 @@ public class Etmtelas extends javax.swing.JFrame {
         etm.cadastrarParada(novaParada);
         GF_CadasParada_CT_id.setText(novaParada.getId());
         GF_CadasParada_Alocar_CT_idParada.setText(novaParada.getId());
-        
+        paradas = etm.getParadasCadastradas();
+        GF_CadasParada_TB_listaDeParadas.setModel(new ModeloDeTabelaParada(paradas));
     }//GEN-LAST:event_GF_CadasParada_BT_cadastrarActionPerformed
 
     private void GF_CadasRota_BT_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GF_CadasRota_BT_cadastrarActionPerformed
@@ -4514,7 +4588,7 @@ public class Etmtelas extends javax.swing.JFrame {
         
         idRota = GF_CadasParada_Alocar_CT_idRota.getText();
         idParada = GF_CadasParada_Alocar_CT_idParada.getText();
-        etm.cadastrarParadaEmRota(idRota, idParada);
+        etm.alocarParada(idRota, idParada);
     }//GEN-LAST:event_GF_CadasParada_Alocar_BT_cadastrarActionPerformed
 
     private void GF_CadasRota_BT_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GF_CadasRota_BT_buscarActionPerformed
@@ -4672,12 +4746,12 @@ public class Etmtelas extends javax.swing.JFrame {
             case "FUNCIONARIO":
                 cpfFun = GF_CadasVei_Alocar_CT_cpf.getText();
                 idVeiculo = GF_CadasVei_Alocar_CT_idVeiculo.getText();
-                etm.cadastrarFuncionarioEmVeiculo(idVeiculo, cpfFun);
+                etm.alocarFuncionario(idVeiculo, cpfFun);
                 break;
             case "VEICULO":
                 idRota = GF_CadasVei_Alocar_CT_idRota.getText();
                 idVeiculo = GF_CadasVei_Alocar_CT_idVeiculo.getText();
-                etm.cadastrarVeiculoEmRota(idRota, idVeiculo);
+                etm.alocarVeiculo(idRota, idVeiculo);
                 break;
             default:
                 break;
@@ -4793,6 +4867,27 @@ public class Etmtelas extends javax.swing.JFrame {
         GF_CadasRota_TB_listagem.setModel(new ModeloDeTabelaRota(rotas));
     }//GEN-LAST:event_GF_CadasRota_BT_voltarActionPerformed
 
+    private void GF_CadasParada_CB_ordenacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GF_CadasParada_CB_ordenacaoActionPerformed
+        String ordenacao;
+        ArrayList<Parada> paradas=null;
+        
+        ordenacao = GF_CadasParada_CB_ordenacao.getSelectedItem().toString();
+        switch(ordenacao){
+            case "MENOR-MAIOR":
+                paradas = etm.getUsoDosPontos(1);
+                break;
+            case "MAIOR-MENOR":
+                paradas = etm.getUsoDosPontos(-1);
+                break;
+            default:
+                break;
+        }
+        
+        if(paradas!=null){
+            GF_CadasParada_TB_listaDeParadas.setModel(new ModeloDeTabelaParada(paradas));
+        }
+    }//GEN-LAST:event_GF_CadasParada_CB_ordenacaoActionPerformed
+
     public void limparCampos(JPanel painel){
         Component [] componentes;
         componentes = painel.getComponents();
@@ -4903,11 +4998,14 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JButton GF_CadasParada_BT_cadastrar;
     private javax.swing.JButton GF_CadasParada_BT_limpar;
     private javax.swing.JButton GF_CadasParada_BT_remover;
+    private javax.swing.JComboBox GF_CadasParada_CB_ordenacao;
     private javax.swing.JTextField GF_CadasParada_CT_endereco;
     private javax.swing.JTextField GF_CadasParada_CT_id;
     private javax.swing.JTextField GF_CadasParada_CT_latitude;
     private javax.swing.JTextField GF_CadasParada_CT_longitude;
     private javax.swing.JPanel GF_CadasParada_PN_Alocar;
+    private javax.swing.JPanel GF_CadasParada_PN_listaDeParadas;
+    private javax.swing.JTable GF_CadasParada_TB_listaDeParadas;
     private javax.swing.JButton GF_CadasRota_BT_atualizar;
     private javax.swing.JButton GF_CadasRota_BT_buscar;
     private javax.swing.JButton GF_CadasRota_BT_cadastrar;
@@ -4915,7 +5013,6 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JButton GF_CadasRota_BT_limpar;
     private javax.swing.JButton GF_CadasRota_BT_remover;
     private javax.swing.JButton GF_CadasRota_BT_voltar;
-    private javax.swing.JComboBox GF_CadasRota_CB_ordenacao;
     private javax.swing.JTextField GF_CadasRota_CT_id;
     private javax.swing.JTextField GF_CadasRota_CT_nome;
     private javax.swing.JPanel GF_CadasRota_PN_calcularDistancia;
@@ -5249,6 +5346,7 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
@@ -5303,6 +5401,7 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
