@@ -6,6 +6,7 @@
 package etm;
 
 import java.awt.Component;
+import javax.swing.AbstractButton;
 import javax.swing.JCheckBox;
 
 /**
@@ -484,8 +485,8 @@ public class TelaGerenteLocal extends javax.swing.JFrame {
     private void Cadastrar_BT_atualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastrar_BT_atualizarActionPerformed
         int j=0;
         for(Component c: elementosPainelEscala){
-            if(c instanceof JCheckBox && !((JCheckBox)c).getText().equals("Todos")){
-                escala[j] = ((JCheckBox)c).isSelected();
+            if(c instanceof JCheckBox && !((AbstractButton)c).getText().equals("Todos")){
+                escala[j] = ((AbstractButton)c).isSelected();
                 j+=1;
             }
         }
@@ -493,8 +494,8 @@ public class TelaGerenteLocal extends javax.swing.JFrame {
 
     private void Cadastrar_CB_todosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastrar_CB_todosActionPerformed
         for(Component c: elementosPainelEscala){
-            if( c instanceof JCheckBox && !((JCheckBox)c).getText().equals("Todos")){
-                ((JCheckBox)c).setSelected(Cadastrar_CB_todos.isSelected());
+            if( c instanceof JCheckBox && !((AbstractButton)c).getText().equals("Todos")){
+                ((AbstractButton)c).setSelected(Cadastrar_CB_todos.isSelected());
             }
         }
     }//GEN-LAST:event_Cadastrar_CB_todosActionPerformed

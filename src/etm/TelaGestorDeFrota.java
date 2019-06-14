@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 import usuarios.Usuario;
 import veiculos.Onibus;
 import veiculos.Veiculo;
+import veiculos.VeiculoComPlaca;
 
 public class TelaGestorDeFrota extends javax.swing.JFrame {
 
@@ -1024,7 +1025,7 @@ public class TelaGestorDeFrota extends javax.swing.JFrame {
             CadasVei_CB_tipoDeVeiculo.setSelectedItem(veiculo.getTipoDeVeiculo());
             CadasVei_CB_tipoDeCobranca.setSelectedItem(veiculo.getTipoDeCobranca());
             if(veiculo instanceof Onibus){
-                CadasVei_CT_placa.setText(((Onibus)veiculo).getPlaca());
+                CadasVei_CT_placa.setText(((VeiculoComPlaca)veiculo).getPlaca());
             }
             CadasVei_CT_capacidade.setText(String.valueOf(veiculo.getCapacidade()));
             CadasVei_CT_autonomia.setText(String.valueOf(veiculo.getAutonomia()));
