@@ -152,7 +152,7 @@ public class Rota {
     }
     
     public boolean veiculoEstaCadastrado(String idVeiculo){
-        return buscarVeiculo(idVeiculo).getId().equals(idVeiculo);
+        return buscarVeiculo(idVeiculo)!=null;
     }
     
     public void descadastrarRotaDeVeiculos(){

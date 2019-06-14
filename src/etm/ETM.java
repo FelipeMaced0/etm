@@ -326,11 +326,15 @@ public class ETM {
     }
     
     //Retorna todos os veículos cadastrados
-    public ArrayList getVeiculosCadastrados(){
+    public ArrayList<Veiculo> getVeiculosCadastrados(){
         return veiculos;
     }
-    //Retorna todas as rotas cadastradas
-    public ArrayList getRotasCadastradas(){
+    
+    public ArrayList<Parada> getParadasCadastradas(){
+        return paradas;
+    }
+    
+    public ArrayList<Rota> getRotasCadastradas(){
         return rotas;
     }
     
