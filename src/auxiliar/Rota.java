@@ -98,9 +98,12 @@ public class Rota {
         coordenadas.remove(coordenadas.indexOf(new Coordenada(id)));
     }
     
-    public void descadastrarVeiculo(Veiculo veiculo){
+    public void descadastrarVeiculo(String  idVeiculo){
+        Veiculo veiculo = buscarVeiculo(idVeiculo);
+        
         if(veiculos.remove(veiculo)){
             nVeiculos--;
+            veiculo.setMinhaRota(null);
             atualizarNVeiculosNasParadas(-1);
         }
     } 
@@ -110,7 +113,7 @@ public class Rota {
         Veiculo veiculo;
         while(i.hasNext()){
             veiculo = i.next();
-            if(veiculo.getId().equals(id)){
+            if(veiculo.getId().equals(idVeiculo)){
                 return veiculo;
             }
         }
@@ -155,7 +158,7 @@ public class Rota {
         return buscarVeiculo(idVeiculo)!=null;
     }
     
-    public void descadastrarRotaDeVeiculos(){
+    public void desvincularRotaDeVeiculos(){
         Iterator<Veiculo> ve = veiculos.iterator();
         Veiculo veiculo;
         while(ve.hasNext()){
@@ -214,41 +217,8 @@ public class Rota {
         return info;
     }
     
-    public static double paraRadianos(double num){
-        return num*Math.PI/180;
-    }
     
-    public static double Distancia(Coordenada p1, Coordenada p2){
-        double Rterra = 6317000;
-        double distancia;
-        double latDist = paraRadianos(p1.getLatitude()-p2.getLatitude());
-        double longDist = paraRadianos(p1.getLongitude()-p2.getLongitude());
-        double d1 = Math.sin(latDist/2)*Math.sin(latDist/2)+Math.cos(p1.getLatitude())*Math.cos(p2.getLatitude())*Math.sin(longDist/2)*Math.sin(longDist/2);
-        distancia = 2*Rterra*Math.asin(Math.sqrt(d1));
-        return distancia;
-    }
-    
-    //resolver problema com o equals
-    public double calcularDistancia(Parada p1, Parada p2){
-        double dis=0;
-        boolean achei=false;
-        Iterator<Coordenada> coo = coordenadas.iterator();
-        Coordenada coordenada;
-        while(coo.hasNext()){
-            coordenada = coo.next();
-            if(coordenada.getId().equals(p1.getId())||achei){
-                achei=true;
-                if(coordenada.getId().equals(p2.getId())){
-                        break;
-                }
-                else{
-                    dis += Distancia(coordenada,coo.next());
-                }
-            }
-        }
-        return dis;
-    }
-        
+     
     @Override
     public String toString(){
         return "Nome: "+nome;

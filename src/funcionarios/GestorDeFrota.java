@@ -114,7 +114,7 @@ public class GestorDeFrota extends FuncionarioAdministrativo{
         return etm.getUsoDosPontos(ordem);
     }
     
-    public double calcularDistancia(String idRota,Parada p1, Parada p2){
-        return etm.calcularDistancia(idRota, p1, p2);
+    public double calcularDistancia(String idP1, String idP2){
+        return etm.calcularDistancia(idP1, idP2);
     }
 }

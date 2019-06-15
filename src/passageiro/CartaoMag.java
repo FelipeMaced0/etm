@@ -13,7 +13,15 @@ public abstract class CartaoMag {
     public CartaoMag(){ 
     }
     
-    public CartaoMag(String nome, String nCartao, boolean autorizado,float creditos, int nIntegracoes,Calendar dataUltimoUso){
+    public CartaoMag(String nome, boolean autorizado,float creditos, int nIntegracoes,Calendar dataUltimoUso){
+        this.nome = nome.toUpperCase();
+        this.autorizado = autorizado;
+        this.creditos = creditos;
+        this.nIntegracoes = nIntegracoes;
+        this.dataUltimoUso = dataUltimoUso;
+    }
+    
+     public CartaoMag(String nome, String nCartao, boolean autorizado,float creditos, int nIntegracoes,Calendar dataUltimoUso){
         this.nome = nome.toUpperCase();
         this.nCartao = nCartao;
         this.autorizado = autorizado;
@@ -21,7 +29,7 @@ public abstract class CartaoMag {
         this.nIntegracoes = nIntegracoes;
         this.dataUltimoUso = dataUltimoUso;
     }
-
+     
     public CartaoMag(String nome, String nCartao, boolean autorizado) {
         this.nome = nome;
         this.nCartao = nCartao;

@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Iterator;
 import passageiro.CartaoMag;
+import passageiro.Idoso;
 public class CobradorEletronico {
     
     float tarifaCartao;
@@ -80,19 +81,15 @@ public class CobradorEletronico {
         return receita;
     }
     
-    public  int verificarValidaCreditos(CartaoMag cartao, Calendar dataAtual, long dataUltimoUso){
-        if(dataAtual.getTimeInMillis()-dataUltimoUso<2.628e9){
-            cartao.setnIntegracoes(0);
-            return 1;
-        }
+    public  void verificarValidaCreditos(CartaoMag cartao, Calendar dataAtual, long dataUltimoUso){
         if(dataAtual.getTimeInMillis()-dataUltimoUso<3.6e6&&cartao.getnIntegracoes()<=limiteDeIntegracao){
             cartao.setnIntegracoes(cartao.getnIntegracoes()+1);
-            return 2;
         }
         if(dataAtual.get(Calendar.DAY_OF_MONTH) >= 28){
-            return 3;
+            if(cartao instanceof Idoso){
+                cartao.setCreditos(valorDegratuidade);
+            }
         }
-        return 0;
     }
     
     public boolean buscarCartao(String nCartao){
@@ -119,24 +116,24 @@ public class CobradorEletronico {
         int val;
         listaDeCartoes.set(listaDeCartoes.indexOf(cartao), cartao);
         if(listaDeCartoes.contains(cartao)&&cartao.isAutorizado()){
-            val = verificarValidaCreditos(cartao,dataAtual,cartao.getDataUltimoUsoMilisegundos());
+            verificarValidaCreditos(cartao,dataAtual,cartao.getDataUltimoUsoMilisegundos());
             cartao.setDataUltimoUso(dataAtual);
             switch(cartao.getTipoDeUsuario()){
                 case "ESTUDANTE":
                     if(cartao.cobrarPassagem(tarifaCartao)){
-                        if(val==1){
+                        if (val==1){
+                            custoIntegracao += tarifaCartao;
+                        }
+                        
+                        else{
                             custoEstudantes += tarifaCartao/2;
                             receita += tarifaCartao/2;
-                        }
-                        else if (val==2){
-                            custoIntegracao += tarifaCartao;
                         }
                         return true;
                     }                      
                 case "IDOSO":
                     if(cartao.cobrarPassagem(tarifaCartao)){
-                        if(val==1){
-                            
+                        if(val==0){
                             custoIdosos += tarifaCartao;                               
                         }
                         else if(val==3){
@@ -149,10 +146,10 @@ public class CobradorEletronico {
                     } 
                 case "NORMAL":
                     if(cartao.cobrarPassagem(tarifaCartao)){
-                        if(val==1){
+                        if(val==0){
                             receita += tarifaCartao;
                         }
-                        else if(val==2){
+                        else if(val==1){
                             custoIntegracao += tarifaCartao;
                         }
                         return true;

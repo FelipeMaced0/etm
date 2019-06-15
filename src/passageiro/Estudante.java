@@ -7,8 +7,8 @@ public class Estudante extends CartaoMag{
     public Estudante() {
     }
 
-    public Estudante(String nome, String nCartao, boolean autorizado, float creditos, int nIntegracoes, Calendar dataUltimoUso) {
-        super(nome, nCartao, autorizado, creditos, nIntegracoes, dataUltimoUso);
+    public Estudante(String nome, boolean autorizado, float creditos, int nIntegracoes, Calendar dataUltimoUso) {
+        super(nome, autorizado, creditos, nIntegracoes, dataUltimoUso);
     }
 
     public Estudante(String nome, String nCartao, boolean autorizado) {
@@ -17,8 +17,8 @@ public class Estudante extends CartaoMag{
     
     @Override
     public boolean cobrarPassagem(float tarifa){
-        if(autorizado && creditos>=tarifa/2){
-            creditos -= tarifa/2;
+        if(autorizado && creditos>=(tarifa/2)){
+            creditos -= (tarifa/2);
             return true;
         }
         return false;

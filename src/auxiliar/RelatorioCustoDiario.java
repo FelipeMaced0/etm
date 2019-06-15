@@ -1,5 +1,6 @@
 package auxiliar;
 import java.util.Calendar;
+import java.util.Objects;
 public class RelatorioCustoDiario{
     
     String id;
@@ -165,7 +166,9 @@ public class RelatorioCustoDiario{
     
     @Override
     public String toString() {
-        return "RELATÓRIO Nº: " + nRelatorio +"\nTIPO DE RELATÓRIO: "+rasaoRelatada+"\nID: " + id + "\nDATA: " + data.get(Calendar.DAY_OF_MONTH) + "/" + (data.get(Calendar.MONTH)+1) + "/" +data.get(Calendar.YEAR) + "\nCUSTO COM COMBUSTÍVEL:" + custoCombustivel + "\nCUSTO COM FUNCIONÁRIOS: " + custoFuncionarios;
+        return "RELATÓRIO Nº: " + nRelatorio +"\nTIPO DE RELATÓRIO: "+rasaoRelatada+"\nID: " + id + "\nDATA: " + data.get(Calendar.DAY_OF_MONTH) + "/" + (data.get(Calendar.MONTH)+1) + "/" 
+                +data.get(Calendar.YEAR) + "\nCUSTO COM COMBUSTÍVEL:" + custoCombustivel + "\nCUSTO COM FUNCIONÁRIOS: " + custoFuncionarios+"\nCUSTO COM MANUTENÇÃO: "+custoManutencao+"\nCUSTO COM ESTUDANTES: "
+                +custoEstudantes+"CUSTO COM INTEGRAÇÃO"+custoIntegracao+"\nRECEITA: "+receita+"\nNº DE PASSAGEIROS ATENDIDOS";
     }
     
     @Override
@@ -183,5 +186,12 @@ public class RelatorioCustoDiario{
             return false;
         }
         return false;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 53 * hash + Objects.hashCode(this.id);
+        return hash;
     }
 }

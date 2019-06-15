@@ -135,16 +135,26 @@ public abstract class Veiculo {
     }
 
     public String getTipoDeVeiculo() {
-        switch(this.getClass().getSimpleName()){
-            case "Onibus":
-                return"ÔNIBUS";
-            case "Metro":
-                return "METRÔ";
-            case "MicroOnibus":
-                return "MICRO-ÔNIBUS";
-            default:
-               return this.getClass().getSimpleName().toUpperCase();
+        
+        if(this instanceof Onibus){
+            return "ÔNIBUS";
         }
+        if(this instanceof Metro){
+            return "METRÔ";
+        }
+        if(this instanceof MicroOnibus){
+            return "MICRO-ÔNIBUS";
+        }
+        if(this instanceof Vlt){
+             return "VLT";
+        }
+        if(this instanceof Brt){
+             return "BRT";
+        }
+        if(this instanceof Van){
+             return "VAN";
+        } 
+        return null;
     }
     
     public String getTipoDeCobranca() {
@@ -248,8 +258,8 @@ public abstract class Veiculo {
     }
     */
     
-    public void cadastrarFuncionario(FuncionarioOperacional funcionario){
-        funcionarios.add(funcionario);
+    public void cadastrarFuncionario(FuncionarioOperacional fun){
+        funcionarios.add(fun);
     } 
 
     public void cadastrarRevisao(Revisao nRevisao){
@@ -258,7 +268,11 @@ public abstract class Veiculo {
     
     
     public void descadastrarFuncionario(String cpf){
-        funcionarios.remove(funcionarios.indexOf(cpf));
+        FuncionarioOperacional fun = buscarFuncionario(cpf);
+        if(fun != null){
+            funcionarios.remove(fun);
+        }
+        
     }
    
     public void descadastrarRevisao(String id){

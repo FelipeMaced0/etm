@@ -45,7 +45,7 @@ public class ModeloDeTabelaParada extends AbstractTableModel{
     
     @Override
     public boolean isCellEditable(int rowIndex, int columnIndex){
-        return columnIndex != 1;
+        return true;
     }
     
     @Override
@@ -77,10 +77,6 @@ public class ModeloDeTabelaParada extends AbstractTableModel{
         switch(atributo){
             case "ENDEREÇO":
                 parada.setEndereco(String.valueOf(value));
-                break;
-            case "ID":
-                break;
-            case "Nº DE VEÍCULOS":
                 break;
             case "LATITUDE":
                 parada.setLatitude(Float.parseFloat(String.valueOf(value)));

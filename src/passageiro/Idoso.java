@@ -7,8 +7,8 @@ public class Idoso extends CartaoMag{
     public Idoso() {
     }
 
-    public Idoso(String nome, String nCartao, boolean autorizado, float creditos, int nIntegracoes, Calendar dataUltimoUso) {
-        super(nome, nCartao, autorizado, creditos, nIntegracoes, dataUltimoUso);
+    public Idoso(String nome,  boolean autorizado, float creditos, int nIntegracoes, Calendar dataUltimoUso) {
+        super(nome, autorizado, creditos, nIntegracoes, dataUltimoUso);
     }
 
     public Idoso(String nome, String nCartao, boolean autorizado) {

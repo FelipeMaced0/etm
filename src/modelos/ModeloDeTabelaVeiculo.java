@@ -45,7 +45,7 @@ public class ModeloDeTabelaVeiculo extends AbstractTableModel{
     
     @Override
     public boolean isCellEditable(int rowIndex, int columnIndex){
-        return false;
+        return true;
     }
     
     @Override
@@ -77,18 +77,6 @@ public class ModeloDeTabelaVeiculo extends AbstractTableModel{
         String atributo = columns[columnIndex];
 
         switch(atributo){
-            case "ID":
-                break;
-            case "STATUS":
-                break;
-            case "TIPO":
-                break;
-            case "COMBUSTÍVEL":
-                break;
-            case "AUTONOMIA":
-                break;
-            case "CAPACIDADE":
-                break;
             default:
                 break;
         }

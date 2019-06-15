@@ -43,7 +43,7 @@ public class ModeloDeTabelaRota extends AbstractTableModel{
     
     @Override
     public boolean isCellEditable(int rowIndex, int columnIndex){
-        return columnIndex != 1;
+        return true;
     }
     
     @Override
@@ -72,10 +72,6 @@ public class ModeloDeTabelaRota extends AbstractTableModel{
             case "NOME":
                 rota.setNome(String.valueOf(value));
                 break;
-            case "ID":
-                break;
-            case "Nº DE VEÍCULOS":
-               break;
             default:
                break;
         }

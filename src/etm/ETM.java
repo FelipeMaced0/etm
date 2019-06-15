@@ -165,6 +165,7 @@ public class ETM {
         Veiculo veiculo = buscarVeiculo(idVeiculo);
         if(veiculo != null){
             veiculos.remove(veiculo);
+            desvincularVeiculo(idVeiculo);
         }       
     } 
     // descadastrar rota do veículos tbm
@@ -172,6 +173,7 @@ public class ETM {
         Rota rota = buscarRota(idRota);
         if(rota != null){
             rotas.remove(rota);
+            desvincularRota(idRota);
             paradasDesordenadas = true;
         }
        
@@ -181,6 +183,7 @@ public class ETM {
         Parada parada = buscarParada(idParada);
         if(parada != null){
             paradas.remove(parada);
+            desvincularParada(idParada);
             paradasDesordenadas = true;
         }
     }
@@ -191,46 +194,81 @@ public class ETM {
         relatoriosDiarios.remove(relatorio);
     }
     */
-    public void descadastrarFucionario(String idFun){
-        Funcionario fun = buscarFuncionario(idFun);
+    public void descadastrarFucionario(String cpf){
+        Funcionario fun = buscarFuncionario(cpf);
         if(fun != null){
             funcionarios.remove(fun);
+            desvincularFuncionario(cpf);
         }   
     }
     
-    public void descadastrarCartao(String idCartao){
-        CartaoMag cartao = buscarCartao(idCartao);
+    public void descadastrarCartao(String nCartao){
+        CartaoMag cartao = buscarCartao(nCartao);
         if(cartao != null){
             cartoes.remove(cartao);
         }
     }
     
-    public void descadastrarVeiculoEmRota(String idRota, String idVeiculo){
+    public void desvincularVeiculo(String idRota, String idVeiculo){
         Rota rota = buscarRota(idRota);
-        Veiculo veiculo = buscarVeiculo(idVeiculo);
-        if(rota!=null&&veiculo!=null){
-            rota.descadastrarVeiculo(veiculo);
-            veiculo.setMinhaRota(null);
+        if(rota!=null){
+            rota.descadastrarVeiculo(idVeiculo);
         }
     }
     
-    public void descadastrarParadaEmRota(String idRota, String idParada){
+    public void desvincularParada(String idRota, String idParada){
         Rota rota = buscarRota(idRota);
-        Parada parada = buscarParada(idParada);
-        if(rota!=null&&parada!=null){
+        
+        if(rota!=null){
             rota.subParada(idParada);
         }
     }
     
-    public void descadastrarFuncionarioEmVeiculo(String idVeiculo, String cpf){
+    public void desvincularFuncionario(String idVeiculo, String cpf){
         Veiculo veiculo = buscarVeiculo(idVeiculo);
-        Funcionario fun = buscarFuncionario(cpf);
         
-        if(veiculo!=null&&fun!=null){
+        if(veiculo!=null){
             veiculo.descadastrarFuncionario(cpf);
         }
     }
      
+    public void desvincularParada(String idParada){
+        Iterator<Rota> i = rotas.iterator();
+        Rota rota;
+        
+        while(i.hasNext()){
+            rota = i.next();
+            rota.subParada(idParada);
+        }
+    }
+    
+    public void desvincularFuncionario(String cpf){
+        Iterator<Veiculo> i = veiculos.iterator();
+        Veiculo veiculo;
+        
+        while(i.hasNext()){
+            veiculo = i.next();
+            veiculo.descadastrarFuncionario(cpf);
+        }
+    }
+    
+    public void desvincularVeiculo(String idVeiculo){
+        Iterator<Rota> i = rotas.iterator();
+        Rota rota;
+        
+        while(i.hasNext()){
+            rota = i.next();
+            rota.descadastrarVeiculo(idVeiculo);
+        }
+    }
+    
+    public void desvincularRota(String idRota){
+        Rota rota = buscarRota(idRota);
+        if(rota!=null){
+            rota.desvincularRotaDeVeiculos();
+        }
+    }
+    
     //Retorna o veículo  que possuir o id igual ao idBuscado
     public Veiculo buscarVeiculo(String idBuscado){
         Iterator<Veiculo> i = veiculos.iterator();
@@ -305,6 +343,7 @@ public class ETM {
             fun.atualizar(funAtualizado);
         }
     }
+    
     public void atualizarCartao(CartaoMag cartao){
         if(cartoes.contains(cartao)){
             cartoes.set(cartoes.lastIndexOf(cartao), cartao);
@@ -336,6 +375,13 @@ public class ETM {
     
     public ArrayList<Rota> getRotasCadastradas(){
         return rotas;
+    }
+    
+    public boolean cobrarPassagem(String idVeiculo, String idCartao){
+        Veiculo veiculo = buscarVeiculo(idVeiculo);
+        CartaoMag cartao = buscarCartao(idCartao);
+        
+        return veiculo.cobrarPassagemEletronica(cartao);
     }
     
     //Retorna todos os endereços das paradas de uma rota
@@ -655,18 +701,31 @@ public class ETM {
         return this.getParadasCadastradas();
     }
     
-
-    public void mandarVeiculoParaOfici(String id){
-       Veiculo veiculoDanificado = buscarVeiculo(id);
+    public void VeiculoParaOfici(String idVeiculo){
+       Veiculo veiculoDanificado = buscarVeiculo(idVeiculo);
        if(veiculoDanificado != null){
             oficina.cadatrarVeiculo(veiculoDanificado);
        }
     }
     
-    public double calcularDistancia(String idRota, Parada p1, Parada p2){
-        Iterator<Rota> i = rotas.iterator();
-        Rota rota = buscarRota(idRota);
-        return rota.calcularDistancia(p1, p2);
+    private static double paraRadianos(double num){
+        return num*Math.PI/180;
+    }
+    
+    private static double Distancia(Parada p1, Parada p2){
+        double Rterra = 6317000;
+        double distancia;
+        double latDist = paraRadianos(p1.getLatitude()-p2.getLatitude());
+        double longDist = paraRadianos(p1.getLongitude()-p2.getLongitude());
+        double d1 = Math.sin(latDist/2)*Math.sin(latDist/2)+Math.cos(p1.getLatitude())*Math.cos(p2.getLatitude())*Math.sin(longDist/2)*Math.sin(longDist/2);
+        distancia = 2*Rterra*Math.asin(Math.sqrt(d1));
+        return distancia;
+    }
+    public double calcularDistancia(String  idP1, String idP2){
+        Parada p1 = buscarParada(idP1);
+        Parada p2 = buscarParada(idP2);
+        
+        return Distancia(p1, p2);
     }
     
     public String mostrarRelatoriosDiarios(){

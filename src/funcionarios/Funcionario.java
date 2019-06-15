@@ -3,7 +3,7 @@ package funcionarios;
 import java.util.Objects;
 
 
-public abstract class Funcionario {
+public abstract class Funcionario implements Comparable<Funcionario>{
     private String nome;
     private int cargaHoraria;
     private float salario;
@@ -121,6 +121,17 @@ public abstract class Funcionario {
         cpf = funAtualizado.getCpf();
         ctps = funAtualizado.getCtps();
         sexo = funAtualizado.getSexo();
+    }
+    
+    @Override
+    public int compareTo(Funcionario outroFuncionario){
+        if(this.getSalario()>outroFuncionario.getSalario()){
+            return 1;
+        }
+        if(this.getSalario()<outroFuncionario.getSalario()){
+            return -1;
+        }
+        return 0;
     }
     
     @Override
