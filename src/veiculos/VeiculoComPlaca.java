@@ -10,8 +10,8 @@ public abstract class VeiculoComPlaca extends Veiculo{
         this.placa = placa.toUpperCase();
     }
 
-    public VeiculoComPlaca(String placa, String status, String combustivel, String tipoDeRota, String tipoDeCobranca, int capacidade, float autonomia) {
-        super(status, combustivel, tipoDeRota, tipoDeCobranca, capacidade, autonomia);
+    public VeiculoComPlaca(String placa, String status, String combustivel, String tipoDeRota, String tipoDeCobranca, int capacidade, float autonomia, float distanciaDoPercurso) {
+        super(status, combustivel, tipoDeRota, tipoDeCobranca, capacidade, autonomia, distanciaDoPercurso);
         this.placa = placa;
     }
     

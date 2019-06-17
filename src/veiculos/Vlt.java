@@ -9,8 +9,8 @@ public class Vlt extends VeiculoTrilhos{
         super(id, status, combustivel, tipoDeRota, tipoDeCobranca, capacidade, autonomia);
     }
 
-    public Vlt(String status, String combustivel, String tipoDeRota, String tipoDeCobranca, int capacidade, float autonomia) {
-        super(status, combustivel, tipoDeRota, tipoDeCobranca, capacidade, autonomia);
+    public Vlt(String status, String combustivel, String tipoDeRota, String tipoDeCobranca, int capacidade, float autonomia, float distanciaDoPercurso) {
+        super(status, combustivel, tipoDeRota, tipoDeCobranca, capacidade, autonomia, distanciaDoPercurso);
     }
     
 }

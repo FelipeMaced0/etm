@@ -9,8 +9,8 @@ public abstract class VeiculoTrilhos extends Veiculo {
         super(id, status, combustivel, tipoDeRota, tipoDeCobranca, capacidade, autonomia);
     }
 
-    public VeiculoTrilhos(String status, String combustivel, String tipoDeRota, String tipoDeCobranca, int capacidade, float autonomia) {
-        super(status, combustivel, tipoDeRota, tipoDeCobranca, capacidade, autonomia);
+    public VeiculoTrilhos(String status, String combustivel, String tipoDeRota, String tipoDeCobranca, int capacidade, float autonomia, float distanciaDoPercurso) {
+        super(status, combustivel, tipoDeRota, tipoDeCobranca, capacidade, autonomia, distanciaDoPercurso);
     }
     
 }

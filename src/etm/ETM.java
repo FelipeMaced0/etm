@@ -3,8 +3,9 @@ package etm;
 import auxiliar.ComparadorDeParadas;
 import auxiliar.GeradorDeId;
 import auxiliar.Parada;
-import auxiliar.RelatorioCustoDiario;
-import auxiliar.RelatorioPorPeriodo;
+import Relatorios.RelatorioCustoDiario;
+import Relatorios.RelatorioPorPeriodo;
+import Relatorios.RelatorioVeiculo;
 import auxiliar.Rota;
 import funcionarios.Funcionario;
 import funcionarios.FuncionarioOperacional;
@@ -380,7 +381,6 @@ public class ETM {
     public boolean cobrarPassagem(String idVeiculo, String idCartao){
         Veiculo veiculo = buscarVeiculo(idVeiculo);
         CartaoMag cartao = buscarCartao(idCartao);
-        
         return veiculo.cobrarPassagemEletronica(cartao);
     }
     
@@ -390,10 +390,10 @@ public class ETM {
     }
     
     //Gera um relatório com os funcionários que mais se encaixam nos parâmetros fornecidos
-    public ArrayList gerarRelatorioFuncionario(String sexo,int idade, float cargaHoraria, float renda){
-        ArrayList <Funcionario> relatados= new ArrayList();
+    public ArrayList gerarRelatorioFuncionario(String sexo,String funcao,int idade, int cargaHoraria, float renda){
         int p;
         int pAnt=0;
+        ArrayList <Funcionario> relatados= new ArrayList();
         Iterator<Funcionario> i = funcionarios.iterator();
         Funcionario fun;
         while(i.hasNext()){
@@ -411,6 +411,9 @@ public class ETM {
             if(fun.getSalario()==renda){
                 p+=1;
             } 
+            if(fun.getFuncao().equals(funcao)){
+            
+            }
             if(p==pAnt){
                 pAnt = p;
                 relatados.add(fun);
@@ -425,21 +428,21 @@ public class ETM {
     }
     
     //Gera um relatório com os custo de um veículo específico
-    public String gerarRelatorioDeCustoVeiculo(String idVeiculo){
-        String relatorioDeCustos="";
+    public RelatorioVeiculo gerarRelatorioDeCustoVeiculo(String idVeiculo){
+        RelatorioVeiculo relatorio;
         Iterator<Veiculo> i = veiculos.iterator();
         Veiculo veiculo;
         while(i.hasNext()){
             veiculo = i.next();
             if(veiculo.getId().equals(idVeiculo)){
-                relatorioDeCustos += "\nFUNCIONÁRIOS: "+veiculo.getCustoComFuncionarios()+"\nCOMBUSTÍVEL: "+veiculo.getCustoComCombustivel();
-                return relatorioDeCustos;
+                relatorio =  new RelatorioVeiculo(veiculo, veiculo.getCustoComFuncionarios(), veiculo.getCustoComCombustivel());
+                return relatorio;
             }
         }
         return null;
     }
     
-    //Gera um relatório com os custo de uma rota específica
+    //modificar
     public String gerarRelatorioDeCustoRota(String idRota){
         String relatorioDeCustos="";
         Iterator<Rota> i = rotas.iterator();
@@ -701,10 +704,10 @@ public class ETM {
         return this.getParadasCadastradas();
     }
     
-    public void VeiculoParaOfici(String idVeiculo){
+    public void VeiculoParaOficina(String idVeiculo){
        Veiculo veiculoDanificado = buscarVeiculo(idVeiculo);
        if(veiculoDanificado != null){
-            oficina.cadatrarVeiculo(veiculoDanificado);
+            oficina.cadastrarVeiculo(veiculoDanificado);
        }
     }
     

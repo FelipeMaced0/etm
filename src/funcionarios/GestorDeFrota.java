@@ -1,7 +1,8 @@
 package funcionarios;
 
 import auxiliar.Parada;
-import auxiliar.RelatorioPorPeriodo;
+import Relatorios.RelatorioPorPeriodo;
+import Relatorios.RelatorioVeiculo;
 import auxiliar.Rota;
 import etm.ETM;
 import java.util.ArrayList;
@@ -77,12 +78,12 @@ public class GestorDeFrota extends FuncionarioAdministrativo{
         return etm.getEnderecos(idRota);
     }
     
-    public ArrayList gerarRelatorioFuncionario(String sexo,int idade,float cargaHoraria, float renda){
+    public ArrayList gerarRelatorioFuncionario(String sexo, String funcao,int idade, int cargaHoraria, float renda){
         
-        return etm.gerarRelatorioFuncionario(sexo,idade, cargaHoraria, renda);
+        return etm.gerarRelatorioFuncionario(sexo, funcao, idade, cargaHoraria, renda);
     }
     
-    public String gerarRelatorioDeCustoVeiculo(String idVeiculo){
+    public RelatorioVeiculo gerarRelatorioDeCustoVeiculo(String idVeiculo){
         return etm.gerarRelatorioDeCustoVeiculo(idVeiculo);
     }
     

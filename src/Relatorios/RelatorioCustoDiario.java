@@ -1,4 +1,4 @@
-package auxiliar;
+package Relatorios;
 import java.util.Calendar;
 import java.util.Objects;
 public class RelatorioCustoDiario{

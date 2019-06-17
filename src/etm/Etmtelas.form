@@ -64,9 +64,6 @@
           </Layout>
           <SubComponents>
             <Container class="javax.swing.JTabbedPane" name="GF_abaInterna">
-              <Events>
-                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="GF_abaInternaFocusGained"/>
-              </Events>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
               <SubComponents>
@@ -85,13 +82,14 @@
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="GF_CadasRota_PN_cadastrar" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="GF_CadasRota_PN_minhasParadas" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="GF_CadasRota_PN_listaDeParadas" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="GF_CadasRota_PN_cadastrar" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                                      <Component id="GF_CadasRota_PN_minhasParadas" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <Component id="GF_CadasRota_PN_listaDeParadas" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="583" max="32767" attributes="0"/>
+                              <EmptySpace pref="243" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -99,12 +97,13 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                              <Component id="GF_CadasRota_PN_cadastrar" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="GF_CadasRota_PN_cadastrar" min="-2" max="-2" attributes="0"/>
+                                  <Component id="GF_CadasRota_PN_minhasParadas" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="GF_CadasRota_PN_listaDeParadas" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                              <Component id="GF_CadasRota_PN_minhasParadas" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="102" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -129,7 +128,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="GF_CadasRota_SP_minhasParadas" max="32767" attributes="0"/>
+                                  <Component id="GF_CadasRota_SP_minhasParadas" pref="589" max="32767" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -184,28 +183,42 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="GF_CadasRota_BT_detalhar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="GF_CadasRota_BT_voltar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
                                   <Component id="jScrollPane10" min="-2" pref="609" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="GF_CadasRota_BT_detalhar" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="GF_CadasRota_BT_voltar" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel74" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="GF_CadasRota_CB_detalhamento" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jScrollPane10" min="-2" pref="74" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane10" min="-2" pref="91" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="GF_CadasRota_CB_detalhamento" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel74" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace pref="29" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="GF_CadasRota_BT_detalhar" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                                       <Component id="GF_CadasRota_BT_voltar" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="30" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -218,6 +231,9 @@
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GF_CadasRota_BT_voltarActionPerformed"/>
                           </Events>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="GF_CadasRota_BT_voltar.setEnabled(false);"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JButton" name="GF_CadasRota_BT_detalhar">
                           <Properties>
@@ -237,16 +253,33 @@
                             <Component class="javax.swing.JTable" name="GF_CadasRota_TB_listagem">
                               <Properties>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                  <Table columnCount="3" rowCount="4">
+                                  <Table columnCount="4" rowCount="4">
                                     <Column editable="false" title="NOME" type="java.lang.String"/>
                                     <Column editable="false" title="ID" type="java.lang.String"/>
                                     <Column editable="false" title="N&#xba; DE VE&#xcd;CULOS" type="java.lang.Integer"/>
+                                    <Column editable="true" title="N&#xba; DE PARADAS" type="java.lang.Integer"/>
                                   </Table>
                                 </Property>
                               </Properties>
                             </Component>
                           </SubComponents>
                         </Container>
+                        <Component class="javax.swing.JComboBox" name="GF_CadasRota_CB_detalhamento">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="3">
+                                <StringItem index="0" value="-"/>
+                                <StringItem index="1" value="VE&#xcd;CULO"/>
+                                <StringItem index="2" value="PARADA"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel74">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="DETALHAMENTO:"/>
+                          </Properties>
+                        </Component>
                       </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="GF_CadasRota_PN_cadastrar">
@@ -388,6 +421,9 @@
                   </SubComponents>
                 </Container>
                 <Container class="javax.swing.JPanel" name="GF_CadastrarParada_PN">
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="GF_CadastrarParada_PNMouseClicked"/>
+                  </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                       <JTabbedPaneConstraints tabName="Cadastrar Parada">
@@ -426,7 +462,7 @@
                               </Group>
                               <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                               <Component id="GF_CadasParada_PN_listaDeParadas" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="114" max="32767" attributes="0"/>
+                              <EmptySpace pref="113" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -569,6 +605,11 @@
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
+                        <Component class="javax.swing.JLabel" name="jLabel55">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="ORDENAR:"/>
+                          </Properties>
+                        </Component>
                         <Container class="javax.swing.JScrollPane" name="jScrollPane11">
                           <AuxValues>
                             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
@@ -605,11 +646,6 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GF_CadasParada_CB_ordenacaoActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel55">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="ORDENAR:"/>
-                          </Properties>
-                        </Component>
                       </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="GF_CadasParada_PN_cadastrar">
@@ -626,16 +662,14 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace pref="20" max="32767" attributes="0"/>
-                                  <Component id="GF_CadasParada_BT_atualizar" min="-2" pref="93" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="GF_CadasParada_BT_limpar" min="-2" pref="75" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
-                              </Group>
                               <Group type="102" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="GF_CadasParada_BT_atualizar" min="-2" pref="93" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="GF_CadasParada_BT_limpar" min="-2" pref="75" max="-2" attributes="0"/>
+                                      </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="GF_CadasParada_BT_cadastrar" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -665,15 +699,13 @@
                                           </Group>
                                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                               <Component id="GF_CadasParada_CT_longitude" pref="69" max="32767" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="GF_CadasParada_CT_endereco" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="GF_CadasParada_CT_latitude" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="GF_CadasParada_CT_id" alignment="1" pref="69" max="32767" attributes="0"/>
-                                              </Group>
+                                              <Component id="GF_CadasParada_CT_endereco" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="GF_CadasParada_CT_latitude" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="GF_CadasParada_CT_id" alignment="1" pref="69" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="32" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -917,7 +949,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="GF_CadasVei_PN_Alocar" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
+                                      <Component id="GF_CadasVei_Gastos_PN" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace pref="190" max="32767" attributes="0"/>
@@ -930,18 +962,18 @@
                               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="GF_CadasVei_Cadastrar_PN" min="-2" max="-2" attributes="0"/>
-                                  <Component id="GF_CadasVei_PN_Alocar" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jPanel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="GF_CadasVei_Gastos_PN" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="GF_CadasVei_PN_Alocar" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="GF_CadasVei_VeiculosCadastrados_PN" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="61" max="32767" attributes="0"/>
+                              <EmptySpace pref="54" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Container class="javax.swing.JPanel" name="jPanel5">
+                    <Container class="javax.swing.JPanel" name="GF_CadasVei_Gastos_PN">
                       <Properties>
                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -961,14 +993,14 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel66" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jTextField7" min="-2" pref="91" max="-2" attributes="0"/>
+                                          <Component id="GF_Gastos_CT_idVeiculo" min="-2" pref="91" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel116" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jSpinner1" min="-2" pref="64" max="-2" attributes="0"/>
+                                          <Component id="GF_Gastos_SP_nViagens" min="-2" pref="64" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="jButton3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="GF_Gastos_BT_inserir" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -979,15 +1011,15 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel66" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="GF_Gastos_CT_idVeiculo" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Component id="jLabel116" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jSpinner1" min="-2" pref="29" max="-2" attributes="0"/>
+                                      <Component id="GF_Gastos_SP_nViagens" min="-2" pref="29" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="GF_Gastos_BT_inserir" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -1004,19 +1036,25 @@
                             <Property name="text" type="java.lang.String" value="N&#xba; DE VIAGENS"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField7">
+                        <Component class="javax.swing.JTextField" name="GF_Gastos_CT_idVeiculo">
                         </Component>
-                        <Component class="javax.swing.JSpinner" name="jSpinner1">
+                        <Component class="javax.swing.JSpinner" name="GF_Gastos_SP_nViagens">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="12" style="0"/>
                             </Property>
+                            <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+                              <SpinnerModel initial="0" minimum="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                            </Property>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="jButton3">
+                        <Component class="javax.swing.JButton" name="GF_Gastos_BT_inserir">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="INSERIR"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GF_Gastos_BT_inserirActionPerformed"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -1031,39 +1069,35 @@
                                       <Group type="102" alignment="1" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jLabel37" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace max="32767" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                      <Component id="GF_CadasVei_CT_capacidade" pref="77" max="32767" attributes="0"/>
-                                                      <Component id="GF_CadasVei_CT_autonomia" max="32767" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="GF_CadasVei_CB_tipoCombustivel" min="-2" pref="112" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="GF_CadasVei_CB_status" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="GF_CadasVei_CT_id" min="-2" pref="59" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" attributes="0">
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                          <Component id="GF_CadasVei_CB_tipoCombustivel" min="-2" pref="112" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="GF_CadasVei_CB_status" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                          <Component id="GF_CadasVei_CT_id" min="-2" pref="59" max="-2" attributes="0"/>
-                                                      </Group>
+                                                      <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel37" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel39" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <EmptySpace pref="24" max="32767" attributes="0"/>
+                                                  <EmptySpace min="23" max="32767" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="GF_CadasVei_CT_capacidade" max="32767" attributes="0"/>
+                                                      <Component id="GF_CadasVei_CT_autonomia" max="32767" attributes="0"/>
+                                                      <Component id="GF_CadasVei_CT_percursoKm" pref="77" max="32767" attributes="0"/>
+                                                  </Group>
                                               </Group>
                                           </Group>
-                                          <EmptySpace pref="82" max="32767" attributes="0"/>
+                                          <EmptySpace pref="106" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" attributes="0">
                                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -1162,7 +1196,12 @@
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="58" max="32767" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel39" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="GF_CadasVei_CT_percursoKm" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace pref="33" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="GF_CadasVei_BT_buscar" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                                       <Component id="GF_CadasVei_BT_limpar" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
@@ -1219,6 +1258,11 @@
                             <Property name="text" type="java.lang.String" value="ID:"/>
                           </Properties>
                         </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel39">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Percurso em Km:"/>
+                          </Properties>
+                        </Component>
                         <Component class="javax.swing.JTextField" name="GF_CadasVei_CT_id">
                         </Component>
                         <Component class="javax.swing.JTextField" name="GF_CadasVei_CT_capacidade">
@@ -1229,6 +1273,11 @@
                         <Component class="javax.swing.JTextField" name="GF_CadasVei_CT_autonomia">
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="GF_CadasVei_CT_autonomia.setText(&quot;0&quot;);"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="GF_CadasVei_CT_percursoKm">
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="GF_CadasVei_CT_percursoKm.setText(String.valueOf(0));"/>
                           </AuxValues>
                         </Component>
                         <Component class="javax.swing.JButton" name="GF_CadasVei_BT_cadastrar">
@@ -1296,10 +1345,11 @@
                         <Component class="javax.swing.JComboBox" name="GF_CadasVei_CB_status">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="3">
+                              <StringArray count="4">
                                 <StringItem index="0" value="-"/>
                                 <StringItem index="1" value="OPERACIONAL"/>
-                                <StringItem index="2" value="EM MANUTEN&#xc7;&#xc3;O"/>
+                                <StringItem index="2" value="COM DEFEITO"/>
+                                <StringItem index="3" value="EM MANUTEN&#xc7;&#xc3;O"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -1474,8 +1524,9 @@
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="GF_CadasVei_Alocar_CT_idRota" min="-2" pref="61" max="-2" attributes="0"/>
                                                   <Component id="GF_CadasVei_Alocar_CT_idVeiculo" min="-2" pref="61" max="-2" attributes="0"/>
+                                                  <Component id="GF_CadasVei_Alocar_CT_cpf" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace max="32767" attributes="0"/>
+                                              <EmptySpace pref="23" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="103" groupAlignment="1" attributes="0">
@@ -1484,11 +1535,7 @@
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Component id="GF_CadasVei_Alocar_CB_tipoDeAlocacao" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Group type="102" attributes="0">
-                                              <Component id="jLabel69" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                              <Component id="GF_CadasVei_Alocar_CT_cpf" min="-2" pref="141" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="jLabel69" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -1497,7 +1544,7 @@
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel69" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="GF_CadasVei_Alocar_CT_cpf" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1600,7 +1647,6 @@
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="GF_Relatorios_PN_Veiculo" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="GF_Relatorios_BT_balanco" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -1609,18 +1655,22 @@
                                   <Component id="GF_Relatorios_BT_limpar" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="GF_Relatorios_PN_funcionario" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="GF_Relatorios_BR_veiculo" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="GF_Relatorios_BR_funcionario" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="GF_Relatorios_BR_rota" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="GF_Relatorios_PN_Funcionario" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
                                       <Component id="GF_Relatorios_PN_listagem" min="-2" pref="475" max="-2" attributes="0"/>
                                   </Group>
+                                  <Component id="GF_Relatorios_PN_rota" alignment="0" min="-2" pref="145" max="-2" attributes="0"/>
+                                  <Component id="GF_Relatorios_PN_veiculo" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="360" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1633,22 +1683,25 @@
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="GF_Relatorios_BR_veiculo" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="GF_Relatorios_BR_funcionario" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="GF_Relatorios_BR_rota" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="GF_Relatorios_PN_Funcionario" min="-2" max="-2" attributes="0"/>
+                                      <Component id="GF_Relatorios_PN_funcionario" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="GF_Relatorios_PN_listagem" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                              <Component id="GF_Relatorios_PN_Veiculo" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="GF_Relatorios_PN_rota" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="GF_Relatorios_PN_veiculo" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="GF_Relatorios_BT_balanco" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                                   <Component id="GF_Relatorios_BT_buscarRelatorio" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="GF_Relatorios_BT_limpar" min="-2" pref="37" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="138" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1658,6 +1711,9 @@
                       <Properties>
                         <Property name="text" type="java.lang.String" value="BALAN&#xc7;O"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GF_Relatorios_BT_balancoActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="GF_Relatorios_BT_buscarRelatorio">
                       <Properties>
@@ -1682,6 +1738,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="VE&#xcd;CULO"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="GF_Relatorios_BR_veiculoMouseClicked"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="GF_Relatorios_BR_funcionario">
                       <Properties>
@@ -1690,8 +1749,22 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="FUNCION&#xc1;RIO"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="GF_Relatorios_BR_funcionarioMouseClicked"/>
+                      </Events>
                     </Component>
-                    <Container class="javax.swing.JPanel" name="GF_Relatorios_PN_Funcionario">
+                    <Component class="javax.swing.JRadioButton" name="GF_Relatorios_BR_rota">
+                      <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="buttonGroup1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="ROTA"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="GF_Relatorios_BR_rotaMouseClicked"/>
+                      </Events>
+                    </Component>
+                    <Container class="javax.swing.JPanel" name="GF_Relatorios_PN_funcionario">
                       <Properties>
                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -1699,40 +1772,42 @@
                           </Border>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="GF_Relatorios_PN_funcionario.setVisible(false);"/>
+                      </AuxValues>
 
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="103" alignment="1" groupAlignment="1" attributes="0">
-                                          <Component id="jLabel84" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <Component id="jLabel75" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="jLabel73" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="GF_Relatorios_CB_sexo" pref="119" max="32767" attributes="0"/>
-                                                  <Component id="GF_Relatorios_CT_idade" max="32767" attributes="0"/>
-                                              </Group>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel76" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel84" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel75" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="GF_Relatorios_CT_renda" alignment="0" pref="125" max="32767" attributes="0"/>
+                                              <Component id="GF_Relatorios_CT_idade" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="GF_Relatorios_CT_cargaHoraria" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="jLabel76" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="GF_Relatorios_CT_renda" min="-2" pref="119" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel127" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel73" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="GF_Relatorios_CB_funcao" pref="125" max="32767" attributes="0"/>
+                                              <Component id="GF_Relatorios_CB_sexo" max="32767" attributes="0"/>
+                                          </Group>
                                       </Group>
-                                      <Component id="GF_Relatorios_CT_cargaHoraria" min="-2" pref="119" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="36" max="32767" attributes="0"/>
+                                  <EmptySpace pref="25" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1743,7 +1818,12 @@
                                       <Component id="jLabel73" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="GF_Relatorios_CB_sexo" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel127" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="GF_Relatorios_CB_funcao" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel75" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="GF_Relatorios_CT_idade" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1758,7 +1838,7 @@
                                       <Component id="GF_Relatorios_CT_cargaHoraria" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel84" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="0" pref="3" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1784,11 +1864,25 @@
                             <Property name="text" type="java.lang.String" value="C.H:"/>
                           </Properties>
                         </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel127">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Fun&#xe7;&#xe3;o:"/>
+                          </Properties>
+                        </Component>
                         <Component class="javax.swing.JTextField" name="GF_Relatorios_CT_idade">
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="GF_Relatorios_CT_idade.setText(&quot;0&quot;);"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JTextField" name="GF_Relatorios_CT_renda">
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="GF_Relatorios_CT_renda.setText(&quot;0&quot;);"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JTextField" name="GF_Relatorios_CT_cargaHoraria">
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="GF_Relatorios_CT_cargaHoraria.setText(&quot;0&quot;);"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="GF_Relatorios_CB_sexo">
                           <Properties>
@@ -1801,51 +1895,17 @@
                             </Property>
                           </Properties>
                         </Component>
-                      </SubComponents>
-                    </Container>
-                    <Container class="javax.swing.JPanel" name="GF_Relatorios_PN_Veiculo">
-
-                      <Layout>
-                        <DimensionLayout dim="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jLabel74" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="GF_Veiculo_CB_tipoDeVeiculo" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                        </DimensionLayout>
-                        <DimensionLayout dim="1">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel74" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="GF_Veiculo_CB_tipoDeVeiculo" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                        </DimensionLayout>
-                      </Layout>
-                      <SubComponents>
-                        <Component class="javax.swing.JLabel" name="jLabel74">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Tipo de ve&#xed;culo:"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JComboBox" name="GF_Veiculo_CB_tipoDeVeiculo">
+                        <Component class="javax.swing.JComboBox" name="GF_Relatorios_CB_funcao">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="6">
+                              <StringArray count="7">
                                 <StringItem index="0" value="-"/>
-                                <StringItem index="1" value="&#xd4;NIBUS"/>
-                                <StringItem index="2" value="BRT"/>
-                                <StringItem index="3" value="MICRO-&#xd4;NIBUS"/>
-                                <StringItem index="4" value="METR&#xd4;"/>
-                                <StringItem index="5" value="VLT"/>
+                                <StringItem index="1" value="MOTORISTA"/>
+                                <StringItem index="2" value="COBRADOR"/>
+                                <StringItem index="3" value="MEC&#xc2;NICO"/>
+                                <StringItem index="4" value="GESTOR DE FROTA"/>
+                                <StringItem index="5" value="GERENTE LOCAL"/>
+                                <StringItem index="6" value="GERENTE REGIONAL"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -1899,6 +1959,100 @@
                             </Component>
                           </SubComponents>
                         </Container>
+                      </SubComponents>
+                    </Container>
+                    <Container class="javax.swing.JPanel" name="GF_Relatorios_PN_rota">
+                      <Properties>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                            <EtchetBorder/>
+                          </Border>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="GF_Relatorios_PN_rota.setVisible(false);"/>
+                      </AuxValues>
+
+                      <Layout>
+                        <DimensionLayout dim="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jLabel176" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="GF_Rota_CT_idRota" min="-2" pref="74" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                        <DimensionLayout dim="1">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel176" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="GF_Rota_CT_idRota" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace pref="18" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                      </Layout>
+                      <SubComponents>
+                        <Component class="javax.swing.JLabel" name="jLabel176">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="ID Rota:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="GF_Rota_CT_idRota">
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Container class="javax.swing.JPanel" name="GF_Relatorios_PN_veiculo">
+                      <Properties>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                            <EtchetBorder/>
+                          </Border>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="GF_Relatorios_PN_veiculo.setVisible(false);"/>
+                      </AuxValues>
+
+                      <Layout>
+                        <DimensionLayout dim="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jLabel177" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="GF_Veiculo_CT_idVeiculo" min="-2" pref="88" max="-2" attributes="0"/>
+                                  <EmptySpace pref="18" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                        <DimensionLayout dim="1">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel177" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="GF_Veiculo_CT_idVeiculo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace pref="19" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                      </Layout>
+                      <SubComponents>
+                        <Component class="javax.swing.JLabel" name="jLabel177">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="ID Ve&#xed;culo:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="GF_Veiculo_CT_idVeiculo">
+                        </Component>
                       </SubComponents>
                     </Container>
                   </SubComponents>
@@ -1989,7 +2143,7 @@
                                       <Component id="jScrollPane8" min="-2" pref="439" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="138" max="32767" attributes="0"/>
+                              <EmptySpace pref="137" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -2342,6 +2496,9 @@
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Atualizar"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GL_Cadastro_BT_atualizarActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JComboBox" name="GL_Cadastro_CB_sexo">
                       <Properties>
@@ -6102,7 +6259,7 @@
                               <Component id="CB_VendaPassagem_PN_CartaoMag" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                               <Component id="CB_VendaPassagem_PN_aDinheiro" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="519" max="32767" attributes="0"/>
+                              <EmptySpace pref="515" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -6110,9 +6267,9 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="CB_VendaPassagem_PN_CartaoMag" max="32767" attributes="0"/>
-                                  <Component id="CB_VendaPassagem_PN_aDinheiro" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="CB_VendaPassagem_PN_CartaoMag" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CB_VendaPassagem_PN_aDinheiro" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace pref="92" max="32767" attributes="0"/>
                           </Group>
@@ -6149,7 +6306,6 @@
                                               <Component id="CB_CartaoMag_CT_idCartao" min="-2" pref="167" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <Group type="103" groupAlignment="1" attributes="0">
@@ -6264,6 +6420,13 @@
                       </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="CB_VendaPassagem_PN_aDinheiro">
+                      <Properties>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                            <EtchetBorder/>
+                          </Border>
+                        </Property>
+                      </Properties>
 
                       <Layout>
                         <DimensionLayout dim="0">
@@ -6316,7 +6479,7 @@
                                       <Component id="jLabel43" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="CB_VendaPassagem_aDinheiro_CT_troco" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="117" max="32767" attributes="0"/>
                                   <Component id="CB_VendaPassagem_aDinheiro_BT_ok" min="-2" pref="53" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                               </Group>

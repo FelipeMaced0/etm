@@ -25,7 +25,7 @@ public class Oficina {
     public Oficina(String nome, Funcionario encarregado,ETM minhaFrota) {
         this.nome = nome;
         this.encarregado = encarregado;
-        this.status = new String[]{"EM MANUTENÇÃO", "NORMAL"};
+        this.status = new String[]{"OPERACIONAL","COM DEFEITO","EM MANUTENÇÃO"};
         mecanicos = new ArrayList();
         veiculos = new ArrayList();
     }
@@ -50,8 +50,8 @@ public class Oficina {
         return encarregado;
     }
 
-    public void cadatrarVeiculo(Veiculo veiculo){
-        veiculo.setStatus(status[0]);
+    public void cadastrarVeiculo(Veiculo veiculo){
+        veiculo.setStatus(status[1]);
         veiculos.add(veiculo);
     }
     

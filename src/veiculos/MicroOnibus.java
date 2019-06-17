@@ -9,7 +9,7 @@ public class MicroOnibus extends VeiculoComPlaca{
         super(placa, id, status, combustivel, tipoDeRota, tipoDeCobranca, capacidade, autonomia);
     }
 
-    public MicroOnibus(String placa, String status, String combustivel, String tipoDeRota, String tipoDeCobranca, int capacidade, float autonomia) {
-        super(placa, status, combustivel, tipoDeRota, tipoDeCobranca, capacidade, autonomia);
+    public MicroOnibus(String placa, String status, String combustivel, String tipoDeRota, String tipoDeCobranca, int capacidade, float autonomia, float distanciaDoPercurso) {
+        super(placa, status, combustivel, tipoDeRota, tipoDeCobranca, capacidade, autonomia, distanciaDoPercurso);
     }  
 }

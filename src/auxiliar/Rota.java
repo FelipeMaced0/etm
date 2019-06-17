@@ -65,7 +65,11 @@ public class Rota {
     public int getnVeiculos(){
         return nVeiculos;
     }
-
+    
+    public int getnParadas(){
+        return paradas.size();
+    }
+    
     public void addParada(Parada novaParada){
         paradas.add(novaParada);
         novaParada.setnVeiculos(nVeiculos+novaParada.getnVeiculos());

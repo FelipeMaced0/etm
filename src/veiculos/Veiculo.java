@@ -53,13 +53,14 @@ public abstract class Veiculo {
         }
     }
     
-    public Veiculo(String status, String combustivel, String tipoDeRota, String tipoDeCobranca, int capacidade, float autonomia){
+    public Veiculo(String status, String combustivel, String tipoDeRota, String tipoDeCobranca, int capacidade, float autonomia, float distanciaDoPercurso){
         this.status = status.toUpperCase();
         this.combustivel = combustivel.toUpperCase();
         this.tipoDeRota = tipoDeRota.toUpperCase();
         this.tipoDeCobranca = tipoDeCobranca.toUpperCase();
         this.capacidade = capacidade;
         this.autonomia = autonomia;
+        this.distanciaDoPercurso = distanciaDoPercurso;
         funcionarios = new ArrayList();
         revisoes = new ArrayList();
         if(this.tipoDeCobranca.equals("MISTA")||this.tipoDeCobranca.equals("ELETRONICA")){
