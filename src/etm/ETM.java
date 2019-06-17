@@ -5,6 +5,7 @@ import auxiliar.GeradorDeId;
 import auxiliar.Parada;
 import Relatorios.RelatorioCustoDiario;
 import Relatorios.RelatorioPorPeriodo;
+import Relatorios.RelatorioRota;
 import Relatorios.RelatorioVeiculo;
 import auxiliar.Rota;
 import funcionarios.Funcionario;
@@ -15,7 +16,6 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
-import java.util.Objects;
 import oficina.Oficina;
 import passageiro.CartaoMag;
 
@@ -443,15 +443,15 @@ public class ETM {
     }
     
     //modificar
-    public String gerarRelatorioDeCustoRota(String idRota){
-        String relatorioDeCustos="";
+    public RelatorioRota gerarRelatorioDeCustoRota(String idRota){
+        RelatorioRota relatorio;
         Iterator<Rota> i = rotas.iterator();
         Rota rota;
         while(i.hasNext()){
             rota = i.next();
             if(rota.getId().equals(idRota)){
-                relatorioDeCustos += "\nFUNCIONÁRIOS: "+rota.getCustoComFuncionarios()+"\nCOMBUSTÍVEL: "+rota.getCustoComCombustivel();
-                return relatorioDeCustos;
+                relatorio = new RelatorioRota(rota, rota.getCustoComFuncionarios(), rota.getCustoComCombustivel());
+                return relatorio;
             }
         }
         return null;
@@ -745,26 +745,5 @@ public class ETM {
     @Override
     public String toString(){
         return "NOME: "+nome+"\nID: "+id; 
-    }
-    
-    @Override
-    public boolean equals(Object obj){
-        if(obj!=null){
-            if(obj instanceof ETM){
-                if(((ETM)obj).id.equals(this.id)){
-                    return true;
-                }
-                return false;
-            }
-            return false;
-        }
-        return false;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 23 * hash + Objects.hashCode(this.id);
-        return hash;
     }
 }

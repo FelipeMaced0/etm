@@ -4,9 +4,8 @@ public class Mecanico extends Funcionario{
     int veiculosAtendidos;
     public Mecanico(){
     }
-    public Mecanico(String nome,String cpf, String ctps, String sexo,int idade,int cargaHoraria, float salario, int veiculosAtendidos){
+    public Mecanico(String nome,String cpf, String ctps, String sexo,int idade,int cargaHoraria, float salario){
         super(nome,cpf,ctps,sexo,idade,cargaHoraria,salario);
-        this.veiculosAtendidos = veiculosAtendidos;
     }
 
     public Mecanico(String cpf) {

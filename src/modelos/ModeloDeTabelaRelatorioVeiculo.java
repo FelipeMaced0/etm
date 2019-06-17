@@ -1,17 +1,17 @@
 package modelos;
 
-import funcionarios.Funcionario;
+import Relatorios.RelatorioVeiculo;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 
-
 public class ModeloDeTabelaRelatorioVeiculo extends AbstractTableModel{
-    private final ArrayList<Funcionario> rows;
-    private final String [] columns;
-    
-    public ModeloDeTabelaRelatorioVeiculo(ArrayList<Funcionario> funcionarios) {
-        this.rows = funcionarios;
-        columns = new String [] {"ID VEÍCULO","CUSTO FUNCIONÁRIOS","CUSTO COMBUSTÍVEL"};
+    private final ArrayList<RelatorioVeiculo> rows;
+    private final String  columns [];
+
+    public ModeloDeTabelaRelatorioVeiculo(ArrayList<RelatorioVeiculo> rows) {
+        this.rows = rows;
+        columns = new String [] {"ID VEÍCULO", "CUSTO FUNCIONÁRIOS", "CUSTO COMBUSTÍVEL",
+            "CUSTO INTEGRAÇÃO", "CUSTO IDOSOS", "CUSTO ESTUDANTES", "CUSTO CONVENCIONAL"};
     }
     
     @Override
@@ -32,11 +32,9 @@ public class ModeloDeTabelaRelatorioVeiculo extends AbstractTableModel{
     @Override
     public Class<?> getColumnClass(int columnIndex){
         switch(columnIndex){
-            case 0: case 2: case 3: case 4:
+            case 0: 
                 return String.class;
-            case 1:
-                return Integer.class;
-            case 5:
+            case 1: case 2: case 3: case 4:case 5:case 6:
                 return Float.class;
             default:
                 return null;   
@@ -50,21 +48,23 @@ public class ModeloDeTabelaRelatorioVeiculo extends AbstractTableModel{
     
     @Override
     public Object getValueAt(int rowIndex, int columnIndex){
-        Funcionario fun = rows.get(rowIndex);
+        RelatorioVeiculo relatorio = rows.get(rowIndex);
         String atributo = columns[columnIndex];
         switch(atributo){
-            case "NOME":
-                return fun.getNome();
-            case "IDADE":
-                return fun.getIdade();
-            case "FUNÇÃO":
-                return fun.getFuncao();
-            case "CPF":
-                return fun.getCpf();
-            case "CTPS":
-                return fun.getCtps();
-            case "SALÁRIO":
-                return fun.getSalario();
+            case "ID VEÍCULO":
+                return relatorio.getVeiculo().getId();
+            case "CUSTO FUNCIONÁRIOS":
+                return relatorio.getCustoFuncionario();
+            case "CUSTO COMBUSTÍVEL":
+                return relatorio.getCustoCombustivel();
+            case "CUSTO INTEGRAÇÃO":
+                return relatorio.getCustoIntegracao();
+            case "CUSTO IDOSOS":
+                return relatorio.getCustoIdosos();
+            case "CUSTO ESTUDANTES":
+                return relatorio.getCustoEstudante();
+            case "CUSTO CONVENCIONAL":
+                return relatorio.getCustoConvencional();
             default:
                 return "NÃO ENCONTRADO";
         }
@@ -72,37 +72,5 @@ public class ModeloDeTabelaRelatorioVeiculo extends AbstractTableModel{
     
     @Override
     public void setValueAt(Object value, int rowIndex, int columnIndex){
-        Funcionario fun = rows.get(rowIndex);
-        String atributo = columns[columnIndex];
-        switch(atributo){
-            case "NOME":
-                fun.setNome(String.valueOf(value));
-                break;
-            case "IDADE":
-                try{
-                    fun.setIdade(Integer.parseInt(String.valueOf(value)));
-                }catch(NumberFormatException e){
-                    
-                }
-                break;
-            case "FUNÇÃO":
-                break;
-            case "CPF":
-                fun.setCpf(String.valueOf(value));
-                break;
-            case "CTPS":
-                fun.setCtps(String.valueOf(value));
-            case "SALÁRIO":
-                try{
-                    fun.setSalario(Float.parseFloat(atributo));
-                }catch(NumberFormatException e){
-                
-                }
-                break;
-            default:
-                break;
-        }
-        fireTableCellUpdated(rowIndex,columnIndex);
-        
     }
 }

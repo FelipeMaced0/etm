@@ -2,6 +2,7 @@ package funcionarios;
 
 import auxiliar.Parada;
 import Relatorios.RelatorioPorPeriodo;
+import Relatorios.RelatorioRota;
 import Relatorios.RelatorioVeiculo;
 import auxiliar.Rota;
 import etm.ETM;
@@ -87,7 +88,7 @@ public class GestorDeFrota extends FuncionarioAdministrativo{
         return etm.gerarRelatorioDeCustoVeiculo(idVeiculo);
     }
     
-    public String gerarRelatorioDeCustoRota(String idRota){
+    public RelatorioRota gerarRelatorioDeCustoRota(String idRota){
         return etm.gerarRelatorioDeCustoRota(idRota);
     }
     

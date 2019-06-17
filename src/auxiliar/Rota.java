@@ -9,7 +9,6 @@ public class Rota {
     private ArrayList<Coordenada> coordenadas;
     private ArrayList<Parada> paradas;
     private ArrayList<Veiculo> veiculos;
-    private int nVeiculos=0;
     
     public Rota(){
     }
@@ -63,7 +62,7 @@ public class Rota {
     }
     
     public int getnVeiculos(){
-        return nVeiculos;
+        return veiculos.size();
     }
     
     public int getnParadas(){
@@ -72,7 +71,7 @@ public class Rota {
     
     public void addParada(Parada novaParada){
         paradas.add(novaParada);
-        novaParada.setnVeiculos(nVeiculos+novaParada.getnVeiculos());
+        novaParada.setnVeiculos(veiculos.size()+novaParada.getnVeiculos());
     }
     
     public void addCoordenada(Coordenada novaCoordenada){
@@ -81,7 +80,6 @@ public class Rota {
     
     public void cadastrarVeiculo(Veiculo nVeiculo){
         veiculos.add(nVeiculo);
-        nVeiculos += 1;
         atualizarNVeiculosNasParadas(1);
     }
     
@@ -106,7 +104,6 @@ public class Rota {
         Veiculo veiculo = buscarVeiculo(idVeiculo);
         
         if(veiculos.remove(veiculo)){
-            nVeiculos--;
             veiculo.setMinhaRota(null);
             atualizarNVeiculosNasParadas(-1);
         }

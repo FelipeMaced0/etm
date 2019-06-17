@@ -9,7 +9,7 @@ public abstract class CartaoMag {
     protected float creditos;
     protected int nIntegracoes;
     protected Calendar dataUltimoUso;
-    
+            
     public CartaoMag(){ 
     }
     
@@ -70,7 +70,15 @@ public abstract class CartaoMag {
     }
 
     public String getTipoDeUsuario() {
-        return this.getClass().getSimpleName().toUpperCase();
+        if(this instanceof Convencional){
+            return "CONVENCIONAL";
+        }
+        if(this instanceof Estudante){
+            return "ESTUDANTE";
+        }
+        else{
+            return "IDOSO";
+        }
     }
 
     public float getCreditos() {

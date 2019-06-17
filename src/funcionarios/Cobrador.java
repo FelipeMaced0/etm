@@ -4,9 +4,8 @@ public class Cobrador extends FuncionarioOperacional{
     float tarifaNormal;
     public void Cobrador(){
     }
-    public Cobrador(String nome,String cpf, String ctps, String sexo,int idade,int cargaHoraria, float salario, int passageirosAtendidos){
+    public Cobrador(String nome,String cpf, String ctps, String sexo,int idade,int cargaHoraria, float salario){
         super(nome,cpf,ctps,sexo,idade,cargaHoraria,salario);
-        this.passageirosAtendidos = passageirosAtendidos;
     }
 
     public Cobrador(String cpf) {

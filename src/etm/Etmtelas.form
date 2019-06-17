@@ -82,14 +82,10 @@
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="GF_CadasRota_PN_cadastrar" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                                      <Component id="GF_CadasRota_PN_minhasParadas" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="GF_CadasRota_PN_listaDeParadas" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="GF_CadasRota_PN_cadastrar" min="-2" max="-2" attributes="0"/>
+                                  <Component id="GF_CadasRota_PN_listagem" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="243" max="32767" attributes="0"/>
+                              <EmptySpace pref="587" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -97,82 +93,20 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="GF_CadasRota_PN_cadastrar" min="-2" max="-2" attributes="0"/>
-                                  <Component id="GF_CadasRota_PN_minhasParadas" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="GF_CadasRota_PN_cadastrar" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="GF_CadasRota_PN_listaDeParadas" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="102" max="32767" attributes="0"/>
+                              <Component id="GF_CadasRota_PN_listagem" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="88" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Container class="javax.swing.JPanel" name="GF_CadasRota_PN_minhasParadas">
+                    <Container class="javax.swing.JPanel" name="GF_CadasRota_PN_listagem">
                       <Properties>
                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                            <TitledBorder justification="2" title="MINHAS PARADAS">
-                              <Font PropertyName="font" name="Tahoma" size="12" style="1"/>
-                            </TitledBorder>
-                          </Border>
-                        </Property>
-                      </Properties>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="GF_CadasRota_PN_minhasParadas.setVisible(false);"/>
-                      </AuxValues>
-
-                      <Layout>
-                        <DimensionLayout dim="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="GF_CadasRota_SP_minhasParadas" pref="589" max="32767" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                        </DimensionLayout>
-                        <DimensionLayout dim="1">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="GF_CadasRota_SP_minhasParadas" min="-2" pref="92" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                        </DimensionLayout>
-                      </Layout>
-                      <SubComponents>
-                        <Container class="javax.swing.JScrollPane" name="GF_CadasRota_SP_minhasParadas">
-                          <AuxValues>
-                            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                          </AuxValues>
-
-                          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                          <SubComponents>
-                            <Component class="javax.swing.JTable" name="GF_CadasRota_TB_minhasParadas">
-                              <Properties>
-                                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                  <Table columnCount="5" rowCount="4">
-                                    <Column editable="true" title="Endere&#xe7;o" type="java.lang.String"/>
-                                    <Column editable="false" title="ID" type="java.lang.String"/>
-                                    <Column editable="false" title="N&#xba; de ve&#xed;culos" type="java.lang.Integer"/>
-                                    <Column editable="true" title="Latitude" type="java.lang.Float"/>
-                                    <Column editable="true" title="Longitude" type="java.lang.Float"/>
-                                  </Table>
-                                </Property>
-                              </Properties>
-                            </Component>
-                          </SubComponents>
-                        </Container>
-                      </SubComponents>
-                    </Container>
-                    <Container class="javax.swing.JPanel" name="GF_CadasRota_PN_listaDeParadas">
-                      <Properties>
-                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                            <TitledBorder justification="2" title="ROTAS CADASTRADAS">
+                            <TitledBorder justification="2">
                               <Font PropertyName="font" name="Tahoma" size="12" style="1"/>
                             </TitledBorder>
                           </Border>
@@ -184,20 +118,28 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jScrollPane10" min="-2" pref="609" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="4" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <Component id="GF_CadasRota_BT_detalhar" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="GF_CadasRota_BT_voltar" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <Component id="GF_Listagem_BT_detalhar" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="GF_Listagem_BT_voltar" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jLabel74" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Component id="GF_Listagem_CB_detalhamento" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel74" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="GF_CadasRota_CB_detalhamento" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="193" max="-2" attributes="0"/>
+                                          <Component id="GF_Listagem_LB_texto" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
@@ -207,16 +149,19 @@
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="GF_Listagem_LB_texto" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                   <Component id="jScrollPane10" min="-2" pref="91" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="GF_CadasRota_CB_detalhamento" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="GF_Listagem_CB_detalhamento" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel74" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="29" max="32767" attributes="0"/>
+                                  <EmptySpace pref="17" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="GF_CadasRota_BT_detalhar" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                                      <Component id="GF_CadasRota_BT_voltar" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                      <Component id="GF_Listagem_BT_detalhar" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                      <Component id="GF_Listagem_BT_voltar" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
@@ -224,24 +169,48 @@
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JButton" name="GF_CadasRota_BT_voltar">
+                        <Component class="javax.swing.JLabel" name="GF_Listagem_LB_texto">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="12" style="1"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="ROTAS CADASTRADAS"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel74">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="DETALHAMENTO:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JButton" name="GF_Listagem_BT_voltar">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="VOLTAR"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GF_CadasRota_BT_voltarActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GF_Listagem_BT_voltarActionPerformed"/>
                           </Events>
                           <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="GF_CadasRota_BT_voltar.setEnabled(false);"/>
+                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="GF_Listagem_BT_voltar.setEnabled(false);"/>
                           </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JButton" name="GF_CadasRota_BT_detalhar">
+                        <Component class="javax.swing.JButton" name="GF_Listagem_BT_detalhar">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="DETALHAR"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GF_CadasRota_BT_detalharActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GF_Listagem_BT_detalharActionPerformed"/>
                           </Events>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="GF_Listagem_CB_detalhamento">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="3">
+                                <StringItem index="0" value="-"/>
+                                <StringItem index="1" value="VE&#xcd;CULO"/>
+                                <StringItem index="2" value="PARADA"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
                         </Component>
                         <Container class="javax.swing.JScrollPane" name="jScrollPane10">
                           <AuxValues>
@@ -250,7 +219,7 @@
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
-                            <Component class="javax.swing.JTable" name="GF_CadasRota_TB_listagem">
+                            <Component class="javax.swing.JTable" name="GF_Listagem_TB_listagem">
                               <Properties>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                                   <Table columnCount="4" rowCount="4">
@@ -264,22 +233,6 @@
                             </Component>
                           </SubComponents>
                         </Container>
-                        <Component class="javax.swing.JComboBox" name="GF_CadasRota_CB_detalhamento">
-                          <Properties>
-                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="3">
-                                <StringItem index="0" value="-"/>
-                                <StringItem index="1" value="VE&#xcd;CULO"/>
-                                <StringItem index="2" value="PARADA"/>
-                              </StringArray>
-                            </Property>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel74">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="DETALHAMENTO:"/>
-                          </Properties>
-                        </Component>
                       </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="GF_CadasRota_PN_cadastrar">
@@ -1038,6 +991,14 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="GF_Gastos_CT_idVeiculo">
                         </Component>
+                        <Component class="javax.swing.JButton" name="GF_Gastos_BT_inserir">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="INSERIR"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GF_Gastos_BT_inserirActionPerformed"/>
+                          </Events>
+                        </Component>
                         <Component class="javax.swing.JSpinner" name="GF_Gastos_SP_nViagens">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -1047,14 +1008,6 @@
                               <SpinnerModel initial="0" minimum="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
                             </Property>
                           </Properties>
-                        </Component>
-                        <Component class="javax.swing.JButton" name="GF_Gastos_BT_inserir">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="INSERIR"/>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GF_Gastos_BT_inserirActionPerformed"/>
-                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -1449,8 +1402,8 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane12" min="-2" pref="513" max="-2" attributes="0"/>
-                                  <EmptySpace pref="21" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane12" min="-2" pref="674" max="-2" attributes="0"/>
+                                  <EmptySpace pref="20" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1647,12 +1600,6 @@
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="GF_Relatorios_BT_balanco" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="GF_Relatorios_BT_buscarRelatorio" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="GF_Relatorios_BT_limpar" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="GF_Relatorios_PN_funcionario" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -1665,12 +1612,23 @@
                                           </Group>
                                       </Group>
                                       <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
-                                      <Component id="GF_Relatorios_PN_listagem" min="-2" pref="475" max="-2" attributes="0"/>
+                                      <Component id="GF_Relatorios_PN_listagem" max="32767" attributes="0"/>
                                   </Group>
-                                  <Component id="GF_Relatorios_PN_rota" alignment="0" min="-2" pref="145" max="-2" attributes="0"/>
-                                  <Component id="GF_Relatorios_PN_veiculo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="GF_Relatorios_BT_balanco" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="GF_Relatorios_BT_buscarRelatorio" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="GF_Relatorios_BT_limpar" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="GF_Relatorios_PN_rota" alignment="0" min="-2" pref="145" max="-2" attributes="0"/>
+                                          <Component id="GF_Relatorios_PN_veiculo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace pref="360" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1921,9 +1879,9 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jScrollPane9" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                                  <EmptySpace pref="20" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane9" min="-2" pref="795" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>

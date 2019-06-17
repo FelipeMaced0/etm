@@ -11,8 +11,9 @@ public class CobradorEletronico {
     Calendar dataAtual;
     float limiteDeIntegracao;
     float valorDegratuidade;
-    float custoEstudantes;
     float custoIntegracao;
+    float custoConvencional;
+    float custoEstudantes;
     float custoIdosos;
     float receita;
     
@@ -81,14 +82,48 @@ public class CobradorEletronico {
         return receita;
     }
     
-    public  void verificarValidaCreditos(CartaoMag cartao, Calendar dataAtual, long dataUltimoUso){
-        if(dataAtual.getTimeInMillis()-dataUltimoUso<3.6e6&&cartao.getnIntegracoes()<=limiteDeIntegracao){
-            cartao.setnIntegracoes(cartao.getnIntegracoes()+1);
-        }
+    public  boolean verificarValidaCreditos(CartaoMag cartao, Calendar dataAtual, long dataUltimoUso){
         if(dataAtual.get(Calendar.DAY_OF_MONTH) >= 28){
             if(cartao instanceof Idoso){
                 cartao.setCreditos(valorDegratuidade);
             }
+        }
+        if(dataAtual.getTimeInMillis()-dataUltimoUso<3.6e6&&cartao.getnIntegracoes()<=limiteDeIntegracao){
+            cartao.setnIntegracoes(cartao.getnIntegracoes()+1);
+            switch(cartao.getTipoDeUsuario()){
+                case "ESTUDANTE":
+                    custoEstudantes += tarifaCartao;
+                    custoIntegracao += tarifaCartao;
+                    break;
+                case "IDOSO":
+                    custoIdosos += tarifaCartao;
+                    custoIntegracao += tarifaCartao;
+                    break;
+                case "CONVENCIONAL":
+                    custoConvencional += tarifaCartao;
+                    custoIntegracao += tarifaCartao;
+                    break;
+            }
+            return true;
+        }
+        else{
+            
+            if(cartao.cobrarPassagem(tarifaCartao)){
+                switch(cartao.getTipoDeUsuario()){
+                    case "ESTUDANTE":
+                        custoEstudantes += tarifaCartao/2;
+                        receita += tarifaCartao/2;
+                        break;
+                    case "IDOSO":
+                        custoIdosos += tarifaCartao;
+                        break;
+                    case "CONVENCIONAL":
+                        receita += tarifaCartao;
+                        break;
+                }
+                return true;
+            }
+            return false;
         }
     }
     
@@ -113,50 +148,11 @@ public class CobradorEletronico {
     
     public boolean cobrar(CartaoMag cartao){
         dataAtual = Calendar.getInstance();
-        int val;
-        listaDeCartoes.set(listaDeCartoes.indexOf(cartao), cartao);
-        if(listaDeCartoes.contains(cartao)&&cartao.isAutorizado()){
-            verificarValidaCreditos(cartao,dataAtual,cartao.getDataUltimoUsoMilisegundos());
+        boolean liberarCatraca;
+        liberarCatraca = verificarValidaCreditos(cartao,dataAtual,cartao.getDataUltimoUsoMilisegundos());
+        if(listaDeCartoes.contains(cartao)&&liberarCatraca){
             cartao.setDataUltimoUso(dataAtual);
-            switch(cartao.getTipoDeUsuario()){
-                case "ESTUDANTE":
-                    if(cartao.cobrarPassagem(tarifaCartao)){
-                        if (val==1){
-                            custoIntegracao += tarifaCartao;
-                        }
-                        
-                        else{
-                            custoEstudantes += tarifaCartao/2;
-                            receita += tarifaCartao/2;
-                        }
-                        return true;
-                    }                      
-                case "IDOSO":
-                    if(cartao.cobrarPassagem(tarifaCartao)){
-                        if(val==0){
-                            custoIdosos += tarifaCartao;                               
-                        }
-                        else if(val==3){
-                            cartao.setCreditos(valorDegratuidade);
-                        }
-                        else{
-                            custoIntegracao += tarifaCartao;
-                        }
-                        return true;
-                    } 
-                case "NORMAL":
-                    if(cartao.cobrarPassagem(tarifaCartao)){
-                        if(val==0){
-                            receita += tarifaCartao;
-                        }
-                        else if(val==1){
-                            custoIntegracao += tarifaCartao;
-                        }
-                        return true;
-                    }
-                default:
-                    return false;
-            }
+            
         }
         
         return false;
