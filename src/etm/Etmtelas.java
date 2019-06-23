@@ -1564,6 +1564,11 @@ public class Etmtelas extends javax.swing.JFrame {
                 GF_Relatorios_BR_veiculoMouseClicked(evt);
             }
         });
+        GF_Relatorios_BR_veiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GF_Relatorios_BR_veiculoActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(GF_Relatorios_BR_funcionario);
         GF_Relatorios_BR_funcionario.setText("FUNCIONÁRIO");
@@ -1572,12 +1577,22 @@ public class Etmtelas extends javax.swing.JFrame {
                 GF_Relatorios_BR_funcionarioMouseClicked(evt);
             }
         });
+        GF_Relatorios_BR_funcionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GF_Relatorios_BR_funcionarioActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(GF_Relatorios_BR_rota);
         GF_Relatorios_BR_rota.setText("ROTA");
         GF_Relatorios_BR_rota.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 GF_Relatorios_BR_rotaMouseClicked(evt);
+            }
+        });
+        GF_Relatorios_BR_rota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GF_Relatorios_BR_rotaActionPerformed(evt);
             }
         });
 
@@ -5047,7 +5062,6 @@ public class Etmtelas extends javax.swing.JFrame {
             funcionarios = etm.gerarRelatorioFuncionario(sexo, funcao, idade, CHoraria, renda);
             if(!funcionarios.isEmpty()){
                 Collections.sort(funcionarios, new ComparadorDeFuncionarios());
-                GF_Relatorios_PN_Listagem.setVisible(true);
                 GF_Relatorios_TB_listagem.setModel(new ModeloDeTabelaFuncionario(funcionarios));
             }
             
@@ -5063,7 +5077,6 @@ public class Etmtelas extends javax.swing.JFrame {
             System.out.println(relatorio);
             if(relatorio!=null){
                 relatorios.add(relatorio);
-                GF_Relatorios_PN_Listagem.setVisible(true);
                 GF_Relatorios_TB_listagem.setModel(new ModeloDeTabelaRelatorioVeiculo(relatorios));
             }
             
@@ -5076,7 +5089,6 @@ public class Etmtelas extends javax.swing.JFrame {
             relatorio = etm.gerarRelatorioDeCustoRota(idRota);
             if(relatorio!=null){
                 relatorios.add(relatorio);
-                GF_Relatorios_PN_Listagem.setVisible(true);
                 GF_Relatorios_TB_listagem.setModel(new ModeloDeTabelaRelatorioRota(relatorios));
             }
             
@@ -5134,35 +5146,37 @@ public class Etmtelas extends javax.swing.JFrame {
         String id;
         
         if(etm.getRotasCadastradas()!=null){
-            tipoDeDetalhamento = GF_Listagem_CB_detalhamento.getSelectedItem().toString();
-            indexRow = GF_Listagem_TB_listagem.getSelectedRow();
-            id = GF_Listagem_TB_listagem.getValueAt(indexRow, 1).toString();
-            rota = etm.buscarRota(id);
-            switch(tipoDeDetalhamento){
-                case "VEÍCULO":
-                    veiculos = rota.getVeiculos();
-                    if(!veiculos.isEmpty()){
-                        GF_Listagem_LB_texto.setText("VEÍCULOS CADASTRADOS NA ROTA "+id);
-                        GF_Listagem_TB_listagem.setModel(new ModeloDeTabelaVeiculo(veiculos));
-                        GF_Listagem_BT_detalhar.setEnabled(false);
-                        GF_Listagem_BT_voltar.setEnabled(true);
-                    }
-                    break;
-                case "PARADA":
-                    paradas = rota.getParadas();
-                    if(!paradas.isEmpty()){
-                        GF_Listagem_LB_texto.setText("PARADAS CADASTRADAS NA ROTA "+id);
-                        GF_Listagem_TB_listagem.setModel(new ModeloDeTabelaParada(paradas));
-                        GF_Listagem_BT_detalhar.setEnabled(false);
-                        GF_Listagem_BT_voltar.setEnabled(true);
-                    }
-                    break;
-                default:
-                    
+            try{
+                tipoDeDetalhamento = GF_Listagem_CB_detalhamento.getSelectedItem().toString();
+                indexRow = GF_Listagem_TB_listagem.getSelectedRow();
+                id = GF_Listagem_TB_listagem.getValueAt(indexRow, 1).toString();
+                rota = etm.buscarRota(id);
+                
+                switch(tipoDeDetalhamento){
+                    case "VEÍCULO":
+                        veiculos = rota.getVeiculos();
+                        if(!veiculos.isEmpty()){
+                            GF_Listagem_LB_texto.setText("VEÍCULOS CADASTRADOS NA ROTA "+id);
+                            GF_Listagem_TB_listagem.setModel(new ModeloDeTabelaVeiculo(veiculos));
+                            GF_Listagem_BT_detalhar.setEnabled(false);
+                            GF_Listagem_BT_voltar.setEnabled(true);
+                        }
+                        break;
+                    case "PARADA":
+                        paradas = rota.getParadas();
+                        if(!paradas.isEmpty()){
+                            GF_Listagem_LB_texto.setText("PARADAS CADASTRADAS NA ROTA "+id);
+                            GF_Listagem_TB_listagem.setModel(new ModeloDeTabelaParada(paradas));
+                            GF_Listagem_BT_detalhar.setEnabled(false);
+                            GF_Listagem_BT_voltar.setEnabled(true);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }catch(ArrayIndexOutOfBoundsException e){
             }
-            
         }
-        
     }//GEN-LAST:event_GF_Listagem_BT_detalharActionPerformed
 
     private void GF_Listagem_BT_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GF_Listagem_BT_voltarActionPerformed
@@ -5258,6 +5272,21 @@ public class Etmtelas extends javax.swing.JFrame {
     private void GL_RelatoriosPorPe_CB_funcaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GL_RelatoriosPorPe_CB_funcaoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_GL_RelatoriosPorPe_CB_funcaoActionPerformed
+
+    private void GF_Relatorios_BR_rotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GF_Relatorios_BR_rotaActionPerformed
+        GF_Relatorios_PN_Listagem.setVisible(true);
+        GF_Relatorios_TB_listagem.setModel(new ModeloDeTabelaRelatorioRota());
+    }//GEN-LAST:event_GF_Relatorios_BR_rotaActionPerformed
+
+    private void GF_Relatorios_BR_funcionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GF_Relatorios_BR_funcionarioActionPerformed
+        GF_Relatorios_PN_Listagem.setVisible(true);
+        GF_Relatorios_TB_listagem.setModel(new ModeloDeTabelaFuncionario());
+    }//GEN-LAST:event_GF_Relatorios_BR_funcionarioActionPerformed
+
+    private void GF_Relatorios_BR_veiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GF_Relatorios_BR_veiculoActionPerformed
+        GF_Relatorios_PN_Listagem.setVisible(true);
+        GF_Relatorios_TB_listagem.setModel(new ModeloDeTabelaRelatorioVeiculo());
+    }//GEN-LAST:event_GF_Relatorios_BR_veiculoActionPerformed
 
     public void ordenarTabelaParadas(){
         

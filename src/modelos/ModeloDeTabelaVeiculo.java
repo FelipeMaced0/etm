@@ -14,6 +14,11 @@ public class ModeloDeTabelaVeiculo extends AbstractTableModel{
         this.rows = rows;
     }
     
+    public ModeloDeTabelaVeiculo() {
+        this.columns = new String[] {"ID","STATUS","TIPO","COMBUSTÍVEL","AUTONOMIA", "CAPACIDADE"};
+        this.rows = new ArrayList();
+    }
+    
     @Override
     public int getRowCount(){
         return rows.size();

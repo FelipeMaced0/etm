@@ -13,7 +13,10 @@ public class ModeloDeTabelaFuncionario extends AbstractTableModel{
         this.rows = funcionarios;
         columns = new String [] {"NOME","IDADE","FUNÇÃO","CPF","CTPS","SALÁRIO"};
     }
-    
+    public ModeloDeTabelaFuncionario() {
+        this.rows = new ArrayList();
+        columns = new String [] {"NOME","IDADE","FUNÇÃO","CPF","CTPS","SALÁRIO"};
+    }
     @Override
     public int getRowCount(){
         return rows.size();

@@ -14,6 +14,11 @@ public class ModeloDeTabelaParada extends AbstractTableModel{
         this.rows = rows;
     }
     
+    public ModeloDeTabelaParada() {
+        this.columns = new String[] {"ENDEREÇO","ID","QNT. DE VEÍCULOS","LATITUDE","LONGITUDE"};
+        this.rows = new ArrayList();
+    }
+    
     @Override
     public int getRowCount(){
         return rows.size();

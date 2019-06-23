@@ -14,6 +14,12 @@ public class ModeloDeTabelaRelatorioRota extends AbstractTableModel{
             "INTEGRAÇÃO", "IDOSOS", "ESTUDANTES", "CONVENCIONAL"};
     }
     
+    public ModeloDeTabelaRelatorioRota() {
+        this.rows = new ArrayList();
+        columns = new String [] {"ID ROTA", "FUNCIONÁRIOS", "COMBUSTÍVEL",
+            "INTEGRAÇÃO", "IDOSOS", "ESTUDANTES", "CONVENCIONAL"};
+    }
+    
     @Override
     public int getRowCount(){
         return rows.size();
