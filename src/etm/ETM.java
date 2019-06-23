@@ -38,6 +38,8 @@ public class ETM {
     private ArrayList <Rota> rotas;
     private ArrayList <Parada> paradas;
     private ArrayList <CartaoMag> cartoes;
+    private ArrayList <RelatorioVeiculo> relatoriosDeVeiculos;
+    private ArrayList <RelatorioRota> relatoriosDeRotas;
     private boolean paradasDesordenadas = true;
     
     public ETM(){
@@ -61,6 +63,7 @@ public class ETM {
         this.nome = nome;
         this.id = id;
         relatoriosDiarios = new ArrayList();
+        relatoriosDeVeiculos = new ArrayList();
         funcionarios = new ArrayList();
         veiculos = new ArrayList();
         rotas = new ArrayList();   
@@ -189,12 +192,6 @@ public class ETM {
         }
     }
     
-    /*
-    repensar sobre a necessidade
-    public void descadastrarRelatorio(RelatorioCustoDiario relatorio){
-        relatoriosDiarios.remove(relatorio);
-    }
-    */
     public void descadastrarFucionario(String cpf){
         Funcionario fun = buscarFuncionario(cpf);
         if(fun != null){
@@ -427,7 +424,7 @@ public class ETM {
         return relatados;
     }
     
-    //Gera um relatório com os custo de um veículo específico
+    //Gera um relatório com os custos de um veículo específico
     public RelatorioVeiculo gerarRelatorioDeCustoVeiculo(String idVeiculo){
         RelatorioVeiculo relatorio;
         Iterator<Veiculo> i = veiculos.iterator();
@@ -435,7 +432,10 @@ public class ETM {
         while(i.hasNext()){
             veiculo = i.next();
             if(veiculo.getId().equals(idVeiculo)){
-                relatorio =  new RelatorioVeiculo(veiculo, veiculo.getCustoComFuncionarios(), veiculo.getCustoComCombustivel());
+                relatorio =  new RelatorioVeiculo(veiculo, veiculo.getCustoComFuncionarios(),
+                        veiculo.getCustoComCombustivel());
+                
+                relatoriosDeVeiculos.add(relatorio);
                 return relatorio;
             }
         }
@@ -451,6 +451,8 @@ public class ETM {
             rota = i.next();
             if(rota.getId().equals(idRota)){
                 relatorio = new RelatorioRota(rota, rota.getCustoComFuncionarios(), rota.getCustoComCombustivel());
+                relatorio.setId("!");
+                relatoriosDeRotas.add(relatorio);
                 return relatorio;
             }
         }
@@ -632,23 +634,6 @@ public class ETM {
         return new RelatorioPorPeriodo(dataInicial,dataFinal,idRelatorios.gerarId(),"LUCRO OU PERDA",dataFinal,0,custoTotal,receita);
     }
     
-    /*
-    public void salvarRelatorio(RelatorioCustoDiario nRelatorio){
-        if(proxPLrela<relatoriosDiarios.length){
-            relatoriosDiarios[proxPLrela] = nRelatorio;
-        }
-        else{
-            RelatorioCustoDiario [] temp = new RelatorioCustoDiario[relatoriosDiarios.length+3];
-            for(int i=0;i<proxPLrela;i++){
-                temp[i] = relatoriosDiarios[i];
-            }
-            temp[proxPLrela] = nRelatorio;
-            relatoriosDiarios = temp;
-        }
-        proxPLrela += 1;
-    }
-    */
-    
     //calcula e retorna a tarifa ideal de todos os veículos
     public String calcularTarifaIdealTveiculos(float percentDeLucro){
         String info="";
@@ -724,22 +709,15 @@ public class ETM {
         distancia = 2*Rterra*Math.asin(Math.sqrt(d1));
         return distancia;
     }
+    
     public double calcularDistancia(String  idP1, String idP2){
         Parada p1 = buscarParada(idP1);
         Parada p2 = buscarParada(idP2);
         
-        return Distancia(p1, p2);
-    }
-    
-    public String mostrarRelatoriosDiarios(){
-        String info="";
-        Iterator<RelatorioCustoDiario> relatorios = relatoriosDiarios.iterator();
-        RelatorioCustoDiario relatorio;
-        while(relatorios.hasNext()){
-            relatorio = relatorios.next();
-            info += relatorio.toString()+"\n\n";
+        if(p1!=null && p2!=null){
+            return Distancia(p1, p2);
         }
-        return info;
+        return -1;
     }
     
     @Override

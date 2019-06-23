@@ -79,11 +79,7 @@ public class ModeloDeTabelaFuncionario extends AbstractTableModel{
                 fun.setNome(String.valueOf(value));
                 break;
             case "IDADE":
-                try{
-                    fun.setIdade(Integer.parseInt(String.valueOf(value)));
-                }catch(NumberFormatException e){
-                    
-                }
+                fun.setIdade(tratarErroInt(fun.getIdade(), value));
                 break;
             case "FUNÇÃO":
                 break;
@@ -93,16 +89,28 @@ public class ModeloDeTabelaFuncionario extends AbstractTableModel{
             case "CTPS":
                 fun.setCtps(String.valueOf(value));
             case "SALÁRIO":
-                try{
-                    fun.setSalario(Float.parseFloat(atributo));
-                }catch(NumberFormatException e){
-                
-                }
+                fun.setSalario(tratarErroFloat(fun.getSalario(), value));
                 break;
             default:
                 break;
         }
         fireTableCellUpdated(rowIndex,columnIndex);
         
+    }
+    
+    public float tratarErroFloat(float valorAnterior, Object value){
+        try{
+            return Float.parseFloat(String.valueOf(value));
+        }catch(NumberFormatException e){
+            return valorAnterior;
+        }
+    }
+    
+    public int tratarErroInt(int valorAnterior, Object value){
+        try{
+            return Integer.parseInt(String.valueOf(value));
+        }catch(NumberFormatException e){
+            return valorAnterior;
+        }
     }
 }

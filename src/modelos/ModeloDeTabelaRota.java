@@ -10,7 +10,7 @@ public class ModeloDeTabelaRota extends AbstractTableModel{
     private final String columns[];
 
     public ModeloDeTabelaRota(ArrayList<Rota> rows) {
-        this.columns = new String[] {"NOME","ID","Nº DE VEÍCULOS","Nº DE PARADAS"};
+        this.columns = new String[] {"NOME","ID","QNT. DE VEÍCULOS","QNT. DE PARADAS"};
         this.rows = rows;
     }
     
@@ -56,9 +56,10 @@ public class ModeloDeTabelaRota extends AbstractTableModel{
                 return rota.getNome();
             case "ID":
                 return rota.getId();
-            case "Nº DE VEÍCULOS":
+            case "QNT. DE VEÍCULOS":
+                
                 return rota.getnVeiculos();
-            case "Nº DE PARADAS":
+            case "QNT. DE PARADAS":
                 return rota.getnParadas();
             default:
                 return null;

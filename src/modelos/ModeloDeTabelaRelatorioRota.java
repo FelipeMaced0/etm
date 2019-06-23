@@ -1,16 +1,16 @@
 package modelos;
 
-import Relatorios.RelatorioVeiculo;
+import Relatorios.RelatorioRota;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 
-public class ModeloDeTabelaRelatorioVeiculo extends AbstractTableModel{
-    private final ArrayList<RelatorioVeiculo> rows;
+public class ModeloDeTabelaRelatorioRota extends AbstractTableModel{
+    private final ArrayList<RelatorioRota> rows;
     private final String  columns [];
 
-    public ModeloDeTabelaRelatorioVeiculo(ArrayList<RelatorioVeiculo> rows) {
+    public ModeloDeTabelaRelatorioRota(ArrayList<RelatorioRota> rows) {
         this.rows = rows;
-        columns = new String [] {"ID VEÍCULO", "FUNCIONÁRIOS", "COMBUSTÍVEL",
+        columns = new String [] {"ID ROTA", "FUNCIONÁRIOS", "COMBUSTÍVEL",
             "INTEGRAÇÃO", "IDOSOS", "ESTUDANTES", "CONVENCIONAL"};
     }
     
@@ -48,11 +48,11 @@ public class ModeloDeTabelaRelatorioVeiculo extends AbstractTableModel{
     
     @Override
     public Object getValueAt(int rowIndex, int columnIndex){
-        RelatorioVeiculo relatorio = rows.get(rowIndex);
+        RelatorioRota relatorio = rows.get(rowIndex);
         String atributo = columns[columnIndex];
         switch(atributo){
             case "ID VEÍCULO":
-                return relatorio.getVeiculo().getId();
+                return relatorio.getRota().getId();
             case "FUNCIONÁRIOS":
                 return relatorio.getCustoFuncionario();
             case "COMBUSTÍVEL":
@@ -62,7 +62,7 @@ public class ModeloDeTabelaRelatorioVeiculo extends AbstractTableModel{
             case "IDOSOS":
                 return relatorio.getCustoIdosos();
             case "ESTUDANTES":
-                return relatorio.getCustoEstudante();
+                return relatorio.getCustoEstudantes();
             case "CONVENCIONAL":
                 return relatorio.getCustoConvencional();
             default:

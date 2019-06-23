@@ -96,10 +96,6 @@ public class GestorDeFrota extends FuncionarioAdministrativo{
         etm.BalancoDodia();
     }
     
-    public String mostrarRelatoriosDiarios(){
-        return etm.mostrarRelatoriosDiarios();
-    }
-    
     public RelatorioPorPeriodo relatorioPorPeriodoFuncionarios(Calendar dataInicial, Calendar dataFinal){
         return etm.relatorioPorPeriodoFuncionarios(dataInicial, dataFinal);
     }

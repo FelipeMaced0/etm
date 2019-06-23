@@ -73,14 +73,5 @@ public class ModeloDeTabelaVeiculo extends AbstractTableModel{
     
     @Override
     public void setValueAt(Object value, int rowIndex, int columnIndex){
-        Veiculo veiculo = rows.get(rowIndex);
-        String atributo = columns[columnIndex];
-
-        switch(atributo){
-            default:
-                break;
-        }
-        fireTableCellUpdated(rowIndex,columnIndex);
     }
-    
 }

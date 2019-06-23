@@ -10,7 +10,7 @@ public class ModeloDeTabelaParada extends AbstractTableModel{
     private final String columns[];
 
     public ModeloDeTabelaParada(ArrayList<Parada> rows) {
-        this.columns = new String[] {"ENDEREÇO","ID","Nº DE VEÍCULOS","LATITUDE","LONGITUDE"};
+        this.columns = new String[] {"ENDEREÇO","ID","QNT. DE VEÍCULOS","LATITUDE","LONGITUDE"};
         this.rows = rows;
     }
     
@@ -58,7 +58,7 @@ public class ModeloDeTabelaParada extends AbstractTableModel{
                 return parada.getEndereco();
             case "ID":
                 return parada.getId();
-            case "Nº DE VEÍCULOS":
+            case "QNT. DE VEÍCULOS":
                 return parada.getnVeiculos();
             case "LATITUDE":
                 return parada.getLatitude();
@@ -79,10 +79,10 @@ public class ModeloDeTabelaParada extends AbstractTableModel{
                 parada.setEndereco(String.valueOf(value));
                 break;
             case "LATITUDE":
-                parada.setLatitude(Float.parseFloat(String.valueOf(value)));
+                parada.setLatitude(tratarErroFloat(parada.getLatitude(),value));
                 break;
             case "LONGITUDE":
-                parada.setLongitude(Float.parseFloat(String.valueOf(value)));
+                parada.setLongitude(tratarErroFloat(parada.getLongitude(),value));
                 break;
             default:
                 break;
@@ -90,4 +90,11 @@ public class ModeloDeTabelaParada extends AbstractTableModel{
         fireTableCellUpdated(rowIndex,columnIndex);
     }
     
+    public float tratarErroFloat(float valorAnterior, Object value){
+        try{
+            return Float.parseFloat(String.valueOf(value));
+        }catch(NumberFormatException e){
+            return valorAnterior;
+        }
+    }
 }
