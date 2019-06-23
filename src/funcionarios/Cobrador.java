@@ -1,13 +1,22 @@
 package funcionarios;
+
+import auxiliar.Escala;
+
 public class Cobrador extends FuncionarioOperacional{
     int passageirosAtendidos;
     float tarifaNormal;
+    
     public void Cobrador(){
     }
-    public Cobrador(String nome,String cpf, String ctps, String sexo,int idade,int cargaHoraria, float salario){
-        super(nome,cpf,ctps,sexo,idade,cargaHoraria,salario);
-    }
 
+    public Cobrador(String nome, String cpf, String ctps, String sexo, int idade, int cargaHoraria, float salario) {
+        super(nome, cpf, ctps, sexo, idade, cargaHoraria, salario);
+    }
+    
+    public Cobrador(String nome,String cpf, String ctps, String sexo,int idade,int cargaHoraria, float salario, Escala escala){
+        super(nome,cpf,ctps,sexo,idade,cargaHoraria,salario,escala);
+    }
+    
     public Cobrador(String cpf) {
         super(cpf);
     }

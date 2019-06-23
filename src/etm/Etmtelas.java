@@ -3,16 +3,20 @@ package etm;
 import Relatorios.RelatorioRota;
 import Relatorios.RelatorioVeiculo;
 import auxiliar.ComparadorDeFuncionarios;
+import auxiliar.Escala;
 import auxiliar.Parada;
 import auxiliar.Rota;
 import funcionarios.Cobrador;
 import funcionarios.Funcionario;
+import funcionarios.FuncionarioOperacional;
 import funcionarios.Mecanico;
 import funcionarios.Motorista;
+import funcionarios.GestorDeFrota;
 import java.awt.Component;
 import java.awt.Container;
 import java.util.ArrayList;
 import java.util.Collections;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
@@ -207,29 +211,37 @@ public class Etmtelas extends javax.swing.JFrame {
         GL_aba = new javax.swing.JPanel();
         GL_abaInterna = new javax.swing.JTabbedPane();
         GL_abaCadastro = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel86 = new javax.swing.JLabel();
-        jLabel87 = new javax.swing.JLabel();
-        jLabel129 = new javax.swing.JLabel();
         jLabel131 = new javax.swing.JLabel();
-        jLabel133 = new javax.swing.JLabel();
         jLabel85 = new javax.swing.JLabel();
-        jLabel164 = new javax.swing.JLabel();
+        jLabel133 = new javax.swing.JLabel();
+        jLabel129 = new javax.swing.JLabel();
+        jLabel87 = new javax.swing.JLabel();
         jLabel175 = new javax.swing.JLabel();
+        jLabel164 = new javax.swing.JLabel();
         GL_Cadastro_CT_nome = new javax.swing.JTextField();
         GL_Cadastro_CT_cpf = new javax.swing.JTextField();
         GL_Cadastro_CT_ctps = new javax.swing.JTextField();
-        GL_Cadastro_CT_cargaHoraria = new javax.swing.JTextField();
-        GL_Cadastro_CT_salario = new javax.swing.JTextField();
         GL_Cadastro_CT_idade = new javax.swing.JTextField();
+        GL_Cadastro_CT_salario = new javax.swing.JTextField();
+        GL_Cadastro_CT_cargaHoraria = new javax.swing.JTextField();
         GL_Cadastro_BT_Cadastrar = new javax.swing.JButton();
-        GL_Cadastro_BT_limpar = new javax.swing.JButton();
         GL_Cadastro_BT_atualizar = new javax.swing.JButton();
+        GL_Cadastro_BT_limpar = new javax.swing.JButton();
+        GL_Cadastro_BT_buscar = new javax.swing.JButton();
         GL_Cadastro_CB_sexo = new javax.swing.JComboBox();
         GL_Cadastro_CB_funcao = new javax.swing.JComboBox();
-        GL_Cadastro_PN_Escala = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        GL_Cadastro_PN_escala = new javax.swing.JPanel();
+        jLabel142 = new javax.swing.JLabel();
+        GL_Escala_CB_domingo = new javax.swing.JCheckBox();
+        GL_Escala_CB_segunda = new javax.swing.JCheckBox();
+        GL_Escala_CB_terca = new javax.swing.JCheckBox();
+        GL_Escala_CB_quarta = new javax.swing.JCheckBox();
+        GL_Escala_CB_quinta = new javax.swing.JCheckBox();
+        GL_Escala_CB_sexta = new javax.swing.JCheckBox();
+        GL_Escala_CB_sabado = new javax.swing.JCheckBox();
+        GL_Escala_CB_todos = new javax.swing.JCheckBox();
         GL_abaVeiculos = new javax.swing.JPanel();
         GL_PN_dadosVeiculo = new javax.swing.JPanel();
         jLabel88 = new javax.swing.JLabel();
@@ -1948,24 +1960,31 @@ public class Etmtelas extends javax.swing.JFrame {
 
         jLabel86.setText("NOME:");
 
-        jLabel87.setText("CPF:");
-
-        jLabel129.setText("CTPS:");
-
         jLabel131.setText("SALÁRIO:");
-
-        jLabel133.setText("CARGA HORÁRIA:");
 
         jLabel85.setText("IDADE:");
 
-        jLabel164.setText("SEXO:");
+        jLabel133.setText("CARGA HORÁRIA:");
+
+        jLabel129.setText("CTPS:");
+
+        jLabel87.setText("CPF:");
 
         jLabel175.setText("FUNÇÃO:");
+
+        jLabel164.setText("SEXO:");
 
         GL_Cadastro_BT_Cadastrar.setText("Cadastrar");
         GL_Cadastro_BT_Cadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GL_Cadastro_BT_CadastrarActionPerformed(evt);
+            }
+        });
+
+        GL_Cadastro_BT_atualizar.setText("Atualizar");
+        GL_Cadastro_BT_atualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GL_Cadastro_BT_atualizarActionPerformed(evt);
             }
         });
 
@@ -1976,10 +1995,10 @@ public class Etmtelas extends javax.swing.JFrame {
             }
         });
 
-        GL_Cadastro_BT_atualizar.setText("Atualizar");
-        GL_Cadastro_BT_atualizar.addActionListener(new java.awt.event.ActionListener() {
+        GL_Cadastro_BT_buscar.setText("Buscar");
+        GL_Cadastro_BT_buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GL_Cadastro_BT_atualizarActionPerformed(evt);
+                GL_Cadastro_BT_buscarActionPerformed(evt);
             }
         });
 
@@ -1992,45 +2011,186 @@ public class Etmtelas extends javax.swing.JFrame {
             }
         });
 
-        GL_Cadastro_PN_Escala.setVisible(false);
+        GL_Cadastro_PN_escala.setVisible(false);
 
-        jLabel17.setText("Escala");
+        jLabel142.setText("Escala");
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
-            },
-            new String [] {
-                "Nome", "Cpf", "Ctps", "Salario", "Carga Horaria", "Função"
+        GL_Escala_CB_domingo.setText("DOMINGO");
+
+        GL_Escala_CB_segunda.setText("SEGUNDA");
+
+        GL_Escala_CB_terca.setText("TERÇA");
+
+        GL_Escala_CB_quarta.setText("QUARTA");
+
+        GL_Escala_CB_quinta.setText("QUINTA");
+
+        GL_Escala_CB_sexta.setText("SEXTA");
+
+        GL_Escala_CB_sabado.setText("SÁBADO");
+
+        GL_Escala_CB_todos.setText("TODOS");
+        GL_Escala_CB_todos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GL_Escala_CB_todosActionPerformed(evt);
             }
-        ));
-        jScrollPane5.setViewportView(jTable4);
+        });
 
-        javax.swing.GroupLayout GL_Cadastro_PN_EscalaLayout = new javax.swing.GroupLayout(GL_Cadastro_PN_Escala);
-        GL_Cadastro_PN_Escala.setLayout(GL_Cadastro_PN_EscalaLayout);
-        GL_Cadastro_PN_EscalaLayout.setHorizontalGroup(
-            GL_Cadastro_PN_EscalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(GL_Cadastro_PN_EscalaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 442, Short.MAX_VALUE))
-            .addGroup(GL_Cadastro_PN_EscalaLayout.createSequentialGroup()
-                .addGap(194, 194, 194)
-                .addComponent(jLabel17)
-                .addGap(0, 0, Short.MAX_VALUE))
+        javax.swing.GroupLayout GL_Cadastro_PN_escalaLayout = new javax.swing.GroupLayout(GL_Cadastro_PN_escala);
+        GL_Cadastro_PN_escala.setLayout(GL_Cadastro_PN_escalaLayout);
+        GL_Cadastro_PN_escalaLayout.setHorizontalGroup(
+            GL_Cadastro_PN_escalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GL_Cadastro_PN_escalaLayout.createSequentialGroup()
+                .addGroup(GL_Cadastro_PN_escalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(GL_Cadastro_PN_escalaLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(GL_Cadastro_PN_escalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(GL_Escala_CB_domingo)
+                            .addComponent(GL_Escala_CB_quinta))
+                        .addGap(18, 18, 18)
+                        .addGroup(GL_Cadastro_PN_escalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(GL_Escala_CB_segunda)
+                            .addComponent(GL_Escala_CB_sexta))
+                        .addGap(18, 18, 18)
+                        .addGroup(GL_Cadastro_PN_escalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(GL_Escala_CB_terca)
+                            .addComponent(GL_Escala_CB_sabado))
+                        .addGap(18, 18, 18)
+                        .addGroup(GL_Cadastro_PN_escalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(GL_Escala_CB_todos)
+                            .addComponent(GL_Escala_CB_quarta)))
+                    .addGroup(GL_Cadastro_PN_escalaLayout.createSequentialGroup()
+                        .addGap(137, 137, 137)
+                        .addComponent(jLabel142)))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
-        GL_Cadastro_PN_EscalaLayout.setVerticalGroup(
-            GL_Cadastro_PN_EscalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(GL_Cadastro_PN_EscalaLayout.createSequentialGroup()
-                .addGap(7, 7, 7)
-                .addComponent(jLabel17)
+        GL_Cadastro_PN_escalaLayout.setVerticalGroup(
+            GL_Cadastro_PN_escalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GL_Cadastro_PN_escalaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel142)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(GL_Cadastro_PN_escalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(GL_Escala_CB_segunda, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(GL_Cadastro_PN_escalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(GL_Escala_CB_domingo)
+                        .addComponent(GL_Escala_CB_terca)
+                        .addComponent(GL_Escala_CB_quarta)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGroup(GL_Cadastro_PN_escalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(GL_Escala_CB_quinta)
+                    .addComponent(GL_Escala_CB_sexta)
+                    .addComponent(GL_Escala_CB_sabado)
+                    .addComponent(GL_Escala_CB_todos))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(GL_Cadastro_BT_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(GL_Cadastro_BT_Cadastrar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(GL_Cadastro_BT_atualizar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(GL_Cadastro_BT_limpar)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel87)
+                            .addComponent(jLabel129)
+                            .addComponent(jLabel86))
+                        .addGap(25, 25, 25)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(GL_Cadastro_CT_ctps, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(GL_Cadastro_CT_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(GL_Cadastro_CT_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 180, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel164)
+                                .addGap(34, 34, 34))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel175)
+                                .addGap(18, 18, 18)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(GL_Cadastro_CB_funcao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(GL_Cadastro_CB_sexo, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(162, 162, 162))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel133)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(GL_Cadastro_CT_cargaHoraria, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel131)
+                                    .addComponent(jLabel85))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(GL_Cadastro_CT_idade, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(GL_Cadastro_CT_salario, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(GL_Cadastro_PN_escala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(GL_Cadastro_CT_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel86))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(GL_Cadastro_CT_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel87))
+                        .addGap(14, 14, 14))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(GL_Cadastro_CB_sexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel164))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(GL_Cadastro_CB_funcao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel175))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel129)
+                    .addComponent(GL_Cadastro_CT_ctps, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel85)
+                            .addComponent(GL_Cadastro_CT_idade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(17, 17, 17)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel131)
+                            .addComponent(GL_Cadastro_CT_salario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel133)
+                            .addComponent(GL_Cadastro_CT_cargaHoraria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(GL_Cadastro_PN_escala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(GL_Cadastro_BT_Cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(GL_Cadastro_BT_limpar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(GL_Cadastro_BT_atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(GL_Cadastro_BT_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
         );
 
         javax.swing.GroupLayout GL_abaCadastroLayout = new javax.swing.GroupLayout(GL_abaCadastro);
@@ -2038,103 +2198,16 @@ public class Etmtelas extends javax.swing.JFrame {
         GL_abaCadastroLayout.setHorizontalGroup(
             GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(GL_abaCadastroLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(GL_abaCadastroLayout.createSequentialGroup()
-                        .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(GL_abaCadastroLayout.createSequentialGroup()
-                                .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(GL_abaCadastroLayout.createSequentialGroup()
-                                        .addComponent(GL_Cadastro_BT_Cadastrar)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(GL_Cadastro_BT_atualizar)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(GL_Cadastro_BT_limpar))
-                                    .addGroup(GL_abaCadastroLayout.createSequentialGroup()
-                                        .addComponent(jLabel86)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(GL_Cadastro_CT_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 159, Short.MAX_VALUE))
-                            .addGroup(GL_abaCadastroLayout.createSequentialGroup()
-                                .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(GL_abaCadastroLayout.createSequentialGroup()
-                                        .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel87)
-                                            .addComponent(jLabel129))
-                                        .addGap(22, 22, 22)
-                                        .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(GL_Cadastro_CT_cpf, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
-                                            .addComponent(GL_Cadastro_CT_ctps)))
-                                    .addGroup(GL_abaCadastroLayout.createSequentialGroup()
-                                        .addComponent(jLabel131)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(GL_Cadastro_CT_salario, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(GL_abaCadastroLayout.createSequentialGroup()
-                                        .addComponent(jLabel133)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(GL_Cadastro_CT_cargaHoraria, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(GL_abaCadastroLayout.createSequentialGroup()
-                                .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(GL_abaCadastroLayout.createSequentialGroup()
-                                        .addGap(121, 121, 121)
-                                        .addComponent(jLabel164)
-                                        .addGap(34, 34, 34))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GL_abaCadastroLayout.createSequentialGroup()
-                                        .addComponent(jLabel175)
-                                        .addGap(18, 18, 18)))
-                                .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(GL_Cadastro_CB_funcao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(GL_Cadastro_CB_sexo, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(GL_Cadastro_PN_Escala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(380, Short.MAX_VALUE))
-                    .addGroup(GL_abaCadastroLayout.createSequentialGroup()
-                        .addComponent(jLabel85)
-                        .addGap(18, 18, 18)
-                        .addComponent(GL_Cadastro_CT_idade, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(23, 23, 23)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         GL_abaCadastroLayout.setVerticalGroup(
             GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(GL_abaCadastroLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(GL_Cadastro_CT_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(GL_Cadastro_CB_sexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel86)
-                    .addComponent(jLabel164))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(GL_Cadastro_CT_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(GL_Cadastro_CB_funcao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel87)
-                    .addComponent(jLabel175))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(GL_Cadastro_CT_ctps, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel129))
-                .addGap(18, 18, 18)
-                .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel85)
-                    .addComponent(GL_Cadastro_CT_idade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17)
-                .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(GL_Cadastro_PN_Escala, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(GL_abaCadastroLayout.createSequentialGroup()
-                        .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel131)
-                            .addComponent(GL_Cadastro_CT_salario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel133)
-                            .addComponent(GL_Cadastro_CT_cargaHoraria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
-                        .addGroup(GL_abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(GL_Cadastro_BT_Cadastrar)
-                            .addComponent(GL_Cadastro_BT_limpar)
-                            .addComponent(GL_Cadastro_BT_atualizar))))
-                .addContainerGap(290, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         GL_abaInterna.addTab("Cadastro", GL_abaCadastro);
@@ -2266,7 +2339,7 @@ public class Etmtelas extends javax.swing.JFrame {
             .addGroup(GL_abaVeiculosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(GL_PN_dadosVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(741, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         GL_abaVeiculosLayout.setVerticalGroup(
             GL_abaVeiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2375,7 +2448,7 @@ public class Etmtelas extends javax.swing.JFrame {
                             .addComponent(GL_tarifa_CT_totalDeDescontos, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(GL_tarifa_CT_totalDePassagensVendidas, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(GL_tarifa_CT_receita))
-                        .addGap(0, 886, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(GL_abaTarifaLayout.createSequentialGroup()
                         .addComponent(jLabel134)
                         .addGap(600, 600, 600))))
@@ -2665,7 +2738,7 @@ public class Etmtelas extends javax.swing.JFrame {
                                 .addGroup(GL_abaRelatorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(GL_relatorioLocal_CT_salarioAtendente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel106))))))
-                .addContainerGap(334, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         GL_abaInterna.addTab("Relatório Local", GL_abaRelatorio);
@@ -4572,14 +4645,11 @@ public class Etmtelas extends javax.swing.JFrame {
         String tipoDeFuncionario;
         tipoDeFuncionario = GL_Cadastro_CB_funcao.getSelectedItem().toString();
         switch(tipoDeFuncionario){
-            case "MOTORISTA":
-                GL_Cadastro_PN_Escala.setVisible(true);
-                break;
-            case "COBRADOR":
-                GL_Cadastro_PN_Escala.setVisible(true);
+            case "MOTORISTA":case "COBRADOR":case "MECÂNICO":
+                GL_Cadastro_PN_escala.setVisible(true);
                 break;
             default:
-                GL_Cadastro_PN_Escala.setVisible(false);
+                GL_Cadastro_PN_escala.setVisible(false);
                 break;
         }
     }//GEN-LAST:event_GL_Cadastro_CB_funcaoActionPerformed
@@ -5064,7 +5134,9 @@ public class Etmtelas extends javax.swing.JFrame {
                 Collections.sort(funcionarios, new ComparadorDeFuncionarios());
                 GF_Relatorios_TB_listagem.setModel(new ModeloDeTabelaFuncionario(funcionarios));
             }
-            
+            else{
+                GF_Relatorios_TB_listagem.removeAll();
+            }
         }
         //Terminar
         else if (veiculo){
@@ -5079,7 +5151,9 @@ public class Etmtelas extends javax.swing.JFrame {
                 relatorios.add(relatorio);
                 GF_Relatorios_TB_listagem.setModel(new ModeloDeTabelaRelatorioVeiculo(relatorios));
             }
-            
+            else{
+                GF_Relatorios_TB_listagem.removeAll();
+            }
         }
         else if(rota){
             String idRota;
@@ -5091,7 +5165,9 @@ public class Etmtelas extends javax.swing.JFrame {
                 relatorios.add(relatorio);
                 GF_Relatorios_TB_listagem.setModel(new ModeloDeTabelaRelatorioRota(relatorios));
             }
-            
+            else{
+                GF_Relatorios_TB_listagem.removeAll();
+            }
         }
     }//GEN-LAST:event_GF_Relatorios_BT_buscarRelatorioActionPerformed
 
@@ -5101,6 +5177,7 @@ public class Etmtelas extends javax.swing.JFrame {
         String ctps;
         String sexo;
         String funcao;
+        Escala escala;
         float salario;
         int cargaHoraria;
         int idade;
@@ -5115,17 +5192,14 @@ public class Etmtelas extends javax.swing.JFrame {
         idade =  tratarErroInt(GL_Cadastro_CT_idade);
         salario = tratarErroFloat(GL_Cadastro_CT_salario);
         
+        
         switch(funcao){
-            case "MOTORISTA":
-                nFun = new Motorista(nome, cpf, ctps, sexo, idade, cargaHoraria, salario);
-                break;
-            case "COBRADOR":
-                nFun = new Cobrador(nome, cpf, ctps, sexo, idade, cargaHoraria, salario);
-                break;
-            case "MECÂNICO":
-                nFun = new Mecanico(nome, cpf, ctps, sexo, idade, cargaHoraria, salario);
+            case "MOTORISTA":case "COBRADOR":case "MECÂNICO":
+                escala = getEscala(GL_Cadastro_PN_escala);
+                nFun = new Motorista(nome, cpf, ctps, sexo, idade, cargaHoraria, salario, escala);
                 break;
             case "GESTOR DE FROTA":
+                nFun = new GestorDeFrota();
                 break;
             default:
                 break;
@@ -5241,7 +5315,45 @@ public class Etmtelas extends javax.swing.JFrame {
     }//GEN-LAST:event_GF_Gastos_BT_inserirActionPerformed
 
     private void GL_Cadastro_BT_atualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GL_Cadastro_BT_atualizarActionPerformed
-        // TODO add your handling code here:
+        String nome;
+        String cpf;
+        String ctps;
+        String sexo;
+        String funcao;
+        float salario;
+        int cargaHoraria;
+        int idade;
+        Funcionario nFun=null;
+        
+        funcao = GL_Cadastro_CB_funcao.getSelectedItem().toString();
+        nome = GL_Cadastro_CT_nome.getText();
+        cpf = GL_Cadastro_CT_cpf.getText();
+        ctps = GL_Cadastro_CT_ctps.getText();
+        sexo = GL_Cadastro_CB_sexo.getSelectedItem().toString();
+        cargaHoraria = tratarErroInt(GL_Cadastro_CT_cargaHoraria);
+        idade =  tratarErroInt(GL_Cadastro_CT_idade);
+        salario = tratarErroFloat(GL_Cadastro_CT_salario);
+        
+        switch(funcao){
+            case "MOTORISTA":
+                nFun = new Motorista(nome, cpf, ctps, sexo, idade, cargaHoraria, salario);
+                break;
+            case "COBRADOR":
+                nFun = new Cobrador(nome, cpf, ctps, sexo, idade, cargaHoraria, salario);
+                break;
+            case "MECÂNICO":
+                nFun = new Mecanico(nome, cpf, ctps, sexo, idade, cargaHoraria, salario);
+                break;
+            case "GESTOR DE FROTA":
+                break;
+            default:
+                break;
+        }
+        
+        if(nFun!=null){
+            etm.atualizarFuncionario(nFun);
+            GF_Alocar_CT_cpf.setText(nFun.getCpf());
+        }
     }//GEN-LAST:event_GL_Cadastro_BT_atualizarActionPerformed
 
     private void GF_Relatorios_BT_balancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GF_Relatorios_BT_balancoActionPerformed
@@ -5287,6 +5399,34 @@ public class Etmtelas extends javax.swing.JFrame {
         GF_Relatorios_PN_Listagem.setVisible(true);
         GF_Relatorios_TB_listagem.setModel(new ModeloDeTabelaRelatorioVeiculo());
     }//GEN-LAST:event_GF_Relatorios_BR_veiculoActionPerformed
+
+    private void GL_Escala_CB_todosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GL_Escala_CB_todosActionPerformed
+        Component [] elementosPainelEscala = GL_Cadastro_PN_escala.getComponents();
+        for(Component c: elementosPainelEscala){
+            if( c instanceof JCheckBox && !((JCheckBox)c).getText().equals("TODOS")){
+                ((JCheckBox)c).setSelected(GL_Escala_CB_todos.isSelected());
+            }
+        }
+    }//GEN-LAST:event_GL_Escala_CB_todosActionPerformed
+
+    private void GL_Cadastro_BT_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GL_Cadastro_BT_buscarActionPerformed
+        String cpf;
+        Funcionario fun;
+        
+        cpf = GL_Cadastro_CT_cpf.getText();
+        fun = etm.buscarFuncionario(cpf);
+        if(fun != null){
+            GL_Cadastro_CT_nome.setText(fun.getNome());
+            GL_Cadastro_CT_cpf.setText(fun.getCpf());
+            GL_Cadastro_CT_ctps.setText(fun.getCtps());
+            GL_Cadastro_CT_idade.setText(String.valueOf(fun.getIdade()));
+            GL_Cadastro_CT_salario.setText(String.valueOf(fun.getSalario()));
+            GL_Cadastro_CT_cargaHoraria.setText(String.valueOf(fun.getCargaHoraria()));
+            GL_Cadastro_CB_sexo.setSelectedItem(fun.getSexo());
+            GL_Cadastro_CB_funcao.setSelectedItem(fun.getFuncao());
+            setEscala(GL_Cadastro_PN_escala, ((FuncionarioOperacional)fun).getMinhaEscala());
+        }
+    }//GEN-LAST:event_GL_Cadastro_BT_buscarActionPerformed
 
     public void ordenarTabelaParadas(){
         
@@ -5337,12 +5477,56 @@ public class Etmtelas extends javax.swing.JFrame {
             else if(c instanceof JComboBox){
                 ((JComboBox)c).setSelectedIndex(0);
             }
+            else if( c instanceof JCheckBox){
+                ((JCheckBox)c).setSelected(false);
+            }
             else if(c instanceof Container){
                 limparCampos((Container)c);
             }
         }
     }
-
+    
+    public Escala getEscala(Container container){
+        String [] dias = {"DOMINGO","SEGUNDA","TERÇA","QUARTA","QUINTA","SEXTA","SÁBADO"};
+        Component componentes [] = container.getComponents();
+        boolean escala [] = new boolean[7];
+        Component c;
+        int j=0;
+        
+        for(int i=0;i<componentes.length;i++){
+            c = componentes[i];
+            if((c instanceof JCheckBox) && !((JCheckBox)c).getText().equals("TODOS")){
+                escala[j] = buscarDiaEscala(container, dias[j]).isSelected();
+                j++;
+            }
+        }
+        return new Escala(escala);
+    }
+    
+    public void setEscala(Container container, Escala escala){
+        String [] diasString = {"DOMINGO","SEGUNDA","TERÇA","QUARTA","QUINTA","SEXTA","SÁBADO"};
+        boolean dias [] = escala.getEscala();
+        JCheckBox c;
+        for(int i=0;i<diasString.length;i++){
+            c = buscarDiaEscala(container, diasString[i]);
+            if(c != null){
+                ((JCheckBox)c).setSelected(dias[i]);
+            }
+        }
+    }
+    
+    public JCheckBox buscarDiaEscala(Container container , String dia){
+        Component componentes [] = container.getComponents();
+        for(Component c: componentes){
+            if(c instanceof JCheckBox){
+                if(((JCheckBox)c).getText().equals(dia)){
+                    return ((JCheckBox)c);
+                }
+            }
+        }
+        return null;
+    }
+    
     public void mostrarMensagem(String mensagem){
         JOptionPane.showMessageDialog(rootPane, mensagem);
     }
@@ -5541,6 +5725,7 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JTabbedPane GF_abaInterna;
     private javax.swing.JButton GL_Cadastro_BT_Cadastrar;
     private javax.swing.JButton GL_Cadastro_BT_atualizar;
+    private javax.swing.JButton GL_Cadastro_BT_buscar;
     private javax.swing.JButton GL_Cadastro_BT_limpar;
     private javax.swing.JComboBox GL_Cadastro_CB_funcao;
     private javax.swing.JComboBox GL_Cadastro_CB_sexo;
@@ -5550,7 +5735,15 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JTextField GL_Cadastro_CT_idade;
     private javax.swing.JTextField GL_Cadastro_CT_nome;
     private javax.swing.JTextField GL_Cadastro_CT_salario;
-    private javax.swing.JPanel GL_Cadastro_PN_Escala;
+    private javax.swing.JPanel GL_Cadastro_PN_escala;
+    private javax.swing.JCheckBox GL_Escala_CB_domingo;
+    private javax.swing.JCheckBox GL_Escala_CB_quarta;
+    private javax.swing.JCheckBox GL_Escala_CB_quinta;
+    private javax.swing.JCheckBox GL_Escala_CB_sabado;
+    private javax.swing.JCheckBox GL_Escala_CB_segunda;
+    private javax.swing.JCheckBox GL_Escala_CB_sexta;
+    private javax.swing.JCheckBox GL_Escala_CB_terca;
+    private javax.swing.JCheckBox GL_Escala_CB_todos;
     private javax.swing.JPanel GL_PN_dadosVeiculo;
     private javax.swing.JComboBox GL_RelatoriosPorPe_CB_funcao;
     private javax.swing.JPanel GL_aba;
@@ -5740,6 +5933,7 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel140;
     private javax.swing.JLabel jLabel141;
+    private javax.swing.JLabel jLabel142;
     private javax.swing.JLabel jLabel144;
     private javax.swing.JLabel jLabel145;
     private javax.swing.JLabel jLabel146;
@@ -5768,7 +5962,6 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel167;
     private javax.swing.JLabel jLabel168;
     private javax.swing.JLabel jLabel169;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel170;
     private javax.swing.JLabel jLabel171;
     private javax.swing.JLabel jLabel172;
@@ -5872,6 +6065,7 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel97;
     private javax.swing.JLabel jLabel98;
     private javax.swing.JLabel jLabel99;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel3;
@@ -5883,7 +6077,6 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
@@ -5892,7 +6085,6 @@ public class Etmtelas extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;

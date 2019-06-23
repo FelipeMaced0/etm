@@ -2293,304 +2293,395 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="GL_Cadastro_BT_Cadastrar" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="GL_Cadastro_BT_atualizar" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="GL_Cadastro_BT_limpar" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="jLabel86" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="GL_Cadastro_CT_nome" min="-2" pref="159" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <EmptySpace min="0" pref="159" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jLabel87" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jLabel129" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="GL_Cadastro_CT_cpf" pref="159" max="32767" attributes="0"/>
-                                                          <Component id="GL_Cadastro_CT_ctps" max="32767" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="jLabel131" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="GL_Cadastro_CT_salario" min="-2" pref="56" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="jLabel133" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="GL_Cadastro_CT_cargaHoraria" min="-2" pref="53" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
-                                                      <Component id="jLabel164" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <Component id="jLabel175" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="GL_Cadastro_CB_funcao" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="GL_Cadastro_CB_sexo" alignment="0" min="-2" pref="118" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Component id="GL_Cadastro_PN_Escala" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace pref="380" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel85" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="GL_Cadastro_CT_idade" min="-2" pref="56" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="GL_Cadastro_CT_nome" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="GL_Cadastro_CB_sexo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel86" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel164" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="GL_Cadastro_CT_cpf" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="GL_Cadastro_CB_funcao" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel87" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel175" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="GL_Cadastro_CT_ctps" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel129" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel85" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="GL_Cadastro_CT_idade" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="GL_Cadastro_PN_Escala" alignment="1" min="-2" pref="142" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel131" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="GL_Cadastro_CT_salario" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel133" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="GL_Cadastro_CT_cargaHoraria" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace pref="69" max="32767" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="GL_Cadastro_BT_Cadastrar" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="GL_Cadastro_BT_limpar" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="GL_Cadastro_BT_atualizar" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <EmptySpace pref="290" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="jLabel86">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="NOME:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel87">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="CPF:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel129">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="CTPS:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel131">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="SAL&#xc1;RIO:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel133">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="CARGA HOR&#xc1;RIA:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel85">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="IDADE:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel164">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="SEXO:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel175">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="FUN&#xc7;&#xc3;O:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="GL_Cadastro_CT_nome">
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="GL_Cadastro_CT_cpf">
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="GL_Cadastro_CT_ctps">
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="GL_Cadastro_CT_cargaHoraria">
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="GL_Cadastro_CT_salario">
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="GL_Cadastro_CT_idade">
-                    </Component>
-                    <Component class="javax.swing.JButton" name="GL_Cadastro_BT_Cadastrar">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Cadastrar"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GL_Cadastro_BT_CadastrarActionPerformed"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JButton" name="GL_Cadastro_BT_limpar">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Limpar"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GL_Cadastro_BT_limparActionPerformed"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JButton" name="GL_Cadastro_BT_atualizar">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Atualizar"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GL_Cadastro_BT_atualizarActionPerformed"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JComboBox" name="GL_Cadastro_CB_sexo">
-                      <Properties>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="3">
-                            <StringItem index="0" value="-"/>
-                            <StringItem index="1" value="MASCULINO"/>
-                            <StringItem index="2" value="FEMININO"/>
-                          </StringArray>
-                        </Property>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JComboBox" name="GL_Cadastro_CB_funcao">
-                      <Properties>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="5">
-                            <StringItem index="0" value="-"/>
-                            <StringItem index="1" value="MOTORISTA"/>
-                            <StringItem index="2" value="COBRADOR"/>
-                            <StringItem index="3" value="MEC&#xc2;NICO"/>
-                            <StringItem index="4" value="GESTOR DE FROTA"/>
-                          </StringArray>
-                        </Property>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GL_Cadastro_CB_funcaoActionPerformed"/>
-                      </Events>
-                    </Component>
-                    <Container class="javax.swing.JPanel" name="GL_Cadastro_PN_Escala">
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="GL_Cadastro_PN_Escala.setVisible(false);"/>
-                      </AuxValues>
+                    <Container class="javax.swing.JPanel" name="jPanel1">
 
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jScrollPane5" pref="442" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="194" max="-2" attributes="0"/>
-                                  <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="GL_Cadastro_BT_buscar" alignment="0" min="-2" pref="81" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="GL_Cadastro_BT_Cadastrar" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="GL_Cadastro_BT_atualizar" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="GL_Cadastro_BT_limpar" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel87" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel129" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel86" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="GL_Cadastro_CT_ctps" min="-2" pref="159" max="-2" attributes="0"/>
+                                              <Component id="GL_Cadastro_CT_nome" alignment="0" min="-2" pref="159" max="-2" attributes="0"/>
+                                              <Component id="GL_Cadastro_CT_cpf" alignment="0" min="-2" pref="159" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace pref="180" max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jLabel164" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <Component id="jLabel175" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="GL_Cadastro_CB_funcao" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="GL_Cadastro_CB_sexo" alignment="0" min="-2" pref="118" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="162" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jLabel133" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="GL_Cadastro_CT_cargaHoraria" min="-2" pref="53" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jLabel131" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel85" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="GL_Cadastro_CT_idade" min="-2" pref="56" max="-2" attributes="0"/>
+                                                      <Component id="GL_Cadastro_CT_salario" min="-2" pref="56" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="GL_Cadastro_PN_escala" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                                  <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="GL_Cadastro_CT_nome" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel86" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="GL_Cadastro_CT_cpf" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel87" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="GL_Cadastro_CB_sexo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel164" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="GL_Cadastro_CB_funcao" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel175" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel129" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="GL_Cadastro_CT_ctps" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel85" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="GL_Cadastro_CT_idade" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel131" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="GL_Cadastro_CT_salario" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel133" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="GL_Cadastro_CT_cargaHoraria" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Component id="GL_Cadastro_PN_escala" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace pref="70" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="GL_Cadastro_BT_Cadastrar" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                                      <Component id="GL_Cadastro_BT_limpar" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                                      <Component id="GL_Cadastro_BT_atualizar" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                                  </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane5" min="-2" pref="133" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="GL_Cadastro_BT_buscar" min="-2" pref="33" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JLabel" name="jLabel17">
+                        <Component class="javax.swing.JLabel" name="jLabel86">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Escala"/>
+                            <Property name="text" type="java.lang.String" value="NOME:"/>
                           </Properties>
                         </Component>
-                        <Container class="javax.swing.JScrollPane" name="jScrollPane5">
+                        <Component class="javax.swing.JLabel" name="jLabel131">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="SAL&#xc1;RIO:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel85">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="IDADE:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel133">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="CARGA HOR&#xc1;RIA:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel129">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="CTPS:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel87">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="CPF:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel175">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="FUN&#xc7;&#xc3;O:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel164">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="SEXO:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="GL_Cadastro_CT_nome">
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="GL_Cadastro_CT_cpf">
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="GL_Cadastro_CT_ctps">
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="GL_Cadastro_CT_idade">
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="GL_Cadastro_CT_salario">
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="GL_Cadastro_CT_cargaHoraria">
+                        </Component>
+                        <Component class="javax.swing.JButton" name="GL_Cadastro_BT_Cadastrar">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Cadastrar"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GL_Cadastro_BT_CadastrarActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JButton" name="GL_Cadastro_BT_atualizar">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Atualizar"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GL_Cadastro_BT_atualizarActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JButton" name="GL_Cadastro_BT_limpar">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Limpar"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GL_Cadastro_BT_limparActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JButton" name="GL_Cadastro_BT_buscar">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Buscar"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GL_Cadastro_BT_buscarActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="GL_Cadastro_CB_sexo">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="3">
+                                <StringItem index="0" value="-"/>
+                                <StringItem index="1" value="MASCULINO"/>
+                                <StringItem index="2" value="FEMININO"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="GL_Cadastro_CB_funcao">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="5">
+                                <StringItem index="0" value="-"/>
+                                <StringItem index="1" value="MOTORISTA"/>
+                                <StringItem index="2" value="COBRADOR"/>
+                                <StringItem index="3" value="MEC&#xc2;NICO"/>
+                                <StringItem index="4" value="GESTOR DE FROTA"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GL_Cadastro_CB_funcaoActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Container class="javax.swing.JPanel" name="GL_Cadastro_PN_escala">
                           <AuxValues>
-                            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="GL_Cadastro_PN_escala.setVisible(false);"/>
                           </AuxValues>
 
-                          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                          <Layout>
+                            <DimensionLayout dim="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="GL_Escala_CB_domingo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="GL_Escala_CB_quinta" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="GL_Escala_CB_segunda" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="GL_Escala_CB_sexta" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="GL_Escala_CB_terca" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="GL_Escala_CB_sabado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="GL_Escala_CB_todos" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="GL_Escala_CB_quarta" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
+                                              <Component id="jLabel142" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace pref="23" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                            </DimensionLayout>
+                            <DimensionLayout dim="1">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel142" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="GL_Escala_CB_segunda" alignment="1" min="-2" pref="23" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                              <Component id="GL_Escala_CB_domingo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="GL_Escala_CB_terca" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="GL_Escala_CB_quarta" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="GL_Escala_CB_quinta" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="GL_Escala_CB_sexta" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="GL_Escala_CB_sabado" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="GL_Escala_CB_todos" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                            </DimensionLayout>
+                          </Layout>
                           <SubComponents>
-                            <Component class="javax.swing.JTable" name="jTable4">
+                            <Component class="javax.swing.JLabel" name="jLabel142">
                               <Properties>
-                                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                  <Table columnCount="6" rowCount="6">
-                                    <Column editable="true" title="Nome" type="java.lang.Object"/>
-                                    <Column editable="true" title="Cpf" type="java.lang.Object"/>
-                                    <Column editable="true" title="Ctps" type="java.lang.Object"/>
-                                    <Column editable="true" title="Salario" type="java.lang.Object"/>
-                                    <Column editable="true" title="Carga Horaria" type="java.lang.Object"/>
-                                    <Column editable="true" title="Fun&#xe7;&#xe3;o" type="java.lang.Object"/>
-                                  </Table>
-                                </Property>
-                                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-                                  <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
-                                </Property>
+                                <Property name="text" type="java.lang.String" value="Escala"/>
                               </Properties>
+                            </Component>
+                            <Component class="javax.swing.JCheckBox" name="GL_Escala_CB_domingo">
+                              <Properties>
+                                <Property name="text" type="java.lang.String" value="DOMINGO"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JCheckBox" name="GL_Escala_CB_segunda">
+                              <Properties>
+                                <Property name="text" type="java.lang.String" value="SEGUNDA"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JCheckBox" name="GL_Escala_CB_terca">
+                              <Properties>
+                                <Property name="text" type="java.lang.String" value="TER&#xc7;A"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JCheckBox" name="GL_Escala_CB_quarta">
+                              <Properties>
+                                <Property name="text" type="java.lang.String" value="QUARTA"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JCheckBox" name="GL_Escala_CB_quinta">
+                              <Properties>
+                                <Property name="text" type="java.lang.String" value="QUINTA"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JCheckBox" name="GL_Escala_CB_sexta">
+                              <Properties>
+                                <Property name="text" type="java.lang.String" value="SEXTA"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JCheckBox" name="GL_Escala_CB_sabado">
+                              <Properties>
+                                <Property name="text" type="java.lang.String" value="S&#xc1;BADO"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JCheckBox" name="GL_Escala_CB_todos">
+                              <Properties>
+                                <Property name="text" type="java.lang.String" value="TODOS"/>
+                              </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GL_Escala_CB_todosActionPerformed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -2613,7 +2704,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="GL_PN_dadosVeiculo" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="741" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -2921,7 +3012,7 @@
                                           <Component id="GL_tarifa_CT_totalDePassagensVendidas" alignment="0" max="32767" attributes="0"/>
                                           <Component id="GL_tarifa_CT_receita" max="32767" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="0" pref="886" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel134" min="-2" max="-2" attributes="0"/>
@@ -3390,7 +3481,7 @@
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="334" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>

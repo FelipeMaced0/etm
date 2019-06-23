@@ -13,6 +13,12 @@ public class FuncionarioOperacional extends Funcionario {
     public FuncionarioOperacional() {
     }
 
+    public FuncionarioOperacional(String nome, String cpf, String ctps, String sexo, int idade, int cargaHoraria, float salario, Escala minhaEscala) {
+        super(nome, cpf, ctps, sexo, idade, cargaHoraria, salario);
+        this.minhaEscala = minhaEscala;
+        veiculos = new ArrayList();
+    }
+    
     public FuncionarioOperacional(String nome, String cpf, String ctps, String sexo, int idade, int cargaHoraria, float salario) {
         super(nome, cpf, ctps, sexo, idade, cargaHoraria, salario);
         veiculos = new ArrayList();

@@ -33,23 +33,6 @@ public class TelaGerenteLocal extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        Buscar = new javax.swing.JPanel();
-        Buscar_nome_nome = new javax.swing.JLabel();
-        nome_cpf = new javax.swing.JLabel();
-        Buscar_nome_idade = new javax.swing.JLabel();
-        Buscar_nome_sexo = new javax.swing.JLabel();
-        Buscar_salario = new javax.swing.JLabel();
-        Buscar_CT_nome = new javax.swing.JTextField();
-        Buscar_CT_cpf = new javax.swing.JTextField();
-        Buscar_CT_idade = new javax.swing.JTextField();
-        Buscar_CT_salario = new javax.swing.JTextField();
-        Buscar_BT_buscar = new javax.swing.JButton();
-        Buscar_BT_limpar = new javax.swing.JButton();
-        Buscar_BT_descadastrar = new javax.swing.JButton();
-        Buscar_BT_atualizar = new javax.swing.JButton();
-        Buscar_CT_sexo = new javax.swing.JComboBox();
-        Buscar_PN_info = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         Cadastro = new javax.swing.JPanel();
         nome = new javax.swing.JLabel();
         cpf = new javax.swing.JLabel();
@@ -78,124 +61,25 @@ public class TelaGerenteLocal extends javax.swing.JFrame {
         Cadastrar_CB_sexta = new javax.swing.JCheckBox();
         Cadastrar_CB_sabado = new javax.swing.JCheckBox();
         Cadastrar_CB_todos = new javax.swing.JCheckBox();
+        Buscar = new javax.swing.JPanel();
+        Buscar_nome_nome = new javax.swing.JLabel();
+        nome_cpf = new javax.swing.JLabel();
+        Buscar_nome_idade = new javax.swing.JLabel();
+        Buscar_nome_sexo = new javax.swing.JLabel();
+        Buscar_salario = new javax.swing.JLabel();
+        Buscar_CT_nome = new javax.swing.JTextField();
+        Buscar_CT_cpf = new javax.swing.JTextField();
+        Buscar_CT_idade = new javax.swing.JTextField();
+        Buscar_CT_salario = new javax.swing.JTextField();
+        Buscar_BT_buscar = new javax.swing.JButton();
+        Buscar_BT_limpar = new javax.swing.JButton();
+        Buscar_BT_descadastrar = new javax.swing.JButton();
+        Buscar_BT_atualizar = new javax.swing.JButton();
+        Buscar_CT_sexo = new javax.swing.JComboBox();
+        Buscar_PN_info = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        Buscar_nome_nome.setText("NOME:");
-
-        nome_cpf.setText("CPF:");
-
-        Buscar_nome_idade.setText("IDADE:");
-
-        Buscar_nome_sexo.setText("SEXO:");
-
-        Buscar_salario.setText("SALÁRIO");
-
-        Buscar_CT_nome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Buscar_CT_nomeActionPerformed(evt);
-            }
-        });
-
-        Buscar_CT_salario.setText(" ");
-
-        Buscar_BT_buscar.setText("Buscar");
-
-        Buscar_BT_limpar.setText("Limpar");
-
-        Buscar_BT_descadastrar.setText("Descadastrar");
-        Buscar_BT_descadastrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Buscar_BT_descadastrarActionPerformed(evt);
-            }
-        });
-
-        Buscar_BT_atualizar.setText("Atualizar");
-
-        Buscar_CT_sexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "FEMININO", "MASCULINO" }));
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        Buscar_PN_info.setViewportView(jTextArea1);
-
-        javax.swing.GroupLayout BuscarLayout = new javax.swing.GroupLayout(Buscar);
-        Buscar.setLayout(BuscarLayout);
-        BuscarLayout.setHorizontalGroup(
-            BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BuscarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(BuscarLayout.createSequentialGroup()
-                        .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Buscar_nome_idade)
-                            .addComponent(Buscar_salario)
-                            .addComponent(Buscar_nome_sexo))
-                        .addGap(18, 18, 18)
-                        .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Buscar_CT_sexo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Buscar_CT_idade, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Buscar_CT_salario)))
-                    .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(BuscarLayout.createSequentialGroup()
-                            .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(Buscar_nome_nome)
-                                .addComponent(nome_cpf))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(Buscar_CT_cpf, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
-                                .addComponent(Buscar_CT_nome)))
-                        .addGroup(BuscarLayout.createSequentialGroup()
-                            .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(Buscar_BT_buscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Buscar_BT_atualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(Buscar_BT_descadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Buscar_BT_limpar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addGap(8, 8, 8)
-                .addComponent(Buscar_PN_info, javax.swing.GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        BuscarLayout.setVerticalGroup(
-            BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BuscarLayout.createSequentialGroup()
-                .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(BuscarLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Buscar_nome_nome)
-                            .addComponent(Buscar_CT_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Buscar_CT_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nome_cpf))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Buscar_nome_idade)
-                            .addComponent(Buscar_CT_idade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(20, 20, 20)
-                        .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Buscar_nome_sexo)
-                            .addComponent(Buscar_CT_sexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(14, 14, 14)
-                        .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Buscar_salario)
-                            .addComponent(Buscar_CT_salario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Buscar_BT_buscar)
-                            .addComponent(Buscar_BT_limpar))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Buscar_BT_descadastrar)
-                            .addComponent(Buscar_BT_atualizar)))
-                    .addGroup(BuscarLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Buscar_PN_info)))
-                .addGap(47, 47, 47))
-        );
-
-        jTabbedPane1.addTab("Buscar", Buscar);
 
         nome.setText("NOME:");
 
@@ -423,6 +307,122 @@ public class TelaGerenteLocal extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Cadastro", Cadastro);
+
+        Buscar_nome_nome.setText("NOME:");
+
+        nome_cpf.setText("CPF:");
+
+        Buscar_nome_idade.setText("IDADE:");
+
+        Buscar_nome_sexo.setText("SEXO:");
+
+        Buscar_salario.setText("SALÁRIO");
+
+        Buscar_CT_nome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Buscar_CT_nomeActionPerformed(evt);
+            }
+        });
+
+        Buscar_CT_salario.setText(" ");
+
+        Buscar_BT_buscar.setText("Buscar");
+
+        Buscar_BT_limpar.setText("Limpar");
+
+        Buscar_BT_descadastrar.setText("Descadastrar");
+        Buscar_BT_descadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Buscar_BT_descadastrarActionPerformed(evt);
+            }
+        });
+
+        Buscar_BT_atualizar.setText("Atualizar");
+
+        Buscar_CT_sexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "FEMININO", "MASCULINO" }));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        Buscar_PN_info.setViewportView(jTextArea1);
+
+        javax.swing.GroupLayout BuscarLayout = new javax.swing.GroupLayout(Buscar);
+        Buscar.setLayout(BuscarLayout);
+        BuscarLayout.setHorizontalGroup(
+            BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BuscarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(BuscarLayout.createSequentialGroup()
+                        .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Buscar_nome_idade)
+                            .addComponent(Buscar_salario)
+                            .addComponent(Buscar_nome_sexo))
+                        .addGap(18, 18, 18)
+                        .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Buscar_CT_sexo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Buscar_CT_idade, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Buscar_CT_salario)))
+                    .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(BuscarLayout.createSequentialGroup()
+                            .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Buscar_nome_nome)
+                                .addComponent(nome_cpf))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(Buscar_CT_cpf, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
+                                .addComponent(Buscar_CT_nome)))
+                        .addGroup(BuscarLayout.createSequentialGroup()
+                            .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(Buscar_BT_buscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Buscar_BT_atualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(Buscar_BT_descadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Buscar_BT_limpar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addGap(8, 8, 8)
+                .addComponent(Buscar_PN_info, javax.swing.GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        BuscarLayout.setVerticalGroup(
+            BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BuscarLayout.createSequentialGroup()
+                .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(BuscarLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Buscar_nome_nome)
+                            .addComponent(Buscar_CT_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Buscar_CT_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nome_cpf))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Buscar_nome_idade)
+                            .addComponent(Buscar_CT_idade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(20, 20, 20)
+                        .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Buscar_nome_sexo)
+                            .addComponent(Buscar_CT_sexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(14, 14, 14)
+                        .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Buscar_salario)
+                            .addComponent(Buscar_CT_salario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Buscar_BT_buscar)
+                            .addComponent(Buscar_BT_limpar))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Buscar_BT_descadastrar)
+                            .addComponent(Buscar_BT_atualizar)))
+                    .addGroup(BuscarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Buscar_PN_info)))
+                .addGap(47, 47, 47))
+        );
+
+        jTabbedPane1.addTab("Buscar", Buscar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
