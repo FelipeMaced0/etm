@@ -5059,6 +5059,7 @@ public class Etmtelas extends javax.swing.JFrame {
         }
         if(nVeiculo != null){
             etm.atualizarVeiculo(nVeiculo);
+            atualizarTabelaVeiculos();
         }
     }//GEN-LAST:event_GF_CadasVei_BT_atualizarActionPerformed
 
@@ -5479,9 +5480,6 @@ public class Etmtelas extends javax.swing.JFrame {
             }
             else if( c instanceof JCheckBox){
                 ((JCheckBox)c).setSelected(false);
-            }
-            else if(c instanceof Container){
-                limparCampos((Container)c);
             }
         }
     }
