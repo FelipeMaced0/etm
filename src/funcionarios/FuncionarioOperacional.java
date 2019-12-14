@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import veiculos.Veiculo;
 
-public class FuncionarioOperacional extends Funcionario {
+public abstract class FuncionarioOperacional extends Funcionario {
 
     ArrayList<Veiculo> veiculos;
     Escala minhaEscala;

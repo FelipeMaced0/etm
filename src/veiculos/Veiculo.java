@@ -29,7 +29,6 @@ public abstract class Veiculo {
     private int nVezesFezPercurso;
     private Rota  minhaRota;
     private CobradorEletronico ce;
-    
     private ArrayList<FuncionarioOperacional> funcionarios;
     private ArrayList<Revisao> revisoes;
 
